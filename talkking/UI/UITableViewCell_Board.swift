@@ -1,26 +1,27 @@
 //
-//  UITableViewCell_Favor.swift
+//  UITableViewCell_Board.swift
 //  talkking
 //
-//  Created by mangomilk114 on 2018. 4. 23..
+//  Created by mangomilk114 on 2018. 4. 25..
 //  Copyright © 2018년 도호소프트. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class UITableViewCell_Favor : UITableViewCell
+class UITableViewCell_Board : UITableViewCell
 {
+    
+    @IBOutlet var Time: UILabel!
+    @IBAction func Notice(_ sender: Any) {
+    }
+    @IBOutlet var Board: UILabel!
     @IBOutlet var Rank: UIImageView!
     @IBOutlet var Name: UILabel!
     @IBOutlet var Thumbnail: UIImageView!
-    
-    public func SetFavorCell(userData:UserData)
+    public func SetBoardCell(userData:UserData)
     {
-        // 데이터를 추가 해야 한다.
-        Name.text = userData.Name
-        Rank.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade: userData.Grade))
-        //Thumbnail = UIImage.
+
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

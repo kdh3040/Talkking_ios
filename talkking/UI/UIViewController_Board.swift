@@ -1,28 +1,21 @@
 //
-//  UIViewController_Favor.swift
+//  UIViewController_Board.swift
 //  talkking
 //
-//  Created by mangomilk114 on 2018. 4. 23..
+//  Created by mangomilk114 on 2018. 4. 25..
 //  Copyright © 2018년 도호소프트. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableViewDataSource
+class UIViewController_Board : UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-    @IBOutlet var FavorTableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        FavorTableView.delegate = self
-        FavorTableView.dataSource = self
-        
-        DataMgr.Instance
-        // 임시
-        // 내 데이터 생성
-        DataMgr.Instance.MyData = MyUserData(userIndex: 1)
+        //ChatMainTableView.delegate = self
+        //ChatMainTableView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,7 +24,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
+        
         let count : Int = 0
         
         if(count <= 0)
@@ -44,9 +37,6 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
             tableView.separatorStyle = .singleLine
             //tableView.backgroundView?.isHidden = true
         }
-        
-        
-        
         return (DataMgr.Instance.MyData?.MyData?.FavorUserIndexList?.count)!;
     }
     // 셀 내용 변경하기 (tableView 구현 필수)
@@ -59,5 +49,5 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         cell.SetFavorCell(userData: DataMgr.Instance.GetUserData(index: index)!)
         return cell
     }
-
+    
 }

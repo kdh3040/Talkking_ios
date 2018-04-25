@@ -10,7 +10,7 @@ import Foundation
 
 class DataMgr {
     
-    private var CahingUserDataList : [UserData]?
+    private var CahingUserDataList : [UserData] = [UserData]()
     public var MyData : MyUserData?
     
     static let Instance = DataMgr()
@@ -20,12 +20,11 @@ class DataMgr {
 
         // 임시
         var tempData = UserData(userindex: 1, name: "임시1", age: 10, sex: SEX_TYPE.MALE, grade: 1, thumbnailList: ["asdfads"],favorList:[2])
-        CahingUserDataList?.append(tempData)
+        CahingUserDataList.append(tempData)
         tempData = UserData(userindex: 2, name: "임시2", age: 30, sex: SEX_TYPE.FEMALE, grade: 3, thumbnailList: ["우ㄴㅁㅇㄹㅁㄴㄹ"],favorList:[1])
-        CahingUserDataList?.append(tempData)
+        CahingUserDataList.append(tempData)
         
-        // 내 데이터 생성
-        MyData = MyUserData(userIndex: 1)
+        
     }
     
     public func GetUserData(index:Int) -> UserData?
@@ -35,7 +34,7 @@ class DataMgr {
             return nil
         }
         
-        for userData in CahingUserDataList! {
+        for userData in CahingUserDataList {
             if userData.UserIndex == index
             {
                 return userData

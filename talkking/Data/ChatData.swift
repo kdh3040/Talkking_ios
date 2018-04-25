@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+class ChatData{
+    public var ChatString : String = "임시"
+}

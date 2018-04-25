@@ -10,7 +10,7 @@ import Foundation
 
 class MyUserData
 {
-    var MyData : UserData?
+    public var MyData : UserData?
     
     public init(userIndex:Int) {
         MyData = DataMgr.Instance.GetUserData(index:userIndex)
