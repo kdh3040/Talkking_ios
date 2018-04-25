@@ -61,7 +61,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="KAk-Ba-hqB" customClass="UITableViewCell_ChatMain" customModule="talkking" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="50" id="KAk-Ba-hqB" customClass="UITableViewCell_ChatMain" customModule="talkking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KAk-Ba-hqB" id="84T-MY-hIO">
@@ -114,13 +114,6 @@
                                                 <constraint firstItem="8dB-mf-mTm" firstAttribute="leading" secondItem="gJe-di-Ecg" secondAttribute="trailing" constant="8" id="vGd-mN-agG"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="Chat" destination="ue4-1k-msq" id="50I-y8-5aK"/>
-                                            <outlet property="Name" destination="gJe-di-Ecg" id="lMO-dc-oTH"/>
-                                            <outlet property="Rank" destination="8dB-mf-mTm" id="xTD-tk-1XV"/>
-                                            <outlet property="Thumbnail" destination="J1L-id-kKM" id="CtC-0J-Wwp"/>
-                                            <outlet property="Time" destination="vrC-hQ-pGO" id="CXe-8T-xsr"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

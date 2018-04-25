@@ -37,14 +37,14 @@ class UIViewController_Board : UIViewController, UITableViewDelegate, UITableVie
             tableView.separatorStyle = .singleLine
             //tableView.backgroundView?.isHidden = true
         }
-        return (DataMgr.Instance.MyData?.MyData?.FavorUserIndexList?.count)!;
+        return (DataMgr.Instance.MyData?.FavorUserIndexList?.count)!;
     }
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavorCell", for: indexPath) as! UITableViewCell_Favor
         
-        var index : Int = (DataMgr.Instance.MyData?.MyData?.FavorUserIndexList![indexPath.row])!
+        var index : Int = (DataMgr.Instance.MyData?.FavorUserIndexList![indexPath.row])!
         
         cell.SetFavorCell(userData: DataMgr.Instance.GetUserData(index: index)!)
         return cell

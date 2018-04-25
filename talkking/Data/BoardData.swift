@@ -7,3 +7,30 @@
 //
 
 import Foundation
+
+class BoardData
+{
+    var BoardIndex : Int?
+    var UserIndex : Int?
+    var BoardText : String?
+    var WriteTime : Date?
+    var Notice : Bool?
+    
+    public init(boardIndex : Int, userIndex : Int, boardText : String, writeTime : Date, noticeList : [Int])
+    {
+        BoardIndex = boardIndex
+        UserIndex = userIndex
+        BoardText = boardText
+        WriteTime = writeTime
+        
+        Notice = false
+        for noticeUserIndex in noticeList
+        {
+            if noticeUserIndex == DataMgr.Instance.MyData?.UserIndex
+            {
+                Notice = true
+                break
+            }
+        }
+    }
+}

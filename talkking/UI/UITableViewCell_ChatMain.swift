@@ -11,12 +11,6 @@ import UIKit
 
 class UITableViewCell_ChatMain : UITableViewCell
 {
-    @IBOutlet var Thumbnail: UIImageView!
-    @IBOutlet var Rank
-    : UIImageView!
-    @IBOutlet var Chat: UILabel!
-    @IBOutlet var Time: UILabel!
-    @IBOutlet var Name: UILabel!
     public func SetChatMainCell(chatdata:ChatData)
     {
 

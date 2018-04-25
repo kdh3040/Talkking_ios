@@ -8,11 +8,13 @@
 
 import Foundation
 
-class MyUserData
+class MyUserData : UserData
 {
-    public var MyData : UserData?
+    public var CahingChatDataList : [ChatData] = [ChatData]()
     
-    public init(userIndex:Int) {
-        MyData = DataMgr.Instance.GetUserData(index:userIndex)
+    public init(userIndex : Int)
+    {
+        let userData = DataMgr.Instance.GetUserData(index: userIndex)
+        super.init(userData: userData!)
     }
 }

@@ -27,31 +27,27 @@ class UIViewController_ChatMain : UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let count : Int = 0
+        let count : Int = (DataMgr.Instance.MyData?.CahingChatDataList.count)!
         
         if(count <= 0)
         {
             tableView.separatorStyle = .none
-            //tableView.backgroundView?.isHidden = false
         }
         else
         {
             tableView.separatorStyle = .singleLine
-            //tableView.backgroundView?.isHidden = true
         }
-        
-        
-        
-        return (DataMgr.Instance.MyData?.MyData?.FavorUserIndexList?.count)!;
+
+        return count
     }
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavorCell", for: indexPath) as! UITableViewCell_Favor
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! UITableViewCell_ChatMain
         
-        var index : Int = (DataMgr.Instance.MyData?.MyData?.FavorUserIndexList![indexPath.row])!
+        let data : ChatData = (DataMgr.Instance.MyData?.CahingChatDataList[indexPath.row])!
         
-        cell.SetFavorCell(userData: DataMgr.Instance.GetUserData(index: index)!)
+        cell.SetChatMainCell(chatdata: data)
         return cell
     }
     

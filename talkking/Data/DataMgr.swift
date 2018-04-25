@@ -10,6 +10,8 @@ import Foundation
 
 class DataMgr {
     
+    // list와 map을 찾아서 추가해주자
+    private var CahingBoardDataList : [BoardData] = [BoardData]()
     private var CahingUserDataList : [UserData] = [UserData]()
     public var MyData : MyUserData?
     
@@ -48,8 +50,30 @@ class DataMgr {
     }
     public func SetUserData(userData:UserData)
     {
+        // 겹치는 인덱스의 유저가 들어 올때는 데이터만 갱신
         // 유저데이터를 생성 하거나 갱신 할때 무조건 이함수를 통해서 갱신되어야함
         // 캐싱된 유저데이터 리스트를 하나로 관리하게끔
     }
     
+    public func GetBoardData(index:Int) -> BoardData?
+    {
+        if index <= 0
+        {
+            return nil
+        }
+        
+        for boardData in CahingBoardDataList {
+            if boardData.BoardIndex == index
+            {
+                return boardData
+            }
+        }
+        
+        return nil
+    }
+    
+    public func SetBoardData(boardData:BoardData)
+    {
+        // 겹치는 인덱스의 게시글이 들어 올때는 데이터만 갱신
+    }
 }

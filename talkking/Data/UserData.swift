@@ -23,6 +23,18 @@ class UserData
     var Grade : Int = 0
     var ThumbnailList : [String]?
     var FavorUserIndexList : [Int]?
+    var Item : [Int : Int]?
+    
+    public init(userData : UserData)
+    {
+        UserIndex = userData.UserIndex
+        Name = userData.Name
+        Age = userData.Age
+        Sex = userData.Sex
+        Grade = userData.Grade
+        ThumbnailList = userData.ThumbnailList
+        FavorUserIndexList = userData.FavorUserIndexList
+    }
     
     public init(userindex:Int, name:String, age:Int, sex:SEX_TYPE, grade:Int, thumbnailList:[String]
         , favorList:[Int])
