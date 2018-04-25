@@ -58,7 +58,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="A9x-60-XXe"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="채팅" id="i7P-wW-yqf"/>
+                    <tabBarItem key="tabBarItem" title="채팅" image="icon_main_chat" selectedImage="icon_main_chat_select" id="i7P-wW-yqf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5U-BX-PzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,7 +74,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="q3Z-eb-Lq6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="팬" id="G8V-Jj-PMe"/>
+                    <tabBarItem key="tabBarItem" title="팬" image="icon_main_fan" selectedImage="icon_main_fan_select" id="G8V-Jj-PMe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHh-Kx-3sC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +90,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xSE-tk-MnH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="게시판" id="Dxl-DA-aWA"/>
+                    <tabBarItem key="tabBarItem" title="게시판" image="icon_main_board" selectedImage="icon_main_board_select" id="Dxl-DA-aWA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4MK-Pf-iVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,24 +109,55 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavorCell" id="7Ry-EQ-YZd" customClass="UITableViewCell_Favor" customModule="talkking" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavorCell" rowHeight="50" id="7Ry-EQ-YZd" customClass="UITableViewCell_Favor" customModule="talkking" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Ry-EQ-YZd" id="YRb-WB-FKg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pf-gV-Vda">
-                                                    <rect key="frame" x="166" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPY-vZ-4mm">
+                                                    <rect key="frame" x="1" y="4" width="372" height="52"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="FavorButton:" destination="7Ry-EQ-YZd" eventType="touchUpInside" id="OD9-49-Pgp"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pf-gV-Vda">
+                                                    <rect key="frame" x="70" y="14" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AZa-8H-9dD" userLabel="Thumbnail">
+                                                    <rect key="frame" x="15" y="-1" width="50" height="50.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="Wmj-Yu-LGL"/>
+                                                        <constraint firstAttribute="height" constant="50" id="b4Z-GK-ZVu"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bof-m1-Nad" userLabel="Grade">
+                                                    <rect key="frame" x="120" y="9" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="9ad-MV-ciS"/>
+                                                        <constraint firstAttribute="height" constant="30" id="KYw-kL-cUc"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AZa-8H-9dD" firstAttribute="centerY" secondItem="YRb-WB-FKg" secondAttribute="centerY" id="0fp-QQ-pfm"/>
+                                                <constraint firstItem="9Pf-gV-Vda" firstAttribute="leading" secondItem="AZa-8H-9dD" secondAttribute="trailing" constant="5" id="6XT-8Y-F9i"/>
+                                                <constraint firstItem="Bof-m1-Nad" firstAttribute="leading" secondItem="9Pf-gV-Vda" secondAttribute="trailing" constant="8" id="D9g-Vj-WlM"/>
+                                                <constraint firstItem="9Pf-gV-Vda" firstAttribute="centerY" secondItem="YRb-WB-FKg" secondAttribute="centerY" id="L5Z-zm-M6u"/>
+                                                <constraint firstItem="AZa-8H-9dD" firstAttribute="leading" secondItem="YRb-WB-FKg" secondAttribute="leading" constant="15" id="cVq-h9-Zzz"/>
+                                                <constraint firstAttribute="bottom" secondItem="Bof-m1-Nad" secondAttribute="bottom" constant="10" id="uKN-hD-8SD"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="Grade" destination="Bof-m1-Nad" id="ZTd-lJ-BAY"/>
                                             <outlet property="Name" destination="9Pf-gV-Vda" id="VsG-DI-Isn"/>
+                                            <outlet property="Thumbnail" destination="AZa-8H-9dD" id="LNZ-7P-jnJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -149,7 +180,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dQy-Cz-9dS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="즐겨찾기" image="icon_main_favor_press" selectedImage="icon_main_favor" id="TeL-qm-Z4e"/>
+                    <tabBarItem key="tabBarItem" title="즐겨찾기" image="icon_main_favor" selectedImage="icon_main_favor_select" id="TeL-qm-Z4e"/>
                     <connections>
                         <outlet property="FavorTableEmptyView" destination="mUj-1O-kJ5" id="8wU-NB-TjP"/>
                         <outlet property="FavorTableView" destination="YcP-bY-o8X" id="fIN-ZF-1ZI"/>
@@ -176,8 +207,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_main_board" width="30" height="30"/>
+        <image name="icon_main_board_select" width="30" height="30"/>
+        <image name="icon_main_chat" width="30" height="30"/>
+        <image name="icon_main_chat_select" width="30" height="30"/>
+        <image name="icon_main_fan" width="30" height="30"/>
+        <image name="icon_main_fan_select" width="30" height="30"/>
         <image name="icon_main_favor" width="30" height="30"/>
-        <image name="icon_main_favor_press" width="30" height="30"/>
+        <image name="icon_main_favor_select" width="30" height="30"/>
         <image name="icon_main_home" width="30" height="30"/>
         <image name="icon_main_home_press" width="30" height="30"/>
     </resources>
