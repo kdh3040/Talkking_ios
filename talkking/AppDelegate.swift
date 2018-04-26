@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        DataMgr.Instance
         // 임시
         // 내 데이터 생성
         DataMgr.Instance.MyData = MyUserData(userIndex: 1)

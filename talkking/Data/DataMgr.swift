@@ -9,10 +9,8 @@
 import Foundation
 
 class DataMgr {
-    
-    // list와 map을 찾아서 추가해주자
-    private var CahingBoardDataList : [BoardData] = [BoardData]()
-    private var CahingUserDataList : [UserData] = [UserData]()
+    private var CahingBoardDataList : [Int : BoardData] = [Int : BoardData]()
+    private var CahingUserDataList : [Int : UserData] = [Int : UserData]()
     public var MyData : MyUserData?
     
     static let Instance = DataMgr()
@@ -22,25 +20,16 @@ class DataMgr {
 
         // 임시
         var tempData = UserData(userindex: 1, name: "임시1", age: 10, sex: SEX_TYPE.MALE, grade: 1, thumbnailList: ["asdfads"],favorList:[2])
-        CahingUserDataList.append(tempData)
+        CahingUserDataList[1] = tempData
         tempData = UserData(userindex: 2, name: "임시2", age: 30, sex: SEX_TYPE.FEMALE, grade: 3, thumbnailList: ["우ㄴㅁㅇㄹㅁㄴㄹ"],favorList:[1])
-        CahingUserDataList.append(tempData)
-        
-        
+        CahingUserDataList[2] = tempData
     }
     
     public func GetUserData(index:Int) -> UserData?
     {
-        if index <= 0
+        if let userData = CahingUserDataList[index]
         {
-            return nil
-        }
-        
-        for userData in CahingUserDataList {
-            if userData.UserIndex == index
-            {
-                return userData
-            }
+            return userData
         }
         
         // 없는 데이터를 불러 올경우 파이어베이스에 쿼리를 날려 실제 유저가 있는지 확인
@@ -57,16 +46,9 @@ class DataMgr {
     
     public func GetBoardData(index:Int) -> BoardData?
     {
-        if index <= 0
+        if let boardData = CahingBoardDataList[index]
         {
-            return nil
-        }
-        
-        for boardData in CahingBoardDataList {
-            if boardData.BoardIndex == index
-            {
-                return boardData
-            }
+            return boardData
         }
         
         return nil

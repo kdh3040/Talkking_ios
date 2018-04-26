@@ -27,7 +27,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        let count : Int = (DataMgr.Instance.MyData?.FavorUserIndexList?.count)!
+        let count : Int = (DataMgr.Instance.MyData?.FavorUserIndexList.count)!
         
         if(count <= 0)
         {
@@ -45,7 +45,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavorCell", for: indexPath) as! UITableViewCell_Favor
         
-        var index : Int = (DataMgr.Instance.MyData?.FavorUserIndexList![indexPath.row])!
+        let index : Int = (DataMgr.Instance.MyData?.FavorUserIndexList[indexPath.row])!
         
         cell.SetFavorCell(userData: DataMgr.Instance.GetUserData(index: index)!)
         return cell

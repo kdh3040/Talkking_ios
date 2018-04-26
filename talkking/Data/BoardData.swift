@@ -10,11 +10,11 @@ import Foundation
 
 class BoardData
 {
-    var BoardIndex : Int?
-    var UserIndex : Int?
-    var BoardText : String?
-    var WriteTime : Date?
-    var Notice : Bool?
+    var BoardIndex : Int = 0
+    var UserIndex : Int = 0
+    var BoardText : String = ""
+    var WriteTime : Date = Date()
+    var Notice : Bool = false
     
     public init(boardIndex : Int, userIndex : Int, boardText : String, writeTime : Date, noticeList : [Int])
     {

@@ -17,13 +17,13 @@ public enum SEX_TYPE : Int
 class UserData
 {
     var UserIndex : Int = 0
-    var Name : String?
+    var Name : String = ""
     var Age : Int = 0
     var Sex : SEX_TYPE = SEX_TYPE.MALE
     var Grade : Int = 0
-    var ThumbnailList : [String]?
-    var FavorUserIndexList : [Int]?
-    var Item : [Int : Int]?
+    var ThumbnailList : [String] = [String]()
+    var FavorUserIndexList : [Int] = [Int]()
+    var Item : [Int : Int] = [Int: Int]()
     
     public init(userData : UserData)
     {
