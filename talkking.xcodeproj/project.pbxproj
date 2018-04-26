@@ -71,6 +71,8 @@
 		9318F99720907E8900E08F7D /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99620907E8900E08F7D /* diamond.png */; };
 		9318F99920907E9100E08F7D /* emerald.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99820907E9100E08F7D /* emerald.png */; };
 		9318F99B20907F1D00E08F7D /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99A20907F1D00E08F7D /* heart.png */; };
+		93E5245220921870009E303A /* UITableViewCell_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E524502092186F009E303A /* UITableViewCell_Fan.swift */; };
+		93E5245320921870009E303A /* UIViewController_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E524512092186F009E303A /* UIViewController_Fan.swift */; };
 		984F7E6BCCA63E223554DA90 /* Pods_talkking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE62041C31A9797ACD5992D /* Pods_talkking.framework */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +164,8 @@
 		9318F99620907E8900E08F7D /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
 		9318F99820907E9100E08F7D /* emerald.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emerald.png; sourceTree = "<group>"; };
 		9318F99A20907F1D00E08F7D /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		93E524502092186F009E303A /* UITableViewCell_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell_Fan.swift; sourceTree = "<group>"; };
+		93E524512092186F009E303A /* UIViewController_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_Fan.swift; sourceTree = "<group>"; };
 		9AF8EC7116B3018C39A3C35C /* Pods-talkkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests.release.xcconfig"; sourceTree = "<group>"; };
 		A76CA12B4956316FCD0FBDBA /* Pods-talkkingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingUITests/Pods-talkkingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD54EC540FA7633BC1BEA87A /* Pods-talkking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkking/Pods-talkking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -345,6 +349,8 @@
 				9318F974209052E700E08F7D /* UITableViewCell_ChatMain.swift */,
 				9318F97620906CFA00E08F7D /* UIViewController_Board.swift */,
 				9318F97820906D0A00E08F7D /* UITableViewCell_Board.swift */,
+				93E524502092186F009E303A /* UITableViewCell_Fan.swift */,
+				93E524512092186F009E303A /* UIViewController_Fan.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -735,6 +741,7 @@
 				9318F95020903E0300E08F7D /* PagingMenuController.swift in Sources */,
 				9318F96620903E0300E08F7D /* MyUserData.swift in Sources */,
 				9318F96420903E0300E08F7D /* UIViewController_Favor.swift in Sources */,
+				93E5245220921870009E303A /* UITableViewCell_Fan.swift in Sources */,
 				9318F95220903E0300E08F7D /* MenuView.swift in Sources */,
 				9318F96A20903E0300E08F7D /* DataMgr.swift in Sources */,
 				9318F97920906D0A00E08F7D /* UITableViewCell_Board.swift in Sources */,
@@ -742,6 +749,7 @@
 				9318F94F20903E0300E08F7D /* MenuViewCustomizable.swift in Sources */,
 				9318F95120903E0300E08F7D /* PagingMenuControllerCustomizable.swift in Sources */,
 				9318F96920903E0300E08F7D /* ChatData.swift in Sources */,
+				93E5245320921870009E303A /* UIViewController_Fan.swift in Sources */,
 				9318F96320903E0300E08F7D /* UITableViewCell_Favor.swift in Sources */,
 				9318F97720906CFA00E08F7D /* UIViewController_Board.swift in Sources */,
 				9318F94E20903E0300E08F7D /* Pagable.swift in Sources */,
@@ -924,7 +932,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -940,7 +951,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -956,7 +970,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -973,7 +991,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -989,7 +1011,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1005,7 +1031,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

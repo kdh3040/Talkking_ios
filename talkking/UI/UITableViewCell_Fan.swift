@@ -8,15 +8,9 @@
 
 import Foundation
 import UIKit
-
+import Kingfisher
 class UITableViewCell_Fan : UITableViewCell
 {
-    @IBOutlet var HeartCount: UILabel!
-    @IBOutlet var Name: UILabel!
-    @IBOutlet var NewIcon: UIImageView!
-    @IBOutlet var RankLabel: UILabel!
-    @IBOutlet var Rank: UIImageView!
-    @IBOutlet var Thumbnail: UIImageView!
     public func SetFanCell(userData:UserData)
     {
 
