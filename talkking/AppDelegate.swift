@@ -22,6 +22,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        ref = Database.database().reference().child("User");
+        ref.child("13").observeSingleEvent(of: .value, with: { ( snapshot) in
+            
+            let tempData = snapshot.value as? NSDictionary
+            let userName = tempData?["Idx"] as? Int ?? 0
+            //let tempData = snapshot.value as? Dictionary<String, AnyObject>
+            
+            //let User = UserData.init(userindex: tempData?["Idx"] as? Int ?? 0, name: <#T##String#>, age: <#T##Int#>, sex: <#T##SEX_TYPE#>, grade: <#T##Int#>, thumbnailList: <#T##[String]#>, favorList: <#T##[Int]#>)
+            
+           // DataMgr.Instance.SetUserData(userData: User)
+
+            // DataMgr.Instance.UserData(tempData : UserData, userName:Int)
+            
+            
+            
+            /*
+             let userName = test?["Idx"] as? String ?? ""
+             let User : [String : UserData] = snapshot.value as! [String : UserData]
+             print(User)
+             //DataMgr.Instance.SetUserData(userData: User)*/
+        }){ (error) in
+            print(error.localizedDescription)
+        }
 
         // 내 데이터 생성
         DataMgr.Instance.MyData = MyUserData(userIndex: 1)
