@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var ref : DatabaseReference!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+                // 임시
         
-        // 임시
+        FirebaseApp.configure()
+        
+
         // 내 데이터 생성
         DataMgr.Instance.MyData = MyUserData(userIndex: 1)
         

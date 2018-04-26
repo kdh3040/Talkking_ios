@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A507F6528AAC0FCD05F1D1E /* Pods_talkkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA66D18ECD38054FF2D97C22 /* Pods_talkkingTests.framework */; };
 		3D5091BD208DF92000DA8C8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5091BC208DF92000DA8C8F /* AppDelegate.swift */; };
 		3D5091BF208DF92000DA8C8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5091BE208DF92000DA8C8F /* ViewController.swift */; };
 		3D5091C2208DF92000DA8C8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5091C0208DF92000DA8C8F /* Main.storyboard */; };
 		3D5091C7208DF92100DA8C8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5091C5208DF92100DA8C8F /* LaunchScreen.storyboard */; };
 		3D5091D2208DF92200DA8C8F /* talkkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5091D1208DF92200DA8C8F /* talkkingTests.swift */; };
 		3D5091DD208DF92200DA8C8F /* talkkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5091DC208DF92200DA8C8F /* talkkingUITests.swift */; };
+		3DA635B72091D2D800081F3B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3DA635B62091D2D800081F3B /* Podfile */; };
+		3DA635B92091D3A500081F3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DA635B82091D3A500081F3B /* GoogleService-Info.plist */; };
+		75CA69A90FD45DBA81B64F20 /* Pods_talkkingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42D7350E03D89B9AE8A9F90 /* Pods_talkkingUITests.framework */; };
 		9318F94B20903E0300E08F7D /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318F92620903E0300E08F7D /* PagingViewController.swift */; };
 		9318F94C20903E0300E08F7D /* MenuItemViewCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318F92720903E0300E08F7D /* MenuItemViewCustomizable.swift */; };
 		9318F94D20903E0300E08F7D /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318F92820903E0300E08F7D /* MenuItemView.swift */; };
@@ -67,7 +71,7 @@
 		9318F99720907E8900E08F7D /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99620907E8900E08F7D /* diamond.png */; };
 		9318F99920907E9100E08F7D /* emerald.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99820907E9100E08F7D /* emerald.png */; };
 		9318F99B20907F1D00E08F7D /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99A20907F1D00E08F7D /* heart.png */; };
-		93F973F9208E0DC600279D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93F973F8208E0DC500279D89 /* Assets.xcassets */; };
+		984F7E6BCCA63E223554DA90 /* Pods_talkking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE62041C31A9797ACD5992D /* Pods_talkking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,10 @@
 		3D5091D8208DF92200DA8C8F /* talkkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = talkkingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5091DC208DF92200DA8C8F /* talkkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talkkingUITests.swift; sourceTree = "<group>"; };
 		3D5091DE208DF92200DA8C8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DA635B62091D2D800081F3B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3DA635B82091D3A500081F3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4CE62041C31A9797ACD5992D /* Pods_talkking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talkking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53352310F5C94E0F2849069E /* Pods-talkkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9318F92620903E0300E08F7D /* PagingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingViewController.swift; sourceTree = "<group>"; };
 		9318F92720903E0300E08F7D /* MenuItemViewCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemViewCustomizable.swift; sourceTree = "<group>"; };
 		9318F92820903E0300E08F7D /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
@@ -154,7 +162,13 @@
 		9318F99620907E8900E08F7D /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
 		9318F99820907E9100E08F7D /* emerald.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emerald.png; sourceTree = "<group>"; };
 		9318F99A20907F1D00E08F7D /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
-		93F973F8208E0DC500279D89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		9AF8EC7116B3018C39A3C35C /* Pods-talkkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests.release.xcconfig"; sourceTree = "<group>"; };
+		A76CA12B4956316FCD0FBDBA /* Pods-talkkingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingUITests/Pods-talkkingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD54EC540FA7633BC1BEA87A /* Pods-talkking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkking/Pods-talkking.debug.xcconfig"; sourceTree = "<group>"; };
+		CA66D18ECD38054FF2D97C22 /* Pods_talkkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talkkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42D7350E03D89B9AE8A9F90 /* Pods_talkkingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talkkingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE5DEC812A2B957E125D15C5 /* Pods-talkkingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingUITests/Pods-talkkingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F1AFF606777DF8EFF9DC1B1F /* Pods-talkking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkking.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkking/Pods-talkking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				984F7E6BCCA63E223554DA90 /* Pods_talkking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A507F6528AAC0FCD05F1D1E /* Pods_talkkingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,19 +192,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75CA69A90FD45DBA81B64F20 /* Pods_talkkingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B03AB831311E81C4EEEE1E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD54EC540FA7633BC1BEA87A /* Pods-talkking.debug.xcconfig */,
+				F1AFF606777DF8EFF9DC1B1F /* Pods-talkking.release.xcconfig */,
+				53352310F5C94E0F2849069E /* Pods-talkkingTests.debug.xcconfig */,
+				9AF8EC7116B3018C39A3C35C /* Pods-talkkingTests.release.xcconfig */,
+				A76CA12B4956316FCD0FBDBA /* Pods-talkkingUITests.debug.xcconfig */,
+				DE5DEC812A2B957E125D15C5 /* Pods-talkkingUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3D5091B0208DF92000DA8C8F = {
 			isa = PBXGroup;
 			children = (
+				3DA635B62091D2D800081F3B /* Podfile */,
 				3D5091BB208DF92000DA8C8F /* talkking */,
 				3D5091D0208DF92200DA8C8F /* talkkingTests */,
 				3D5091DB208DF92200DA8C8F /* talkkingUITests */,
 				3D5091BA208DF92000DA8C8F /* Products */,
+				0B03AB831311E81C4EEEE1E8 /* Pods */,
+				BC617FE344A5616F1915D1DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +238,7 @@
 		3D5091BB208DF92000DA8C8F /* talkking */ = {
 			isa = PBXGroup;
 			children = (
+				3DA635B82091D3A500081F3B /* GoogleService-Info.plist */,
 				9318F96B2090496E00E08F7D /* Common */,
 				9318F94420903E0300E08F7D /* Data */,
 				9318F92420903E0300E08F7D /* Library */,
@@ -214,7 +248,6 @@
 				3D5091BE208DF92000DA8C8F /* ViewController.swift */,
 				3D5091C0208DF92000DA8C8F /* Main.storyboard */,
 				3D5091C5208DF92100DA8C8F /* LaunchScreen.storyboard */,
-				93F973F8208E0DC500279D89 /* Assets.xcassets */,
 				3D5091C8208DF92100DA8C8F /* Info.plist */,
 			);
 			path = talkking;
@@ -375,6 +408,16 @@
 			path = icon_etc;
 			sourceTree = "<group>";
 		};
+		BC617FE344A5616F1915D1DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CE62041C31A9797ACD5992D /* Pods_talkking.framework */,
+				CA66D18ECD38054FF2D97C22 /* Pods_talkkingTests.framework */,
+				D42D7350E03D89B9AE8A9F90 /* Pods_talkkingUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -382,9 +425,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D5091E1208DF92200DA8C8F /* Build configuration list for PBXNativeTarget "talkking" */;
 			buildPhases = (
+				1E440AEC1AD08A72BAF2126E /* [CP] Check Pods Manifest.lock */,
 				3D5091B5208DF92000DA8C8F /* Sources */,
 				3D5091B6208DF92000DA8C8F /* Frameworks */,
 				3D5091B7208DF92000DA8C8F /* Resources */,
+				2345ADA7DF1F3AF24D4609C8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -399,9 +444,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D5091E4208DF92200DA8C8F /* Build configuration list for PBXNativeTarget "talkkingTests" */;
 			buildPhases = (
+				6962F145C514F44EF4D5CBB9 /* [CP] Check Pods Manifest.lock */,
 				3D5091C9208DF92200DA8C8F /* Sources */,
 				3D5091CA208DF92200DA8C8F /* Frameworks */,
 				3D5091CB208DF92200DA8C8F /* Resources */,
+				3E0659F20E3ACE64B410DF97 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -417,9 +464,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D5091E7208DF92200DA8C8F /* Build configuration list for PBXNativeTarget "talkkingUITests" */;
 			buildPhases = (
+				3C578DAE5B33296A87FFC0E8 /* [CP] Check Pods Manifest.lock */,
 				3D5091D4208DF92200DA8C8F /* Sources */,
 				3D5091D5208DF92200DA8C8F /* Frameworks */,
 				3D5091D6208DF92200DA8C8F /* Resources */,
+				1DAEE0BAFBD61F8DE6C38AB1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -484,6 +533,7 @@
 				9318F95F20903E0300E08F7D /* home_select.png in Resources */,
 				9318F98020907E0500E08F7D /* fan_rank_2.png in Resources */,
 				3D5091C7208DF92100DA8C8F /* LaunchScreen.storyboard in Resources */,
+				3DA635B72091D2D800081F3B /* Podfile in Resources */,
 				9318F96020903E0300E08F7D /* board.png in Resources */,
 				9318F98920907E1D00E08F7D /* new_img.png in Resources */,
 				9318F98720907E0C00E08F7D /* heart_red.png in Resources */,
@@ -503,11 +553,11 @@
 				9318F95320903E0300E08F7D /* rank_bronze.png in Resources */,
 				9318F99720907E8900E08F7D /* diamond.png in Resources */,
 				9318F96120903E0300E08F7D /* chat.png in Resources */,
-				93F973F9208E0DC600279D89 /* Assets.xcassets in Resources */,
 				9318F95E20903E0300E08F7D /* favor_select.png in Resources */,
 				9318F99120907E5000E08F7D /* sapphire.png in Resources */,
 				9318F95520903E0300E08F7D /* rank_vvip.png in Resources */,
 				9318F98220907E0500E08F7D /* fan_rank_big_2.png in Resources */,
+				3DA635B92091D3A500081F3B /* GoogleService-Info.plist in Resources */,
 				9318F98120907E0500E08F7D /* fan_rank_1.png in Resources */,
 				9318F98520907E0500E08F7D /* fan_rank_big_1.png in Resources */,
 				3D5091C2208DF92000DA8C8F /* Main.storyboard in Resources */,
@@ -532,6 +582,135 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DAEE0BAFBD61F8DE6C38AB1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-talkkingUITests/Pods-talkkingUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-talkkingUITests/Pods-talkkingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E440AEC1AD08A72BAF2126E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-talkking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2345ADA7DF1F3AF24D4609C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-talkking/Pods-talkking-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-talkking/Pods-talkking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C578DAE5B33296A87FFC0E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-talkkingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E0659F20E3ACE64B410DF97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6962F145C514F44EF4D5CBB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-talkkingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D5091B5208DF92000DA8C8F /* Sources */ = {
@@ -669,7 +848,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -723,6 +902,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -732,14 +912,13 @@
 		};
 		3D5091E2208DF92200DA8C8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD54EC540FA7633BC1BEA87A /* Pods-talkking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkking/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -749,14 +928,13 @@
 		};
 		3D5091E3208DF92200DA8C8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1AFF606777DF8EFF9DC1B1F /* Pods-talkking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkking/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -766,16 +944,13 @@
 		};
 		3D5091E5208DF92200DA8C8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53352310F5C94E0F2849069E /* Pods-talkkingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -786,16 +961,13 @@
 		};
 		3D5091E6208DF92200DA8C8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AF8EC7116B3018C39A3C35C /* Pods-talkkingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -806,15 +978,12 @@
 		};
 		3D5091E8208DF92200DA8C8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A76CA12B4956316FCD0FBDBA /* Pods-talkkingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -825,15 +994,12 @@
 		};
 		3D5091E9208DF92200DA8C8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE5DEC812A2B957E125D15C5 /* Pods-talkkingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

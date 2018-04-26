@@ -15,6 +15,8 @@ class DataMgr {
     
     static let Instance = DataMgr()
     private init() {
+ 
+        
         // 초기 데이터 생성
         // 클래스를 생성 하면 초기에 타는 함수
 
