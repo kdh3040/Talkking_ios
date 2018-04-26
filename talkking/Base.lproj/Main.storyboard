@@ -147,7 +147,7 @@
         <!--팬-->
         <scene sceneID="azQ-T2-svu">
             <objects>
-                <viewController id="tSF-gJ-QrI" sceneMemberID="viewController">
+                <viewController id="tSF-gJ-QrI" customClass="UIViewController_Fan" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5ct-c8-C2A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,18 +163,148 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_etc_heart" translatesAutoresizingMaskIntoConstraints="NO" id="KH9-2A-MuM">
-                                        <rect key="frame" x="289" y="10" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mtB-Hy-Tnr">
+                                        <rect key="frame" x="278" y="0.0" width="97" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JS-Aa-aI9" userLabel="my_heart_count">
+                                                <rect key="frame" x="22" y="5" width="75" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rDG-dz-1IP" userLabel="my_fan">
+                                                <rect key="frame" x="0.0" y="25" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOd-pV-SJ4" userLabel="my_fan_count">
+                                                <rect key="frame" x="22" y="25" width="75" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_etc_heart" translatesAutoresizingMaskIntoConstraints="NO" id="KH9-2A-MuM" userLabel="my_heart">
+                                                <rect key="frame" x="0.0" y="5" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.46274509800000002" green="0.42745098040000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLs-QT-ETn">
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="Eu5-f4-aVk" customClass="UITableViewCell_Fan" customModule="talkking" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eu5-f4-aVk" id="wur-Hl-vsE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sI6-Kt-Myw" userLabel="Thumbnail">
+                                                    <rect key="frame" x="68" y="10" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="BHt-RJ-cHq"/>
+                                                        <constraint firstAttribute="width" constant="60" id="G6G-UT-pR6"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wKi-bx-KQS" userLabel="Rank">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="oDU-8p-P9C"/>
+                                                        <constraint firstAttribute="width" constant="60" id="qRq-8H-HjV"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCp-Ob-EuP" userLabel="RankLabel">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="yGp-Te-Cil"/>
+                                                        <constraint firstAttribute="width" constant="60" id="yZU-D7-SE0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RK3-B2-QgW" userLabel="new">
+                                                    <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="OE9-md-4XQ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="UjZ-sp-tt6"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueR-Vw-cOD" userLabel="Name">
+                                                    <rect key="frame" x="136" y="10" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-EQ-tes">
+                                                    <rect key="frame" x="136" y="39" width="232" height="40"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Zq-he-g4o" userLabel="HeartIcon">
+                                                            <rect key="frame" x="57" y="5" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="GMP-xT-xcI"/>
+                                                                <constraint firstAttribute="width" constant="30" id="jfx-3I-9Ch"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na8-CO-bpW" userLabel="HeartCount">
+                                                            <rect key="frame" x="95" y="10" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Na8-CO-bpW" firstAttribute="leading" secondItem="5Zq-he-g4o" secondAttribute="trailing" constant="8" id="3JK-nM-Wd4"/>
+                                                        <constraint firstItem="5Zq-he-g4o" firstAttribute="leading" secondItem="9Hd-EQ-tes" secondAttribute="leading" constant="57" id="C3c-o1-fhI"/>
+                                                        <constraint firstItem="5Zq-he-g4o" firstAttribute="top" secondItem="9Hd-EQ-tes" secondAttribute="top" constant="5" id="FAw-0R-DE1"/>
+                                                        <constraint firstAttribute="height" constant="40" id="VcZ-2a-gpX"/>
+                                                        <constraint firstItem="Na8-CO-bpW" firstAttribute="top" secondItem="9Hd-EQ-tes" secondAttribute="top" constant="10" id="cKy-h6-7Vg"/>
+                                                        <constraint firstAttribute="width" constant="232" id="fbq-YF-GYF"/>
+                                                        <constraint firstItem="Na8-CO-bpW" firstAttribute="leading" secondItem="5Zq-he-g4o" secondAttribute="trailing" constant="8" id="lIf-fH-0a8"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oCp-Ob-EuP" firstAttribute="centerY" secondItem="wur-Hl-vsE" secondAttribute="centerY" id="5Ig-mo-rrz"/>
+                                                <constraint firstItem="wKi-bx-KQS" firstAttribute="leading" secondItem="wur-Hl-vsE" secondAttribute="leading" id="LHt-ys-zTz"/>
+                                                <constraint firstItem="9Hd-EQ-tes" firstAttribute="leading" secondItem="sI6-Kt-Myw" secondAttribute="trailing" constant="8" id="UmX-ZU-iRu"/>
+                                                <constraint firstItem="wKi-bx-KQS" firstAttribute="centerY" secondItem="wur-Hl-vsE" secondAttribute="centerY" id="a4D-gF-J1V"/>
+                                                <constraint firstItem="RK3-B2-QgW" firstAttribute="top" secondItem="wur-Hl-vsE" secondAttribute="top" id="bfu-Aj-Ilu"/>
+                                                <constraint firstItem="oCp-Ob-EuP" firstAttribute="leading" secondItem="wur-Hl-vsE" secondAttribute="leading" id="h6W-r7-x3w"/>
+                                                <constraint firstItem="sI6-Kt-Myw" firstAttribute="leading" secondItem="wKi-bx-KQS" secondAttribute="trailing" constant="8" id="iB1-Vc-run"/>
+                                                <constraint firstItem="ueR-Vw-cOD" firstAttribute="leading" secondItem="sI6-Kt-Myw" secondAttribute="trailing" constant="8" id="m5r-0J-ADh"/>
+                                                <constraint firstItem="ueR-Vw-cOD" firstAttribute="top" secondItem="wur-Hl-vsE" secondAttribute="top" constant="10" id="meW-DD-XIT"/>
+                                                <constraint firstItem="9Hd-EQ-tes" firstAttribute="top" secondItem="ueR-Vw-cOD" secondAttribute="bottom" constant="8" id="rXy-V5-usa"/>
+                                                <constraint firstItem="sI6-Kt-Myw" firstAttribute="top" secondItem="wur-Hl-vsE" secondAttribute="top" constant="10" id="uF4-Na-J6T"/>
+                                                <constraint firstItem="RK3-B2-QgW" firstAttribute="leading" secondItem="wKi-bx-KQS" secondAttribute="trailing" id="ygP-z8-oZZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="HeartCount" destination="Na8-CO-bpW" id="Gtf-un-Yxw"/>
+                                            <outlet property="Name" destination="ueR-Vw-cOD" id="xCI-ez-HgO"/>
+                                            <outlet property="NewIcon" destination="RK3-B2-QgW" id="uOF-MA-8oj"/>
+                                            <outlet property="Rank" destination="wKi-bx-KQS" id="sxS-1s-XlX"/>
+                                            <outlet property="RankLabel" destination="oCp-Ob-EuP" id="lGw-EQ-Rd0"/>
+                                            <outlet property="Thumbnail" destination="sI6-Kt-Myw" id="gQT-Qt-lQc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="q3Z-eb-Lq6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="팬" image="icon_main_fan" selectedImage="icon_main_fan_select" id="G8V-Jj-PMe"/>
+                    <connections>
+                        <outlet property="FanTableView" destination="eLs-QT-ETn" id="x9m-ey-LRQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHh-Kx-3sC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

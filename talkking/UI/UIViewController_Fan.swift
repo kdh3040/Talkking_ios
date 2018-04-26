@@ -1,23 +1,20 @@
 //
-//  UIViewController_Favor.swift
+//  UIViewController_Fan.swift
 //  talkking
 //
-//  Created by mangomilk114 on 2018. 4. 23..
+//  Created by mangomilk114 on 2018. 4. 26..
 //  Copyright © 2018년 도호소프트. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableViewDataSource
+class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-    @IBOutlet var FavorTableView: UITableView!
-    
+    @IBOutlet var FanTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        FavorTableView.delegate = self
-        FavorTableView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,23 +23,24 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-        let count : Int = (DataMgr.Instance.MyData?.FavorUserIndexList.count)!
+        
+        let count : Int = 0
         
         if(count <= 0)
         {
             tableView.separatorStyle = .none
+            //tableView.backgroundView?.isHidden = false
         }
         else
         {
             tableView.separatorStyle = .singleLine
+            //tableView.backgroundView?.isHidden = true
         }
-
-        return count
+        return (DataMgr.Instance.MyData?.FavorUserIndexList.count)!;
     }
     // 셀 내용 변경하기 (tableView 구현 필수)
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavorCell", for: indexPath) as! UITableViewCell_Favor
         
         let index : Int = (DataMgr.Instance.MyData?.FavorUserIndexList[indexPath.row])!
@@ -50,5 +48,5 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         cell.SetFavorCell(userData: DataMgr.Instance.GetUserData(index: index)!)
         return cell
     }
-
+    
 }
