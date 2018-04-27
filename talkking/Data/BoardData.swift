@@ -26,7 +26,7 @@ class BoardData
         Notice = false
         for noticeUserIndex in noticeList
         {
-            if noticeUserIndex == DataMgr.Instance.MyData?.UserIndex
+            if noticeUserIndex == DataMgr.Instance.MyData?.Index
             {
                 Notice = true
                 break

@@ -12,9 +12,9 @@ class MyUserData : UserData
 {
     public var CahingChatDataList : [ChatData] = [ChatData]()
     
-    public init(userIndex : Int)
+    public init(index : Int)
     {
-        let userData = DataMgr.Instance.GetUserData(index: userIndex)
+        let userData = DataMgr.Instance.GetCahingUserDataList(index: index)
         super.init(userData: userData!)
     }
 }

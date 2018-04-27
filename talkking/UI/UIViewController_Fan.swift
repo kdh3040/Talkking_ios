@@ -42,9 +42,9 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavorCell", for: indexPath) as! UITableViewCell_Favor
         
-        let index : Int = (DataMgr.Instance.MyData?.FavorUserIndexList[indexPath.row])!
+        let index : String = (DataMgr.Instance.MyData?.FavorUserIndexList[indexPath.row])!
         
-        cell.SetFavorCell(userData: DataMgr.Instance.GetUserData(index: index)!)
+       //cell.SetFavorCell(userData: DataMgr.Instance.GetUserData(index: Int(index)!)!)
         return cell
     }
     

@@ -7,47 +7,30 @@
 //
 
 import UIKit
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var ref : DatabaseReference!
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
                 // 임시
         
-        FirebaseApp.configure()
         
-        ref = Database.database().reference().child("User");
-        ref.child("13").observeSingleEvent(of: .value, with: { ( snapshot) in
-            
-            let tempData = snapshot.value as? NSDictionary
-            let userName = tempData?["Idx"] as? Int ?? 0
-            //let tempData = snapshot.value as? Dictionary<String, AnyObject>
-            
-            //let User = UserData.init(userindex: tempData?["Idx"] as? Int ?? 0, name: <#T##String#>, age: <#T##Int#>, sex: <#T##SEX_TYPE#>, grade: <#T##Int#>, thumbnailList: <#T##[String]#>, favorList: <#T##[Int]#>)
-            
-           // DataMgr.Instance.SetUserData(userData: User)
-
-            // DataMgr.Instance.UserData(tempData : UserData, userName:Int)
-            
-            
-            
-            /*
-             let userName = test?["Idx"] as? String ?? ""
-             let User : [String : UserData] = snapshot.value as! [String : UserData]
-             print(User)
-             //DataMgr.Instance.SetUserData(userData: User)*/
-        }){ (error) in
-            print(error.localizedDescription)
-        }
-
+      //  let uuid = NSUUID().uuidString
+       let uuid = CFUUIDCreateString(nil, CFUUIDCreate(nil))
+     //  FireBaseFunc.Instance.LoadMyIndex(uuid: String(uuid!))
+        
+        let tempuuid = "2A81CBB50-66CB-40BD-AA4D-C5DD14C22EE7"
+       FireBaseFunc.Instance.LoadUserIndex(uuid: tempuuid)
+ 
+ 
+        //NSString *UUID = [nameofclass]
         // 내 데이터 생성
-        DataMgr.Instance.MyData = MyUserData(userIndex: 1)
+      //  DataMgr.Instance.MyData = MyUserData(userIndex: 1)
         
         return true
     }

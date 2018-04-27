@@ -15,11 +15,11 @@ class UITableViewCell_Favor : UITableViewCell
     @IBOutlet var Name: UILabel!
     @IBOutlet var Thumbnail: UIImageView!
     
-    public func SetFavorCell(userData:UserData)
+    public func SetFavorCell(userData:UserData?)
     {
         // 데이터를 추가 해야 한다.
-        Name.text = userData.Name
-        Rank.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade: userData.Grade))
+        Name.text = userData?.Name
+        //Rank.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade: userData.Grade))
         //Thumbnail = UIImage.
     }
     
