@@ -8,19 +8,36 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class UITableViewCell_Favor : UITableViewCell
 {
-    @IBOutlet var Rank: UIImageView!
+    @IBOutlet var Grade: UIImageView!
     @IBOutlet var Name: UILabel!
     @IBOutlet var Thumbnail: UIImageView!
+    @IBOutlet var BestItem: UIImageView!
     
     public func SetFavorCell(userData:UserData?)
     {
-        // 데이터를 추가 해야 한다.
-        Name.text = userData?.Name
-        //Rank.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade: userData.Grade))
-        //Thumbnail = UIImage.
+        if let cellUserData = userData
+        {
+            let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/talkking-25dd8.appspot.com/o/images%2F50%2FThumbNail?alt=media&token=6d5ff51a-8d46-405b-8a23-8d1726b7b9e3")!
+            Thumbnail.kf.setImage(with: url,
+                                  placeholder: nil,
+                                  options: [.transition(.fade(1))],
+                                  progressBlock: nil,
+                                  completionHandler: nil)
+            
+            Thumbnail.layer.cornerRadius = Thumbnail.frame.size.width / 2
+            Thumbnail.clipsToBounds = true
+            
+            Name.text = cellUserData.Name
+            Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:1))
+
+            BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: 1))
+            
+            
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

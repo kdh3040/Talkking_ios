@@ -25,28 +25,34 @@ class UIViewController_Board : UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let count : Int = 0
+        let count : Int? = DataMgr.Instance.CahingBoardDataList.count
         
-        if(count <= 0)
+        if let realCount = count
         {
-            tableView.separatorStyle = .none
-            //tableView.backgroundView?.isHidden = false
+            if(realCount <= 0)
+            {
+                tableView.separatorStyle = .none
+                //tableView.backgroundView?.isHidden = false
+            }
+            else
+            {
+                tableView.separatorStyle = .singleLine
+                //tableView.backgroundView?.isHidden = true
+            }
+            return realCount
         }
-        else
-        {
-            tableView.separatorStyle = .singleLine
-            //tableView.backgroundView?.isHidden = true
-        }
-        return (DataMgr.Instance.MyData?.FavorUserIndexList.count)!;
+        
+        return 0
+        
     }
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavorCell", for: indexPath) as! UITableViewCell_Favor
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BoardCell", for: indexPath) as! UITableViewCell_Board
         
-        let index : String = (DataMgr.Instance.MyData?.FavorUserIndexList[indexPath.row])!
+        //let index : int = (DataMgr.Instance.GetBoardData(index: IntDataMgr.Instance.CahingBoardDataList[indexPath.row])!)!
         
-     //  cell.SetFavorCell(userData: DataMgr.Instance.GetBoardData(index: Int(index)!))
+        //cell.SetBoardCell(boardIndex: DataMgr.Instance.GetBoardData(index: Int(index)!))
         return cell
     }
     

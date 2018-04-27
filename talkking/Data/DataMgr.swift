@@ -9,7 +9,7 @@
 import Foundation
 
 class DataMgr {
-    private var CahingBoardDataList : [Int : BoardData] = [Int : BoardData]()
+    public var CahingBoardDataList : [Int : BoardData] = [Int : BoardData]()
     private var CahingUserDataList : [Int : UserData] = [Int : UserData]()
 
     

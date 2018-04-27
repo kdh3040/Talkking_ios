@@ -18,6 +18,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view, typically from a nib.
         FavorTableView.delegate = self
         FavorTableView.dataSource = self
+        FavorTableView.rowHeight = 70;
     }
     
     override func didReceiveMemoryWarning() {
