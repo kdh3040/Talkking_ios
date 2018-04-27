@@ -387,19 +387,29 @@ class UserData
     
     public func SetBestItem()
     {
-      var tempItem : [Int] = [Int]()
         
-        for  ItemValue in Item
+        if self.ItemCount == 0
         {
-           if ItemValue.value != 0
-           {
-            tempItem.append(ItemValue.key)
-            }
+            self.BestItem = 0
         }
-        
-        tempItem.sorted(by: >)
-        self.BestItem = tempItem[0]
-        print(tempItem)
+        else
+        {
+            var tempItem : [Int] = [Int]()
+            
+            for  ItemValue in Item
+            {
+                if ItemValue.value != 0
+                {
+                    tempItem.append(ItemValue.key)
+                }
+            }
+            
+            tempItem.sorted(by: >)
+            
+            self.BestItem = tempItem[0]
+            print(tempItem)
+        }
+
         
     }
 
