@@ -74,6 +74,7 @@
 		9318F99B20907F1D00E08F7D /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99A20907F1D00E08F7D /* heart.png */; };
 		93E5245220921870009E303A /* UITableViewCell_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E524502092186F009E303A /* UITableViewCell_Fan.swift */; };
 		93E5245320921870009E303A /* UIViewController_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E524512092186F009E303A /* UIViewController_Fan.swift */; };
+		93E524552092EDA0009E303A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E524542092EDA0009E303A /* Assets.xcassets */; };
 		984F7E6BCCA63E223554DA90 /* Pods_talkking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE62041C31A9797ACD5992D /* Pods_talkking.framework */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +169,7 @@
 		9318F99A20907F1D00E08F7D /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		93E524502092186F009E303A /* UITableViewCell_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell_Fan.swift; sourceTree = "<group>"; };
 		93E524512092186F009E303A /* UIViewController_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_Fan.swift; sourceTree = "<group>"; };
+		93E524542092EDA0009E303A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AF8EC7116B3018C39A3C35C /* Pods-talkkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests.release.xcconfig"; sourceTree = "<group>"; };
 		A76CA12B4956316FCD0FBDBA /* Pods-talkkingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingUITests/Pods-talkkingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD54EC540FA7633BC1BEA87A /* Pods-talkking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkking/Pods-talkking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				9318F94120903E0300E08F7D /* UI */,
 				3D5091BC208DF92000DA8C8F /* AppDelegate.swift */,
 				3D5091BE208DF92000DA8C8F /* ViewController.swift */,
+				93E524542092EDA0009E303A /* Assets.xcassets */,
 				3D5091C0208DF92000DA8C8F /* Main.storyboard */,
 				3D5091C5208DF92100DA8C8F /* LaunchScreen.storyboard */,
 				3D5091C8208DF92100DA8C8F /* Info.plist */,
@@ -303,9 +306,9 @@
 		9318F92E20903E0300E08F7D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				9318F99E2090815700E08F7D /* icon_etc */,
+				9318F99E2090815700E08F7D /* etc */,
 				9318F99D20907FBD00E08F7D /* icon_item */,
-				9318F99C20907F3200E08F7D /* icon_fan_rank */,
+				9318F99C20907F3200E08F7D /* fan_rank */,
 				9318F92F20903E0300E08F7D /* icon_rank */,
 				9318F93620903E0300E08F7D /* icon_main */,
 			);
@@ -380,7 +383,7 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		9318F99C20907F3200E08F7D /* icon_fan_rank */ = {
+		9318F99C20907F3200E08F7D /* fan_rank */ = {
 			isa = PBXGroup;
 			children = (
 				9318F97F20907E0400E08F7D /* fan_rank_big_1.png */,
@@ -390,7 +393,7 @@
 				9318F97A20907E0300E08F7D /* fan_rank_2.png */,
 				9318F97D20907E0400E08F7D /* fan_rank_3.png */,
 			);
-			path = icon_fan_rank;
+			path = fan_rank;
 			sourceTree = "<group>";
 		};
 		9318F99D20907FBD00E08F7D /* icon_item */ = {
@@ -407,14 +410,14 @@
 			path = icon_item;
 			sourceTree = "<group>";
 		};
-		9318F99E2090815700E08F7D /* icon_etc */ = {
+		9318F99E2090815700E08F7D /* etc */ = {
 			isa = PBXGroup;
 			children = (
 				9318F98820907E1D00E08F7D /* new_img.png */,
 				9318F98620907E0C00E08F7D /* heart_red.png */,
 				9318F99A20907F1D00E08F7D /* heart.png */,
 			);
-			path = icon_etc;
+			path = etc;
 			sourceTree = "<group>";
 		};
 		BC617FE344A5616F1915D1DE /* Frameworks */ = {
@@ -567,6 +570,7 @@
 				9318F95520903E0300E08F7D /* rank_vvip.png in Resources */,
 				9318F98220907E0500E08F7D /* fan_rank_big_2.png in Resources */,
 				3D87315E2092077300022D90 /* GoogleService-Info.plist in Resources */,
+				93E524552092EDA0009E303A /* Assets.xcassets in Resources */,
 				9318F98120907E0500E08F7D /* fan_rank_1.png in Resources */,
 				9318F98520907E0500E08F7D /* fan_rank_big_1.png in Resources */,
 				3D5091C2208DF92000DA8C8F /* Main.storyboard in Resources */,
