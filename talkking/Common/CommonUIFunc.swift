@@ -12,12 +12,18 @@ class CommonUIFunc{
     static let Instance = CommonUIFunc()
     
     public func GetGradeImgName(grade:Int) -> String{
-        if(CommonData.RANK_ICON.count <= grade)
+        if(grade <= 0 || CommonData.RANK_ICON.count <= grade)
         {
             return ""
         }
-        
-        
         return CommonData.RANK_ICON[grade - 1]
+    }
+    
+    public func GetItemImgName(bestItem:Int) -> String{
+        if(bestItem <= 0 || CommonData.ITEM_ICON.count <= bestItem)
+        {
+            return ""
+        }
+        return CommonData.ITEM_ICON[bestItem - 1]
     }
 }
