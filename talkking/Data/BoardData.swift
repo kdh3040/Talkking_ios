@@ -13,9 +13,58 @@ class BoardData
     var BoardIndex : Int = 0
     var UserIndex : Int = 0
     var BoardText : String = ""
-    var WriteTime : Date = Date()
+    var WriteTime : Double = 0
     var Notice : Bool = false
     
+    public init( tempData : NSDictionary)
+    {
+        
+       /*
+        for noticeUserIndex in noticeList
+        {
+            if noticeUserIndex == DataMgr.Instance.MyData?.Index
+            {
+                Notice = true
+                break
+            }
+        }  CahingUserDataList[userData.Index] = userData
+        */
+        
+        if let  tempIdx = tempData["Idx"] as? String {
+            UserIndex = Int(tempIdx)!
+        }
+        else
+        {
+            UserIndex = 0
+        }
+        
+        if let tempBoardIdx = tempData["BoardIdx"] as? Int {
+            BoardIndex = tempBoardIdx
+        }
+        else
+        {
+            BoardIndex = 0
+        }
+        
+        if let tempMsg = tempData["Msg"] as? String {
+            BoardText = tempMsg
+        }
+        else
+        {
+            BoardText = ""
+        }
+        
+        if let tempTime = tempData["Date"] as? Double {
+            WriteTime = tempTime
+        }
+        else
+        {
+            WriteTime = 0
+        }
+        
+        
+    }
+    /*
     public init(boardIndex : Int, userIndex : Int, boardText : String, writeTime : Date, noticeList : [Int])
     {
         BoardIndex = boardIndex
@@ -33,4 +82,5 @@ class BoardData
             }
         }
     }
+ */
 }

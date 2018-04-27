@@ -70,6 +70,7 @@ class DataMgr {
     
     public func SetBoardData(boardData:BoardData)
     {
+          CahingBoardDataList[boardData.BoardIndex] = boardData
         // 겹치는 인덱스의 게시글이 들어 올때는 데이터만 갱신
     }
 }

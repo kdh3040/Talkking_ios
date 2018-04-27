@@ -241,7 +241,18 @@ class UserData
             Token = ""
         }
         
+        self.SetGrade()
+        self.SetBestItem()
     }
     
+    public func SetGrade()
+    {
+        self.Grade = self.Point / 100
+    }
+    
+    public func SetBestItem()
+    {
+        
+    }
 
 }

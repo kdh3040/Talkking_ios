@@ -31,6 +31,14 @@ class FireBaseFunc
             
             if let tempMyIdx = tempData {
                 self.LoadUserData(index: tempMyIdx, Mydata: true)
+                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
+                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
+                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
+                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3])
+                
+                self.LoadBoardDataList()
+                
+                
             }
             else
             {
@@ -92,19 +100,47 @@ class FireBaseFunc
     }
     
     
-    public func LoadUserDataList_Recv(index : String) //-> UserData?
+    public func LoadUserDataList(sortRef : String) //-> UserData?
     {
-            ref.child("User").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+        ref.child("User").queryOrdered(byChild: sortRef).queryLimited(toFirst: UInt(CommonData.LOAD_USERDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
     
-            let tempData = snapshot.value as? NSDictionary
-            let retValue : UserData = UserData.init(tempData: tempData!)
-    
-            DataMgr.Instance.SetCahingUserDataList(userData: retValue)
+                for childSnapshot in snapshot.children
+                {
+                    
+                    let tempChildData = childSnapshot as! DataSnapshot
+                    let tempData = tempChildData.value as? NSDictionary
+                    let retValue : UserData = UserData.init(tempData: tempData!)
+                    
+                    DataMgr.Instance.SetCahingUserDataList(userData: retValue)
+                }
+           
                 
             }){ (error) in
             print(error.localizedDescription)
             }
     
+        //return nil
+    }
+    
+    public func LoadBoardDataList() //-> UserData?
+    {
+        ref.child("Board").queryLimited(toFirst: UInt(CommonData.LOAD_BOARDDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
+            
+            for childSnapshot in snapshot.children
+            {
+                
+                let tempChildData = childSnapshot as! DataSnapshot
+                let tempData = tempChildData.value as? NSDictionary
+                let retValue : BoardData = BoardData.init(tempData: tempData!)
+                
+                DataMgr.Instance.SetBoardData(boardData: retValue)
+            }
+            
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
+        
         //return nil
     }
 }
