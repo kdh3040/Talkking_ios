@@ -36,7 +36,11 @@ class UserData
     var Token : String = ""
     
     var Grade : Int = 0
+    var ImgCount : Int = 0
     var ThumbnailList : [String] = [String]()
+    
+    var ItemCount : Int = 0
+    var BestItem : Int = 0
     var Item : [Int : Int] = [Int: Int]()
     
     
@@ -64,7 +68,12 @@ class UserData
         Name = userData.Name
         Sex = userData.Sex
         Grade = userData.Grade
+        ImgCount = userData.ImgCount
         ThumbnailList = userData.ThumbnailList
+        
+        ItemCount = userData.ItemCount
+        Item = userData.Item
+        
         FavorUserIndexList = userData.FavorUserIndexList
     }
  
@@ -123,12 +132,113 @@ class UserData
             Grade = 0
         }
         
-        if let tempImg = tempData["Img"] as? [String] {
-            ThumbnailList = tempImg
+        if let tempImgCnt = tempData["ImgCount"] as? Int {
+            ImgCount =  tempImgCnt
         }
         else
         {
-            ThumbnailList = ["222"]
+            ImgCount = 1
+        }
+        
+        if let tempThumbImg = tempData["Img"] as? String {
+            ThumbnailList.append(tempThumbImg)
+        }
+        else
+        {
+            ThumbnailList = ["1"]
+        }
+        
+        
+        if let tempImg_0 = tempData["ImgGroup0"] as? String {
+            ThumbnailList.append(tempImg_0)
+        }
+        else
+        {
+            ThumbnailList.append("1")
+        }
+        
+        if let tempImg_1 = tempData["ImgGroup1"] as? String {
+            ThumbnailList.append(tempImg_1)
+        }
+        else
+        {
+            ThumbnailList.append("1")
+        }
+        
+        if let tempImg_2 = tempData["ImgGroup2"] as? String {
+            ThumbnailList.append(tempImg_2)
+        }
+        else
+        {
+            ThumbnailList.append("1")
+        }
+        
+        if let tempImg_3 = tempData["ImgGroup3"] as? String {
+            ThumbnailList.append(tempImg_3)
+        }
+        else
+        {
+            ThumbnailList.append("1")
+        }
+        
+        if let tempItemCount = tempData["ItemCount"] as? Int {
+            ItemCount = tempItemCount
+        }
+        else
+        {
+            ItemCount = 0
+        }
+        
+        
+        if let tempItem_0 = tempData["Item_1"] as? Int {
+            Item[0] = tempItem_0
+        }
+        else
+        {
+             Item[0] = 0
+        }
+        if let tempItem_1 = tempData["Item_2"] as? Int {
+            Item[1] = tempItem_1
+        }
+        else
+        {
+            Item[1] = 0
+        }
+        if let tempItem_2 = tempData["Item_3"] as? Int {
+            Item[2] = tempItem_2
+        }
+        else
+        {
+            Item[2] = 0
+        }
+        if let tempItem_3 = tempData["Item_4"] as? Int {
+            Item[3] = tempItem_3
+        }
+        else
+        {
+            Item[3] = 0
+        }
+        if let tempItem_4 = tempData["Item_5"] as? Int {
+            Item[4] = tempItem_4
+        }
+        else
+        {
+            Item[4] = 0
+        }
+        if let tempItem_5 = tempData["Item_6"] as? Int {
+            Item[5] = tempItem_5
+        }
+        else
+        {
+            Item[5] = 0
+        }
+        
+        if let tempItem_6 = tempData["Item_7"] as? Int {
+            Item[6] = tempItem_6
+        }
+        else
+        {
+            Item[6] = 0
         }
         
         if let tempFavor = tempData["CardList"] as? NSDictionary {
@@ -244,14 +354,52 @@ class UserData
         self.SetGrade()
         self.SetBestItem()
     }
-    
+   
     public func SetGrade()
     {
-        self.Grade = self.Point / 100
+        let tempPosition = self.Point / 100
+        
+        if tempPosition < 2
+        {
+            self.Grade = 0
+        }
+        else if 2 <= tempPosition && tempPosition < 3
+        {
+            self.Grade = 1
+        }
+        else if 3 <= tempPosition && tempPosition < 5
+        {
+            self.Grade = 2
+        }
+        else if 5 <= tempPosition && tempPosition < 10
+        {
+            self.Grade = 3
+        }
+        else if 10 <= tempPosition && tempPosition < 20
+        {
+            self.Grade = 4
+        }
+        else if 20 <= tempPosition
+        {
+            self.Grade = 5
+        }
     }
     
     public func SetBestItem()
     {
+      var tempItem : [Int] = [Int]()
+        
+        for  ItemValue in Item
+        {
+           if ItemValue.value != 0
+           {
+            tempItem.append(ItemValue.key)
+            }
+        }
+        
+        tempItem.sorted(by: >)
+        self.BestItem = tempItem[0]
+        print(tempItem)
         
     }
 
