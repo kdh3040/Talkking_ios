@@ -85,7 +85,7 @@ class FireBaseFunc
             let tempData = snapshot.value as? NSDictionary
             let retValue : UserData = UserData.init(tempData: tempData!)
             
-             DataMgr.Instance.SetCahingUserDataList(userData: retValue)
+             DataMgr.Instance.SetCachingUserDataList(userData: retValue)
             
             if Mydata
             {
@@ -104,6 +104,7 @@ class FireBaseFunc
     {
         ref.child("User").queryOrdered(byChild: sortRef).queryLimited(toFirst: UInt(CommonData.LOAD_USERDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
     
+            var viewIdx : Int = 0
                 for childSnapshot in snapshot.children
                 {
                     
@@ -111,7 +112,26 @@ class FireBaseFunc
                     let tempData = tempChildData.value as? NSDictionary
                     let retValue : UserData = UserData.init(tempData: tempData!)
                     
-                    DataMgr.Instance.SetCahingUserDataList(userData: retValue)
+                    DataMgr.Instance.SetCachingUserDataList(userData: retValue)
+                    
+                    if sortRef == CommonData.HOME_VIEW_REF[0]
+                    {
+                        DataMgr.Instance.SetUserDataList_RecvHeart(ViewIndex : viewIdx, userIndex: retValue.Index)
+                    }
+                    else if sortRef == CommonData.HOME_VIEW_REF[1]
+                    {
+                        DataMgr.Instance.SetUserDataList_FanCount(ViewIndex: viewIdx, userIndex: retValue.Index)
+                    }
+                    else if sortRef == CommonData.HOME_VIEW_REF[2]
+                    {
+                          DataMgr.Instance.SetUserDataList_Near(ViewIndex: viewIdx, userIndex: retValue.Index)
+                    }
+                    else if sortRef == CommonData.HOME_VIEW_REF[3]
+                    {
+                          DataMgr.Instance.SetUserDataList_New(ViewIndex: viewIdx, userIndex: retValue.Index)
+                    }
+                    
+                    viewIdx += 1
                 }
            
                 

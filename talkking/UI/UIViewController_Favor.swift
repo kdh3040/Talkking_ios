@@ -48,7 +48,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         
         let index : String = (DataMgr.Instance.MyData?.FavorUserIndexList[indexPath.row])!
         
-        cell.SetFavorCell(userData: DataMgr.Instance.GetCahingUserDataList(index: Int(index)!))
+        cell.SetFavorCell(userData: DataMgr.Instance.GetCachingUserDataList(index: Int(index)!))
         return cell
     }
 

@@ -20,7 +20,7 @@ class UITableViewCell_Board : UITableViewCell
     @IBOutlet var BestItem: UIImageView!
     public func SetBoardCell(boardData:BoardData)
     {
-        if let cellUserData = DataMgr.Instance.GetCahingUserDataList(index: boardData.UserIndex)
+        if let cellUserData = DataMgr.Instance.GetCachingUserDataList(index: boardData.UserIndex)
         {
             let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/talkking-25dd8.appspot.com/o/images%2F50%2FThumbNail?alt=media&token=6d5ff51a-8d46-405b-8a23-8d1726b7b9e3")!
             Thumbnail.kf.setImage(with: url,

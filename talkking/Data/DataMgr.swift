@@ -9,9 +9,13 @@
 import Foundation
 
 class DataMgr {
-    public var CahingBoardDataList : [Int : BoardData] = [Int : BoardData]()
-    private var CahingUserDataList : [Int : UserData] = [Int : UserData]()
+    public var CachingBoardDataList : [Int : BoardData] = [Int : BoardData]()
+    private var CachingUserDataList : [Int : UserData] = [Int : UserData]()
 
+    private var UserIdxList_RecvHeart : [Int : Int] = [Int : Int]()
+    private var UserIdxList_FanCount: [Int : Int] = [Int : Int]()
+    private var UserIdxList_Near : [Int : Int] = [Int : Int]()
+    private var UserIdxList_New : [Int : Int] = [Int : Int]()
     
     public var MyData : MyUserData?
     
@@ -33,9 +37,9 @@ class DataMgr {
     }
 
     
-    public func GetCahingUserDataList(index:Int) -> UserData?
+    public func GetCachingUserDataList(index:Int) -> UserData?
     {
-        if let userData = CahingUserDataList[index]
+        if let userData = CachingUserDataList[index]
         {
             return userData
         }
@@ -50,9 +54,9 @@ class DataMgr {
         return nil
     }
     
-    public func SetCahingUserDataList(userData:UserData)
+    public func SetCachingUserDataList(userData:UserData)
     {
-        CahingUserDataList[userData.Index] = userData
+        CachingUserDataList[userData.Index] = userData
         // 겹치는 인덱스의 유저가 들어 올때는 데이터만 갱신
         // 유저데이터를 생성 하거나 갱신 할때 무조건 이함수를 통해서 갱신되어야함
         // 캐싱된 유저데이터 리스트를 하나로 관리하게끔
@@ -60,7 +64,7 @@ class DataMgr {
     
     public func GetBoardData(index:Int) -> BoardData?
     {
-        if let boardData = CahingBoardDataList[index]
+        if let boardData = CachingBoardDataList[index]
         {
             return boardData
         }
@@ -70,7 +74,69 @@ class DataMgr {
     
     public func SetBoardData(boardData:BoardData)
     {
-          CahingBoardDataList[boardData.BoardIndex] = boardData
+          CachingBoardDataList[boardData.BoardIndex] = boardData
         // 겹치는 인덱스의 게시글이 들어 올때는 데이터만 갱신
     }
+
+    // RecvHeart 기준으로 들어오는 순서대로 유져 인덱스 적재
+    public func SetUserDataList_RecvHeart(ViewIndex : Int, userIndex : Int)
+    {
+        UserIdxList_RecvHeart[ViewIndex] = userIndex
+    }
+    public func GetUserDataList_RecvHeart(index:Int) -> Int
+    {
+        if let userIndex = UserIdxList_RecvHeart[index]
+        {
+            return userIndex
+        }
+        
+        return 0
+    }
+    
+     // FanCount 기준으로 들어오는 순서대로 유져 인덱스 적재
+    public func SetUserDataList_FanCount(ViewIndex : Int, userIndex : Int)
+    {
+        UserIdxList_FanCount[ViewIndex] = userIndex
+    }
+    public func GetUserDataList_FanCount(index:Int) -> Int
+    {
+        if let userIndex = UserIdxList_FanCount[index]
+        {
+            return userIndex
+        }
+        
+        return 0
+    }
+    
+    // Near 기준으로 들어오는 순서대로 유져 인덱스 적재
+    public func SetUserDataList_Near(ViewIndex : Int, userIndex : Int)
+    {
+        UserIdxList_Near[ViewIndex] = userIndex
+    }
+    public func GetUserDataList_Near(index:Int) -> Int
+    {
+        if let userIndex = UserIdxList_Near[index]
+        {
+            return userIndex
+        }
+        
+        return 0
+    }
+    
+    // New 기준으로 들어오는 순서대로 유져 인덱스 적재
+    public func SetUserDataList_New(ViewIndex : Int, userIndex : Int)
+    {
+        UserIdxList_New[ViewIndex] = userIndex
+    }
+    public func GetUserDataList_New(index:Int) -> Int
+    {
+        if let userIndex = UserIdxList_New[index]
+        {
+            return userIndex
+        }
+        
+        return 0
+    }
+    
+    
 }

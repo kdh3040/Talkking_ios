@@ -25,7 +25,7 @@ class UIViewController_Board : UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let count : Int? = DataMgr.Instance.CahingBoardDataList.count
+        let count : Int? = DataMgr.Instance.CachingBoardDataList.count
         
         if let realCount = count
         {

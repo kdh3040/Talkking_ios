@@ -14,7 +14,7 @@ class MyUserData : UserData
     
     public init(index : Int)
     {
-        let userData = DataMgr.Instance.GetCahingUserDataList(index: index)
+        let userData = DataMgr.Instance.GetCachingUserDataList(index: index)
         super.init(userData: userData!)
     }
 }
