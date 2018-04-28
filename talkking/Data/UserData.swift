@@ -42,7 +42,7 @@ class UserData
     var ItemCount : Int = 0
     var BestItem : Int = 0
     var Item : [Int : Int] = [Int: Int]()
-    
+    var FanDataList : [FanData] = [FanData]()
     
     public init(userData : UserData)
     {
@@ -75,21 +75,9 @@ class UserData
         Item = userData.Item
         
         FavorUserIndexList = userData.FavorUserIndexList
+        FanDataList = userData.FanDataList
     }
  
-    /*
-     public init(userindex:Int, name:String, age:Int, sex:SEX_TYPE, grade:Int, thumbnailList:[String]
-     , favorList:[Int])
-     {
-     Index = userindex
-     Name = name
-     Age = age
-     Sex = sex
-     Grade = grade
-     ThumbnailList = thumbnailList
-     FavorUserIndexList = favorList
-     }
- */
     public init( tempData : NSDictionary)
     {
         if let  tempIdx = tempData["Idx"] as? String {
@@ -281,6 +269,24 @@ class UserData
             FanCount = 0
         }
         
+        
+        let tempFan = tempData["FanList"] as! NSDictionary
+        var tempFanList : [String] = [String]()
+        tempFanList = tempFan.allKeys as! [String]
+        
+        let tempFanData = FanData()
+        
+        for i in 0 ..< tempFan.count
+        {
+            let tempFanChild = tempFan.value(forKey: tempFanList[i]) as! NSDictionary
+            tempFanData.Idx = Int((tempFanChild["Idx"] as? String)!)!
+            tempFanData.Check = (tempFanChild["Check"] as? Int)!
+            tempFanData.RecvHeart = (tempFanChild["RecvGold"] as? Int)!
+            
+           FanDataList.append(tempFanData)
+            
+        }
+      
         if let tempCoin = tempData["Honey"] as? Int {
             Coin = tempCoin
         }

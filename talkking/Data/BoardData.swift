@@ -27,7 +27,7 @@ class BoardData
                 Notice = true
                 break
             }
-        }  CahingUserDataList[userData.Index] = userData
+        }
         */
         
         if let  tempIdx = tempData["Idx"] as? String {

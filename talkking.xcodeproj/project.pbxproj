@@ -16,6 +16,7 @@
 		3D5091DD208DF92200DA8C8F /* talkkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5091DC208DF92200DA8C8F /* talkkingUITests.swift */; };
 		3D87315E2092077300022D90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D87315D2092077300022D90 /* GoogleService-Info.plist */; };
 		3D87316020930D3400022D90 /* FireBaseFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87315F20930D3400022D90 /* FireBaseFunc.swift */; };
+		3D87316220948D1A00022D90 /* FanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87316120948D1A00022D90 /* FanData.swift */; };
 		3DA635B72091D2D800081F3B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3DA635B62091D2D800081F3B /* Podfile */; };
 		75CA69A90FD45DBA81B64F20 /* Pods_talkkingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42D7350E03D89B9AE8A9F90 /* Pods_talkkingUITests.framework */; };
 		9318F94B20903E0300E08F7D /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318F92620903E0300E08F7D /* PagingViewController.swift */; };
@@ -110,6 +111,7 @@
 		3D5091DE208DF92200DA8C8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D87315D2092077300022D90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3D87315F20930D3400022D90 /* FireBaseFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseFunc.swift; sourceTree = "<group>"; };
+		3D87316120948D1A00022D90 /* FanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanData.swift; sourceTree = "<group>"; };
 		3DA635B62091D2D800081F3B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4CE62041C31A9797ACD5992D /* Pods_talkking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talkking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53352310F5C94E0F2849069E /* Pods-talkkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				9318F94920903E0300E08F7D /* ChatData.swift */,
 				9318F94A20903E0300E08F7D /* DataMgr.swift */,
 				3D87315F20930D3400022D90 /* FireBaseFunc.swift */,
+				3D87316120948D1A00022D90 /* FanData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 				9318F96920903E0300E08F7D /* ChatData.swift in Sources */,
 				93E5245320921870009E303A /* UIViewController_Fan.swift in Sources */,
 				9318F96320903E0300E08F7D /* UITableViewCell_Favor.swift in Sources */,
+				3D87316220948D1A00022D90 /* FanData.swift in Sources */,
 				9318F97720906CFA00E08F7D /* UIViewController_Board.swift in Sources */,
 				9318F94E20903E0300E08F7D /* Pagable.swift in Sources */,
 				9318F971209049A900E08F7D /* CommonFunc.swift in Sources */,
