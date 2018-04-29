@@ -19,6 +19,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         FavorTableView.delegate = self
         FavorTableView.dataSource = self
         FavorTableView.rowHeight = 70;
+        FavorTableView.separatorStyle = .none
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,19 +28,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-        let count : Int = (DataMgr.Instance.MyData?.FavorUserIndexList.count)!
-        
-        if(count <= 0)
-        {
-            tableView.separatorStyle = .none
-        }
-        else
-        {
-            tableView.separatorStyle = .singleLine
-        }
-
-        return count
+        return (DataMgr.Instance.MyData?.FavorUserIndexList.count)!
     }
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -50,6 +39,12 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         
         cell.SetFavorCell(userData: DataMgr.Instance.GetCachingUserDataList(index: Int(index)!))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("즐겨찾기 셀을 선택 하였습니다.")
+        print("section: \(indexPath.section)")
+        print("row: \(indexPath.row)")
     }
 
 }

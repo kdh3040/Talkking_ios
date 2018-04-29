@@ -149,9 +149,9 @@ class FireBaseFunc
             for childSnapshot in snapshot.children
             {
                 
-                let tempChildData = childSnapshot as! DataSnapshot
-                let tempData = tempChildData.value as? NSDictionary
-                let retValue : BoardData = BoardData.init(tempData: tempData!)
+                var tempChildData = childSnapshot as! DataSnapshot
+                var tempData = tempChildData.value as? NSDictionary
+                var retValue : BoardData = BoardData.init(tempData: tempData!)
                 
                 DataMgr.Instance.SetBoardData(boardData: retValue)
             }

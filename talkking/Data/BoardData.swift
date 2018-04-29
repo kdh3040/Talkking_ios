@@ -14,7 +14,7 @@ class BoardData
     var UserIndex : Int = 0
     var BoardText : String = ""
     var WriteTime : Double = 0
-    var Notice : Bool = false
+    var Report : Bool = false
     
     public init( tempData : NSDictionary)
     {

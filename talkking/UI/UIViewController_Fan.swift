@@ -11,9 +11,22 @@ import UIKit
 
 class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    @IBOutlet var FanTableView: UITableView!
+    @IBOutlet var MyFanCount: UILabel!
+    @IBOutlet var MyHeartCount: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        FanTableView.delegate = self
+        FanTableView.dataSource = self
+        FanTableView.rowHeight = 70
+        FanTableView.separatorStyle = .none
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        MyFanCount.text = numberFormatter.string(from: NSNumber(value:(DataMgr.Instance.MyData?.FanCount)!))!
+        
+        MyHeartCount.text = numberFormatter.string(from: NSNumber(value:100))!
     }
     
     override func didReceiveMemoryWarning() {
@@ -22,29 +35,18 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        let count : Int = 0
-        
-        if(count <= 0)
-        {
-            tableView.separatorStyle = .none
-            //tableView.backgroundView?.isHidden = false
-        }
-        else
-        {
-            tableView.separatorStyle = .singleLine
-            //tableView.backgroundView?.isHidden = true
-        }
-        return (DataMgr.Instance.MyData?.FavorUserIndexList.count)!;
+        return (DataMgr.Instance.MyData?.FanDataList.count)!;
     }
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavorCell", for: indexPath) as! UITableViewCell_Favor
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FanCell", for: indexPath) as! UITableViewCell_Fan
+
+        //let index : Int = (DataMgr.Instance.MyData?.FavorUserIndexList[indexPath.row])!
         
-        let index : String = (DataMgr.Instance.MyData?.FavorUserIndexList[indexPath.row])!
+        //let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
         
-       //cell.SetFavorCell(userData: DataMgr.Instance.GetUserData(index: Int(index)!)!)
+        //cell.SetFanCell(userData: userData, rank: index)
         return cell
     }
     

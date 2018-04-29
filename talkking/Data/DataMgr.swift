@@ -9,7 +9,7 @@
 import Foundation
 
 class DataMgr {
-    public var CachingBoardDataList : [Int : BoardData] = [Int : BoardData]()
+    public var CachingBoardDataList : [BoardData] = [BoardData]()
     private var CachingUserDataList : [Int : UserData] = [Int : UserData]()
 
     private var UserIdxList_RecvHeart : [Int : Int] = [Int : Int]()
@@ -64,9 +64,12 @@ class DataMgr {
     
     public func GetBoardData(index:Int) -> BoardData?
     {
-        if let boardData = CachingBoardDataList[index]
+        for var data in CachingBoardDataList
         {
-            return boardData
+            if data.BoardIndex == index
+            {
+                return data
+            }
         }
         
         return nil
@@ -74,7 +77,7 @@ class DataMgr {
     
     public func SetBoardData(boardData:BoardData)
     {
-          CachingBoardDataList[boardData.BoardIndex] = boardData
+        CachingBoardDataList.append(boardData)
         // 겹치는 인덱스의 게시글이 들어 올때는 데이터만 갱신
     }
 

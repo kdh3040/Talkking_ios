@@ -18,6 +18,8 @@ class UIViewController_ChatMain : UIViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view, typically from a nib.
         ChatMainTableView.delegate = self
         ChatMainTableView.dataSource = self
+        ChatMainTableView.rowHeight = 70;
+        ChatMainTableView.separatorStyle = .none
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,28 +28,14 @@ class UIViewController_ChatMain : UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        let count : Int = (DataMgr.Instance.MyData?.CahingChatDataList.count)!
-        
-        if(count <= 0)
-        {
-            tableView.separatorStyle = .none
-        }
-        else
-        {
-            tableView.separatorStyle = .singleLine
-        }
-
-        return count
+        return (DataMgr.Instance.MyData?.CahingChatDataList.count)!
     }
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! UITableViewCell_ChatMain
         
-        let data : ChatData = (DataMgr.Instance.MyData?.CahingChatDataList[indexPath.row])!
         
-        cell.SetChatMainCell(chatdata: data)
         return cell
     }
     

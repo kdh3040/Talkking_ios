@@ -21,7 +21,7 @@ class UITableViewCell_Favor : UITableViewCell
     {
         if let cellUserData = userData
         {
-            let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/talkking-25dd8.appspot.com/o/images%2F50%2FThumbNail?alt=media&token=6d5ff51a-8d46-405b-8a23-8d1726b7b9e3")!
+            let url = URL(string: cellUserData.GetMainThumbnail())!
             Thumbnail.kf.setImage(with: url,
                                   placeholder: nil,
                                   options: [.transition(.fade(1))],
@@ -32,17 +32,9 @@ class UITableViewCell_Favor : UITableViewCell
             Thumbnail.clipsToBounds = true
             
             Name.text = cellUserData.Name
-            Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:1))
+            Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:cellUserData.Grade))
 
-            BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: 1))
-            
-            
+            BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: cellUserData.BestItem))
         }
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // 실제로 선택 하였을때 호출 되는 함수를 찾아야 한다.
-        print("세팅 및 선택")
     }
 }

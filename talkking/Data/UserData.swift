@@ -274,7 +274,7 @@ class UserData
         var tempFanList : [String] = [String]()
         tempFanList = tempFan.allKeys as! [String]
         
-        let tempFanData = FanData()
+        var tempFanData : FanData = FanData()
         
         for i in 0 ..< tempFan.count
         {
@@ -415,8 +415,29 @@ class UserData
             self.BestItem = tempItem[0]
             print(tempItem)
         }
+    }
+    
+    public func GetMainThumbnail() -> String{
+        if ThumbnailList.count > 0
+        {
+            return ThumbnailList[0]
+        }
 
-        
+        return ""
+    }
+    
+    public func GetThumbnailList() -> [String]{
+        if ThumbnailList.count >= 1
+        {
+            var returnValueList : [String] = [String]()
+            for i in 1..<ThumbnailList.count - 1
+            {
+                returnValueList.append(ThumbnailList[i])
+            }
+            return returnValueList
+        }
+
+        return [String]()
     }
 
 }
