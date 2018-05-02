@@ -270,22 +270,22 @@ class UserData
         }
         
         
-        let tempFan = tempData["FanList"] as! NSDictionary
-        var tempFanList : [String] = [String]()
-        tempFanList = tempFan.allKeys as! [String]
+        //let tempFan = tempData["FanList"] as! NSDictionary
+        //var tempFanList : [String] = [String]()
+        //tempFanList = tempFan.allKeys as! [String]
         
-        var tempFanData : FanData = FanData()
+        //var tempFanData : FanData = FanData()
         
-        for i in 0 ..< tempFan.count
-        {
-            let tempFanChild = tempFan.value(forKey: tempFanList[i]) as! NSDictionary
-            tempFanData.Idx = Int((tempFanChild["Idx"] as? String)!)!
-            tempFanData.Check = (tempFanChild["Check"] as? Int)!
-            tempFanData.RecvHeart = (tempFanChild["RecvGold"] as? Int)!
-            
-           FanDataList.append(tempFanData)
-            
-        }
+        //for i in 0 ..< tempFan.count
+        //{
+        //    let tempFanChild = tempFan.value(forKey: tempFanList[i]) as! NSDictionary
+        //    tempFanData.Idx = Int((tempFanChild["Idx"] as? String)!)!
+        //    tempFanData.Check = (tempFanChild["Check"] as? Int)!
+        //    tempFanData.RecvHeart = (tempFanChild["RecvGold"] as? Int)!
+        //
+        //   FanDataList.append(tempFanData)
+        //
+        //}
       
         if let tempCoin = tempData["Honey"] as? Int {
             Coin = tempCoin

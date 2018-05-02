@@ -14,10 +14,26 @@
         <!--홈-->
         <scene sceneID="Q7X-hR-Ukt">
             <objects>
-                <viewController id="Q1M-Zu-uBB" sceneMemberID="viewController">
+                <viewController id="Q1M-Zu-uBB" customClass="UIViewController_Home" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YbM-ay-hjS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tfq-fD-5KB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="즐겨찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg2-QU-HxE">
+                                        <rect key="frame" x="13" y="12" width="77" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.46274509800000002" green="0.42745098040000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iIC-iS-s2A"/>
                     </view>
@@ -26,6 +42,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QF7-dG-FCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1796" y="-798"/>
+        </scene>
+        <!--홈 인기순-->
+        <scene sceneID="qr8-Lz-du7">
+            <objects>
+                <viewController storyboardIdentifier="MAIN_HOME_PUBLIC" id="Gu8-FZ-ZGG" userLabel="홈 인기순" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ISo-cO-zug">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="08z-7a-iZ3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5eH-X9-dvu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2631" y="-798"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mD4-Xn-R3Q">
@@ -598,6 +629,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Vz-GV-h7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1796" y="-99.400299850074973"/>
+        </scene>
+        <!--홈 팬보유수-->
+        <scene sceneID="lpc-c0-eND">
+            <objects>
+                <viewController storyboardIdentifier="MAIN_HOME_FAN_COUNT" id="OhY-DC-Vr2" userLabel="홈 팬보유수" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rUK-7T-Qnd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Tq-A7-lei"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HIT-qU-JQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3334" y="-798"/>
+        </scene>
+        <!--홈 가까운순-->
+        <scene sceneID="cnd-E8-nSx">
+            <objects>
+                <viewController storyboardIdentifier="MAIN_HOME_NEAR" id="foy-7r-FqT" userLabel="홈 가까운순" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qFP-vd-lcA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="T4T-gg-6a6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="its-O2-2BZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3996" y="-798"/>
+        </scene>
+        <!--홈 NEW-->
+        <scene sceneID="hek-bg-5J0">
+            <objects>
+                <viewController storyboardIdentifier="MAIN_HOME_NEW" id="M9y-WJ-Icc" userLabel="홈 NEW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IFE-tb-8Ha">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4V0-M3-cla"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zt8-gC-uJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4622" y="-798"/>
         </scene>
     </scenes>
     <resources>

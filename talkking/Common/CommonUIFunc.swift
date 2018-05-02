@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 class CommonUIFunc{
     static let Instance = CommonUIFunc()
     
@@ -39,5 +39,10 @@ class CommonUIFunc{
     {
         let calendar = Calendar.current
         return calendar.isDateInToday(time)
+    }
+    
+    public func GetDefaultColor() -> UIColor
+    {
+        return UIColor(red: 0.463, green: 0.427, blue: 0.671, alpha: 1)
     }
 }
