@@ -46,7 +46,7 @@
         <!--홈 인기순-->
         <scene sceneID="qr8-Lz-du7">
             <objects>
-                <viewController storyboardIdentifier="MAIN_HOME_PUBLIC" id="Gu8-FZ-ZGG" userLabel="홈 인기순" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MAIN_HOME_PUBLIC" id="Gu8-FZ-ZGG" userLabel="홈 인기순" customClass="UIViewController_Home_Public" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ISo-cO-zug">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -633,7 +633,7 @@
         <!--홈 팬보유수-->
         <scene sceneID="lpc-c0-eND">
             <objects>
-                <viewController storyboardIdentifier="MAIN_HOME_FAN_COUNT" id="OhY-DC-Vr2" userLabel="홈 팬보유수" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MAIN_HOME_FAN_COUNT" id="OhY-DC-Vr2" userLabel="홈 팬보유수" customClass="UIViewController_Home_FanCount" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rUK-7T-Qnd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -648,7 +648,7 @@
         <!--홈 가까운순-->
         <scene sceneID="cnd-E8-nSx">
             <objects>
-                <viewController storyboardIdentifier="MAIN_HOME_NEAR" id="foy-7r-FqT" userLabel="홈 가까운순" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MAIN_HOME_NEAR" id="foy-7r-FqT" userLabel="홈 가까운순" customClass="UIViewController_Home_Near" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qFP-vd-lcA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -663,7 +663,7 @@
         <!--홈 NEW-->
         <scene sceneID="hek-bg-5J0">
             <objects>
-                <viewController storyboardIdentifier="MAIN_HOME_NEW" id="M9y-WJ-Icc" userLabel="홈 NEW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MAIN_HOME_NEW" id="M9y-WJ-Icc" userLabel="홈 NEW" customClass="UIViewController_Home_New" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IFE-tb-8Ha">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

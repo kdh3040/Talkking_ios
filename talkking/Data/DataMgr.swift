@@ -95,7 +95,10 @@ class DataMgr {
         
         return 0
     }
-    
+    public func GetUserDataList_RecvHeart_Count() -> Int
+    {
+        return UserIdxList_RecvHeart.count
+    }
      // FanCount 기준으로 들어오는 순서대로 유져 인덱스 적재
     public func SetUserDataList_FanCount(ViewIndex : Int, userIndex : Int)
     {
@@ -109,6 +112,11 @@ class DataMgr {
         }
         
         return 0
+    }
+    
+    public func GetUserDataList_FanCount_Count() -> Int
+    {
+        return UserIdxList_FanCount.count
     }
     
     // Near 기준으로 들어오는 순서대로 유져 인덱스 적재
@@ -126,6 +134,11 @@ class DataMgr {
         return 0
     }
     
+    public func GetUserDataList_Near_Count() -> Int
+    {
+        return UserIdxList_Near.count
+    }
+    
     // New 기준으로 들어오는 순서대로 유져 인덱스 적재
     public func SetUserDataList_New(ViewIndex : Int, userIndex : Int)
     {
@@ -140,6 +153,9 @@ class DataMgr {
         
         return 0
     }
-    
+    public func GetUserDataList_New_Count() -> Int
+    {
+        return UserIdxList_New.count
+    }
     
 }
