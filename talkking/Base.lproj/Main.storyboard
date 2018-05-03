@@ -894,6 +894,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionViewFlowLayout" destination="Wv1-os-Xio" id="JiN-2t-Z7b"/>
+                        <outlet property="collectionview" destination="Q6I-ly-gbY" id="XmP-UN-FOP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="its-O2-2BZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -977,6 +978,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionViewFlowLayout" destination="zjJ-aN-WS9" id="gvz-QW-fY7"/>
+                        <outlet property="collectionview" destination="lOL-a0-OW3" id="kyF-8u-q7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zt8-gC-uJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1060,6 +1062,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionViewFlowLayout" destination="qNc-dn-QbT" id="eWT-tc-3Ox"/>
+                        <outlet property="collectionview" destination="zJH-af-M0f" id="EQG-0s-nyv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RUV-NP-ddH" userLabel="First Responder" sceneMemberID="firstResponder"/>
