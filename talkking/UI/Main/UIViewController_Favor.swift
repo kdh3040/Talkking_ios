@@ -42,9 +42,12 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("즐겨찾기 셀을 선택 하였습니다.")
-        print("section: \(indexPath.section)")
-        print("row: \(indexPath.row)")
+        
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.TEST()
+        self.present(page, animated: true) {
+            print("페이지 넘김")
+        }
     }
 
 }

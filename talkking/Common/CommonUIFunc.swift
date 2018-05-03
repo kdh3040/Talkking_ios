@@ -10,8 +10,37 @@ import Foundation
 import UIKit
 import Kingfisher
 
+struct UserPageAccumulateData {
+    public var PageStoryBoardId : String = ""
+    public var UserIndex : Int = 0
+    
+    init(pageStoryBoardId : String, userIndex : Int) {
+        PageStoryBoardId = pageStoryBoardId
+        UserIndex = userIndex
+    }
+}
+
 class CommonUIFunc{
     static let Instance = CommonUIFunc()
+    
+    public var PageAccumulateList : [UserPageAccumulateData] = [UserPageAccumulateData]()
+    
+    public func EnquePage(storyBoardId : String, userIndex : Int = 0)
+    {
+        PageAccumulateList.append(UserPageAccumulateData.init(pageStoryBoardId: storyBoardId, userIndex: userIndex))
+    }
+    
+    public func DequePage() -> UserPageAccumulateData?
+    {
+        if let returnData = PageAccumulateList.popLast()
+        {
+            return returnData
+        }
+        
+        return nil
+    }
+    
+    
     
     public func GetGradeImgName(grade:Int) -> String{
         if(grade <= 0 || CommonData.RANK_ICON.count <= grade)
@@ -56,6 +85,15 @@ class CommonUIFunc{
     public func GetDefaultColor() -> UIColor
     {
         return UIColor(red: 0.463, green: 0.427, blue: 0.671, alpha: 1)
+    }
+    
+    public func GetManColor() -> UIColor
+    {
+        return UIColor(red: 0.372, green: 0.725, blue: 0.901, alpha: 1)
+    }
+    public func GetWomanColor() -> UIColor
+    {
+        return UIColor(red: 1, green: 0.686, blue: 1, alpha: 1)
     }
     
     public func ConvertNumberFormat(count:Int, addString : String = "") -> String

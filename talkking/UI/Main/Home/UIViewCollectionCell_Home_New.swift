@@ -21,7 +21,7 @@ class UIViewCollectionCell_Home_New : UICollectionViewCell
         {
             CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : false)
             
-            AgeName.text = String.init(format: "(%d세)%s", cellUserData.Age, cellUserData.Name)
+            AgeName.text = String.init(format: "(%d세)%@", cellUserData.Age, cellUserData.Name)
         }
     }
 }

@@ -40,11 +40,11 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FanCell", for: indexPath) as! UITableViewCell_Fan
 
-        //let index : Int = (DataMgr.Instance.MyData?.FavorUserIndexList[indexPath.row])!
+        let index : Int = (DataMgr.Instance.MyData?.FanDataList[indexPath.row].Idx)!
         
-        //let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
+        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
         
-        //cell.SetFanCell(userData: userData, rank: index)
+        cell.SetFanCell(userData: userData, rank: index)
         return cell
     }
     

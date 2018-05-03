@@ -87,6 +87,7 @@
 		93E766512099F69B005455A8 /* UIViewCollectionCell_Home_Hot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E766502099F69B005455A8 /* UIViewCollectionCell_Home_Hot.swift */; };
 		93E766532099FD12005455A8 /* main_icon_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E766522099FD12005455A8 /* main_icon_location.png */; };
 		93E766572099FD76005455A8 /* main_icon_hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E766562099FD76005455A8 /* main_icon_hot.png */; };
+		93E7665A209AF11C005455A8 /* UIViewController_UserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E76659209AF11C005455A8 /* UIViewController_UserPage.swift */; };
 		984F7E6BCCA63E223554DA90 /* Pods_talkking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE62041C31A9797ACD5992D /* Pods_talkking.framework */; };
 /* End PBXBuildFile section */
 
@@ -194,6 +195,7 @@
 		93E766502099F69B005455A8 /* UIViewCollectionCell_Home_Hot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCollectionCell_Home_Hot.swift; sourceTree = "<group>"; };
 		93E766522099FD12005455A8 /* main_icon_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_location.png; sourceTree = "<group>"; };
 		93E766562099FD76005455A8 /* main_icon_hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_hot.png; sourceTree = "<group>"; };
+		93E76659209AF11C005455A8 /* UIViewController_UserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_UserPage.swift; sourceTree = "<group>"; };
 		9AF8EC7116B3018C39A3C35C /* Pods-talkkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests.release.xcconfig"; sourceTree = "<group>"; };
 		A76CA12B4956316FCD0FBDBA /* Pods-talkkingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingUITests/Pods-talkkingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD54EC540FA7633BC1BEA87A /* Pods-talkking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkking/Pods-talkking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 		9318F94120903E0300E08F7D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				93E76658209AF102005455A8 /* Page */,
 				93E766402099B9B7005455A8 /* Main */,
 			);
 			path = UI;
@@ -462,6 +465,14 @@
 				93E766502099F69B005455A8 /* UIViewCollectionCell_Home_Hot.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		93E76658209AF102005455A8 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				93E76659209AF11C005455A8 /* UIViewController_UserPage.swift */,
+			);
+			path = Page;
 			sourceTree = "<group>";
 		};
 		BC617FE344A5616F1915D1DE /* Frameworks */ = {
@@ -812,6 +823,7 @@
 				93E5245220921870009E303A /* UITableViewCell_Fan.swift in Sources */,
 				9318F96A20903E0300E08F7D /* DataMgr.swift in Sources */,
 				93E766332099B7F3005455A8 /* UIViewController_Home_Public.swift in Sources */,
+				93E7665A209AF11C005455A8 /* UIViewController_UserPage.swift in Sources */,
 				9318F97920906D0A00E08F7D /* UITableViewCell_Board.swift in Sources */,
 				9318F96F2090499F00E08F7D /* CommonUIFunc.swift in Sources */,
 				93E7662D20996B8A005455A8 /* UIViewController_Home.swift in Sources */,

@@ -20,4 +20,5 @@ struct CommonData {
     public static let LOAD_USERDATA_COUNT = 60
     
     public static let LOAD_BOARDDATA_COUNT = 10
+
 }
