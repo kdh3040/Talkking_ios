@@ -14,6 +14,7 @@ struct CommonData {
     public static let ITEM_ICON = ["icon_item_opal", "icon_item_pearl", "icon_item_amethyst", "icon_item_sapphire", "icon_item_emerald", "icon_item_ruby","icon_item_diamond"]
     public static let FAN_RANK_ICON_BIG = ["fan_rank_big_1", "fan_rank_big_2", "fan_rank_big_3"]
     public static let FAN_RANK_ICON = ["fan_rank_1", "fan_rank_2", "fan_rank_3"]
+    public static let MAIN_RANK_ICON = ["etc_main_rank_1", "etc_main_rank_2", "etc_main_rank_3"]
     
     public static let HOME_VIEW_REF = ["RecvGold", "FanCount", "Dist", "Date"]
     public static let LOAD_USERDATA_COUNT = 60

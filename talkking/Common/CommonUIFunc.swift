@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Kingfisher
+
 class CommonUIFunc{
     static let Instance = CommonUIFunc()
     
@@ -35,6 +37,16 @@ class CommonUIFunc{
         return CommonData.FAN_RANK_ICON[rank - 1]
     }
     
+    public func GetMainRankImgName(rank:Int) -> String{
+        if(rank <= 0 || CommonData.MAIN_RANK_ICON.count <= rank)
+        {
+            return ""
+        }
+        return CommonData.MAIN_RANK_ICON[rank - 1]
+    }
+    
+    
+    
     public func IsTodayTime(time:Date) -> Bool
     {
         let calendar = Calendar.current
@@ -44,5 +56,42 @@ class CommonUIFunc{
     public func GetDefaultColor() -> UIColor
     {
         return UIColor(red: 0.463, green: 0.427, blue: 0.671, alpha: 1)
+    }
+    
+    public func ConvertNumberFormat(count:Int, addString : String = "") -> String
+    {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        return numberFormatter.string(from: NSNumber(value:count))! + addString
+    }
+    
+    public func ConvertNumberFormatDouble(count:Double, addString : String = "") -> String
+    {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        return numberFormatter.string(from: NSNumber(value:count))! + addString
+    }
+    
+    public func SetThumbnail(imageView : UIImageView, url : Resource, circle : Bool)
+    {
+        imageView.kf.setImage(with: url,
+                              placeholder: nil,
+                              options: [.transition(.fade(1))],
+                              progressBlock: nil,
+                              completionHandler: nil)
+    
+        SetDefaultThumbnail(imageView : imageView, circle : circle)
+    }
+    
+    public func SetDefaultThumbnail(imageView : UIImageView, circle : Bool)
+    {
+        if circle == true
+        {
+            imageView.backgroundColor = CommonUIFunc.Instance.GetDefaultColor()
+            imageView.layer.cornerRadius = imageView.frame.size.width / 2
+            imageView.clipsToBounds = true
+        }
     }
 }

@@ -22,38 +22,32 @@ class UITableViewCell_Board : UITableViewCell
     @IBOutlet var BestItem: UIImageView!
     public func SetBoardCell(boardData:BoardData)
     {
+        CommonUIFunc.Instance.SetDefaultThumbnail(imageView : Thumbnail, circle : true)
+        
         if let cellUserData = DataMgr.Instance.GetCachingUserDataList(index: boardData.UserIndex)
         {
-            let url = URL(string: cellUserData.GetMainThumbnail())!
-            Thumbnail.kf.setImage(with: url,
-                                  placeholder: nil,
-                                  options: [.transition(.fade(1))],
-                                  progressBlock: nil,
-                                  completionHandler: nil)
-            
-            Thumbnail.layer.cornerRadius = Thumbnail.frame.size.width / 2
-            Thumbnail.clipsToBounds = true
+            CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : true)
             
             Name.text = cellUserData.Name
             Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:cellUserData.Grade))
             
             BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: cellUserData.BestItem))
-            
-            Board.text = boardData.BoardText
-            let writeTime = Date(timeIntervalSince1970: boardData.WriteTime)
-            
-            if CommonUIFunc.Instance.IsTodayTime(time:writeTime)
-            {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "HH:mm"
-                Time.text = dateFormatter.string(from: writeTime)
-            }
-            else
-            {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "MM월 dd일"
-                Time.text = dateFormatter.string(from: writeTime)
-            }
+        }
+        
+        Board.text = boardData.BoardText
+        let writeTime = Date(timeIntervalSince1970: boardData.WriteTime)
+        
+        if CommonUIFunc.Instance.IsTodayTime(time:writeTime)
+        {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            Time.text = dateFormatter.string(from: writeTime)
+        }
+        else
+        {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM월 dd일"
+            Time.text = dateFormatter.string(from: writeTime)
         }
     }
 }

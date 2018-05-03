@@ -12,20 +12,27 @@ import UIKit
 
 class UIViewController_Home_Near: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet var collectionViewFlowLayout: UICollectionViewFlowLayout!
     @IBOutlet var collectionview: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionview.delegate = self
+        collectionview.dataSource = self
+        collectionview.collectionViewLayout = collectionViewFlowLayout
+        collectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.width / 3)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataMgr.Instance.GetUserDataList_RecvHeart_Count()
+        return DataMgr.Instance.GetUserDataList_Near_Count()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //UIcollectionviewcell * cell = collectionview.de "cell"
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_Near
         
-        let cell:UIViewCollectionCell_Home_Near = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_Near
+        cell.SetHomeNearData(userIndex:DataMgr.Instance.GetUserDataList_Near(index: indexPath.row), rank : indexPath.row + 1)
+        
         return cell
     }
 }

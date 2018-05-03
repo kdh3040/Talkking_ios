@@ -262,7 +262,7 @@ class UserData
         }
         
         if let tempFanCount = tempData["FanCount"] as? Double {
-            FanCount = tempFanCount
+            FanCount = -(tempFanCount / 10000000)
         }
         else
         {

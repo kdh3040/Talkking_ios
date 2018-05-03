@@ -1,5 +1,5 @@
 //
-//  UIviewController_Home_FanCount.swift
+//  UIViewController_Home_Hot.swift
 //  talkking
 //
 //  Created by mangomilk114 on 2018. 5. 2..
@@ -9,9 +9,7 @@
 import Foundation
 import UIKit
 
-
-class UIViewController_Home_FanCount: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-{
+class UIViewController_Home_Hot: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var collectionview: UICollectionView!
     @IBOutlet var collectionViewFlowLayout: UICollectionViewFlowLayout!
@@ -25,18 +23,15 @@ class UIViewController_Home_FanCount: UIViewController, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return DataMgr.Instance.GetUserDataList_FanCount_Count()
+        return DataMgr.Instance.GetUserDataList_Hot_Count()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        let cell:UIViewCollectionCell_Home_FanCount = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_FanCount
+        //UIcollectionviewcell * cell = collectionview.de "cell"
         
-    cell.SetHomeFanCountData(userIndex:DataMgr.Instance.GetUserDataList_FanCount(index: indexPath.row), rank : indexPath.row + 1)
-
+        let cell:UIViewCollectionCell_Home_Hot = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_Hot
+        
+        cell.SetHomeHotData(userIndex: DataMgr.Instance.GetUserDataList_Near(index: indexPath.row))
         return cell
-        
-        
-        
     }
 }

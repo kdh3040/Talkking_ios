@@ -21,19 +21,11 @@ class UITableViewCell_Fan : UITableViewCell
     @IBOutlet var HeartCount: UILabel!
     public func SetFanCell(userData:UserData?, rank : Int)
     {
-        // 환웅 인덱스가 0 부터 시작이기 때문
+        CommonUIFunc.Instance.SetDefaultThumbnail(imageView : Thumbnail, circle : true)
         let realRank = rank + 1
         if let cellUserData = userData
         {
-            let url = URL(string: cellUserData.GetMainThumbnail())!
-            Thumbnail.kf.setImage(with: url,
-                                  placeholder: nil,
-                                  options: [.transition(.fade(1))],
-                                  progressBlock: nil,
-                                  completionHandler: nil)
-            
-            Thumbnail.layer.cornerRadius = Thumbnail.frame.size.width / 2
-            Thumbnail.clipsToBounds = true
+            CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : true)
             
             Name.text = cellUserData.Name
             Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:cellUserData.Grade))

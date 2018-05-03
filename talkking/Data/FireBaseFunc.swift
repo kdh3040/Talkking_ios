@@ -82,16 +82,17 @@ class FireBaseFunc
     {
         ref.child("User").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
             
-            let tempData = snapshot.value as? NSDictionary
-            let retValue : UserData = UserData.init(tempData: tempData!)
-            
-             DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-            
-            if Mydata
+            if let tempData = snapshot.value as? NSDictionary
             {
-                DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                let retValue : UserData = UserData.init(tempData: tempData)
+                
+                DataMgr.Instance.SetCachingUserDataList(userData: retValue)
+                
+                if Mydata
+                {
+                    DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                }
             }
-            
         }){ (error) in
             print(error.localizedDescription)
         }

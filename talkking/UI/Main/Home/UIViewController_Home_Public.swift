@@ -10,11 +10,17 @@ import Foundation
 import UIKit
 
 
-class UIViewController_Home_Public: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class UIViewController_Home_Public: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+{
 
+    @IBOutlet var collectionViewFlowLayout: UICollectionViewFlowLayout!
     @IBOutlet var collectionview: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionview.delegate = self
+        collectionview.dataSource = self
+        collectionview.collectionViewLayout = collectionViewFlowLayout
+        collectionViewFlowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.width / 3)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -23,9 +29,10 @@ class UIViewController_Home_Public: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //UIcollectionviewcell * cell = collectionview.de "cell"
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_Public
         
-        let cell:UIViewCollectionCell_Home_Public = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_Public
+        cell.SetHomePublicData(userIndex:DataMgr.Instance.GetUserDataList_RecvHeart(index: indexPath.row), rank : indexPath.row + 1)
         return cell
     }
 }

@@ -9,5 +9,27 @@
 import Foundation
 import UIKit
 
-class UIViewCollectionCell_Home_FanCount : UICollectionViewCell {
+class UIViewCollectionCell_Home_FanCount : UICollectionViewCell
+{
+    @IBOutlet var Rank: UIImageView!
+    @IBOutlet var Thumbnail: UIImageView!
+    @IBOutlet var FanCount: UILabel!
+    
+    public func SetHomeFanCountData(userIndex : Int, rank : Int)
+    {
+        CommonUIFunc.Instance.SetDefaultThumbnail(imageView : Thumbnail, circle : false)
+        
+        if let cellUserData = DataMgr.Instance.GetCachingUserDataList(index: userIndex)
+        {
+            CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : false)
+
+            FanCount.text = CommonUIFunc.Instance.ConvertNumberFormatDouble(count: cellUserData.FanCount, addString : "명")
+            
+            let rankIcon = CommonUIFunc.Instance.GetMainRankImgName(rank: rank)
+            if rankIcon.isEmpty == false
+            {
+                Rank.image = UIImage.init(named: rankIcon)
+            }
+        }
+    }
 }

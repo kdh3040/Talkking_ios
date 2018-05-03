@@ -19,17 +19,11 @@ class UITableViewCell_Favor : UITableViewCell
     
     public func SetFavorCell(userData:UserData?)
     {
+        CommonUIFunc.Instance.SetDefaultThumbnail(imageView : Thumbnail, circle : true)
+
         if let cellUserData = userData
         {
-            let url = URL(string: cellUserData.GetMainThumbnail())!
-            Thumbnail.kf.setImage(with: url,
-                                  placeholder: nil,
-                                  options: [.transition(.fade(1))],
-                                  progressBlock: nil,
-                                  completionHandler: nil)
-            
-            Thumbnail.layer.cornerRadius = Thumbnail.frame.size.width / 2
-            Thumbnail.clipsToBounds = true
+            CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : true)
             
             Name.text = cellUserData.Name
             Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:cellUserData.Grade))

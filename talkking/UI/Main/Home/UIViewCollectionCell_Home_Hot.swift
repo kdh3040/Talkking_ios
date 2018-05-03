@@ -1,5 +1,5 @@
 //
-//  UIViewCollectionCell_Home_Near.swift
+//  UIViewCollectionCell_Home_Hot.swift
 //  talkking
 //
 //  Created by mangomilk114 on 2018. 5. 2..
@@ -9,12 +9,11 @@
 import Foundation
 import UIKit
 
-class UIViewCollectionCell_Home_Near : UICollectionViewCell
+class UIViewCollectionCell_Home_Hot : UICollectionViewCell
 {
     @IBOutlet var Thumbnail: UIImageView!
-    @IBOutlet var Rank: UIImageView!
-    @IBOutlet var Near: UILabel!
-    public func SetHomeNearData(userIndex : Int, rank : Int)
+    @IBOutlet var AgeName: UILabel!
+    public func SetHomeHotData(userIndex : Int)
     {
         CommonUIFunc.Instance.SetDefaultThumbnail(imageView : Thumbnail, circle : false)
         
@@ -22,13 +21,7 @@ class UIViewCollectionCell_Home_Near : UICollectionViewCell
         {
             CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : false)
             
-            Near.text = CommonUIFunc.Instance.ConvertNumberFormatDouble(count: cellUserData.Distance, addString : "Km")
-            
-            let rankIcon = CommonUIFunc.Instance.GetMainRankImgName(rank: rank)
-            if rankIcon.isEmpty == false
-            {
-                Rank.image = UIImage.init(named: rankIcon)
-            }
+            AgeName.text = String.init(format: "(%d세)%s", cellUserData.Age, cellUserData.Name)
         }
     }
 }

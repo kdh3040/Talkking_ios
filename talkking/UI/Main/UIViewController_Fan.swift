@@ -22,11 +22,9 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
         FanTableView.rowHeight = 70
         FanTableView.separatorStyle = .none
         
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        MyFanCount.text = numberFormatter.string(from: NSNumber(value:(DataMgr.Instance.MyData?.FanCount)!))!
+        MyFanCount.text = CommonUIFunc.Instance.ConvertNumberFormatDouble(count: DataMgr.Instance.MyData!.FanCount)
         
-        MyHeartCount.text = numberFormatter.string(from: NSNumber(value:100))!
+        MyHeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: 100)
     }
     
     override func didReceiveMemoryWarning() {

@@ -13,6 +13,7 @@ import Parchment
 class UIViewController_Home : UIViewController
 {
     let PageTitles = [
+        "HOT",
         "인기순",
         "팬보유수",
         "가까운순",
@@ -20,6 +21,7 @@ class UIViewController_Home : UIViewController
     ]
     
     let PagingViewController = FixedPagingViewController(viewControllers: [
+        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MAIN_HOME_HOT"),
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MAIN_HOME_PUBLIC"),
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MAIN_HOME_FAN_COUNT"),
          UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MAIN_HOME_NEAR"),
@@ -36,6 +38,12 @@ class UIViewController_Home : UIViewController
         PagingViewController.textColor = UIColor(white: 1, alpha: 0.6)
         PagingViewController.selectedTextColor = .white
         PagingViewController.menuItemSize = .sizeToFit(minWidth: 20, height: 40)
+        
+        PagingViewController.indicatorOptions = .visible(
+            height: 4,
+            zIndex: Int.max,
+            spacing: UIEdgeInsets.zero,
+            insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         
         // Make sure you add the PagingViewController as a child view
         // controller and contrain it to the edges of the view.

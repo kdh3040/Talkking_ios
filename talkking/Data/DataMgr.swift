@@ -16,27 +16,12 @@ class DataMgr {
     private var UserIdxList_FanCount: [Int : Int] = [Int : Int]()
     private var UserIdxList_Near : [Int : Int] = [Int : Int]()
     private var UserIdxList_New : [Int : Int] = [Int : Int]()
+    private var UserIdxList_Hot : [Int : Int] = [Int : Int]()
     
     public var MyData : MyUserData?
     
     static let Instance = DataMgr()
-    private init() {
- 
-        
-        // 초기 데이터 생성
-        // 클래스를 생성 하면 초기에 타는 함수
 
-  
-        /*
- // 임시
-        var tempData = UserData(userindex: 1, name: "임시1", age: 10, sex: SEX_TYPE.MALE, grade: 1, thumbnailList: ["asdfads"],favorList:[2])
-        CahingUserDataList[1] = tempData
-        tempData = UserData(userindex: 2, name: "임시2", age: 30, sex: SEX_TYPE.FEMALE, grade: 3, thumbnailList: ["우ㄴㅁㅇㄹㅁㄴㄹ"],favorList:[1])
-        CahingUserDataList[2] = tempData
- */
-    }
-
-    
     public func GetCachingUserDataList(index:Int) -> UserData?
     {
         if let userData = CachingUserDataList[index]
@@ -156,6 +141,25 @@ class DataMgr {
     public func GetUserDataList_New_Count() -> Int
     {
         return UserIdxList_New.count
+    }
+    
+    // Hot 기준으로 들어오는 순서대로 유져 인덱스 적재
+    public func SetUserDataList_Hot(ViewIndex : Int, userIndex : Int)
+    {
+        UserIdxList_Hot[ViewIndex] = userIndex
+    }
+    public func GetUserDataList_Hot(index:Int) -> Int
+    {
+        if let userIndex = UserIdxList_Hot[index]
+        {
+            return userIndex
+        }
+        
+        return 0
+    }
+    public func GetUserDataList_Hot_Count() -> Int
+    {
+        return UserIdxList_Hot.count
     }
     
 }

@@ -73,7 +73,6 @@
 		93E5245D209588C2009E303A /* fan_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E5245C209588C2009E303A /* fan_white.png */; };
 		93E7662D20996B8A005455A8 /* UIViewController_Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E7662C20996B8A005455A8 /* UIViewController_Home.swift */; };
 		93E766332099B7F3005455A8 /* UIViewController_Home_Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E766322099B7F3005455A8 /* UIViewController_Home_Public.swift */; };
-		93E766352099B818005455A8 /* UIviewController_Home_FanCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E766342099B818005455A8 /* UIviewController_Home_FanCount.swift */; };
 		93E766392099B844005455A8 /* UIViewController_Home_FanCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E766382099B844005455A8 /* UIViewController_Home_FanCount.swift */; };
 		93E7663B2099B852005455A8 /* UIViewController_Home_Near.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E7663A2099B852005455A8 /* UIViewController_Home_Near.swift */; };
 		93E7663D2099B860005455A8 /* UIViewController_Home_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E7663C2099B860005455A8 /* UIViewController_Home_New.swift */; };
@@ -81,6 +80,13 @@
 		93E766432099BA5F005455A8 /* UIViewCollectionCell_Home_FanCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E766422099BA5F005455A8 /* UIViewCollectionCell_Home_FanCount.swift */; };
 		93E766452099BA7B005455A8 /* UIViewCollectionCell_Home_Near.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E766442099BA7B005455A8 /* UIViewCollectionCell_Home_Near.swift */; };
 		93E766472099BA94005455A8 /* UIViewCollectionCell_Home_New.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E766462099BA94005455A8 /* UIViewCollectionCell_Home_New.swift */; };
+		93E7664B2099F0C9005455A8 /* main_rank_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E766482099F0C8005455A8 /* main_rank_2.png */; };
+		93E7664C2099F0CA005455A8 /* main_rank_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E766492099F0C9005455A8 /* main_rank_1.png */; };
+		93E7664D2099F0CA005455A8 /* main_rank_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E7664A2099F0C9005455A8 /* main_rank_3.png */; };
+		93E7664F2099F5B1005455A8 /* UIViewController_Home_Hot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E7664E2099F5B1005455A8 /* UIViewController_Home_Hot.swift */; };
+		93E766512099F69B005455A8 /* UIViewCollectionCell_Home_Hot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E766502099F69B005455A8 /* UIViewCollectionCell_Home_Hot.swift */; };
+		93E766532099FD12005455A8 /* main_icon_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E766522099FD12005455A8 /* main_icon_location.png */; };
+		93E766572099FD76005455A8 /* main_icon_hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E766562099FD76005455A8 /* main_icon_hot.png */; };
 		984F7E6BCCA63E223554DA90 /* Pods_talkking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE62041C31A9797ACD5992D /* Pods_talkking.framework */; };
 /* End PBXBuildFile section */
 
@@ -174,7 +180,6 @@
 		93E5245C209588C2009E303A /* fan_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fan_white.png; sourceTree = "<group>"; };
 		93E7662C20996B8A005455A8 /* UIViewController_Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_Home.swift; sourceTree = "<group>"; };
 		93E766322099B7F3005455A8 /* UIViewController_Home_Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Home_Public.swift; sourceTree = "<group>"; };
-		93E766342099B818005455A8 /* UIviewController_Home_FanCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIviewController_Home_FanCount.swift; sourceTree = "<group>"; };
 		93E766382099B844005455A8 /* UIViewController_Home_FanCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Home_FanCount.swift; sourceTree = "<group>"; };
 		93E7663A2099B852005455A8 /* UIViewController_Home_Near.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Home_Near.swift; sourceTree = "<group>"; };
 		93E7663C2099B860005455A8 /* UIViewController_Home_New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Home_New.swift; sourceTree = "<group>"; };
@@ -182,6 +187,13 @@
 		93E766422099BA5F005455A8 /* UIViewCollectionCell_Home_FanCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCollectionCell_Home_FanCount.swift; sourceTree = "<group>"; };
 		93E766442099BA7B005455A8 /* UIViewCollectionCell_Home_Near.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCollectionCell_Home_Near.swift; sourceTree = "<group>"; };
 		93E766462099BA94005455A8 /* UIViewCollectionCell_Home_New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCollectionCell_Home_New.swift; sourceTree = "<group>"; };
+		93E766482099F0C8005455A8 /* main_rank_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_rank_2.png; sourceTree = "<group>"; };
+		93E766492099F0C9005455A8 /* main_rank_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_rank_1.png; sourceTree = "<group>"; };
+		93E7664A2099F0C9005455A8 /* main_rank_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_rank_3.png; sourceTree = "<group>"; };
+		93E7664E2099F5B1005455A8 /* UIViewController_Home_Hot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Home_Hot.swift; sourceTree = "<group>"; };
+		93E766502099F69B005455A8 /* UIViewCollectionCell_Home_Hot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCollectionCell_Home_Hot.swift; sourceTree = "<group>"; };
+		93E766522099FD12005455A8 /* main_icon_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_location.png; sourceTree = "<group>"; };
+		93E766562099FD76005455A8 /* main_icon_hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_hot.png; sourceTree = "<group>"; };
 		9AF8EC7116B3018C39A3C35C /* Pods-talkkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests.release.xcconfig"; sourceTree = "<group>"; };
 		A76CA12B4956316FCD0FBDBA /* Pods-talkkingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingUITests/Pods-talkkingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD54EC540FA7633BC1BEA87A /* Pods-talkking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkking/Pods-talkking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -302,7 +314,6 @@
 		9318F92E20903E0300E08F7D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				93E766342099B818005455A8 /* UIviewController_Home_FanCount.swift */,
 				9318F99E2090815700E08F7D /* etc */,
 				9318F99D20907FBD00E08F7D /* icon_item */,
 				9318F99C20907F3200E08F7D /* fan_rank */,
@@ -404,6 +415,11 @@
 		9318F99E2090815700E08F7D /* etc */ = {
 			isa = PBXGroup;
 			children = (
+				93E766562099FD76005455A8 /* main_icon_hot.png */,
+				93E766522099FD12005455A8 /* main_icon_location.png */,
+				93E766492099F0C9005455A8 /* main_rank_1.png */,
+				93E766482099F0C8005455A8 /* main_rank_2.png */,
+				93E7664A2099F0C9005455A8 /* main_rank_3.png */,
 				93E52458209583CA009E303A /* report.png */,
 				9318F98820907E1D00E08F7D /* new_img.png */,
 				9318F98620907E0C00E08F7D /* heart_red.png */,
@@ -438,10 +454,12 @@
 				93E766382099B844005455A8 /* UIViewController_Home_FanCount.swift */,
 				93E7663A2099B852005455A8 /* UIViewController_Home_Near.swift */,
 				93E7663C2099B860005455A8 /* UIViewController_Home_New.swift */,
+				93E7664E2099F5B1005455A8 /* UIViewController_Home_Hot.swift */,
 				93E7663E2099B979005455A8 /* UIViewCollectionCell_Home_Public.swift */,
 				93E766422099BA5F005455A8 /* UIViewCollectionCell_Home_FanCount.swift */,
 				93E766442099BA7B005455A8 /* UIViewCollectionCell_Home_Near.swift */,
 				93E766462099BA94005455A8 /* UIViewCollectionCell_Home_New.swift */,
+				93E766502099F69B005455A8 /* UIViewCollectionCell_Home_Hot.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -571,10 +589,12 @@
 				9318F96220903E0300E08F7D /* board_select.png in Resources */,
 				9318F95F20903E0300E08F7D /* home_select.png in Resources */,
 				9318F98020907E0500E08F7D /* fan_rank_2.png in Resources */,
+				93E766532099FD12005455A8 /* main_icon_location.png in Resources */,
 				93E5245D209588C2009E303A /* fan_white.png in Resources */,
 				3D5091C7208DF92100DA8C8F /* LaunchScreen.storyboard in Resources */,
 				3DA635B72091D2D800081F3B /* Podfile in Resources */,
 				9318F96020903E0300E08F7D /* board.png in Resources */,
+				93E7664B2099F0C9005455A8 /* main_rank_2.png in Resources */,
 				9318F98920907E1D00E08F7D /* new_img.png in Resources */,
 				9318F98720907E0C00E08F7D /* heart_red.png in Resources */,
 				9318F95D20903E0300E08F7D /* home.png in Resources */,
@@ -594,6 +614,7 @@
 				9318F95320903E0300E08F7D /* rank_bronze.png in Resources */,
 				9318F99720907E8900E08F7D /* diamond.png in Resources */,
 				9318F96120903E0300E08F7D /* chat.png in Resources */,
+				93E7664D2099F0CA005455A8 /* main_rank_3.png in Resources */,
 				9318F95E20903E0300E08F7D /* favor_select.png in Resources */,
 				9318F99120907E5000E08F7D /* sapphire.png in Resources */,
 				9318F95520903E0300E08F7D /* rank_vvip.png in Resources */,
@@ -602,8 +623,10 @@
 				93E524552092EDA0009E303A /* Assets.xcassets in Resources */,
 				9318F98120907E0500E08F7D /* fan_rank_1.png in Resources */,
 				9318F98520907E0500E08F7D /* fan_rank_big_1.png in Resources */,
+				93E7664C2099F0CA005455A8 /* main_rank_1.png in Resources */,
 				3D5091C2208DF92000DA8C8F /* Main.storyboard in Resources */,
 				9318F99B20907F1D00E08F7D /* heart.png in Resources */,
+				93E766572099FD76005455A8 /* main_icon_hot.png in Resources */,
 				9318F95920903E0300E08F7D /* fan.png in Resources */,
 				9318F95C20903E0300E08F7D /* chat_select.png in Resources */,
 			);
@@ -778,11 +801,12 @@
 				9318F96D2090498F00E08F7D /* CommonData.swift in Sources */,
 				9318F975209052E700E08F7D /* UITableViewCell_ChatMain.swift in Sources */,
 				3D87316020930D3400022D90 /* FireBaseFunc.swift in Sources */,
+				93E766512099F69B005455A8 /* UIViewCollectionCell_Home_Hot.swift in Sources */,
 				9318F973209051F100E08F7D /* UIViewController_ChatMain.swift in Sources */,
 				3D5091BF208DF92000DA8C8F /* ViewController.swift in Sources */,
-				93E766352099B818005455A8 /* UIviewController_Home_FanCount.swift in Sources */,
 				9318F96720903E0300E08F7D /* UserData.swift in Sources */,
 				3D5091BD208DF92000DA8C8F /* AppDelegate.swift in Sources */,
+				93E7664F2099F5B1005455A8 /* UIViewController_Home_Hot.swift in Sources */,
 				9318F96620903E0300E08F7D /* MyUserData.swift in Sources */,
 				9318F96420903E0300E08F7D /* UIViewController_Favor.swift in Sources */,
 				93E5245220921870009E303A /* UITableViewCell_Fan.swift in Sources */,
