@@ -35,19 +35,6 @@ class UITableViewCell_Board : UITableViewCell
         }
         
         Board.text = boardData.BoardText
-        let writeTime = Date(timeIntervalSince1970: boardData.WriteTime)
-        
-        if CommonUIFunc.Instance.IsTodayTime(time:writeTime)
-        {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm"
-            Time.text = dateFormatter.string(from: writeTime)
-        }
-        else
-        {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM월 dd일"
-            Time.text = dateFormatter.string(from: writeTime)
-        }
+        Time.text = CommonUIFunc.Instance.ConvertTimeString(time: boardData.WriteTime)
     }
 }

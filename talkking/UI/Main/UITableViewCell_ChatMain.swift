@@ -29,6 +29,8 @@ class UITableViewCell_ChatMain : UITableViewCell
             Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:cellUserData.Grade))
             
             BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: cellUserData.BestItem))
+            
+            Time.text = CommonUIFunc.Instance.ConvertTimeString(time: 100)
         }
     }
 }

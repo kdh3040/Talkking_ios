@@ -32,7 +32,7 @@ class UITableViewCell_Fan : UITableViewCell
             
             BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: cellUserData.BestItem))
             
-            if realRank <= 3
+            if realRank <= CommonData.FAN_RANK_ICON.count
             {
                 Rank.isHidden = false
                 RankLabel.isHidden = true
@@ -48,9 +48,7 @@ class UITableViewCell_Fan : UITableViewCell
                 RankLabel.text = String.init(format: "%d위", realRank)
             }
             
-            let numberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = .decimal
-            HeartCount.text = numberFormatter.string(from: NSNumber(value:100))
+            HeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: 100)
         }
     }
 }

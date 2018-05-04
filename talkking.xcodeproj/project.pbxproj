@@ -88,6 +88,14 @@
 		93E766532099FD12005455A8 /* main_icon_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E766522099FD12005455A8 /* main_icon_location.png */; };
 		93E766572099FD76005455A8 /* main_icon_hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E766562099FD76005455A8 /* main_icon_hot.png */; };
 		93E7665A209AF11C005455A8 /* UIViewController_UserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E76659209AF11C005455A8 /* UIViewController_UserPage.swift */; };
+		93E7665C209C221D005455A8 /* etc_itcon_board_write.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E7665B209C221C005455A8 /* etc_itcon_board_write.png */; };
+		93E7665E209C26A3005455A8 /* etc_icon_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E7665D209C26A2005455A8 /* etc_icon_back.png */; };
+		93E76665209C5BA6005455A8 /* etc_icon_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E7665F209C5BA4005455A8 /* etc_icon_heart.png */; };
+		93E76666209C5BA6005455A8 /* etc_icon_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E76660209C5BA4005455A8 /* etc_icon_chat.png */; };
+		93E76667209C5BA6005455A8 /* etc_icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E76661209C5BA5005455A8 /* etc_icon_share.png */; };
+		93E76668209C5BA6005455A8 /* etc_icon_favor.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E76662209C5BA5005455A8 /* etc_icon_favor.png */; };
+		93E76669209C5BA6005455A8 /* etc_icon_not_favor.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E76663209C5BA5005455A8 /* etc_icon_not_favor.png */; };
+		93E7666A209C5BA6005455A8 /* etc_icon_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E76664209C5BA6005455A8 /* etc_icon_home.png */; };
 		984F7E6BCCA63E223554DA90 /* Pods_talkking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE62041C31A9797ACD5992D /* Pods_talkking.framework */; };
 /* End PBXBuildFile section */
 
@@ -196,6 +204,14 @@
 		93E766522099FD12005455A8 /* main_icon_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_location.png; sourceTree = "<group>"; };
 		93E766562099FD76005455A8 /* main_icon_hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_icon_hot.png; sourceTree = "<group>"; };
 		93E76659209AF11C005455A8 /* UIViewController_UserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_UserPage.swift; sourceTree = "<group>"; };
+		93E7665B209C221C005455A8 /* etc_itcon_board_write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_itcon_board_write.png; sourceTree = "<group>"; };
+		93E7665D209C26A2005455A8 /* etc_icon_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_back.png; sourceTree = "<group>"; };
+		93E7665F209C5BA4005455A8 /* etc_icon_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_heart.png; sourceTree = "<group>"; };
+		93E76660209C5BA4005455A8 /* etc_icon_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_chat.png; sourceTree = "<group>"; };
+		93E76661209C5BA5005455A8 /* etc_icon_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_share.png; sourceTree = "<group>"; };
+		93E76662209C5BA5005455A8 /* etc_icon_favor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_favor.png; sourceTree = "<group>"; };
+		93E76663209C5BA5005455A8 /* etc_icon_not_favor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_not_favor.png; sourceTree = "<group>"; };
+		93E76664209C5BA6005455A8 /* etc_icon_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_home.png; sourceTree = "<group>"; };
 		9AF8EC7116B3018C39A3C35C /* Pods-talkkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests.release.xcconfig"; sourceTree = "<group>"; };
 		A76CA12B4956316FCD0FBDBA /* Pods-talkkingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingUITests/Pods-talkkingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD54EC540FA7633BC1BEA87A /* Pods-talkking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkking.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkking/Pods-talkking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -418,6 +434,14 @@
 		9318F99E2090815700E08F7D /* etc */ = {
 			isa = PBXGroup;
 			children = (
+				93E76660209C5BA4005455A8 /* etc_icon_chat.png */,
+				93E76662209C5BA5005455A8 /* etc_icon_favor.png */,
+				93E7665F209C5BA4005455A8 /* etc_icon_heart.png */,
+				93E76664209C5BA6005455A8 /* etc_icon_home.png */,
+				93E76663209C5BA5005455A8 /* etc_icon_not_favor.png */,
+				93E76661209C5BA5005455A8 /* etc_icon_share.png */,
+				93E7665D209C26A2005455A8 /* etc_icon_back.png */,
+				93E7665B209C221C005455A8 /* etc_itcon_board_write.png */,
 				93E766562099FD76005455A8 /* main_icon_hot.png */,
 				93E766522099FD12005455A8 /* main_icon_location.png */,
 				93E766492099F0C9005455A8 /* main_rank_1.png */,
@@ -599,6 +623,7 @@
 				9318F95A20903E0300E08F7D /* fan_select.png in Resources */,
 				9318F96220903E0300E08F7D /* board_select.png in Resources */,
 				9318F95F20903E0300E08F7D /* home_select.png in Resources */,
+				93E76668209C5BA6005455A8 /* etc_icon_favor.png in Resources */,
 				9318F98020907E0500E08F7D /* fan_rank_2.png in Resources */,
 				93E766532099FD12005455A8 /* main_icon_location.png in Resources */,
 				93E5245D209588C2009E303A /* fan_white.png in Resources */,
@@ -610,7 +635,9 @@
 				9318F98720907E0C00E08F7D /* heart_red.png in Resources */,
 				9318F95D20903E0300E08F7D /* home.png in Resources */,
 				9318F98320907E0500E08F7D /* fan_rank_3.png in Resources */,
+				93E7665E209C26A3005455A8 /* etc_icon_back.png in Resources */,
 				9318F95820903E0300E08F7D /* rank_silver.png in Resources */,
+				93E7666A209C5BA6005455A8 /* etc_icon_home.png in Resources */,
 				9318F98F20907E4A00E08F7D /* ruby.png in Resources */,
 				93E52459209583CB009E303A /* report.png in Resources */,
 				9318F95720903E0300E08F7D /* rank_gold.png in Resources */,
@@ -630,6 +657,8 @@
 				9318F99120907E5000E08F7D /* sapphire.png in Resources */,
 				9318F95520903E0300E08F7D /* rank_vvip.png in Resources */,
 				9318F98220907E0500E08F7D /* fan_rank_big_2.png in Resources */,
+				93E76666209C5BA6005455A8 /* etc_icon_chat.png in Resources */,
+				93E7665C209C221D005455A8 /* etc_itcon_board_write.png in Resources */,
 				3D87315E2092077300022D90 /* GoogleService-Info.plist in Resources */,
 				93E524552092EDA0009E303A /* Assets.xcassets in Resources */,
 				9318F98120907E0500E08F7D /* fan_rank_1.png in Resources */,
@@ -637,8 +666,11 @@
 				93E7664C2099F0CA005455A8 /* main_rank_1.png in Resources */,
 				3D5091C2208DF92000DA8C8F /* Main.storyboard in Resources */,
 				9318F99B20907F1D00E08F7D /* heart.png in Resources */,
+				93E76665209C5BA6005455A8 /* etc_icon_heart.png in Resources */,
 				93E766572099FD76005455A8 /* main_icon_hot.png in Resources */,
+				93E76667209C5BA6005455A8 /* etc_icon_share.png in Resources */,
 				9318F95920903E0300E08F7D /* fan.png in Resources */,
+				93E76669209C5BA6005455A8 /* etc_icon_not_favor.png in Resources */,
 				9318F95C20903E0300E08F7D /* chat_select.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
