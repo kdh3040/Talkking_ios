@@ -32,11 +32,21 @@ class UIViewController_Home_FanCount: UIViewController, UICollectionViewDelegate
 
         let cell:UIViewCollectionCell_Home_FanCount = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_FanCount
         
-    cell.SetHomeFanCountData(userIndex:DataMgr.Instance.GetUserDataList_FanCount(index: indexPath.row), rank : indexPath.row + 1)
+        cell.SetHomeFanCountData(userIndex:DataMgr.Instance.GetUserDataList_FanCount(index: indexPath.row), rank : indexPath.row + 1)
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.SetUserData(userData: GetSelectUserData(indexPath:indexPath))
+        self.present(page, animated: true)
+    }
+    
+    func GetSelectUserData(indexPath: IndexPath) -> UserData
+    {
+        let index = DataMgr.Instance.GetUserDataList_FanCount(index: indexPath.row)
         
-        
-        
+        return DataMgr.Instance.GetCachingUserDataList(index: index)!
     }
 }

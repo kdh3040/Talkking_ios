@@ -33,10 +33,11 @@ class UIViewController_ChatMain : UIViewController, UITableViewDelegate, UITable
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! UITableViewCell_ChatMain
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_ChatMain
         
-        
+        //cell.SetChatMainCell(userData: GetSelectUserData(indexPath:indexPath), chatData: nil)
         return cell
     }
+
     
 }

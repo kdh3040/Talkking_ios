@@ -32,7 +32,20 @@ class UIViewController_Home_Public: UIViewController, UICollectionViewDelegate, 
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_Public
         
-        cell.SetHomePublicData(userIndex:DataMgr.Instance.GetUserDataList_RecvHeart(index: indexPath.row), rank : indexPath.row + 1)
+        cell.SetHomePublicData(userData:GetSelectUserData(indexPath:indexPath), rank : indexPath.row + 1)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.SetUserData(userData: GetSelectUserData(indexPath:indexPath))
+        self.present(page, animated: true)
+    }
+    
+    func GetSelectUserData(indexPath: IndexPath) -> UserData
+    {
+        let index = DataMgr.Instance.GetUserDataList_RecvHeart(index: indexPath.row)
+        
+        return DataMgr.Instance.GetCachingUserDataList(index: index)!
     }
 }

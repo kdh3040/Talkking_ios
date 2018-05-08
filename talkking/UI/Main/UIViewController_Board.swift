@@ -32,10 +32,22 @@ class UIViewController_Board : UIViewController, UITableViewDelegate, UITableVie
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BoardCell", for: indexPath) as! UITableViewCell_Board
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_Board
         
         cell.SetBoardCell(boardData: DataMgr.Instance.CachingBoardDataList[indexPath.row])
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.SetUserData(userData: GetSelectUserData(indexPath:indexPath))
+        self.present(page, animated: true)
+    }
+    
+    func GetSelectUserData(indexPath: IndexPath) -> UserData
+    {
+        let userIndex = DataMgr.Instance.CachingBoardDataList[indexPath.row].UserIndex
+        
+        return DataMgr.Instance.GetCachingUserDataList(index: userIndex)!
+    }
 }

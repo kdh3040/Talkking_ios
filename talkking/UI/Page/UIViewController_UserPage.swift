@@ -64,7 +64,7 @@ class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (PageUserData?.FanDataList.count)!
+        return PageUserData!.FanDataList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -75,38 +75,4 @@ class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UI
         /*cell.SetHomeHotData(userIndex: DataMgr.Instance.GetUserDataList_Near(index: indexPath.row))*/
         return cell
     }
-    
-    
-    
-    
-    
-    
-    /*
-    @IBOutlet var Imagett: UIButton!
-    @IBAction func Back(_ sender: Any) {
-        self.dismiss(animated: true) {
-            print("뒤로감")
-        }
-    }
-    @IBAction func UserPageGOGO(_ sender: Any) {
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-        page.TEST()
-        self.present(page, animated: true) {
-            print("페이지 넘김")
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let rankIcon = CommonUIFunc.Instance.GetMainRankImgName(rank: 1)
-        if rankIcon.isEmpty == false
-        {
-            Imagett.setImage(UIImage.init(named: rankIcon), for : UIControlState.normal)
-        }
-    }
-    
-    public func TEST(){
-        print("USER_PAGE")
-    }*/
 }

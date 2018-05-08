@@ -33,21 +33,22 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavorCell", for: indexPath) as! UITableViewCell_Favor
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_Favor
         
-        let index : String = (DataMgr.Instance.MyData?.FavorUserIndexList[indexPath.row])!
-        
-        cell.SetFavorCell(userData: DataMgr.Instance.GetCachingUserDataList(index: Int(index)!))
+        cell.SetFavorCell(userData: GetSelectUserData(indexPath:indexPath))
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-        page.TEST()
-        self.present(page, animated: true) {
-            print("페이지 넘김")
-        }
+        page.SetUserData(userData: GetSelectUserData(indexPath:indexPath))
+        self.present(page, animated: true)
     }
-
+    
+    func GetSelectUserData(indexPath: IndexPath) -> UserData
+    {
+        let index : String = DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row]
+        
+        return DataMgr.Instance.GetCachingUserDataList(index: Int(index)!)!
+    }
 }

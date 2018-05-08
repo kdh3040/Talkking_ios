@@ -12,6 +12,17 @@ import Parchment
 
 class UIViewController_Home : UIViewController
 {
+    @IBAction func FilterAction(_ sender: Any) {
+    }
+    @IBAction func RandomBoxAction(_ sender: Any) {
+    }
+    @IBAction func HeartRecvAction(_ sender: Any) {
+    }
+    @IBAction func MyPageAction(_ sender: Any) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "MY_USER_PAGE") as! UIViewController_MyUserPage
+        self.present(page, animated: true)
+    }
+    
     let PageTitles = [
         "HOT",
         "인기순",

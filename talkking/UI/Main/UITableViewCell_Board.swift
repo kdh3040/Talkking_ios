@@ -28,7 +28,7 @@ class UITableViewCell_Board : UITableViewCell
         {
             CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : true)
             
-            Name.text = cellUserData.Name
+            CommonUIFunc.Instance.SetUserName(label: Name, userData: cellUserData)
             Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:cellUserData.Grade))
             
             BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: cellUserData.BestItem))

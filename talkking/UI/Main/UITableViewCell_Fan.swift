@@ -19,36 +19,32 @@ class UITableViewCell_Fan : UITableViewCell
     @IBOutlet var Grade: UIImageView!
     @IBOutlet var BestItem: UIImageView!
     @IBOutlet var HeartCount: UILabel!
-    public func SetFanCell(userData:UserData?, rank : Int)
+    public func SetFanCell(userData:UserData, rank : Int)
     {
-        CommonUIFunc.Instance.SetDefaultThumbnail(imageView : Thumbnail, circle : true)
         let realRank = rank + 1
-        if let cellUserData = userData
+        CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: userData.GetMainThumbnail())!, circle : true)
+        
+        CommonUIFunc.Instance.SetUserName(label: Name, userData: userData)
+        Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:userData.Grade))
+        
+        BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: userData.BestItem))
+        
+        if realRank <= CommonData.FAN_RANK_ICON.count
         {
-            CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : true)
+            Rank.isHidden = false
+            RankLabel.isHidden = true
             
-            Name.text = cellUserData.Name
-            Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:cellUserData.Grade))
-            
-            BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: cellUserData.BestItem))
-            
-            if realRank <= CommonData.FAN_RANK_ICON.count
-            {
-                Rank.isHidden = false
-                RankLabel.isHidden = true
-                
-                Rank.image = UIImage.init(named:
+            Rank.image = UIImage.init(named:
                 CommonUIFunc.Instance.GetFanRankImgName(rank: realRank))
-            }
-            else
-            {
-                Rank.isHidden = true
-                RankLabel.isHidden = false
-                
-                RankLabel.text = String.init(format: "%d위", realRank)
-            }
-            
-            HeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: 100)
         }
+        else
+        {
+            Rank.isHidden = true
+            RankLabel.isHidden = false
+            
+            RankLabel.text = String.init(format: "%d위", realRank)
+        }
+        
+        HeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: 100)
     }
 }

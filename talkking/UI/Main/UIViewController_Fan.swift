@@ -38,14 +38,22 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FanCell", for: indexPath) as! UITableViewCell_Fan
-
-        let index : Int = (DataMgr.Instance.MyData?.FanDataList[indexPath.row].Idx)!
-        
-        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
-        
-        cell.SetFanCell(userData: userData, rank: index)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_Fan
+        cell.SetFanCell(userData: GetSelectUserData(indexPath: indexPath), rank: indexPath.row)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.SetUserData(userData: GetSelectUserData(indexPath:indexPath))
+        self.present(page, animated: true)
+    }
+    
+    func GetSelectUserData(indexPath: IndexPath) -> UserData
+    {
+        let index = DataMgr.Instance.MyData!.FanDataList[indexPath.row].Idx
+        
+        return DataMgr.Instance.GetCachingUserDataList(index: index)!
     }
     
 }

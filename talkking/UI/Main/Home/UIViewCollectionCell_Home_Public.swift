@@ -15,21 +15,16 @@ class UIViewCollectionCell_Home_Public : UICollectionViewCell
     @IBOutlet var Thumbnail: UIImageView!
     @IBOutlet var Rank: UIImageView!
     
-    public func SetHomePublicData(userIndex : Int, rank : Int)
+    public func SetHomePublicData(userData:UserData, rank : Int)
     {
-        CommonUIFunc.Instance.SetDefaultThumbnail(imageView : Thumbnail, circle : false)
-
-        if let cellUserData = DataMgr.Instance.GetCachingUserDataList(index: userIndex)
+        CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: userData.GetMainThumbnail())!, circle : false)
+        
+        HeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: userData.RecvHeart)
+        
+        let rankIcon = CommonUIFunc.Instance.GetMainRankImgName(rank: rank)
+        if rankIcon.isEmpty == false
         {
-            CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : false)
-
-            HeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: cellUserData.RecvHeart)
-            
-            let rankIcon = CommonUIFunc.Instance.GetMainRankImgName(rank: rank)
-            if rankIcon.isEmpty == false
-            {
-                Rank.image = UIImage.init(named: rankIcon)
-            }
+            Rank.image = UIImage.init(named: rankIcon)
         }
     }
 }

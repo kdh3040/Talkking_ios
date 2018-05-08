@@ -30,7 +30,20 @@ class UIViewController_Home_New: UIViewController, UICollectionViewDelegate, UIC
         //UIcollectionviewcell * cell = collectionview.de "cell"
         
         let cell:UIViewCollectionCell_Home_New = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_New
-        cell.SetHomeNewData(userIndex: DataMgr.Instance.GetUserDataList_Near(index: indexPath.row))
+        cell.SetHomeNewData(userIndex: DataMgr.Instance.GetUserDataList_New(index: indexPath.row))
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.SetUserData(userData: GetSelectUserData(indexPath:indexPath))
+        self.present(page, animated: true)
+    }
+    
+    func GetSelectUserData(indexPath: IndexPath) -> UserData
+    {
+        let index = DataMgr.Instance.GetUserDataList_New(index: indexPath.row)
+        
+        return DataMgr.Instance.GetCachingUserDataList(index: index)!
     }
 }
