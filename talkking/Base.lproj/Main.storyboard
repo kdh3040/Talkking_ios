@@ -319,7 +319,7 @@
                                             <constraint firstAttribute="height" constant="50" id="QcO-4U-isv"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XO-Ma-wJu" userLabel="randombox">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XO-Ma-wJu" userLabel="heart_recv">
                                         <rect key="frame" x="304" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="MM4-6P-DBW"/>
@@ -327,10 +327,10 @@
                                         </constraints>
                                         <state key="normal" image="icon_main_heart_recv"/>
                                         <connections>
-                                            <action selector="RandomBoxAction:" destination="Q1M-Zu-uBB" eventType="touchUpInside" id="V9B-Dk-RQi"/>
+                                            <action selector="HeartRecvAction:" destination="Q1M-Zu-uBB" eventType="touchUpInside" id="qDt-ik-5EX"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98h-q1-dRy" userLabel="heart_recv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98h-q1-dRy" userLabel="randombox">
                                         <rect key="frame" x="266" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="2Z2-Ak-5Bl"/>
@@ -338,7 +338,7 @@
                                         </constraints>
                                         <state key="normal" image="icon_main_randombox"/>
                                         <connections>
-                                            <action selector="HeartRecvAction:" destination="Q1M-Zu-uBB" eventType="touchUpInside" id="ueJ-7d-aiP"/>
+                                            <action selector="RandomBoxAction:" destination="Q1M-Zu-uBB" eventType="touchUpInside" id="ZHB-hm-POF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx9-SU-Tao" userLabel="mypage">
@@ -1703,6 +1703,15 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1l0-jN-GGb" userLabel="back">
+                                        <rect key="frame" x="171" y="9" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="etc_icon_back"/>
+                                        <connections>
+                                            <action selector="Back:" destination="E5A-hN-taa" eventType="touchUpInside" id="Jap-4X-8Xu"/>
+                                            <action selector="Back:" destination="wdl-m7-LSo" eventType="touchUpInside" id="hcU-Hg-oyh"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="톡킹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPP-J2-cQg">
                                         <rect key="frame" x="12" y="12" width="53" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1735,6 +1744,9 @@
                                         <rect key="frame" x="72" y="13" width="96" height="96"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="etc_icon_thumbnail"/>
+                                        <connections>
+                                            <action selector="fff:" destination="wdl-m7-LSo" eventType="touchUpInside" id="OqP-r3-jrV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

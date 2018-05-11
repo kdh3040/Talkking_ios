@@ -17,6 +17,8 @@ class UIViewController_Home : UIViewController
     @IBAction func RandomBoxAction(_ sender: Any) {
     }
     @IBAction func HeartRecvAction(_ sender: Any) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "INPUT_PAGE") as! UIViewController_InputPage
+        self.present(page, animated: true)
     }
     @IBAction func MyPageAction(_ sender: Any) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "MY_USER_PAGE") as! UIViewController_MyUserPage
