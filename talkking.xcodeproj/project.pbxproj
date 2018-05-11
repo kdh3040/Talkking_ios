@@ -72,6 +72,14 @@
 		9318F99920907E9100E08F7D /* emerald.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99820907E9100E08F7D /* emerald.png */; };
 		9318F99B20907F1D00E08F7D /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99A20907F1D00E08F7D /* heart.png */; };
 		9353D9A820A58AEC006E4FAF /* UIViewController_NoticePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9A720A58AEC006E4FAF /* UIViewController_NoticePage.swift */; };
+		9353D9B120A5B6E3006E4FAF /* charge_500.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AA20A5B6DF006E4FAF /* charge_500.png */; };
+		9353D9B220A5B6E3006E4FAF /* charge_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AB20A5B6DF006E4FAF /* charge_30.png */; };
+		9353D9B320A5B6E3006E4FAF /* charge_300.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AC20A5B6E0006E4FAF /* charge_300.png */; };
+		9353D9B420A5B6E3006E4FAF /* charge_50.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AD20A5B6E1006E4FAF /* charge_50.png */; };
+		9353D9B520A5B6E3006E4FAF /* charge_1000.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AE20A5B6E1006E4FAF /* charge_1000.png */; };
+		9353D9B620A5B6E3006E4FAF /* charge_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AF20A5B6E2006E4FAF /* charge_100.png */; };
+		9353D9B720A5B6E3006E4FAF /* charge_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9B020A5B6E3006E4FAF /* charge_10.png */; };
+		9353D9BB20A5BAC3006E4FAF /* UIViewController_ChargePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9BA20A5BAC3006E4FAF /* UIViewController_ChargePage.swift */; };
 		93A4C4DA20A05EF300066594 /* etc_icon_notice.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4D920A05EF300066594 /* etc_icon_notice.png */; };
 		93A4C4DD20A0615B00066594 /* etc_icon_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4DB20A0615A00066594 /* etc_icon_setting.png */; };
 		93A4C4DE20A0615B00066594 /* etc_icon_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4DC20A0615B00066594 /* etc_icon_thumbnail.png */; };
@@ -206,6 +214,14 @@
 		9318F99820907E9100E08F7D /* emerald.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emerald.png; sourceTree = "<group>"; };
 		9318F99A20907F1D00E08F7D /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		9353D9A720A58AEC006E4FAF /* UIViewController_NoticePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_NoticePage.swift; sourceTree = "<group>"; };
+		9353D9AA20A5B6DF006E4FAF /* charge_500.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_500.png; sourceTree = "<group>"; };
+		9353D9AB20A5B6DF006E4FAF /* charge_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_30.png; sourceTree = "<group>"; };
+		9353D9AC20A5B6E0006E4FAF /* charge_300.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_300.png; sourceTree = "<group>"; };
+		9353D9AD20A5B6E1006E4FAF /* charge_50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_50.png; sourceTree = "<group>"; };
+		9353D9AE20A5B6E1006E4FAF /* charge_1000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_1000.png; sourceTree = "<group>"; };
+		9353D9AF20A5B6E2006E4FAF /* charge_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_100.png; sourceTree = "<group>"; };
+		9353D9B020A5B6E3006E4FAF /* charge_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_10.png; sourceTree = "<group>"; };
+		9353D9BA20A5BAC3006E4FAF /* UIViewController_ChargePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_ChargePage.swift; sourceTree = "<group>"; };
 		93A4C4D920A05EF300066594 /* etc_icon_notice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_notice.png; sourceTree = "<group>"; };
 		93A4C4DB20A0615A00066594 /* etc_icon_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_setting.png; sourceTree = "<group>"; };
 		93A4C4DC20A0615B00066594 /* etc_icon_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_thumbnail.png; sourceTree = "<group>"; };
@@ -368,6 +384,7 @@
 		9318F92E20903E0300E08F7D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				9353D9A920A5B6C9006E4FAF /* charge */,
 				9318F99E2090815700E08F7D /* etc */,
 				9318F99D20907FBD00E08F7D /* icon_item */,
 				9318F99C20907F3200E08F7D /* fan_rank */,
@@ -505,6 +522,20 @@
 			path = etc;
 			sourceTree = "<group>";
 		};
+		9353D9A920A5B6C9006E4FAF /* charge */ = {
+			isa = PBXGroup;
+			children = (
+				9353D9B020A5B6E3006E4FAF /* charge_10.png */,
+				9353D9AB20A5B6DF006E4FAF /* charge_30.png */,
+				9353D9AD20A5B6E1006E4FAF /* charge_50.png */,
+				9353D9AF20A5B6E2006E4FAF /* charge_100.png */,
+				9353D9AC20A5B6E0006E4FAF /* charge_300.png */,
+				9353D9AA20A5B6DF006E4FAF /* charge_500.png */,
+				9353D9AE20A5B6E1006E4FAF /* charge_1000.png */,
+			);
+			path = charge;
+			sourceTree = "<group>";
+		};
 		93E766402099B9B7005455A8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +580,7 @@
 				930450E420A580EB005E37FB /* UIViewController_NoticeListPage.swift */,
 				930450E820A58899005E37FB /* UITableViewCell_Notice.swift */,
 				9353D9A720A58AEC006E4FAF /* UIViewController_NoticePage.swift */,
+				9353D9BA20A5BAC3006E4FAF /* UIViewController_ChargePage.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -699,6 +731,8 @@
 				9318F98420907E0500E08F7D /* fan_rank_big_3.png in Resources */,
 				930450E020A55F1C005E37FB /* etc_check_empty.png in Resources */,
 				9318F99320907E5C00E08F7D /* amethyst.png in Resources */,
+				9353D9B420A5B6E3006E4FAF /* charge_50.png in Resources */,
+				9353D9B120A5B6E3006E4FAF /* charge_500.png in Resources */,
 				9318F95620903E0300E08F7D /* rank_vip.png in Resources */,
 				9318F95420903E0300E08F7D /* rank_diamond.png in Resources */,
 				93A4C4E620A1E0A200066594 /* etc_icon_main.png in Resources */,
@@ -708,6 +742,9 @@
 				93A4C4DE20A0615B00066594 /* etc_icon_thumbnail.png in Resources */,
 				9318F98B20907E2E00E08F7D /* pearl.png in Resources */,
 				93A4C4EE20A1E1CF00066594 /* icon_main_randombox.png in Resources */,
+				9353D9B720A5B6E3006E4FAF /* charge_10.png in Resources */,
+				9353D9B520A5B6E3006E4FAF /* charge_1000.png in Resources */,
+				9353D9B320A5B6E3006E4FAF /* charge_300.png in Resources */,
 				9318F98D20907E3500E08F7D /* opal.png in Resources */,
 				9318F99920907E9100E08F7D /* emerald.png in Resources */,
 				9318F95320903E0300E08F7D /* rank_bronze.png in Resources */,
@@ -716,10 +753,12 @@
 				93A4C4DA20A05EF300066594 /* etc_icon_notice.png in Resources */,
 				93E7664D2099F0CA005455A8 /* main_rank_3.png in Resources */,
 				9318F95E20903E0300E08F7D /* favor_select.png in Resources */,
+				9353D9B220A5B6E3006E4FAF /* charge_30.png in Resources */,
 				9318F99120907E5000E08F7D /* sapphire.png in Resources */,
 				9318F95520903E0300E08F7D /* rank_vvip.png in Resources */,
 				9318F98220907E0500E08F7D /* fan_rank_big_2.png in Resources */,
 				93E76666209C5BA6005455A8 /* etc_icon_chat.png in Resources */,
+				9353D9B620A5B6E3006E4FAF /* charge_100.png in Resources */,
 				93E7665C209C221D005455A8 /* etc_itcon_board_write.png in Resources */,
 				3D87315E2092077300022D90 /* GoogleService-Info.plist in Resources */,
 				930450E120A55F1C005E37FB /* etc_check_full.png in Resources */,
@@ -925,6 +964,7 @@
 				9318F96A20903E0300E08F7D /* DataMgr.swift in Sources */,
 				93E766332099B7F3005455A8 /* UIViewController_Home_Public.swift in Sources */,
 				93E7665A209AF11C005455A8 /* UIViewController_UserPage.swift in Sources */,
+				9353D9BB20A5BAC3006E4FAF /* UIViewController_ChargePage.swift in Sources */,
 				93A4C4E220A06A0F00066594 /* UIViewController_MyUserPage.swift in Sources */,
 				9318F97920906D0A00E08F7D /* UITableViewCell_Board.swift in Sources */,
 				9318F96F2090499F00E08F7D /* CommonUIFunc.swift in Sources */,

@@ -31,6 +31,8 @@ class UIViewController_MyUserPage : UIViewController
     }
     
     @IBAction func CoinCharge(_ sender: Any) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "CHARGE_PAGE") as! UIViewController_ChargePage
+        self.present(page, animated: true)
     }
     
     @IBOutlet var Coin: UILabel!

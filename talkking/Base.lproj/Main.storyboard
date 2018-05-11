@@ -2192,6 +2192,298 @@
             </objects>
             <point key="canvasLocation" x="3845.5999999999999" y="-1934.4827586206898"/>
         </scene>
+        <!--충전-->
+        <scene sceneID="EBw-KY-kvx">
+            <objects>
+                <viewController storyboardIdentifier="CHARGE_PAGE" id="lM0-RY-ask" userLabel="충전" customClass="UIViewController_ChargePage" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oz0-CB-vrS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="beS-G9-6X2" userLabel="TopBar">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QJ-fF-tg5" userLabel="back">
+                                        <rect key="frame" x="8" y="10" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="etc_icon_back"/>
+                                        <connections>
+                                            <action selector="Back:" destination="lM0-RY-ask" eventType="touchUpInside" id="18X-QJ-nfq"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="충전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tm-OO-caq" userLabel="충전">
+                                        <rect key="frame" x="43" y="12" width="39" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.46274509800000002" green="0.42745098040000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OJX-yv-pyv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTw-xF-l83" userLabel="MyCoin">
+                                <rect key="frame" x="0.0" y="70" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAm-KD-dHP">
+                                        <rect key="frame" x="157" y="15" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1iU-CB-U8R"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="etc_icon_coin" translatesAutoresizingMaskIntoConstraints="NO" id="HLM-JO-eFV">
+                                        <rect key="frame" x="109" y="10" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="dAK-KX-dpt"/>
+                                            <constraint firstAttribute="width" constant="40" id="rEN-uZ-Tbd"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HLM-JO-eFV" firstAttribute="top" secondItem="aTw-xF-l83" secondAttribute="top" constant="10" id="Pz9-qy-ozX"/>
+                                    <constraint firstItem="KAm-KD-dHP" firstAttribute="centerX" secondItem="aTw-xF-l83" secondAttribute="centerX" id="ROo-bk-HHR"/>
+                                    <constraint firstAttribute="height" constant="60" id="RrL-gz-MYM"/>
+                                    <constraint firstAttribute="width" constant="375" id="bcN-Oz-WVx"/>
+                                    <constraint firstItem="KAm-KD-dHP" firstAttribute="top" secondItem="aTw-xF-l83" secondAttribute="top" constant="15" id="eFj-Oh-8il"/>
+                                    <constraint firstItem="KAm-KD-dHP" firstAttribute="leading" secondItem="HLM-JO-eFV" secondAttribute="trailing" constant="8" id="hpz-11-U36"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3e-Xa-ibj" userLabel="Ad">
+                                <rect key="frame" x="0.0" y="130" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-UM-jU1">
+                                        <rect key="frame" x="114" y="0.0" width="147" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="광고">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="FreeAd_1:" destination="lM0-RY-ask" eventType="touchUpInside" id="Oam-w7-CP8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="C0T-EF-ADf"/>
+                                    <constraint firstAttribute="height" constant="60" id="bjN-zr-qpq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SE6-3G-EKk" userLabel="Charge_1">
+                                <rect key="frame" x="0.0" y="190" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_10" translatesAutoresizingMaskIntoConstraints="NO" id="BmC-TV-Emt">
+                                        <rect key="frame" x="8" y="4" width="295" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lce-8d-D46">
+                                        <rect key="frame" x="289" y="4" width="78" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="1000원">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Charge_1:" destination="lM0-RY-ask" eventType="touchUpInside" id="yqr-Uv-lLS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="S95-m8-TYv"/>
+                                    <constraint firstAttribute="width" constant="375" id="edg-X2-wsu"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7nU-Yg-OFj" userLabel="Charge_2">
+                                <rect key="frame" x="0.0" y="250" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_30" translatesAutoresizingMaskIntoConstraints="NO" id="HMv-uP-B89">
+                                        <rect key="frame" x="8" y="4" width="295" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTw-4E-GFu">
+                                        <rect key="frame" x="289" y="4" width="78" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="2900원">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Charge_2:" destination="lM0-RY-ask" eventType="touchUpInside" id="6bW-uM-Ejk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="TyI-LJ-VZt"/>
+                                    <constraint firstAttribute="height" constant="60" id="X9t-O8-5kh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EnL-Oy-1Cn" userLabel="Charge_3">
+                                <rect key="frame" x="0.0" y="310" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_50" translatesAutoresizingMaskIntoConstraints="NO" id="bzv-dC-aHP">
+                                        <rect key="frame" x="8" y="4" width="295" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ip8-cA-l64">
+                                        <rect key="frame" x="289" y="4" width="78" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="4900원">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Charge_3:" destination="lM0-RY-ask" eventType="touchUpInside" id="ckH-6f-SZu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="DPY-DG-tH0"/>
+                                    <constraint firstAttribute="width" constant="375" id="huf-gr-zqf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7q-xz-Uxs" userLabel="Charge_4">
+                                <rect key="frame" x="0.0" y="370" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_100" translatesAutoresizingMaskIntoConstraints="NO" id="P3p-Wa-dz1">
+                                        <rect key="frame" x="8" y="4" width="295" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUq-iQ-C95">
+                                        <rect key="frame" x="289" y="4" width="78" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="9900원">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Charge_4:" destination="lM0-RY-ask" eventType="touchUpInside" id="GrD-fK-fez"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5zl-3h-4dv"/>
+                                    <constraint firstAttribute="width" constant="375" id="9BT-IV-KfL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lG7-iw-p5g" userLabel="Charge_5">
+                                <rect key="frame" x="0.0" y="430" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_300" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-5c-a2y">
+                                        <rect key="frame" x="8" y="4" width="295" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKb-IT-iGd">
+                                        <rect key="frame" x="289" y="4" width="78" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="29000원">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Charge_5:" destination="lM0-RY-ask" eventType="touchUpInside" id="xZu-Sd-zGm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="n6t-jk-UI8"/>
+                                    <constraint firstAttribute="width" constant="375" id="v9U-zA-6qR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6P-kl-WxY" userLabel="Charge_6">
+                                <rect key="frame" x="0.0" y="490" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_500" translatesAutoresizingMaskIntoConstraints="NO" id="gxf-CX-JaR">
+                                        <rect key="frame" x="8" y="4" width="295" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ne-Hv-LHf">
+                                        <rect key="frame" x="289" y="4" width="78" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="49000원">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Charge_6:" destination="lM0-RY-ask" eventType="touchUpInside" id="AuF-b4-9be"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6d3-Lr-iPp"/>
+                                    <constraint firstAttribute="width" constant="375" id="mfL-g7-PsF"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5u2-3D-xcq" userLabel="Charge_7">
+                                <rect key="frame" x="0.0" y="550" width="375" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charge_1000" translatesAutoresizingMaskIntoConstraints="NO" id="Epl-e7-oE6">
+                                        <rect key="frame" x="8" y="4" width="295" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGf-Xa-I7O">
+                                        <rect key="frame" x="289" y="4" width="78" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="99000원">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Charge_7:" destination="lM0-RY-ask" eventType="touchUpInside" id="Yv4-mx-hyL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GeF-Sq-7Rc"/>
+                                    <constraint firstAttribute="width" constant="375" id="utt-ef-lwS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EnL-Oy-1Cn" firstAttribute="centerX" secondItem="Oz0-CB-vrS" secondAttribute="centerX" id="5a8-Y9-jua"/>
+                            <constraint firstItem="lG7-iw-p5g" firstAttribute="top" secondItem="I7q-xz-Uxs" secondAttribute="bottom" id="7ww-2F-AdK"/>
+                            <constraint firstItem="e3e-Xa-ibj" firstAttribute="centerX" secondItem="Oz0-CB-vrS" secondAttribute="centerX" id="Dca-Eh-5Wy"/>
+                            <constraint firstItem="a6P-kl-WxY" firstAttribute="top" secondItem="lG7-iw-p5g" secondAttribute="bottom" id="E05-Dq-cr4"/>
+                            <constraint firstItem="I7q-xz-Uxs" firstAttribute="top" secondItem="EnL-Oy-1Cn" secondAttribute="bottom" id="Kq7-xr-yc6"/>
+                            <constraint firstItem="e3e-Xa-ibj" firstAttribute="top" secondItem="aTw-xF-l83" secondAttribute="bottom" id="PkD-Q3-6jQ"/>
+                            <constraint firstItem="EnL-Oy-1Cn" firstAttribute="top" secondItem="7nU-Yg-OFj" secondAttribute="bottom" id="Sik-qj-aca"/>
+                            <constraint firstItem="beS-G9-6X2" firstAttribute="leading" secondItem="3mR-59-2fu" secondAttribute="leading" id="UDg-mW-hpJ"/>
+                            <constraint firstItem="5u2-3D-xcq" firstAttribute="centerX" secondItem="Oz0-CB-vrS" secondAttribute="centerX" id="VhF-xC-zk2"/>
+                            <constraint firstItem="beS-G9-6X2" firstAttribute="trailing" secondItem="3mR-59-2fu" secondAttribute="trailing" id="XMB-xi-0XZ"/>
+                            <constraint firstItem="SE6-3G-EKk" firstAttribute="top" secondItem="e3e-Xa-ibj" secondAttribute="bottom" id="bJa-Iz-R1W"/>
+                            <constraint firstItem="beS-G9-6X2" firstAttribute="top" secondItem="3mR-59-2fu" secondAttribute="top" id="bUa-ug-Hj3"/>
+                            <constraint firstItem="a6P-kl-WxY" firstAttribute="centerX" secondItem="Oz0-CB-vrS" secondAttribute="centerX" id="dib-RX-CJ7"/>
+                            <constraint firstItem="SE6-3G-EKk" firstAttribute="centerX" secondItem="Oz0-CB-vrS" secondAttribute="centerX" id="fpw-JB-IxP"/>
+                            <constraint firstItem="lG7-iw-p5g" firstAttribute="centerX" secondItem="Oz0-CB-vrS" secondAttribute="centerX" id="hhj-dD-r8o"/>
+                            <constraint firstItem="5u2-3D-xcq" firstAttribute="top" secondItem="a6P-kl-WxY" secondAttribute="bottom" id="hp3-zi-nG9"/>
+                            <constraint firstItem="7nU-Yg-OFj" firstAttribute="centerX" secondItem="Oz0-CB-vrS" secondAttribute="centerX" id="hzw-4B-sc8"/>
+                            <constraint firstItem="aTw-xF-l83" firstAttribute="centerX" secondItem="Oz0-CB-vrS" secondAttribute="centerX" id="lp5-9g-Usn"/>
+                            <constraint firstItem="7nU-Yg-OFj" firstAttribute="top" secondItem="SE6-3G-EKk" secondAttribute="bottom" id="p19-lr-RAu"/>
+                            <constraint firstItem="aTw-xF-l83" firstAttribute="top" secondItem="beS-G9-6X2" secondAttribute="bottom" id="ptN-yW-LJa"/>
+                            <constraint firstItem="I7q-xz-Uxs" firstAttribute="centerX" secondItem="Oz0-CB-vrS" secondAttribute="centerX" id="u2M-u5-WY9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3mR-59-2fu"/>
+                    </view>
+                    <connections>
+                        <outlet property="MyCoin" destination="KAm-KD-dHP" id="7ck-Ff-bTg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Rl-CC-N1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4573.6000000000004" y="-1928.1859070464768"/>
+        </scene>
         <!--공지-->
         <scene sceneID="euE-TH-aDV">
             <objects>
@@ -2243,6 +2535,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="charge_10" width="342" height="59"/>
+        <image name="charge_100" width="342" height="59"/>
+        <image name="charge_1000" width="342" height="59"/>
+        <image name="charge_30" width="342" height="59"/>
+        <image name="charge_300" width="342" height="59"/>
+        <image name="charge_50" width="342" height="59"/>
+        <image name="charge_500" width="342" height="59"/>
         <image name="etc_board_report" width="30" height="30"/>
         <image name="etc_check_empty" width="30" height="30"/>
         <image name="etc_fan_white" width="48" height="48"/>
