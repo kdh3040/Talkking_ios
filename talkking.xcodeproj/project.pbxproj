@@ -19,6 +19,9 @@
 		3D87316220948D1A00022D90 /* FanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87316120948D1A00022D90 /* FanData.swift */; };
 		3DA635B72091D2D800081F3B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 3DA635B62091D2D800081F3B /* Podfile */; };
 		75CA69A90FD45DBA81B64F20 /* Pods_talkkingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42D7350E03D89B9AE8A9F90 /* Pods_talkkingUITests.framework */; };
+		930450E020A55F1C005E37FB /* etc_check_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 930450DE20A55F17005E37FB /* etc_check_empty.png */; };
+		930450E120A55F1C005E37FB /* etc_check_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 930450DF20A55F18005E37FB /* etc_check_full.png */; };
+		930450E320A56273005E37FB /* UIViewController_ProvisionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930450E220A56273005E37FB /* UIViewController_ProvisionPage.swift */; };
 		9318F95320903E0300E08F7D /* rank_bronze.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F93020903E0300E08F7D /* rank_bronze.png */; };
 		9318F95420903E0300E08F7D /* rank_diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F93120903E0300E08F7D /* rank_diamond.png */; };
 		9318F95520903E0300E08F7D /* rank_vvip.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F93220903E0300E08F7D /* rank_vvip.png */; };
@@ -146,6 +149,9 @@
 		3DA635B62091D2D800081F3B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4CE62041C31A9797ACD5992D /* Pods_talkking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talkking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53352310F5C94E0F2849069E /* Pods-talkkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkkingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkkingTests/Pods-talkkingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		930450DE20A55F17005E37FB /* etc_check_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_check_empty.png; sourceTree = "<group>"; };
+		930450DF20A55F18005E37FB /* etc_check_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_check_full.png; sourceTree = "<group>"; };
+		930450E220A56273005E37FB /* UIViewController_ProvisionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_ProvisionPage.swift; sourceTree = "<group>"; };
 		9318F93020903E0300E08F7D /* rank_bronze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rank_bronze.png; sourceTree = "<group>"; };
 		9318F93120903E0300E08F7D /* rank_diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rank_diamond.png; sourceTree = "<group>"; };
 		9318F93220903E0300E08F7D /* rank_vvip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rank_vvip.png; sourceTree = "<group>"; };
@@ -460,6 +466,8 @@
 		9318F99E2090815700E08F7D /* etc */ = {
 			isa = PBXGroup;
 			children = (
+				930450DE20A55F17005E37FB /* etc_check_empty.png */,
+				930450DF20A55F18005E37FB /* etc_check_full.png */,
 				93A4C4E520A1E0A100066594 /* etc_icon_main.png */,
 				93A4C4DF20A0670C00066594 /* etc_icon_coin.png */,
 				93A4C4DC20A0615B00066594 /* etc_icon_thumbnail.png */,
@@ -528,6 +536,7 @@
 				93E76659209AF11C005455A8 /* UIViewController_UserPage.swift */,
 				93A4C4E120A06A0F00066594 /* UIViewController_MyUserPage.swift */,
 				93A4C4E320A07F9A00066594 /* UIViewController_InputPage.swift */,
+				930450E220A56273005E37FB /* UIViewController_ProvisionPage.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -675,6 +684,7 @@
 				93E52459209583CB009E303A /* report.png in Resources */,
 				9318F95720903E0300E08F7D /* rank_gold.png in Resources */,
 				9318F98420907E0500E08F7D /* fan_rank_big_3.png in Resources */,
+				930450E020A55F1C005E37FB /* etc_check_empty.png in Resources */,
 				9318F99320907E5C00E08F7D /* amethyst.png in Resources */,
 				9318F95620903E0300E08F7D /* rank_vip.png in Resources */,
 				9318F95420903E0300E08F7D /* rank_diamond.png in Resources */,
@@ -699,6 +709,7 @@
 				93E76666209C5BA6005455A8 /* etc_icon_chat.png in Resources */,
 				93E7665C209C221D005455A8 /* etc_itcon_board_write.png in Resources */,
 				3D87315E2092077300022D90 /* GoogleService-Info.plist in Resources */,
+				930450E120A55F1C005E37FB /* etc_check_full.png in Resources */,
 				93E524552092EDA0009E303A /* Assets.xcassets in Resources */,
 				93A4C4E020A0670C00066594 /* etc_icon_coin.png in Resources */,
 				9318F98120907E0500E08F7D /* fan_rank_1.png in Resources */,
@@ -891,6 +902,7 @@
 				3D5091BF208DF92000DA8C8F /* ViewController.swift in Sources */,
 				9318F96720903E0300E08F7D /* UserData.swift in Sources */,
 				3D5091BD208DF92000DA8C8F /* AppDelegate.swift in Sources */,
+				930450E320A56273005E37FB /* UIViewController_ProvisionPage.swift in Sources */,
 				93E7664F2099F5B1005455A8 /* UIViewController_Home_Hot.swift in Sources */,
 				9318F96620903E0300E08F7D /* MyUserData.swift in Sources */,
 				9318F96420903E0300E08F7D /* UIViewController_Favor.swift in Sources */,
