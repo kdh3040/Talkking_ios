@@ -11,25 +11,29 @@ import UIKit
 
 class UIViewController_MyUserPage : UIViewController
 {
-    @IBAction func Back(_ sender: Any) {
+    @IBAction func BackAction(_ sender: Any) {
         self.dismiss(animated: true)
     }
     @IBOutlet var UserPageLabel: UILabel!
     
     @IBOutlet var Thumbnail: UIButton!
     @IBAction func Notice(_ sender: Any) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "NOTICE_LIST_PAGE") as! UIViewController_NoticeListPage
+        self.present(page, animated: true)
     }
     @IBOutlet var Name: UILabel!
     @IBOutlet var Grade: UIButton!
     @IBAction func GradeAction(_ sender: Any) {
     }
-    @IBAction func ProfileSettinf(_ sender: Any) {
+    @IBAction func ProfileSetting(_ sender: Any) {
     }
-    @IBAction func SettinfAction(_ sender: Any) {
+    @IBAction func SettingAction(_ sender: Any) {
     }
-    @IBOutlet var Coin: UILabel!
+    
     @IBAction func CoinCharge(_ sender: Any) {
     }
+    
+    @IBOutlet var Coin: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
