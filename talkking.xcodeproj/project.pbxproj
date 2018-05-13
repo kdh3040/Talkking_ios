@@ -14,6 +14,7 @@
 		3D5091C7208DF92100DA8C8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D5091C5208DF92100DA8C8F /* LaunchScreen.storyboard */; };
 		3D5091D2208DF92200DA8C8F /* talkkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5091D1208DF92200DA8C8F /* talkkingTests.swift */; };
 		3D5091DD208DF92200DA8C8F /* talkkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5091DC208DF92200DA8C8F /* talkkingUITests.swift */; };
+		3D56890D20A816820041D8AD /* SendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56890C20A816820041D8AD /* SendData.swift */; };
 		3D87315E2092077300022D90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D87315D2092077300022D90 /* GoogleService-Info.plist */; };
 		3D87316020930D3400022D90 /* FireBaseFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87315F20930D3400022D90 /* FireBaseFunc.swift */; };
 		3D87316220948D1A00022D90 /* FanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87316120948D1A00022D90 /* FanData.swift */; };
@@ -155,6 +156,7 @@
 		3D5091D8208DF92200DA8C8F /* talkkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = talkkingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5091DC208DF92200DA8C8F /* talkkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talkkingUITests.swift; sourceTree = "<group>"; };
 		3D5091DE208DF92200DA8C8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D56890C20A816820041D8AD /* SendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendData.swift; sourceTree = "<group>"; };
 		3D87315D2092077300022D90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3D87315F20930D3400022D90 /* FireBaseFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseFunc.swift; sourceTree = "<group>"; };
 		3D87316120948D1A00022D90 /* FanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanData.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				9318F94A20903E0300E08F7D /* DataMgr.swift */,
 				3D87315F20930D3400022D90 /* FireBaseFunc.swift */,
 				3D87316120948D1A00022D90 /* FanData.swift */,
+				3D56890C20A816820041D8AD /* SendData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -971,6 +974,7 @@
 				93E7662D20996B8A005455A8 /* UIViewController_Home.swift in Sources */,
 				93E766472099BA94005455A8 /* UIViewCollectionCell_Home_New.swift in Sources */,
 				9318F96920903E0300E08F7D /* ChatData.swift in Sources */,
+				3D56890D20A816820041D8AD /* SendData.swift in Sources */,
 				93E7663B2099B852005455A8 /* UIViewController_Home_Near.swift in Sources */,
 				93E5245320921870009E303A /* UIViewController_Fan.swift in Sources */,
 				9318F96320903E0300E08F7D /* UITableViewCell_Favor.swift in Sources */,

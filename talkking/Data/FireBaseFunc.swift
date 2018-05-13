@@ -30,15 +30,11 @@ class FireBaseFunc
            // tempData  = nil
             
             if let tempMyIdx = tempData {
+                
                 self.LoadUserData(index: tempMyIdx, Mydata: true)
-                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
-                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
-                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
-                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3])
-                
+ 
                 self.LoadBoardDataList()
-                
-                
+            
             }
             else
             {
@@ -80,32 +76,83 @@ class FireBaseFunc
     
     public func LoadUserData(index : String, Mydata : Bool) //-> UserData?
     {
-        ref.child("User").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+        
+        ref.child("GenderList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
             
-            if let tempData = snapshot.value as? NSDictionary
-            {
-                let retValue : UserData = UserData.init(tempData: tempData)
+            var tempGender = snapshot.value as? String
+            
+            // tempData  = nil
+            
+            if let tempUserGender = tempGender {
                 
-                DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-                
-                if Mydata
-                {
-                    DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
-                }
+         
+                    if tempUserGender == "남자"
+                    {
+                        self.ref.child("Users").child("Man").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+                            
+                            if let tempData = snapshot.value as? NSDictionary
+                            {
+                                let retValue : UserData = UserData.init(tempData: tempData)
+                                
+                                DataMgr.Instance.SetCachingUserDataList(userData: retValue)
+                                
+                                if Mydata
+                                {
+                                    DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                                    
+                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
+                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
+                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
+                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3])
+                                }
+                            }
+                        }){ (error) in
+                            print(error.localizedDescription)
+                        }
+                    }
+                    else
+                    {
+                        self.ref.child("Users").child("Woman").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+                            
+                            if let tempData = snapshot.value as? NSDictionary
+                            {
+                                let retValue : UserData = UserData.init(tempData: tempData)
+                                
+                                DataMgr.Instance.SetCachingUserDataList(userData: retValue)
+                                
+                                if Mydata
+                                {
+                                    DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                                    
+                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
+                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
+                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
+                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3])
+                                }
+                                
+                                
+                            }
+                        }){ (error) in
+                            print(error.localizedDescription)
+                        }
+                    }
             }
+            
         }){ (error) in
             print(error.localizedDescription)
         }
-        
         //return nil
     }
     
     
     public func LoadUserDataList(sortRef : String) //-> UserData?
     {
-        ref.child("User").queryOrdered(byChild: sortRef).queryLimited(toFirst: UInt(CommonData.LOAD_USERDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
-    
-            var viewIdx : Int = 0
+        
+        if DataMgr.Instance.MyData!.Sex == SEX_TYPE.MALE
+        {
+            ref.child("Users").child("Woman").queryOrdered(byChild: sortRef).queryLimited(toFirst: UInt(CommonData.LOAD_USERDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
+                
+                var viewIdx : Int = 0
                 for childSnapshot in snapshot.children
                 {
                     
@@ -125,20 +172,62 @@ class FireBaseFunc
                     }
                     else if sortRef == CommonData.HOME_VIEW_REF[2]
                     {
-                          DataMgr.Instance.SetUserDataList_Near(ViewIndex: viewIdx, userIndex: retValue.Index)
+                        DataMgr.Instance.SetUserDataList_Near(ViewIndex: viewIdx, userIndex: retValue.Index)
                     }
                     else if sortRef == CommonData.HOME_VIEW_REF[3]
                     {
-                          DataMgr.Instance.SetUserDataList_New(ViewIndex: viewIdx, userIndex: retValue.Index)
+                        DataMgr.Instance.SetUserDataList_New(ViewIndex: viewIdx, userIndex: retValue.Index)
                     }
                     
                     viewIdx += 1
                 }
-           
+                
                 
             }){ (error) in
-            print(error.localizedDescription)
+                print(error.localizedDescription)
             }
+        }
+        else
+        {
+            ref.child("Users").child("Man").queryOrdered(byChild: sortRef).queryLimited(toFirst: UInt(CommonData.LOAD_USERDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
+                
+                var viewIdx : Int = 0
+                for childSnapshot in snapshot.children
+                {
+                    
+                    let tempChildData = childSnapshot as! DataSnapshot
+                    let tempData = tempChildData.value as? NSDictionary
+                    let retValue : UserData = UserData.init(tempData: tempData!)
+                    
+                    DataMgr.Instance.SetCachingUserDataList(userData: retValue)
+                    
+                    if sortRef == CommonData.HOME_VIEW_REF[0]
+                    {
+                        DataMgr.Instance.SetUserDataList_RecvHeart(ViewIndex : viewIdx, userIndex: retValue.Index)
+                    }
+                    else if sortRef == CommonData.HOME_VIEW_REF[1]
+                    {
+                        DataMgr.Instance.SetUserDataList_FanCount(ViewIndex: viewIdx, userIndex: retValue.Index)
+                    }
+                    else if sortRef == CommonData.HOME_VIEW_REF[2]
+                    {
+                        DataMgr.Instance.SetUserDataList_Near(ViewIndex: viewIdx, userIndex: retValue.Index)
+                    }
+                    else if sortRef == CommonData.HOME_VIEW_REF[3]
+                    {
+                        DataMgr.Instance.SetUserDataList_New(ViewIndex: viewIdx, userIndex: retValue.Index)
+                    }
+                    
+                    viewIdx += 1
+                }
+                
+                
+            }){ (error) in
+                print(error.localizedDescription)
+            }
+        }
+        
+       
     
         //return nil
     }
