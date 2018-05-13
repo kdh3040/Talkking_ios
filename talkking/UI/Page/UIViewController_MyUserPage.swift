@@ -43,7 +43,7 @@ class UIViewController_MyUserPage : UIViewController
         if let myData = DataMgr.Instance.MyData
         {
             UserPageLabel.text = String.init(format: "%@의 페이지", myData.Name)
-            CommonUIFunc.Instance.SetThumbnail(button: Thumbnail, url: URL(string: myData.GetMainThumbnail())!, circle: true)
+            CommonUIFunc.Instance.SetThumbnail(button: Thumbnail, url: URL(string: myData.GetMainThumbnail())!, circle: false)
             
             CommonUIFunc.Instance.SetUserName(label: Name, userData: myData)
             Grade.setImage(UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:myData.Grade)), for: .normal)

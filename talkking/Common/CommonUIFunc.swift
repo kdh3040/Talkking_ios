@@ -132,7 +132,7 @@ class CommonUIFunc{
     public func SetThumbnail(button : UIButton, url : Resource, circle : Bool)
     {
         let buttonImage : UIImageView = UIImageView.init()
-        
+ 
         buttonImage.kf.setImage(with: url,
                               placeholder: nil,
                               options: [.transition(.fade(1))],
@@ -141,7 +141,7 @@ class CommonUIFunc{
         
         SetDefaultThumbnail(imageView : buttonImage, circle : circle)
         
-        button.setImage(buttonImage.image, for: UIControlState.normal)
+        button.setBackgroundImage(buttonImage.image, for: UIControlState.normal)
     }
     
     public func SetThumbnail(imageView : UIImageView, url : Resource, circle : Bool)
@@ -176,6 +176,12 @@ class CommonUIFunc{
         {
             label.textColor = GetMaleColor()
         }
-        
+    }
+    
+    public func PushUserPage(userData:UserData, viewController:UIViewController)
+    {
+        let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.SetUserData(userData: userData)
+        viewController.present(page, animated: true)
     }
 }

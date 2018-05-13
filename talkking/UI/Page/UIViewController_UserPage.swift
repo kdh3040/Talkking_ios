@@ -35,6 +35,10 @@ class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UI
     @IBAction func ShareAction(_ sender: Any) {
     }
     @IBAction func HomeAction(_ sender: Any) {
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+        
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "HOME_PAGE") as! UIViewController_Home
+        self.present(page, animated: true)
     }
 
     @IBOutlet var FanListView: UICollectionView!
@@ -54,7 +58,7 @@ class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UI
         
         if let pageUserData = PageUserData
         {
-            UserNamePage.text = pageUserData.Name
+            UserNamePage.text = String.init(format: "%@의 페이지", pageUserData.Name)
             CommonUIFunc.Instance.SetThumbnail(button: Thumbnail, url: URL(string: pageUserData.GetMainThumbnail())!, circle: false)
             Distance.text = CommonUIFunc.Instance.ConvertNumberFormatDouble(count: pageUserData.Distance, addString: "Km")
             CommonUIFunc.Instance.SetUserName(label: Name, userData:pageUserData)
@@ -68,11 +72,19 @@ class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //UIcollectionviewcell * cell = collectionview.de "cell"
         
-        let cell:UIViewCollectionCell_Home_Hot = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_Hot
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_UserPage_Fan
         
-        /*cell.SetHomeHotData(userIndex: DataMgr.Instance.GetUserDataList_Near(index: indexPath.row))*/
+        /*if let pageUserData = PageUserData
+        {
+            let fanIdx = pageUserData.FanDataList[indexPath.row].Idx
+            cell.SetUserPageFanData(userData: DataMgr.Instance.GetCachingUserDataList(index: fanIdx)!)
+        }*/
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        // 팬 페이지로 이동
     }
 }

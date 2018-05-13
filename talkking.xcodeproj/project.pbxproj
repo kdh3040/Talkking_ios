@@ -88,6 +88,7 @@
 		9353D9C520A81042006E4FAF /* etc_jewel_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9C320A81041006E4FAF /* etc_jewel_1.png */; };
 		9353D9C720A8128D006E4FAF /* UIViewController_RecvHeartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9C620A8128D006E4FAF /* UIViewController_RecvHeartPage.swift */; };
 		9353D9C920A8142D006E4FAF /* UITableViewCell_RecvHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9C820A8142D006E4FAF /* UITableViewCell_RecvHeart.swift */; };
+		9353D9CD20A817B3006E4FAF /* UIViewCollectionCell_UserPage_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9CC20A817B2006E4FAF /* UIViewCollectionCell_UserPage_Fan.swift */; };
 		93A4C4DA20A05EF300066594 /* etc_icon_notice.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4D920A05EF300066594 /* etc_icon_notice.png */; };
 		93A4C4DD20A0615B00066594 /* etc_icon_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4DB20A0615A00066594 /* etc_icon_setting.png */; };
 		93A4C4DE20A0615B00066594 /* etc_icon_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4DC20A0615B00066594 /* etc_icon_thumbnail.png */; };
@@ -238,6 +239,7 @@
 		9353D9C320A81041006E4FAF /* etc_jewel_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_jewel_1.png; sourceTree = "<group>"; };
 		9353D9C620A8128D006E4FAF /* UIViewController_RecvHeartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_RecvHeartPage.swift; sourceTree = "<group>"; };
 		9353D9C820A8142D006E4FAF /* UITableViewCell_RecvHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_RecvHeart.swift; sourceTree = "<group>"; };
+		9353D9CC20A817B2006E4FAF /* UIViewCollectionCell_UserPage_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCollectionCell_UserPage_Fan.swift; sourceTree = "<group>"; };
 		93A4C4D920A05EF300066594 /* etc_icon_notice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_notice.png; sourceTree = "<group>"; };
 		93A4C4DB20A0615A00066594 /* etc_icon_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_setting.png; sourceTree = "<group>"; };
 		93A4C4DC20A0615B00066594 /* etc_icon_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_thumbnail.png; sourceTree = "<group>"; };
@@ -594,6 +596,7 @@
 			isa = PBXGroup;
 			children = (
 				93E76659209AF11C005455A8 /* UIViewController_UserPage.swift */,
+				9353D9CC20A817B2006E4FAF /* UIViewCollectionCell_UserPage_Fan.swift */,
 				93A4C4E120A06A0F00066594 /* UIViewController_MyUserPage.swift */,
 				93A4C4E320A07F9A00066594 /* UIViewController_InputPage.swift */,
 				930450E220A56273005E37FB /* UIViewController_ProvisionPage.swift */,
@@ -997,6 +1000,7 @@
 				9318F97920906D0A00E08F7D /* UITableViewCell_Board.swift in Sources */,
 				9353D9C720A8128D006E4FAF /* UIViewController_RecvHeartPage.swift in Sources */,
 				9318F96F2090499F00E08F7D /* CommonUIFunc.swift in Sources */,
+				9353D9CD20A817B3006E4FAF /* UIViewCollectionCell_UserPage_Fan.swift in Sources */,
 				93E7662D20996B8A005455A8 /* UIViewController_Home.swift in Sources */,
 				9353D9BF20A69A34006E4FAF /* UIViewController_ProfileSetting.swift in Sources */,
 				93E766472099BA94005455A8 /* UIViewCollectionCell_Home_New.swift in Sources */,
