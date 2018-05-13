@@ -17,6 +17,9 @@ class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UI
     }
     @IBOutlet var UserNamePage: UILabel!
     @IBAction func ThumbnailAction(_ sender: Any) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "THUMBNAIL_LIST_PAGE") as! UIViewController_ThumbnailList
+        page.SetUserThumbnailList(userData: PageUserData!)
+        self.present(page, animated: true)
     }
     @IBOutlet var Thumbnail: UIButton!
     @IBOutlet var Distance: UILabel!

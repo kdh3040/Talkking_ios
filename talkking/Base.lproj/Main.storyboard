@@ -3185,6 +3185,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D8P-yz-ahu"/>
                     </view>
+                    <connections>
+                        <outlet property="Thumbnail" destination="Mnj-CL-n7l" id="AgG-sn-Tez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snS-Qo-eLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
