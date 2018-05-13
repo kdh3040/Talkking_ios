@@ -81,6 +81,13 @@
 		9353D9B620A5B6E3006E4FAF /* charge_100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AF20A5B6E2006E4FAF /* charge_100.png */; };
 		9353D9B720A5B6E3006E4FAF /* charge_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9B020A5B6E3006E4FAF /* charge_10.png */; };
 		9353D9BB20A5BAC3006E4FAF /* UIViewController_ChargePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9BA20A5BAC3006E4FAF /* UIViewController_ChargePage.swift */; };
+		9353D9BD20A69460006E4FAF /* etc_icon_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9BC20A69460006E4FAF /* etc_icon_picture.png */; };
+		9353D9BF20A69A34006E4FAF /* UIViewController_ProfileSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9BE20A69A34006E4FAF /* UIViewController_ProfileSetting.swift */; };
+		9353D9C120A806B8006E4FAF /* UIViewController_MyJewel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9C020A806B8006E4FAF /* UIViewController_MyJewel.swift */; };
+		9353D9C420A81042006E4FAF /* etc_jewel_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9C220A81040006E4FAF /* etc_jewel_10.png */; };
+		9353D9C520A81042006E4FAF /* etc_jewel_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9C320A81041006E4FAF /* etc_jewel_1.png */; };
+		9353D9C720A8128D006E4FAF /* UIViewController_RecvHeartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9C620A8128D006E4FAF /* UIViewController_RecvHeartPage.swift */; };
+		9353D9C920A8142D006E4FAF /* UITableViewCell_RecvHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9C820A8142D006E4FAF /* UITableViewCell_RecvHeart.swift */; };
 		93A4C4DA20A05EF300066594 /* etc_icon_notice.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4D920A05EF300066594 /* etc_icon_notice.png */; };
 		93A4C4DD20A0615B00066594 /* etc_icon_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4DB20A0615A00066594 /* etc_icon_setting.png */; };
 		93A4C4DE20A0615B00066594 /* etc_icon_thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4DC20A0615B00066594 /* etc_icon_thumbnail.png */; };
@@ -224,6 +231,13 @@
 		9353D9AF20A5B6E2006E4FAF /* charge_100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_100.png; sourceTree = "<group>"; };
 		9353D9B020A5B6E3006E4FAF /* charge_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_10.png; sourceTree = "<group>"; };
 		9353D9BA20A5BAC3006E4FAF /* UIViewController_ChargePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_ChargePage.swift; sourceTree = "<group>"; };
+		9353D9BC20A69460006E4FAF /* etc_icon_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_picture.png; sourceTree = "<group>"; };
+		9353D9BE20A69A34006E4FAF /* UIViewController_ProfileSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_ProfileSetting.swift; sourceTree = "<group>"; };
+		9353D9C020A806B8006E4FAF /* UIViewController_MyJewel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_MyJewel.swift; sourceTree = "<group>"; };
+		9353D9C220A81040006E4FAF /* etc_jewel_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_jewel_10.png; sourceTree = "<group>"; };
+		9353D9C320A81041006E4FAF /* etc_jewel_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_jewel_1.png; sourceTree = "<group>"; };
+		9353D9C620A8128D006E4FAF /* UIViewController_RecvHeartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_RecvHeartPage.swift; sourceTree = "<group>"; };
+		9353D9C820A8142D006E4FAF /* UITableViewCell_RecvHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_RecvHeart.swift; sourceTree = "<group>"; };
 		93A4C4D920A05EF300066594 /* etc_icon_notice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_notice.png; sourceTree = "<group>"; };
 		93A4C4DB20A0615A00066594 /* etc_icon_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_setting.png; sourceTree = "<group>"; };
 		93A4C4DC20A0615B00066594 /* etc_icon_thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_icon_thumbnail.png; sourceTree = "<group>"; };
@@ -494,6 +508,9 @@
 		9318F99E2090815700E08F7D /* etc */ = {
 			isa = PBXGroup;
 			children = (
+				9353D9C320A81041006E4FAF /* etc_jewel_1.png */,
+				9353D9C220A81040006E4FAF /* etc_jewel_10.png */,
+				9353D9BC20A69460006E4FAF /* etc_icon_picture.png */,
 				930450DE20A55F17005E37FB /* etc_check_empty.png */,
 				930450DF20A55F18005E37FB /* etc_check_full.png */,
 				93A4C4E520A1E0A100066594 /* etc_icon_main.png */,
@@ -584,6 +601,10 @@
 				930450E820A58899005E37FB /* UITableViewCell_Notice.swift */,
 				9353D9A720A58AEC006E4FAF /* UIViewController_NoticePage.swift */,
 				9353D9BA20A5BAC3006E4FAF /* UIViewController_ChargePage.swift */,
+				9353D9BE20A69A34006E4FAF /* UIViewController_ProfileSetting.swift */,
+				9353D9C020A806B8006E4FAF /* UIViewController_MyJewel.swift */,
+				9353D9C620A8128D006E4FAF /* UIViewController_RecvHeartPage.swift */,
+				9353D9C820A8142D006E4FAF /* UITableViewCell_RecvHeart.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -716,6 +737,7 @@
 				93E76668209C5BA6005455A8 /* etc_icon_favor.png in Resources */,
 				9318F98020907E0500E08F7D /* fan_rank_2.png in Resources */,
 				93E766532099FD12005455A8 /* main_icon_location.png in Resources */,
+				9353D9C520A81042006E4FAF /* etc_jewel_1.png in Resources */,
 				93E5245D209588C2009E303A /* fan_white.png in Resources */,
 				3D5091C7208DF92100DA8C8F /* LaunchScreen.storyboard in Resources */,
 				3DA635B72091D2D800081F3B /* Podfile in Resources */,
@@ -753,6 +775,7 @@
 				9318F95320903E0300E08F7D /* rank_bronze.png in Resources */,
 				9318F99720907E8900E08F7D /* diamond.png in Resources */,
 				9318F96120903E0300E08F7D /* chat.png in Resources */,
+				9353D9C420A81042006E4FAF /* etc_jewel_10.png in Resources */,
 				93A4C4DA20A05EF300066594 /* etc_icon_notice.png in Resources */,
 				93E7664D2099F0CA005455A8 /* main_rank_3.png in Resources */,
 				9318F95E20903E0300E08F7D /* favor_select.png in Resources */,
@@ -770,6 +793,7 @@
 				9318F98120907E0500E08F7D /* fan_rank_1.png in Resources */,
 				9318F98520907E0500E08F7D /* fan_rank_big_1.png in Resources */,
 				93E7664C2099F0CA005455A8 /* main_rank_1.png in Resources */,
+				9353D9BD20A69460006E4FAF /* etc_icon_picture.png in Resources */,
 				3D5091C2208DF92000DA8C8F /* Main.storyboard in Resources */,
 				9318F99B20907F1D00E08F7D /* heart.png in Resources */,
 				93E76665209C5BA6005455A8 /* etc_icon_heart.png in Resources */,
@@ -949,6 +973,7 @@
 				93E766452099BA7B005455A8 /* UIViewCollectionCell_Home_Near.swift in Sources */,
 				93E7663F2099B979005455A8 /* UIViewCollectionCell_Home_Public.swift in Sources */,
 				93E766392099B844005455A8 /* UIViewController_Home_FanCount.swift in Sources */,
+				9353D9C120A806B8006E4FAF /* UIViewController_MyJewel.swift in Sources */,
 				930450E920A58899005E37FB /* UITableViewCell_Notice.swift in Sources */,
 				9318F96D2090498F00E08F7D /* CommonData.swift in Sources */,
 				9318F975209052E700E08F7D /* UITableViewCell_ChatMain.swift in Sources */,
@@ -970,8 +995,10 @@
 				9353D9BB20A5BAC3006E4FAF /* UIViewController_ChargePage.swift in Sources */,
 				93A4C4E220A06A0F00066594 /* UIViewController_MyUserPage.swift in Sources */,
 				9318F97920906D0A00E08F7D /* UITableViewCell_Board.swift in Sources */,
+				9353D9C720A8128D006E4FAF /* UIViewController_RecvHeartPage.swift in Sources */,
 				9318F96F2090499F00E08F7D /* CommonUIFunc.swift in Sources */,
 				93E7662D20996B8A005455A8 /* UIViewController_Home.swift in Sources */,
+				9353D9BF20A69A34006E4FAF /* UIViewController_ProfileSetting.swift in Sources */,
 				93E766472099BA94005455A8 /* UIViewCollectionCell_Home_New.swift in Sources */,
 				9318F96920903E0300E08F7D /* ChatData.swift in Sources */,
 				3D56890D20A816820041D8AD /* SendData.swift in Sources */,
@@ -981,6 +1008,7 @@
 				3D87316220948D1A00022D90 /* FanData.swift in Sources */,
 				9318F97720906CFA00E08F7D /* UIViewController_Board.swift in Sources */,
 				93A4C4E420A07F9A00066594 /* UIViewController_InputPage.swift in Sources */,
+				9353D9C920A8142D006E4FAF /* UITableViewCell_RecvHeart.swift in Sources */,
 				93E766432099BA5F005455A8 /* UIViewCollectionCell_Home_FanCount.swift in Sources */,
 				9353D9A820A58AEC006E4FAF /* UIViewController_NoticePage.swift in Sources */,
 				93E7663D2099B860005455A8 /* UIViewController_Home_New.swift in Sources */,
