@@ -11,10 +11,31 @@ import Foundation
 class MyUserData : UserData
 {
     public var CahingChatDataList : [ChatData] = [ChatData]()
-    
+    private var ChatDataIdx_List : [Int : Int] = [Int : Int]()
+
     public init(index : Int)
     {
         let userData = DataMgr.Instance.GetCachingUserDataList(index: index)
         super.init(userData: userData!)
+        
+        for i in 0..<userData!.ChatDataList.count
+        {
+            SetChatDataIdxList(ViewIndex: i, userIndex: userData!.ChatDataList[i].Idx)
+            CahingChatDataList.append(userData!.ChatDataList[i])
+        }
+    }
+    
+    public func SetChatDataIdxList(ViewIndex : Int, userIndex : Int)
+    {
+        ChatDataIdx_List[ViewIndex] = userIndex
+    }
+    public func GetChatDataIdxList(index:Int) -> Int
+    {
+        if let userIndex = ChatDataIdx_List[index]
+        {
+            return userIndex
+        }
+        
+        return 0
     }
 }

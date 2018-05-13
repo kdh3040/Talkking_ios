@@ -31,6 +31,9 @@ PODS:
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GTMSessionFetcher/Core (1.1.15)
+  - ImageSlideshow (1.5.3):
+    - ImageSlideshow/Core (= 1.5.3)
+  - ImageSlideshow/Core (1.5.3)
   - Kingfisher (4.7.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -45,6 +48,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - ImageSlideshow (~> 1.5)
   - Kingfisher
   - Parchment
 
@@ -58,6 +62,7 @@ SPEC REPOS:
     - FirebaseInstanceID
     - GoogleToolboxForMac
     - GTMSessionFetcher
+    - ImageSlideshow
     - Kingfisher
     - leveldb-library
     - nanopb
@@ -72,11 +77,12 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 83e0040351565df711a5db3d8ebe5ea21aca998a
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  ImageSlideshow: 24a1184909f589379ba2527ebcc77996881bb1f2
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Parchment: e3aa960329b6c081efa352960948eb1125fbdd3e
 
-PODFILE CHECKSUM: cff08ad50f026dcf140f15e0e777abe72681cdc4
+PODFILE CHECKSUM: 27c2b5bbe09ba0f82f3adf4ade209dff28406882
 
 COCOAPODS: 1.5.0

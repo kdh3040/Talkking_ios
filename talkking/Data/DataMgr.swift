@@ -21,18 +21,13 @@ class DataMgr {
     public var MyData : MyUserData?
     
     static let Instance = DataMgr()
-
+    
     public func GetCachingUserDataList(index:Int) -> UserData?
     {
         if let userData = CachingUserDataList[index]
         {
             return userData
         }
-        else
-        {
-            FireBaseFunc.Instance.LoadUserData(index: String(index), Mydata: false)
-        }
-        
         // 없는 데이터를 불러 올경우 파이어베이스에 쿼리를 날려 실제 유저가 있는지 확인
         // 실제로 유저가 없는 경우 널처리
         

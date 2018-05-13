@@ -14,12 +14,19 @@ class FireBaseFunc
 {
     static let Instance = FireBaseFunc()
     var ref : DatabaseReference!
+    var CallbackFunc: ()
+    var callbackExist : Bool = false
     
     private init() {
          FirebaseApp.configure()
           ref = Database.database().reference()
     }
    
+    public func SetCallFunc(callbackFunc : ())
+    {
+        CallbackFunc = callbackFunc
+        callbackExist = true
+    }
     
     public func LoadUserIndex(uuid : String)
     {
@@ -31,7 +38,7 @@ class FireBaseFunc
             
             if let tempMyIdx = tempData {
                 
-                self.LoadUserData(index: tempMyIdx, Mydata: true)
+                self.LoadMyData(index: tempMyIdx)
  
                 self.LoadBoardDataList()
             
@@ -74,7 +81,73 @@ class FireBaseFunc
      
     }
     
-    public func LoadUserData(index : String, Mydata : Bool) //-> UserData?
+    public func LoadMyData(index : String) //-> UserData?
+    {
+        
+        ref.child("GenderList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+            
+            var tempGender = snapshot.value as? String
+            
+            // tempData  = nil
+            
+            if let tempUserGender = tempGender {
+                
+                
+                if tempUserGender == "남자"
+                {
+                    self.ref.child("Users").child("Man").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+                        
+                        if let tempData = snapshot.value as? NSDictionary
+                        {
+                            let retValue : UserData = UserData.init(tempData: tempData)
+                            
+                            DataMgr.Instance.SetCachingUserDataList(userData: retValue)
+                         
+                                DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                                
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3])
+                            
+                        }
+                    }){ (error) in
+                        print(error.localizedDescription)
+                    }
+                }
+                else
+                {
+                    self.ref.child("Users").child("Woman").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+                        
+                        if let tempData = snapshot.value as? NSDictionary
+                        {
+                            let retValue : UserData = UserData.init(tempData: tempData)
+                            
+                            DataMgr.Instance.SetCachingUserDataList(userData: retValue)
+                            
+                           
+                                DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                                
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3])
+                            
+                            
+                        }
+                    }){ (error) in
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
+        //return nil
+    }
+    
+    public func LoadUserData(index : String, complete : @escaping (()->())) //-> UserData?
     {
         
         ref.child("GenderList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
@@ -94,17 +167,8 @@ class FireBaseFunc
                             {
                                 let retValue : UserData = UserData.init(tempData: tempData)
                                 
-                                DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-                                
-                                if Mydata
-                                {
-                                    DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
-                                    
-                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
-                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
-                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
-                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3])
-                                }
+                                DataMgr.Instance.SetCachingUserDataList(userData: retValue)                            
+                                complete()
                             }
                         }){ (error) in
                             print(error.localizedDescription)
@@ -119,18 +183,7 @@ class FireBaseFunc
                                 let retValue : UserData = UserData.init(tempData: tempData)
                                 
                                 DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-                                
-                                if Mydata
-                                {
-                                    DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
-                                    
-                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
-                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
-                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
-                                    self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3])
-                                }
-                                
-                                
+                                complete()
                             }
                         }){ (error) in
                             print(error.localizedDescription)
