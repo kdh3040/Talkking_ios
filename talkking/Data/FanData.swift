@@ -10,7 +10,7 @@ import Foundation
 
 class FanData
 {
-    var Check : Int = 0
+    var Check : Int = 0 
     var Idx : Int = 0
     var RecvHeart : Int = 0
     
