@@ -28,6 +28,10 @@ class FireBaseFunc
         callbackExist = true
     }
     
+    public func test()
+    {
+        print("asdasd")
+    }
     public func LoadUserIndex(uuid : String)
     {
         ref.child("UserIdx").child(uuid).observeSingleEvent(of: .value, with: { ( snapshot) in
@@ -38,7 +42,7 @@ class FireBaseFunc
             
             if let tempMyIdx = tempData {
                 
-                self.LoadMyData(index: tempMyIdx)
+                self.LoadMyData(index: tempMyIdx, complete: self.test)
  
                 self.LoadBoardDataList()
             
@@ -81,7 +85,7 @@ class FireBaseFunc
      
     }
     
-    public func LoadMyData(index : String) //-> UserData?
+    public func LoadMyData(index : String, complete : @escaping (()->())) //-> UserData?
     {
         
         ref.child("GenderList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
@@ -104,7 +108,8 @@ class FireBaseFunc
                             DataMgr.Instance.SetCachingUserDataList(userData: retValue)
                          
                                 DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
-                                
+                                complete()
+                            
                                 self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
                                 self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
                                 self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
