@@ -35,11 +35,9 @@ class UIViewController_Home_Public: UIViewController, UICollectionViewDelegate, 
         cell.SetHomePublicData(userData:GetSelectUserData(indexPath:indexPath), rank : indexPath.row + 1)
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-        page.SetUserData(userData: GetSelectUserData(indexPath:indexPath))
-        self.present(page, animated: true)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        CommonUIFunc.Instance.PushUserPage(userData: GetSelectUserData(indexPath:indexPath), viewController:self)
     }
     
     func GetSelectUserData(indexPath: IndexPath) -> UserData
