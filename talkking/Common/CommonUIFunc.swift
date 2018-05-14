@@ -138,8 +138,11 @@ class CommonUIFunc{
                               options: [.transition(.fade(1))],
                               progressBlock: nil,
                               completionHandler: nil)
-        
-        SetDefaultThumbnail(imageView : buttonImage, circle : circle)
+        if circle == true
+        {
+            button.layer.cornerRadius = button.frame.size.width / 2
+            button.clipsToBounds = true
+        }
         
         button.setBackgroundImage(buttonImage.image, for: UIControlState.normal)
     }
@@ -168,7 +171,7 @@ class CommonUIFunc{
     public func SetUserName(label : UILabel, userData : UserData)
     {
         label.text = userData.Name
-        if userData.Sex == SEX_TYPE.FEMALE
+        if userData.Gender == GENDER_TYPE.FEMALE
         {
             label.textColor = GetFemaleColor()
         }
@@ -183,5 +186,66 @@ class CommonUIFunc{
         let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
         page.SetUserData(userData: userData)
         viewController.present(page, animated: true)
+    }
+    
+    public func IsInputStringLimit(string:String, limit:Int) -> Bool
+    {
+        // TODO : 한글은 하나가 짤리는데 어떻게 해야 할지 모르겠음
+        // 예시
+        // 제한이 6이라면
+        // 일이삼사오유 <-- 에서 걸림
+        // 일이삼사오육 <--- 까지 되야 할것 같은데
+        return string.count <= limit
+    }
+    
+    public func OpenThumbnailPic(viewController : UIViewController, thumbnailPicker : UIImagePickerController)
+    {
+        let alert =  UIAlertController(title: "프로필 사진", message: "선택해주세요", preferredStyle: .actionSheet)
+        let library =  UIAlertAction(title: "사진앨범", style: .default) {
+            (action) in
+            thumbnailPicker.sourceType = .photoLibrary;
+            viewController.present(thumbnailPicker, animated: false, completion: nil);
+            //(action) in self.openLibrary()
+        }
+        
+        
+        let camera =  UIAlertAction(title: "카메라", style: .default) {
+            (action) in
+                if(UIImagePickerController.isSourceTypeAvailable(.camera)){
+                    thumbnailPicker.sourceType = .camera
+                    viewController.present(thumbnailPicker, animated: false, completion: nil)
+                }
+                else{
+                    print("Camera not available")
+                }
+            //(action) in self.openCamera()
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(library)
+        
+        alert.addAction(camera)
+        
+        alert.addAction(cancel)
+        
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    
+    public func ShowAlertPopup(viewController : UIViewController, title : String, message : String, actionTitle_1 : String, actionFunc_1 : @escaping () -> Void, actionTitle_2 : String, actionFunc_2 : @escaping () -> Void)
+    {
+        let alertController = UIAlertController(title: title,message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let action_1 = UIAlertAction(title : actionTitle_1 , style:.default){
+            (action:UIAlertAction) in actionFunc_1()
+        }
+        
+        let action_2 = UIAlertAction(title : actionTitle_2 , style:.default){
+            (action:UIAlertAction) in actionFunc_2()
+        }
+        
+        alertController.addAction(action_1)
+        alertController.addAction(action_2)
+        
+        viewController.present(alertController,animated: true,completion: nil)
     }
 }

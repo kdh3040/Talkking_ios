@@ -12,24 +12,7 @@ import UIKit
 class UIViewController_InputPage : UIViewController
 {
     @IBAction func ThumbnailAction(_ sender: Any) {
-        let alert =  UIAlertController(title: "프로필 사진", message: "선택해주세요", preferredStyle: .actionSheet)
-        let library =  UIAlertAction(title: "사진앨범", style: .default) {
-            (action) in self.openLibrary()
-        }
-        
-        
-        let camera =  UIAlertAction(title: "카메라", style: .default) {
-            (action) in self.openCamera()
-        }
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-
-        alert.addAction(library)
-        
-        alert.addAction(camera)
-        
-        alert.addAction(cancel)
-        
-        present(alert, animated: true, completion: nil)
+        CommonUIFunc.Instance.OpenThumbnailPic(viewController: self, thumbnailPicker: ThumbnailPicker)
     }
     @IBOutlet var Thumbnail: UIButton!
     
@@ -98,18 +81,7 @@ class UIViewController_InputPage : UIViewController
     @IBAction func CreateAction(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    
-    
-    let AgeData = ["20","21","22","23","24","25","26","27","28","29",
-                   "30","31","32","33","34","35","36","37","38","39",
-                   "40","41","42","43","44","45","46","47","48","49",
-                   "50","51","52","53","54","55","56","57","58","59",
-                   "60","61","62","63","64","65","66","67","68","69",
-                   "70","71","72","73","74","75","76","77","78","79",
-                   "80","81","82","83","84","85","86","87","88","89",
-                   "90","91","92","93","94","95","96","97","98","99"]
-    let GenderData = ["남자","여자"]
-    
+
     let ThumbnailPicker = UIImagePickerController()
     let AgePickerView = UIPickerView()
     let GenderPickerView = UIPickerView()
@@ -138,30 +110,9 @@ class UIViewController_InputPage : UIViewController
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
-    func openLibrary()
-    {
-        ThumbnailPicker.sourceType = .photoLibrary
-        present(ThumbnailPicker, animated: false, completion: nil)
-    }
-    
-    func openCamera()
-    {
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
-            ThumbnailPicker.sourceType = .camera
-            present(ThumbnailPicker, animated: false, completion: nil)
-        }
-        else{
-            print("Camera not available")
-        }
-    }
-    
-    
-    
-    
 }
 
-extension UIViewController_InputPage : UIPickerViewDataSource, UIPickerViewDelegate
+extension UIViewController_InputPage : UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
@@ -175,13 +126,13 @@ extension UIViewController_InputPage : UIPickerViewDataSource, UIPickerViewDeleg
     }
 }
 
-extension UIViewController_InputPage : UIImagePickerControllerDelegate, UINavigationControllerDelegate
+extension UIViewController_InputPage : UIPickerViewDataSource, UIPickerViewDelegate
 {
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView.tag == 1 {
-            return AgeData.count
+            return CommonData.AGE_DATA.count
         } else {
-            return GenderData.count
+            return CommonData.GENDER_DATA.count
         }
     }
     
@@ -191,17 +142,17 @@ extension UIViewController_InputPage : UIImagePickerControllerDelegate, UINaviga
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 1 {
-            return AgeData[row]
+            return CommonData.AGE_DATA[row]  + "세"
         } else {
-            return GenderData[row]
+            return CommonData.GENDER_DATA[row]
         }
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
-            Age.text = AgeData[row]
+            Age.text = CommonData.AGE_DATA[row]  + "세"
         } else {
-            Gender.text = GenderData[row]
+            Gender.text = CommonData.GENDER_DATA[row]
         }
     }
 }
@@ -209,13 +160,8 @@ extension UIViewController_InputPage : UIImagePickerControllerDelegate, UINaviga
 extension UIViewController_InputPage : UITextFieldDelegate
 {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        /*
         let currentText = textField.text ?? ""
-        guard let stringRange = Range(range, in: currentText) else { return false }
-        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
- */
-        let currentText = textField.text ?? ""
-        return currentText.count <= 7
+        return CommonUIFunc.Instance.IsInputStringLimit(string: currentText, limit: CommonData.STR_LIMIT_INPUT_NICKNAME)
     }
 }
 
