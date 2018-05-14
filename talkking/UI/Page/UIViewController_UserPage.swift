@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
 
 class UIViewController_UserPage : UIViewController
 {
@@ -83,6 +84,19 @@ class UIViewController_UserPage : UIViewController
     @IBOutlet var FanListView: UICollectionView!
     @IBOutlet var FanListViewFlowLayout: UICollectionViewFlowLayout!
     
+    var FanCnt =  0
+    var FanLoadCnt =  0
+    
+    private func CallBackFunc_LoadSimpleUserData(count : Int)
+    {
+        if count == FanLoadCnt
+        {
+            SVProgressHUD.dismiss()
+            FanCnt = PageUserData!.FanDataList.count
+            FanListView.reloadData()
+        }
+    }
+    
     var PageUserData : UserData? = nil
     public func SetUserData(userData : UserData)
     {
@@ -104,6 +118,20 @@ class UIViewController_UserPage : UIViewController
             Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:pageUserData.Grade))
             BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: pageUserData.BestItem))
             RefreshFavorUI()
+            
+            for i in 0..<pageUserData.FanDataList.count
+            {
+                if (DataMgr.Instance.GetCachingUserDataList(index: pageUserData.FanDataList[i].Idx) != nil)
+                {
+                    DataMgr.Instance.SetCachingSimpleUserDataList(userData: DataMgr.Instance.GetCachingUserDataList(index: pageUserData.FanDataList[i].Idx)!)
+                }
+                else
+                {
+                    SVProgressHUD.show()
+                    FireBaseFunc.Instance.LoadSimpleUserData(index: String.init(format:"%d",pageUserData.FanDataList[i].Idx), complete: CallBackFunc_LoadSimpleUserData)
+                    FanLoadCnt += 1
+                }
+            }
         }
     }
     
@@ -127,19 +155,18 @@ class UIViewController_UserPage : UIViewController
 extension UIViewController_UserPage : UICollectionViewDelegate, UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return PageUserData!.FanDataList.count
+        return FanCnt
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_UserPage_Fan
         
-        // 팬들 썸네일 보여주기
-        /*if let pageUserData = PageUserData
+        if let pageUserData = PageUserData
          {
          let fanIdx = pageUserData.FanDataList[indexPath.row].Idx
-         cell.SetUserPageFanData(userData: DataMgr.Instance.GetCachingUserDataList(index: fanIdx)!)
-         }*/
+         cell.SetUserPageFanData(userData: DataMgr.Instance.GetCachingSimpleUserDataList(index: fanIdx)!)
+         }
         return cell
     }
     
