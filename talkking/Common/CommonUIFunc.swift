@@ -231,7 +231,7 @@ class CommonUIFunc{
         viewController.present(alert, animated: true, completion: nil)
     }
     
-    public func ShowAlertPopup(viewController : UIViewController, title : String, message : String, actionTitle_1 : String, actionFunc_1 : @escaping () -> Void, actionTitle_2 : String, actionFunc_2 : @escaping () -> Void)
+    public func ShowAlertPopup(viewController : UIViewController, title : String, message : String, actionTitle_1 : String, actionFunc_1 : @escaping () -> Void, actionTitle_2 : String, actionFunc_2 : (() -> Void)? = nil)
     {
         let alertController = UIAlertController(title: title,message: message, preferredStyle: UIAlertControllerStyle.alert)
         
@@ -240,7 +240,11 @@ class CommonUIFunc{
         }
         
         let action_2 = UIAlertAction(title : actionTitle_2 , style:.default){
-            (action:UIAlertAction) in actionFunc_2()
+            (action:UIAlertAction) in
+            if let actionFunc = actionFunc_2
+            {
+                actionFunc()
+            }
         }
         
         alertController.addAction(action_1)
