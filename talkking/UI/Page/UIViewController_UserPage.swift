@@ -121,16 +121,17 @@ class UIViewController_UserPage : UIViewController
             
             for i in 0..<pageUserData.FanDataList.count
             {
-                if (DataMgr.Instance.GetCachingUserDataList(index: pageUserData.FanDataList[i].Idx) != nil)
-                {
-                    DataMgr.Instance.SetCachingSimpleUserDataList(userData: DataMgr.Instance.GetCachingUserDataList(index: pageUserData.FanDataList[i].Idx)!)
-                }
-                else
+                if (DataMgr.Instance.GetCachingSimpleUserDataList(index: pageUserData.FanDataList[i].Idx) == nil)
                 {
                     SVProgressHUD.show()
                     FireBaseFunc.Instance.LoadSimpleUserData(index: String.init(format:"%d",pageUserData.FanDataList[i].Idx), complete: CallBackFunc_LoadSimpleUserData)
-                    FanLoadCnt += 1
+                    FanLoadCnt += CommonData.LOAD_DATA_SET
                 }
+            }
+            
+            if FanLoadCnt == 0
+            {
+                FanCnt = pageUserData.FanDataList.count
             }
         }
     }
@@ -164,8 +165,8 @@ extension UIViewController_UserPage : UICollectionViewDelegate, UICollectionView
         
         if let pageUserData = PageUserData
          {
-         let fanIdx = pageUserData.FanDataList[indexPath.row].Idx
-         cell.SetUserPageFanData(userData: DataMgr.Instance.GetCachingSimpleUserDataList(index: fanIdx)!)
+             let fanIdx = pageUserData.FanDataList[indexPath.row].Idx
+             cell.SetUserPageFanData(userData: DataMgr.Instance.GetCachingSimpleUserDataList(index: fanIdx)!)
          }
         return cell
     }
