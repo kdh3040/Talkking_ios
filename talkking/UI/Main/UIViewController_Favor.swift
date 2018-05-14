@@ -13,6 +13,20 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
 {
     @IBOutlet var FavorTableView: UITableView!
     
+    var FavorCnt =  0
+    var FavorLoadCnt =  0
+    
+    private func CallBackFunc(count : Int)
+    {
+        if count == FavorLoadCnt
+        {
+            FavorCnt = DataMgr.Instance.MyData!.FavorUserIndexList.count
+            FavorTableView.reloadData()
+        }
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +34,19 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         FavorTableView.dataSource = self
         FavorTableView.rowHeight = 70;
         FavorTableView.separatorStyle = .none
+        
+        for i in 0..<DataMgr.Instance.MyData!.FavorUserIndexList.count
+        {
+            if (DataMgr.Instance.GetCachingUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!) != nil)
+            {
+                DataMgr.Instance.SetCachingSimpleUserDataList(userData: DataMgr.Instance.GetCachingUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!)!)
+            }
+            else
+            {
+                FireBaseFunc.Instance.LoadSimpleUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[i], complete: CallBackFunc)
+                FavorLoadCnt += 1
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,15 +55,23 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (DataMgr.Instance.MyData?.FavorUserIndexList.count)!
+        //return (DataMgr.Instance.MyData?.FavorUserIndexList.count)!
+        return FavorCnt
     }
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_Favor
         
-        cell.SetFavorCell(userData: GetSelectUserData(indexPath:indexPath))
+        cell.SetFavorCell(userData: GetSelectSimpleUserData(indexPath:indexPath))
         return cell
+    }
+    
+    func GetSelectSimpleUserData(indexPath: IndexPath) -> UserData
+    {
+        let index : String = DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row]
+        
+        return DataMgr.Instance.GetCachingSimpleUserDataList(index: Int(index)!)!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

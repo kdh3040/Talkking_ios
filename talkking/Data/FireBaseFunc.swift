@@ -108,7 +108,7 @@ class FireBaseFunc
                             DataMgr.Instance.SetCachingUserDataList(userData: retValue)
                          
                                 DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
-                                complete()
+                            
                             
                                 self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
                                 self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
@@ -201,7 +201,28 @@ class FireBaseFunc
         }
         //return nil
     }
+     var i : Int = 0
     
+    public func LoadSimpleUserData(index : String, complete : @escaping ((_ count : Int)->())) //-> UserData?
+    {
+       
+        self.ref.child("SimpleData").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+            
+            if let tempData = snapshot.value as? NSDictionary
+            {
+                let retValue : UserData = UserData.init(tempData: tempData)
+                
+                DataMgr.Instance.SetCachingSimpleUserDataList(userData: retValue)
+                self.i += 1;
+                complete(self.i)
+               
+            }
+        }){ (error) in
+            print(error.localizedDescription)
+        }
+        
+        //return nil
+    }
     
     public func LoadUserDataList(sortRef : String) //-> UserData?
     {

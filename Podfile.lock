@@ -42,6 +42,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Parchment (1.2.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Firebase (>= 2.5.1)
@@ -51,6 +52,7 @@ DEPENDENCIES:
   - ImageSlideshow (~> 1.5)
   - Kingfisher
   - Parchment
+  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -67,6 +69,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Parchment
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   Firebase: 4bd804448ab2596794698773d41520a0af101e65
@@ -82,7 +85,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Parchment: e3aa960329b6c081efa352960948eb1125fbdd3e
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 27c2b5bbe09ba0f82f3adf4ade209dff28406882
+PODFILE CHECKSUM: d5e3aeb8f7bcb1388097295fac292fb3902bf267
 
 COCOAPODS: 1.5.0
