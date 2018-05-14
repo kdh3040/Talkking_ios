@@ -78,6 +78,7 @@ class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UI
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_UserPage_Fan
         
+        // 팬들 썸네일 보여주기
         /*if let pageUserData = PageUserData
         {
             let fanIdx = pageUserData.FanDataList[indexPath.row].Idx

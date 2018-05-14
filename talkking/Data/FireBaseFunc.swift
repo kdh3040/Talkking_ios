@@ -206,7 +206,7 @@ class FireBaseFunc
     public func LoadUserDataList(sortRef : String) //-> UserData?
     {
         
-        if DataMgr.Instance.MyData!.Sex == SEX_TYPE.MALE
+        if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
         {
             ref.child("Users").child("Woman").queryOrdered(byChild: sortRef).queryLimited(toFirst: UInt(CommonData.LOAD_USERDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
                 

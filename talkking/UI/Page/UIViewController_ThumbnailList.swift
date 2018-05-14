@@ -90,7 +90,10 @@ class UIViewController_ThumbnailList: UIViewController {
         var thumbnailSource : [KingfisherSource] = [KingfisherSource]()
         for i in 0..<ThumbnailURLList.count
         {
-            thumbnailSource.append(KingfisherSource(urlString:ThumbnailURLList[i])!)
+            if ThumbnailURLList[i] != "1"
+            {
+                thumbnailSource.append(KingfisherSource(urlString:ThumbnailURLList[i])!)
+            }
         }
 
         Thumbnail.setImageInputs(thumbnailSource)
@@ -103,6 +106,11 @@ class UIViewController_ThumbnailList: UIViewController {
         let fullScreenController = Thumbnail.presentFullScreenController(from: self)
         // set the activity indicator for full screen controller (skipping the line will show no activity indicator)
         fullScreenController.slideshow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
+    }
+    
+    public func SetUserThumbnailList(thumbnailList:[String])
+    {
+        ThumbnailURLList = thumbnailList
     }
     
     public func SetUserThumbnailList(userData:UserData)

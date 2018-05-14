@@ -14,5 +14,6 @@ class UIViewCollectionCell_UserPage_Fan : UICollectionViewCell
     @IBOutlet var Thumbnail: UIImageView!
     public func SetUserPageFanData(userData:UserData)
     {
+        CommonUIFunc.Instance.SetThumbnail(imageView: Thumbnail, url: URL(string:userData.GetMainThumbnail())!, circle: true)
     }
 }

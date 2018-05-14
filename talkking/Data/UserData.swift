@@ -8,7 +8,7 @@
 
 import Foundation
 import FirebaseDatabase
-public enum SEX_TYPE : String
+public enum GENDER_TYPE : String
 {
     case MALE = "남자"
     case FEMALE = "여자"
@@ -22,7 +22,7 @@ class UserData
     var CreateDate : Double = 0
     var Distance : Double = 0
     var FanCount : Double = 0
-    var Sex : SEX_TYPE = SEX_TYPE.MALE
+    var Gender : GENDER_TYPE = GENDER_TYPE.MALE
     var Coin : Int = 0
     var Index : Int = 0
     var BoardWriteTime : Double = 0;
@@ -68,7 +68,7 @@ class UserData
         Age = userData.Age
         Index = userData.Index
         Name = userData.Name
-        Sex = userData.Sex
+        Gender = userData.Gender
         Grade = userData.Grade
         ImgCount = userData.ImgCount
         ThumbnailList = userData.ThumbnailList
@@ -109,12 +109,12 @@ class UserData
             Age = 0
         }
         
-        if let tempSex = tempData["Gender"] as? String {
-            Sex = SEX_TYPE(rawValue: tempSex)!
+        if let tempGender = tempData["Gender"] as? String {
+            Gender = GENDER_TYPE(rawValue: tempGender)!
         }
         else
         {
-            Sex = SEX_TYPE.MALE
+            Gender = GENDER_TYPE.MALE
         }
         
         if let tempGrade = tempData["Grade"] as? Int {

@@ -1451,13 +1451,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raL-GW-Y9c" userLabel="Middle">
                                 <rect key="frame" x="0.0" y="69" width="375" height="378"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nuu-et-SyQ" userLabel="Thumbnail">
-                                        <rect key="frame" x="62" y="40" width="250" height="250"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="eef-a5-5cR"/>
-                                            <constraint firstAttribute="height" constant="250" id="nAC-Fd-Xwb"/>
-                                        </constraints>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du4-cz-B7K">
                                         <rect key="frame" x="7" y="8" width="97" height="30"/>
                                         <constraints>
@@ -1492,17 +1485,40 @@
                                             <action selector="GradeAction:" destination="E5A-hN-taa" eventType="touchUpInside" id="xec-V9-rhZ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJh-6d-g2C" userLabel="BestItem">
+                                        <rect key="frame" x="259" y="344" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="86U-6d-h40"/>
+                                            <constraint firstAttribute="height" constant="30" id="zyu-8A-zdi"/>
+                                        </constraints>
+                                        <state key="normal" image="icon_item_amethyst"/>
+                                        <connections>
+                                            <action selector="BestItemAction:" destination="E5A-hN-taa" eventType="touchUpInside" id="OGT-yt-5AX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nuu-et-SyQ" userLabel="Thumbnail">
+                                        <rect key="frame" x="37" y="39" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="eef-a5-5cR"/>
+                                            <constraint firstAttribute="height" constant="300" id="nAC-Fd-Xwb"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="ThumbnailAction:" destination="E5A-hN-taa" eventType="touchUpInside" id="qnb-i9-LNT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="zcc-iS-C1f" firstAttribute="top" secondItem="Nuu-et-SyQ" secondAttribute="bottom" constant="54" id="31R-3z-afy"/>
+                                    <constraint firstItem="zcc-iS-C1f" firstAttribute="top" secondItem="Nuu-et-SyQ" secondAttribute="bottom" constant="5" id="31R-3z-afy"/>
                                     <constraint firstItem="Nuu-et-SyQ" firstAttribute="centerX" secondItem="raL-GW-Y9c" secondAttribute="centerX" id="Gdm-Cj-zEz"/>
                                     <constraint firstItem="du4-cz-B7K" firstAttribute="leading" secondItem="raL-GW-Y9c" secondAttribute="leading" constant="7" id="HUm-GN-Aoa"/>
-                                    <constraint firstItem="Nuu-et-SyQ" firstAttribute="top" secondItem="du4-cz-B7K" secondAttribute="bottom" constant="2" id="WMc-Z9-niw"/>
+                                    <constraint firstItem="NJh-6d-g2C" firstAttribute="top" secondItem="Nuu-et-SyQ" secondAttribute="bottom" constant="5" id="VTm-yp-Yn7"/>
+                                    <constraint firstItem="Nuu-et-SyQ" firstAttribute="top" secondItem="du4-cz-B7K" secondAttribute="bottom" constant="1" id="WMc-Z9-niw"/>
                                     <constraint firstItem="zcc-iS-C1f" firstAttribute="centerX" secondItem="raL-GW-Y9c" secondAttribute="centerX" id="XSG-tU-IL0"/>
                                     <constraint firstAttribute="height" constant="378" id="eig-9C-myQ"/>
-                                    <constraint firstItem="hR5-Zj-Tax" firstAttribute="top" secondItem="Nuu-et-SyQ" secondAttribute="bottom" constant="54" id="g0N-Ls-IaN"/>
-                                    <constraint firstItem="Nuu-et-SyQ" firstAttribute="centerY" secondItem="raL-GW-Y9c" secondAttribute="centerY" constant="-24" id="hy9-Gq-hQK"/>
+                                    <constraint firstItem="hR5-Zj-Tax" firstAttribute="top" secondItem="Nuu-et-SyQ" secondAttribute="bottom" constant="5" id="g0N-Ls-IaN"/>
+                                    <constraint firstItem="Nuu-et-SyQ" firstAttribute="centerY" secondItem="raL-GW-Y9c" secondAttribute="centerY" id="hy9-Gq-hQK"/>
+                                    <constraint firstItem="NJh-6d-g2C" firstAttribute="leading" secondItem="hR5-Zj-Tax" secondAttribute="trailing" constant="4" id="lWu-MA-x79"/>
                                     <constraint firstItem="hR5-Zj-Tax" firstAttribute="leading" secondItem="zcc-iS-C1f" secondAttribute="trailing" constant="8" id="meS-J5-yJP"/>
                                     <constraint firstItem="du4-cz-B7K" firstAttribute="top" secondItem="raL-GW-Y9c" secondAttribute="top" constant="8" id="rd1-eA-4jW"/>
                                 </constraints>
@@ -1567,7 +1583,7 @@
                                                 <rect key="frame" x="201" y="7" width="107" height="30"/>
                                                 <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="107" id="ce7-Pz-CX3"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="ce7-Pz-CX3"/>
                                                     <constraint firstAttribute="height" constant="30" id="nYF-ZF-YlT"/>
                                                 </constraints>
                                                 <state key="normal" title="코인충전하기">
@@ -1627,6 +1643,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="BestItem" destination="NJh-6d-g2C" id="sLH-Bx-Ccw"/>
                         <outlet property="Coin" destination="fC0-fz-Xa4" id="Ql0-5i-LZN"/>
                         <outlet property="Grade" destination="hR5-Zj-Tax" id="VaI-06-33a"/>
                         <outlet property="Name" destination="zcc-iS-C1f" id="uCi-LU-8JF"/>
@@ -2539,7 +2556,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEr-Dl-Vad">
-                                        <rect key="frame" x="105" y="27" width="57" height="27"/>
+                                        <rect key="frame" x="105" y="27" width="152" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.26195954623287671" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2657,7 +2674,12 @@
                         <outlet property="Age" destination="Tc4-Z9-h0o" id="h8G-Hk-LAM"/>
                         <outlet property="Desc" destination="yFu-o2-eox" id="LkP-uP-5r4"/>
                         <outlet property="Gander" destination="y9j-vx-DAy" id="7Wz-OH-VRc"/>
+                        <outlet property="MainThumbnail" destination="EEZ-r8-gT3" id="lcz-8G-gXj"/>
                         <outlet property="NickName" destination="qEr-Dl-Vad" id="4N8-VI-ljD"/>
+                        <outlet property="SubThumbnail_1" destination="v0f-ob-qQ8" id="bQK-0f-GDE"/>
+                        <outlet property="SubThumbnail_2" destination="U0a-5u-FbK" id="6WF-nY-j6R"/>
+                        <outlet property="SubThumbnail_3" destination="7Sz-s0-lZ8" id="VgK-Gq-WWR"/>
+                        <outlet property="SubThumbnail_4" destination="AQK-9O-FLC" id="r6m-JD-ZhS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIn-0G-L4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3226,6 +3248,7 @@
         <image name="etc_main_icon_location" width="48" height="48"/>
         <image name="etc_new" width="32" height="15"/>
         <image name="etc_notice" width="48" height="48"/>
+        <image name="icon_item_amethyst" width="255" height="255"/>
         <image name="icon_item_diamond" width="255" height="255"/>
         <image name="icon_main_board" width="30" height="30"/>
         <image name="icon_main_board_select" width="30" height="30"/>
