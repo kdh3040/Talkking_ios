@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
 
-class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource
+class UIViewController_UserPage : UIViewController
 {
     
     @IBAction func Back(_ sender: Any) {
@@ -28,6 +29,42 @@ class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UI
     @IBOutlet var Grade: UIImageView!
     
     @IBAction func FavorAction(_ sender: Any) {
+        if let pageUserData = PageUserData,
+            let myData = DataMgr.Instance.MyData
+        {
+            if myData.FavorUserIndexList.contains(String.init(format:"%d", pageUserData.Index))
+            {
+                let favorRemoveAction = {
+                    // TODO : 파이어 베이스에 올리기
+                    myData.FavorUserIndexList.removeAll()
+                    self.RefreshFavorUI()
+                }
+                
+                CommonUIFunc.Instance.ShowAlertPopup(
+                    viewController: self,
+                    title: "즐겨찾기",
+                    message: "즐겨찾기를 해제 하시겠습니까?",
+                    actionTitle_1: "해제",
+                    actionFunc_1: favorRemoveAction,
+                    actionTitle_2: "취소")
+            }
+            else
+            {
+                let favorAddAction = {
+                    // TODO : 파이어 베이스에 올리기
+                    myData.FavorUserIndexList.append(String(pageUserData.Index))
+                    self.RefreshFavorUI()
+                }
+                
+                CommonUIFunc.Instance.ShowAlertPopup(
+                    viewController: self,
+                    title: "즐겨찾기",
+                    message: "즐겨찾기에 추가 하시겠습니까?",
+                    actionTitle_1: "추가",
+                    actionFunc_1: favorAddAction,
+                    actionTitle_2: "취소")
+            }
+        }
     }
     @IBOutlet var Favor: UIButton!
     
@@ -46,6 +83,19 @@ class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UI
 
     @IBOutlet var FanListView: UICollectionView!
     @IBOutlet var FanListViewFlowLayout: UICollectionViewFlowLayout!
+    
+    var FanCnt =  0
+    var FanLoadCnt =  0
+    
+    private func CallBackFunc_LoadSimpleUserData(count : Int)
+    {
+        if count == FanLoadCnt
+        {
+            SVProgressHUD.dismiss()
+            FanCnt = PageUserData!.FanDataList.count
+            FanListView.reloadData()
+        }
+    }
     
     var PageUserData : UserData? = nil
     public func SetUserData(userData : UserData)
@@ -67,23 +117,56 @@ class UIViewController_UserPage : UIViewController, UICollectionViewDelegate, UI
             CommonUIFunc.Instance.SetUserName(label: Name, userData:pageUserData)
             Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:pageUserData.Grade))
             BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: pageUserData.BestItem))
+            RefreshFavorUI()
+            
+            for i in 0..<pageUserData.FanDataList.count
+            {
+                if (DataMgr.Instance.GetCachingUserDataList(index: pageUserData.FanDataList[i].Idx) != nil)
+                {
+                    DataMgr.Instance.SetCachingSimpleUserDataList(userData: DataMgr.Instance.GetCachingUserDataList(index: pageUserData.FanDataList[i].Idx)!)
+                }
+                else
+                {
+                    SVProgressHUD.show()
+                    FireBaseFunc.Instance.LoadSimpleUserData(index: String.init(format:"%d",pageUserData.FanDataList[i].Idx), complete: CallBackFunc_LoadSimpleUserData)
+                    FanLoadCnt += 1
+                }
+            }
         }
     }
     
+    public func RefreshFavorUI()
+    {
+        if let pageUserData = PageUserData,
+        let myData = DataMgr.Instance.MyData
+        {
+            if myData.FavorUserIndexList.contains(String.init(format:"%d", pageUserData.Index))
+            {
+                Favor.setImage(UIImage.init(named: "etc_icon_favor"), for: .normal)
+            }
+            else
+            {
+                Favor.setImage(UIImage.init(named: "etc_icon_not_favor"), for: .normal)
+            }
+        }
+    }
+}
+
+extension UIViewController_UserPage : UICollectionViewDelegate, UICollectionViewDataSource
+{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return PageUserData!.FanDataList.count
+        return FanCnt
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_UserPage_Fan
         
-        // 팬들 썸네일 보여주기
-        /*if let pageUserData = PageUserData
-        {
-            let fanIdx = pageUserData.FanDataList[indexPath.row].Idx
-            cell.SetUserPageFanData(userData: DataMgr.Instance.GetCachingUserDataList(index: fanIdx)!)
-        }*/
+        if let pageUserData = PageUserData
+         {
+         let fanIdx = pageUserData.FanDataList[indexPath.row].Idx
+         cell.SetUserPageFanData(userData: DataMgr.Instance.GetCachingSimpleUserDataList(index: fanIdx)!)
+         }
         return cell
     }
     

@@ -24,6 +24,8 @@ struct CommonData {
     public static let STR_LIMIT_INPUT_NICKNAME = 8
     public static let STR_LIMIT_MYPROFILE_MEMO = 100
     
+    public static let GACHA_COST = 7
+    
     public static let AGE_DATA =
                   ["20","21","22","23","24","25","26","27","28","29",
                    "30","31","32","33","34","35","36","37","38","39",

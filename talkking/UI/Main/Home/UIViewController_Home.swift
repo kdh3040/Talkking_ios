@@ -15,6 +15,8 @@ class UIViewController_Home : UIViewController
     @IBAction func FilterAction(_ sender: Any) {
     }
     @IBAction func RandomBoxAction(_ sender: Any) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "MY_JEWEL_PAGE") as! UIViewController_MyJewel
+        self.present(page, animated: true)
     }
     @IBAction func HeartRecvAction(_ sender: Any) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "INPUT_PAGE") as! UIViewController_InputPage
