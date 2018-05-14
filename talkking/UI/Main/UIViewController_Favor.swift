@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
 
 class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableViewDataSource
 {
@@ -16,16 +17,24 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     var FavorCnt =  0
     var FavorLoadCnt =  0
     
-    private func CallBackFunc(count : Int)
+    private func CallBackFunc_LoadSimpleUserData(count : Int)
     {
         if count == FavorLoadCnt
         {
+            SVProgressHUD.dismiss()
             FavorCnt = DataMgr.Instance.MyData!.FavorUserIndexList.count
             FavorTableView.reloadData()
         }
-        
     }
     
+    private func CallBackFunc_LoadUserData(index : Int)
+    {
+            SVProgressHUD.dismiss()
+            let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
+            let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+            page.SetUserData(userData: userData)
+            self.present(page, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +52,9 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
             }
             else
             {
-                FireBaseFunc.Instance.LoadSimpleUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[i], complete: CallBackFunc)
+                SVProgressHUD.init()
+                SVProgressHUD.show()
+                FireBaseFunc.Instance.LoadSimpleUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[i], complete: CallBackFunc_LoadSimpleUserData)
                 FavorLoadCnt += 1
             }
         }
@@ -75,15 +86,24 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-        page.SetUserData(userData: GetSelectUserData(indexPath:indexPath))
-        self.present(page, animated: true)
+        if let userData = GetSelectUserData(indexPath:indexPath)
+        {
+            let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+            page.SetUserData(userData: userData)
+            self.present(page, animated: true)
+        }
+        else
+        {
+            // 로딩하세요
+            SVProgressHUD.show()
+            FireBaseFunc.Instance.LoadUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row], complete: CallBackFunc_LoadUserData)
+        }
     }
     
-    func GetSelectUserData(indexPath: IndexPath) -> UserData
+    func GetSelectUserData(indexPath: IndexPath) -> UserData?
     {
         let index : String = DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row]
         
-        return DataMgr.Instance.GetCachingUserDataList(index: Int(index)!)!
+        return DataMgr.Instance.GetCachingUserDataList(index: Int(index)!)
     }
 }

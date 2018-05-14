@@ -152,7 +152,7 @@ class FireBaseFunc
         //return nil
     }
     
-    public func LoadUserData(index : String, complete : @escaping (()->())) //-> UserData?
+    public func LoadUserData(index : String, complete : @escaping ((_ index : Int)->())) //-> UserData?
     {
         
         ref.child("GenderList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
@@ -173,7 +173,7 @@ class FireBaseFunc
                                 let retValue : UserData = UserData.init(tempData: tempData)
                                 
                                 DataMgr.Instance.SetCachingUserDataList(userData: retValue)                            
-                                complete()
+                                complete(Int(index)!)
                             }
                         }){ (error) in
                             print(error.localizedDescription)
@@ -188,7 +188,7 @@ class FireBaseFunc
                                 let retValue : UserData = UserData.init(tempData: tempData)
                                 
                                 DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-                                complete()
+                               complete(Int(index)!)
                             }
                         }){ (error) in
                             print(error.localizedDescription)
