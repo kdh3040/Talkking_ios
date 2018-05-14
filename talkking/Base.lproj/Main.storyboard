@@ -3167,6 +3167,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="WHR-Gi-0aD"/>
                     </view>
+                    <connections>
+                        <outlet property="RecvHeartTableView" destination="joW-sI-Wza" id="coc-JM-hcU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7o-gO-5Wb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

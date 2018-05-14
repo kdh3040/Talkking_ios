@@ -16,4 +16,30 @@ class UIViewController_RecvHeartPage : UIViewController
     }
     @IBAction func RemoveAll(_ sender: Any) {
     }
+    @IBOutlet var RecvHeartTableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        /*RecvHeartTableView.delegate = self
+        RecvHeartTableView.dataSource = self
+        RecvHeartTableView.rowHeight = 70;
+        RecvHeartTableView.separatorStyle = .none
+        
+        for i in 0..<DataMgr.Instance.MyData!.FanDataList.count
+        {
+            DataMgr.Instance.MyData!.FanDataList[i].
+            if (DataMgr.Instance.GetCachingUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!) != nil)
+            {
+                DataMgr.Instance.SetCachingSimpleUserDataList(userData: DataMgr.Instance.GetCachingUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!)!)
+            }
+            else
+            {
+                SVProgressHUD.init()
+                SVProgressHUD.show()
+                FireBaseFunc.Instance.LoadSimpleUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[i], complete: CallBackFunc_LoadSimpleUserData)
+                FavorLoadCnt += 1
+            }
+        }*/
+    }
 }
