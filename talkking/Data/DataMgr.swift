@@ -38,6 +38,8 @@ class DataMgr {
     public func SetCachingUserDataList(userData:UserData)
     {
         CachingUserDataList[userData.Index] = userData
+        
+        self.SetCachingSimpleUserDataList(userData:userData)
         // 겹치는 인덱스의 유저가 들어 올때는 데이터만 갱신
         // 유저데이터를 생성 하거나 갱신 할때 무조건 이함수를 통해서 갱신되어야함
         // 캐싱된 유저데이터 리스트를 하나로 관리하게끔

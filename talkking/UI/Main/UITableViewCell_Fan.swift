@@ -19,7 +19,7 @@ class UITableViewCell_Fan : UITableViewCell
     @IBOutlet var Grade: UIImageView!
     @IBOutlet var BestItem: UIImageView!
     @IBOutlet var HeartCount: UILabel!
-    public func SetFanCell(userData:UserData, rank : Int)
+    public func SetFanCell(userData:UserData, rank : Int, RecvHeart : Int)
     {
         let realRank = rank + 1
         CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: userData.GetMainThumbnail())!, circle : true)
@@ -45,6 +45,6 @@ class UITableViewCell_Fan : UITableViewCell
             RankLabel.text = String.init(format: "%d위", realRank)
         }
         
-        HeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: 100)
+        HeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: RecvHeart)
     }
 }

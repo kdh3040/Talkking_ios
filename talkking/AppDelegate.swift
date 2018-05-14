@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,12 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // 임시
         
         
+      
       //  let uuid = NSUUID().uuidString
        let uuid = CFUUIDCreateString(nil, CFUUIDCreate(nil))
      //  FireBaseFunc.Instance.LoadMyIndex(uuid: String(uuid!))
         
         var tempuuid = "2A81CBB50-66CB-40BD-AA4D-C5DD14C22EE7"
         tempuuid = "f8cf61f5d605463"
+        
+        SVProgressHUD.init()
+        SVProgressHUD.show()
+        
        FireBaseFunc.Instance.LoadUserIndex(uuid: tempuuid)
  
  

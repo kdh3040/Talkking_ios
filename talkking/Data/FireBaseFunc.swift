@@ -9,13 +9,14 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
-
+import SVProgressHUD
 class FireBaseFunc
 {
     static let Instance = FireBaseFunc()
     var ref : DatabaseReference!
     var CallbackFunc: ()
     var callbackExist : Bool = false
+    var LoadDataCnt : Int = 0
     
     private init() {
          FirebaseApp.configure()
@@ -28,12 +29,22 @@ class FireBaseFunc
         callbackExist = true
     }
     
-    public func test()
+    public func CallBackFunc_LoadMyData(count : Int)
     {
-        print("asdasd")
+        LoadDataCnt += count
+        
+        if LoadDataCnt == CommonData.LOAD_DATA_TYPE
+        {
+            SVProgressHUD.dismiss()
+        }
+        
     }
+    
+    
     public func LoadUserIndex(uuid : String)
     {
+        
+        
         ref.child("UserIdx").child(uuid).observeSingleEvent(of: .value, with: { ( snapshot) in
             
             var tempData = snapshot.value as? String
@@ -42,7 +53,7 @@ class FireBaseFunc
             
             if let tempMyIdx = tempData {
                 
-                self.LoadMyData(index: tempMyIdx, complete: self.test)
+                self.LoadMyData(index: tempMyIdx, complete: self.CallBackFunc_LoadMyData)
  
                 self.LoadBoardDataList()
             
@@ -85,7 +96,7 @@ class FireBaseFunc
      
     }
     
-    public func LoadMyData(index : String, complete : @escaping (()->())) //-> UserData?
+    public func LoadMyData(index : String, complete : @escaping ((_ count : Int)->())) //-> UserData?
     {
         
         ref.child("GenderList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
@@ -109,11 +120,12 @@ class FireBaseFunc
                          
                                 DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
                             
+                                complete(CommonData.LOAD_DATA_SET)
                             
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3])
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
                             
                         }
                     }){ (error) in
@@ -132,11 +144,14 @@ class FireBaseFunc
                             
                            
                                 DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
-                                
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0])
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1])
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2])
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3])
+                            
+                                complete(CommonData.LOAD_DATA_SET)
+                            
+                            
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
+                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
                             
                             
                         }
@@ -213,7 +228,7 @@ class FireBaseFunc
                 let retValue : UserData = UserData.init(tempData: tempData)
                 
                 DataMgr.Instance.SetCachingSimpleUserDataList(userData: retValue)
-                self.i += 1;
+                self.i += CommonData.LOAD_DATA_SET;
                 complete(self.i)
                
             }
@@ -224,7 +239,7 @@ class FireBaseFunc
         //return nil
     }
     
-    public func LoadUserDataList(sortRef : String) //-> UserData?
+    public func LoadUserDataList(sortRef : String, complete : @escaping ((_ count : Int)->())) //-> UserData?
     {
         
         if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
@@ -241,21 +256,40 @@ class FireBaseFunc
                     
                     DataMgr.Instance.SetCachingUserDataList(userData: retValue)
                     
+                    
                     if sortRef == CommonData.HOME_VIEW_REF[0]
                     {
                         DataMgr.Instance.SetUserDataList_RecvHeart(ViewIndex : viewIdx, userIndex: retValue.Index)
+                        
+                        if DataMgr.Instance.GetUserDataList_RecvHeart_Count() == CommonData.LOAD_USERDATA_COUNT
+                        {
+                            complete(CommonData.LOAD_DATA_SET)
+                        }
+                       
                     }
                     else if sortRef == CommonData.HOME_VIEW_REF[1]
                     {
                         DataMgr.Instance.SetUserDataList_FanCount(ViewIndex: viewIdx, userIndex: retValue.Index)
+                        if DataMgr.Instance.GetUserDataList_FanCount_Count() == CommonData.LOAD_USERDATA_COUNT
+                        {
+                            complete(CommonData.LOAD_DATA_SET)
+                        }
                     }
                     else if sortRef == CommonData.HOME_VIEW_REF[2]
                     {
                         DataMgr.Instance.SetUserDataList_Near(ViewIndex: viewIdx, userIndex: retValue.Index)
+                        if DataMgr.Instance.GetUserDataList_Near_Count() == CommonData.LOAD_USERDATA_COUNT
+                        {
+                            complete(CommonData.LOAD_DATA_SET)
+                        }
                     }
                     else if sortRef == CommonData.HOME_VIEW_REF[3]
                     {
                         DataMgr.Instance.SetUserDataList_New(ViewIndex: viewIdx, userIndex: retValue.Index)
+                        if DataMgr.Instance.GetUserDataList_New_Count() == CommonData.LOAD_USERDATA_COUNT
+                        {
+                            complete(CommonData.LOAD_DATA_SET)
+                        }
                     }
                     
                     viewIdx += 1

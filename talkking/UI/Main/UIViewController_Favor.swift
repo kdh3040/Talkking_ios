@@ -46,16 +46,11 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         
         for i in 0..<DataMgr.Instance.MyData!.FavorUserIndexList.count
         {
-            if (DataMgr.Instance.GetCachingUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!) != nil)
+            if (DataMgr.Instance.GetCachingSimpleUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!) == nil)
             {
-                DataMgr.Instance.SetCachingSimpleUserDataList(userData: DataMgr.Instance.GetCachingUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!)!)
-            }
-            else
-            {
-                SVProgressHUD.init()
                 SVProgressHUD.show()
                 FireBaseFunc.Instance.LoadSimpleUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[i], complete: CallBackFunc_LoadSimpleUserData)
-                FavorLoadCnt += 1
+                FavorLoadCnt += CommonData.LOAD_DATA_SET
             }
         }
     }

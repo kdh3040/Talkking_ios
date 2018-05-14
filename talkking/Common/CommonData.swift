@@ -35,4 +35,7 @@ struct CommonData {
                    "90","91","92","93","94","95","96","97","98","99"]
     public static let GENDER_DATA = ["남자","여자"]
 
+    public static let LOAD_DATA_SET = 1
+    public static let LOAD_DATA_TYPE = 5
+
 }

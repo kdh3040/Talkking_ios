@@ -24,7 +24,7 @@ class UITableViewCell_Board : UITableViewCell
     {
         CommonUIFunc.Instance.SetDefaultThumbnail(imageView : Thumbnail, circle : true)
         
-        if let cellUserData = DataMgr.Instance.GetCachingUserDataList(index: boardData.UserIndex)
+        if let cellUserData = DataMgr.Instance.GetCachingSimpleUserDataList(index: boardData.UserIndex)
         {
             CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : true)
             
