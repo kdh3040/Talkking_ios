@@ -29,7 +29,7 @@ class UIViewController_MyUserPage : UIViewController
     @IBOutlet var Name: UILabel!
     @IBOutlet var Grade: UIButton!
     @IBAction func GradeAction(_ sender: Any) {
-        // 등급표 팝업 추가
+        // TODO 등급표 팝업 추가
     }
     @IBOutlet var BestItem: UIButton!
     @IBAction func BestItemAction(_ sender: Any) {
@@ -41,7 +41,10 @@ class UIViewController_MyUserPage : UIViewController
         self.present(page, animated: true)
     }
     @IBAction func SettingAction(_ sender: Any) {
-        // 설정 페이지 추가
+        // TODO 설정 페이지 추가
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "SETTING_PAGE") as! UIViewController_SettingPage
+        self.present(page, animated: true)
+        
     }
     
     @IBAction func CoinCharge(_ sender: Any) {

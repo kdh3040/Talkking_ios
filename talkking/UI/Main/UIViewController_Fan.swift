@@ -23,7 +23,7 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
     {
         if count == FanLoadCnt
         {
-            SVProgressHUD.dismiss()
+            CommonUIFunc.DismissLoading()
             FanCnt = DataMgr.Instance.MyData!.FanDataList.count
             FanTableView.reloadData()
         }
@@ -31,7 +31,7 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
     
     private func CallBackFunc_LoadUserData(index : Int)
     {
-        SVProgressHUD.dismiss()
+        CommonUIFunc.DismissLoading()
         let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
         let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
         page.SetUserData(userData: userData)
@@ -55,7 +55,7 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
         {
             if (DataMgr.Instance.GetCachingSimpleUserDataList(index: Int(DataMgr.Instance.MyData!.FanDataList[i].Idx)) == nil)
             {
-                SVProgressHUD.show()
+                CommonUIFunc.ShowLoading()
                 FireBaseFunc.Instance.LoadSimpleUserData(index: String(DataMgr.Instance.MyData!.FanDataList[i].Idx), complete: CallBackFunc_LoadSimpleUserData)
                 FanLoadCnt += CommonData.LOAD_DATA_SET
             }
@@ -98,7 +98,7 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
         else
         {
             // 로딩하세요
-            SVProgressHUD.show()
+            CommonUIFunc.ShowLoading()
             FireBaseFunc.Instance.LoadUserData(index: String(DataMgr.Instance.MyData!.FanDataList[indexPath.row].Idx), complete: CallBackFunc_LoadUserData)
         }
         

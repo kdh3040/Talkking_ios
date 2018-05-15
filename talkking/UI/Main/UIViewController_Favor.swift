@@ -21,7 +21,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     {
         if count == FavorLoadCnt
         {
-            SVProgressHUD.dismiss()
+            CommonUIFunc.DismissLoading()
             FavorCnt = DataMgr.Instance.MyData!.FavorUserIndexList.count
             FavorTableView.reloadData()
         }
@@ -29,7 +29,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
     
     private func CallBackFunc_LoadUserData(index : Int)
     {
-            SVProgressHUD.dismiss()
+            CommonUIFunc.DismissLoading()
             let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
             let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
             page.SetUserData(userData: userData)
@@ -48,7 +48,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         {
             if (DataMgr.Instance.GetCachingSimpleUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!) == nil)
             {
-                SVProgressHUD.show()
+                CommonUIFunc.ShowLoading()
                 FireBaseFunc.Instance.LoadSimpleUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[i], complete: CallBackFunc_LoadSimpleUserData)
                 FavorLoadCnt += CommonData.LOAD_DATA_SET
             }
@@ -90,7 +90,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         else
         {
             // 로딩하세요
-            SVProgressHUD.show()
+            CommonUIFunc.ShowLoading()
             FireBaseFunc.Instance.LoadUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row], complete: CallBackFunc_LoadUserData)
         }
     }

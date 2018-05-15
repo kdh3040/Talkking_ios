@@ -69,10 +69,13 @@ class UIViewController_UserPage : UIViewController
     @IBOutlet var Favor: UIButton!
     
     @IBAction func ChatAction(_ sender: Any) {
+        // TODO 쪽지 보내기 팝업
     }
     @IBAction func HeartAction(_ sender: Any) {
+        // TODO 하트 보내기 팝업
     }
     @IBAction func ShareAction(_ sender: Any) {
+        // TODO 공유하기 기능 추가
     }
     @IBAction func HomeAction(_ sender: Any) {
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
@@ -91,7 +94,7 @@ class UIViewController_UserPage : UIViewController
     {
         if count == FanLoadCnt
         {
-            SVProgressHUD.dismiss()
+            CommonUIFunc.DismissLoading()
             FanCnt = PageUserData!.FanDataList.count
             FanListView.reloadData()
         }
@@ -123,7 +126,7 @@ class UIViewController_UserPage : UIViewController
             {
                 if (DataMgr.Instance.GetCachingSimpleUserDataList(index: pageUserData.FanDataList[i].Idx) == nil)
                 {
-                    SVProgressHUD.show()
+                    CommonUIFunc.ShowLoading()
                     FireBaseFunc.Instance.LoadSimpleUserData(index: String.init(format:"%d",pageUserData.FanDataList[i].Idx), complete: CallBackFunc_LoadSimpleUserData)
                     FanLoadCnt += CommonData.LOAD_DATA_SET
                 }
@@ -173,6 +176,6 @@ extension UIViewController_UserPage : UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        // 팬 페이지로 이동
+        // TODO 팬페이지 추가
     }
 }

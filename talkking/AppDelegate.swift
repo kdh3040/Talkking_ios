@@ -29,8 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var tempuuid = "2A81CBB50-66CB-40BD-AA4D-C5DD14C22EE7"
         tempuuid = "f8cf61f5d605463"
         
-        SVProgressHUD.init()
-        SVProgressHUD.show()
+        CommonUIFunc.ShowLoading()
         
        FireBaseFunc.Instance.LoadUserIndex(uuid: tempuuid)
  

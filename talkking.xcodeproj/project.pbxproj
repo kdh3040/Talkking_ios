@@ -100,6 +100,10 @@
 		93A4C4EC20A1E1CF00066594 /* icon_main_mypage.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4E820A1E1CD00066594 /* icon_main_mypage.png */; };
 		93A4C4ED20A1E1CF00066594 /* icon_main_filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4E920A1E1CE00066594 /* icon_main_filter.png */; };
 		93A4C4EE20A1E1CF00066594 /* icon_main_randombox.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4EA20A1E1CE00066594 /* icon_main_randombox.png */; };
+		93C29B7E20AA876E008D9D84 /* UIViewController_SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C29B7D20AA876E008D9D84 /* UIViewController_SettingPage.swift */; };
+		93C29B8020AAB72D008D9D84 /* UITableViewController_Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C29B7F20AAB72D008D9D84 /* UITableViewController_Setting.swift */; };
+		93C29B8220AABE03008D9D84 /* UIViewController_BlockListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C29B8120AABE03008D9D84 /* UIViewController_BlockListPage.swift */; };
+		93C29B8420AABE1B008D9D84 /* UITableViewCell_BlockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C29B8320AABE1B008D9D84 /* UITableViewCell_BlockList.swift */; };
 		93E5245220921870009E303A /* UITableViewCell_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E524502092186F009E303A /* UITableViewCell_Fan.swift */; };
 		93E5245320921870009E303A /* UIViewController_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E524512092186F009E303A /* UIViewController_Fan.swift */; };
 		93E524552092EDA0009E303A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E524542092EDA0009E303A /* Assets.xcassets */; };
@@ -251,6 +255,10 @@
 		93A4C4E820A1E1CD00066594 /* icon_main_mypage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_main_mypage.png; sourceTree = "<group>"; };
 		93A4C4E920A1E1CE00066594 /* icon_main_filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_main_filter.png; sourceTree = "<group>"; };
 		93A4C4EA20A1E1CE00066594 /* icon_main_randombox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_main_randombox.png; sourceTree = "<group>"; };
+		93C29B7D20AA876E008D9D84 /* UIViewController_SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_SettingPage.swift; sourceTree = "<group>"; };
+		93C29B7F20AAB72D008D9D84 /* UITableViewController_Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController_Setting.swift; sourceTree = "<group>"; };
+		93C29B8120AABE03008D9D84 /* UIViewController_BlockListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_BlockListPage.swift; sourceTree = "<group>"; };
+		93C29B8320AABE1B008D9D84 /* UITableViewCell_BlockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_BlockList.swift; sourceTree = "<group>"; };
 		93E524502092186F009E303A /* UITableViewCell_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell_Fan.swift; sourceTree = "<group>"; };
 		93E524512092186F009E303A /* UIViewController_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_Fan.swift; sourceTree = "<group>"; };
 		93E524542092EDA0009E303A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -608,6 +616,10 @@
 				9353D9C620A8128D006E4FAF /* UIViewController_RecvHeartPage.swift */,
 				9353D9C820A8142D006E4FAF /* UITableViewCell_RecvHeart.swift */,
 				9353D9D020A832CF006E4FAF /* UIViewController_ThumbnailList.swift */,
+				93C29B7D20AA876E008D9D84 /* UIViewController_SettingPage.swift */,
+				93C29B7F20AAB72D008D9D84 /* UITableViewController_Setting.swift */,
+				93C29B8120AABE03008D9D84 /* UIViewController_BlockListPage.swift */,
+				93C29B8320AABE1B008D9D84 /* UITableViewCell_BlockList.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -999,13 +1011,17 @@
 				930450E520A580EB005E37FB /* UIViewController_NoticeListPage.swift in Sources */,
 				3D5091BF208DF92000DA8C8F /* ViewController.swift in Sources */,
 				9318F96720903E0300E08F7D /* UserData.swift in Sources */,
+				93C29B8220AABE03008D9D84 /* UIViewController_BlockListPage.swift in Sources */,
 				3D5091BD208DF92000DA8C8F /* AppDelegate.swift in Sources */,
+				93C29B8020AAB72D008D9D84 /* UITableViewController_Setting.swift in Sources */,
 				930450E320A56273005E37FB /* UIViewController_ProvisionPage.swift in Sources */,
 				93E7664F2099F5B1005455A8 /* UIViewController_Home_Hot.swift in Sources */,
+				93C29B7E20AA876E008D9D84 /* UIViewController_SettingPage.swift in Sources */,
 				9318F96620903E0300E08F7D /* MyUserData.swift in Sources */,
 				9318F96420903E0300E08F7D /* UIViewController_Favor.swift in Sources */,
 				93E5245220921870009E303A /* UITableViewCell_Fan.swift in Sources */,
 				9318F96A20903E0300E08F7D /* DataMgr.swift in Sources */,
+				93C29B8420AABE1B008D9D84 /* UITableViewCell_BlockList.swift in Sources */,
 				93E766332099B7F3005455A8 /* UIViewController_Home_Public.swift in Sources */,
 				93E7665A209AF11C005455A8 /* UIViewController_UserPage.swift in Sources */,
 				9353D9BB20A5BAC3006E4FAF /* UIViewController_ChargePage.swift in Sources */,
@@ -1206,7 +1222,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1222,7 +1241,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkking/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1238,7 +1260,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1255,7 +1281,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1271,7 +1301,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1287,7 +1321,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = talkkingUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = DOHOSOFT.talkkingUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

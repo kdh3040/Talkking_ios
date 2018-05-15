@@ -35,7 +35,7 @@ class FireBaseFunc
         
         if LoadDataCnt == CommonData.LOAD_DATA_TYPE
         {
-            SVProgressHUD.dismiss()
+            CommonUIFunc.DismissLoading()
         }
         
     }

@@ -107,6 +107,7 @@ class UIViewController_MyJewel : UIViewController
     
     func ShowJewelSell(_ index:Int)
     {
+        // TODO 보석 판매 기능 추가
         print(String.init(format:"%d", index))
     }
     

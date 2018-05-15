@@ -21,7 +21,7 @@ class UIViewController_Board : UIViewController, UITableViewDelegate, UITableVie
     {
         if count == BoardLoadCnt
         {
-            SVProgressHUD.dismiss()
+            CommonUIFunc.DismissLoading()
             BoardCnt = DataMgr.Instance.CachingBoardDataList.count
             BoardTableView.reloadData()
         }
@@ -29,7 +29,7 @@ class UIViewController_Board : UIViewController, UITableViewDelegate, UITableVie
     
     private func CallBackFunc_LoadUserData(index : Int)
     {
-        SVProgressHUD.dismiss()
+        CommonUIFunc.DismissLoading()
         let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
         let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
         page.SetUserData(userData: userData)
@@ -49,7 +49,7 @@ class UIViewController_Board : UIViewController, UITableViewDelegate, UITableVie
         {
             if (DataMgr.Instance.GetCachingSimpleUserDataList(index: DataMgr.Instance.CachingBoardDataList[i].UserIndex) == nil)
             {
-                SVProgressHUD.show()
+                CommonUIFunc.ShowLoading()
                 FireBaseFunc.Instance.LoadSimpleUserData(index: String(DataMgr.Instance.CachingBoardDataList[i].UserIndex), complete: CallBackFunc_LoadSimpleUserData)
                 BoardLoadCnt += CommonData.LOAD_DATA_SET
             }
@@ -93,7 +93,7 @@ class UIViewController_Board : UIViewController, UITableViewDelegate, UITableVie
         else
         {
             // 로딩하세요
-            SVProgressHUD.show()
+            CommonUIFunc.ShowLoading()
             FireBaseFunc.Instance.LoadUserData(index: String(DataMgr.Instance.CachingBoardDataList[indexPath.row].UserIndex), complete: CallBackFunc_LoadUserData)
         }
     }

@@ -11,7 +11,7 @@ import UIKit
 
 class UIViewController_ProfileSetting : UIViewController
 {
-
+    // TODO 변경된 데이터를 파이어베이스에 올리는 기능
     @IBAction func Back(_ sender: Any) {
         self.dismiss(animated: true)
     }

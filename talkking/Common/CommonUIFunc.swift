@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Kingfisher
+import SVProgressHUD
 
 struct UserPageAccumulateData {
     public var PageStoryBoardId : String = ""
@@ -251,5 +252,16 @@ class CommonUIFunc{
         alertController.addAction(action_2)
         
         viewController.present(alertController,animated: true,completion: nil)
+    }
+    
+    
+    static public func ShowLoading()
+    {
+        SVProgressHUD.show()
+        SVProgressHUD.setDefaultMaskType(.clear)
+    }
+    static public func DismissLoading()
+    {
+        SVProgressHUD.dismiss()
     }
 }

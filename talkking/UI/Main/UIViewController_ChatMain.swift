@@ -22,7 +22,7 @@ class UIViewController_ChatMain : UIViewController, UITableViewDelegate, UITable
     {
         if count == ChatLoadCnt
         {
-            SVProgressHUD.dismiss()
+            CommonUIFunc.DismissLoading()
             ChatCnt = DataMgr.Instance.MyData!.ChatDataList.count
             ChatMainTableView.reloadData()
         }
@@ -30,7 +30,7 @@ class UIViewController_ChatMain : UIViewController, UITableViewDelegate, UITable
     
     private func CallBackFunc_LoadUserData(index : Int)
     {
-        SVProgressHUD.dismiss()
+        CommonUIFunc.DismissLoading()
         let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
         let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
         page.SetUserData(userData: userData)

@@ -11,6 +11,8 @@ import UIKit
 
 class UIViewController_InputPage : UIViewController
 {
+    // TODO 아이디가 없으면 처음 페이지로 설정하는 기능 추가
+    // TODO 세팅한 데이터들을 파이어 베이스에 넘기는 기능 추가
     @IBAction func ThumbnailAction(_ sender: Any) {
         CommonUIFunc.Instance.OpenThumbnailPic(viewController: self, thumbnailPicker: ThumbnailPicker)
     }
