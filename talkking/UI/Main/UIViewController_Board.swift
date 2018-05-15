@@ -12,6 +12,12 @@ import SVProgressHUD
 
 class UIViewController_Board : UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    
+    @IBAction func WriteAction(_ sender: Any) {
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "BOARD_WRITE_POPUP") as! UIViewController_BoardWritePopup
+        page.ShowPopup(viewController: self)
+    }
+    
     @IBOutlet var BoardTableView: UITableView!
     
     var BoardCnt =  0

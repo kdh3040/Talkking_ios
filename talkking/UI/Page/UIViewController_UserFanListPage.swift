@@ -21,6 +21,28 @@ class UIViewController_UserFanListPage : UIViewController
     @IBOutlet var FanTableView: UITableView!
     
     public var SelectUserData : UserData? = nil
+    var FanCnt =  0
+    var FanLoadCnt =  0
+    
+    private func CallBackFunc_LoadSimpleUserData(count : Int)
+    {
+        if count == FanLoadCnt,
+            let userData = self.SelectUserData
+        {
+            CommonUIFunc.DismissLoading()
+            FanCnt = userData.FanDataList.count
+            FanTableView.reloadData()
+        }
+    }
+    
+    private func CallBackFunc_LoadUserData(index : Int)
+    {
+        CommonUIFunc.DismissLoading()
+        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.SetUserData(userData: userData)
+        self.present(page, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +51,30 @@ class UIViewController_UserFanListPage : UIViewController
         FanTableView.dataSource = self
         FanTableView.rowHeight = 80;
         FanTableView.separatorStyle = .none
+        
+        if let userData = SelectUserData
+        {
+            PageNameLabel.text = String.init(format:"%@의 팬", userData.Name)
+            HeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: userData.RecvHeart)
+            FanCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: userData.FanDataList.count)
+            
+            for i in 0..<userData.FanDataList.count
+            {
+                let fanData = userData.FanDataList[i]
+                if (DataMgr.Instance.GetCachingSimpleUserDataList(index: fanData.Idx) == nil)
+                {
+                    CommonUIFunc.ShowLoading()
+                    FireBaseFunc.Instance.LoadSimpleUserData(index: String(fanData.Idx), complete: CallBackFunc_LoadSimpleUserData)
+                    FanLoadCnt += CommonData.LOAD_DATA_SET
+                }
+            }
+            
+            if FanLoadCnt == 0
+            {
+                FanCnt = userData.FanDataList.count
+            }
+        }
+        
     }
     
     public func SetSelectUserData(userData : UserData)
@@ -40,21 +86,41 @@ class UIViewController_UserFanListPage : UIViewController
 extension UIViewController_UserFanListPage : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SelectUserData!.FanDataList.count
+        return FanCnt
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_UserFan
         let fanData = SelectUserData!.FanDataList[indexPath.row]
-        if let userData = DataMgr.Instance.GetCachingUserDataList(index:fanData.Idx)
-        {
-            cell.SetFanUserData(userData: userData, rank : indexPath.row, RecvHeart: fanData.RecvHeart)
-        }
+        cell.SetFanUserData(userData: GetSelectSimpleUserData(indexPath: indexPath) , rank : indexPath.row, RecvHeart: fanData.RecvHeart)
         return cell
     }
     
+    func GetSelectSimpleUserData(indexPath: IndexPath) -> UserData
+    {
+        let index : Int = SelectUserData!.FanDataList[indexPath.row].Idx
+        
+        return DataMgr.Instance.GetCachingSimpleUserDataList(index: (index))!
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-        page.SetUserData(userData: DataMgr.Instance.GetCachingUserDataList(index:SelectUserData!.FanDataList[indexPath.row].Idx)!)
-        self.present(page, animated: true)
+        
+        if let userData = GetSelectUserData(indexPath:indexPath)
+        {
+            let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+            page.SetUserData(userData: userData)
+            self.present(page, animated: true)
+        }
+        else
+        {
+            CommonUIFunc.ShowLoading()
+            FireBaseFunc.Instance.LoadUserData(index: String(SelectUserData!.FanDataList[indexPath.row].Idx), complete: CallBackFunc_LoadUserData)
+        }
+    }
+    
+    func GetSelectUserData(indexPath: IndexPath) -> UserData?
+    {
+        let index = SelectUserData!.FanDataList[indexPath.row].Idx
+        
+        return DataMgr.Instance.GetCachingUserDataList(index: index)
     }
 }

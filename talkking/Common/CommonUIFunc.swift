@@ -60,7 +60,7 @@ class CommonUIFunc{
     }
     
     public func GetFanRankImgName(rank:Int) -> String{
-        if(rank <= 0 || CommonData.FAN_RANK_ICON.count <= rank)
+        if(rank <= 0 || CommonData.FAN_RANK_ICON.count < rank)
         {
             return ""
         }
