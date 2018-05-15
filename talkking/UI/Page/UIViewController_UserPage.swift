@@ -69,7 +69,8 @@ class UIViewController_UserPage : UIViewController
     @IBOutlet var Favor: UIButton!
     
     @IBAction func ChatAction(_ sender: Any) {
-        // TODO 쪽지 보내기 팝업
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "MSG_SEND_POPUP") as! UIViewController_MsgSendPopup
+        page.ShowPopup(viewController: self)
     }
     @IBAction func HeartAction(_ sender: Any) {
         // TODO 하트 보내기 팝업
@@ -176,6 +177,8 @@ extension UIViewController_UserPage : UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        // TODO 팬페이지 추가
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_FAN_LIST") as! UIViewController_UserFanListPage
+        page.SetSelectUserData(userData: PageUserData!)
+        self.present(page, animated: true)
     }
 }

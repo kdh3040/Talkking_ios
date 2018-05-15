@@ -23,6 +23,7 @@ struct CommonData {
     
     public static let STR_LIMIT_INPUT_NICKNAME = 8
     public static let STR_LIMIT_MYPROFILE_MEMO = 100
+    public static let STR_LIMIT_SEND_MSG = 30
     
     public static let GACHA_COST = 7
     
