@@ -45,7 +45,8 @@ class UIViewController_ProfileSetting : UIViewController
     }
     @IBOutlet var NickName: UILabel!
     @IBAction func NickNameChangeAction(_ sender: Any) {
-        // TODO : 닉네임 변경 팝업 추가
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "NICK_NAME_CHANGE_POPUP") as! UIViewController_NickNameChangePopup
+        page.ShowPopup(viewController: self)
     }
     @IBOutlet var Age: UITextField!
     @IBOutlet var Gander: UILabel!
