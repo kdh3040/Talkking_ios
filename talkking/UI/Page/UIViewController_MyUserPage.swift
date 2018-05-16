@@ -41,7 +41,6 @@ class UIViewController_MyUserPage : UIViewController
         self.present(page, animated: true)
     }
     @IBAction func SettingAction(_ sender: Any) {
-        // TODO 설정 페이지 추가
         let page = self.storyboard?.instantiateViewController(withIdentifier: "SETTING_PAGE") as! UIViewController_SettingPage
         self.present(page, animated: true)
         

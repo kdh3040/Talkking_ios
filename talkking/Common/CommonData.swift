@@ -25,8 +25,10 @@ struct CommonData {
     public static let STR_LIMIT_MYPROFILE_MEMO = 100
     public static let STR_LIMIT_SEND_MSG = 30
     public static let STR_LIMIT_BOARD_MSG = 100
+    public static let STR_LIMIT_HEART_SEND_MSG = 50
     
     public static let GACHA_COST = 7
+    public static let NICKNAME_CHANGE_COST = 500
     
     public static let AGE_DATA =
                   ["20","21","22","23","24","25","26","27","28","29",

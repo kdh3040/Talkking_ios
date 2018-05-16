@@ -75,7 +75,8 @@ class UIViewController_UserPage : UIViewController
         page.ShowPopup(viewController: self)
     }
     @IBAction func HeartAction(_ sender: Any) {
-        // TODO 하트 보내기 팝업
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "HEART_SEND_POPUP") as! UIViewController_HeartSendPopup
+        page.ShowPopup(viewController: self)
     }
     @IBAction func ShareAction(_ sender: Any) {
         // TODO 공유하기 기능 추가
