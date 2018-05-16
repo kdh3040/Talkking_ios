@@ -26,6 +26,7 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
             CommonUIFunc.DismissLoading()
             FanCnt = DataMgr.Instance.MyData!.FanDataList.count
             FanTableView.reloadData()
+            FireBaseFunc.Instance.CallBackCount = 0
         }
     }
     
@@ -59,6 +60,11 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
                 FireBaseFunc.Instance.LoadSimpleUserData(index: String(DataMgr.Instance.MyData!.FanDataList[i].Idx), complete: CallBackFunc_LoadSimpleUserData)
                 FanLoadCnt += CommonData.LOAD_DATA_SET
             }
+        }
+        
+        if FanLoadCnt == 0
+        {
+            FanCnt = DataMgr.Instance.MyData!.FanDataList.count
         }
         
     }

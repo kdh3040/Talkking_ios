@@ -15,9 +15,9 @@ class UITableViewCell_Notice : UITableViewCell
     @IBOutlet var Title: UILabel!
     @IBOutlet var Time: UILabel!
  
-    public func SetNoticeData()
+    public func SetNoticeData(notiData : NotificationData)
     {
-        Title.text = "공지입니다."
-        Time.text = "10-23-44"
+        Title.text = notiData.Title
+        Time.text = notiData.Date
     }
 }

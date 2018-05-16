@@ -20,11 +20,11 @@ class UIViewController_NoticePage : UIViewController
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        Notice.text = "이건 공지"
+
     }
     
-    public func SetNotice()
+    public func SetNotice(notiData : NotificationData)
     {
-        
+        Notice.text = notiData.Body
     }
 }

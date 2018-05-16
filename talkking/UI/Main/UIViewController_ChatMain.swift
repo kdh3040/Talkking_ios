@@ -25,6 +25,7 @@ class UIViewController_ChatMain : UIViewController, UITableViewDelegate, UITable
             CommonUIFunc.DismissLoading()
             ChatCnt = DataMgr.Instance.MyData!.ChatDataList.count
             ChatMainTableView.reloadData()
+            FireBaseFunc.Instance.CallBackCount = 0
         }
     }
     

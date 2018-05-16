@@ -30,6 +30,7 @@ class UIViewController_Board : UIViewController, UITableViewDelegate, UITableVie
             CommonUIFunc.DismissLoading()
             BoardCnt = DataMgr.Instance.CachingBoardDataList.count
             BoardTableView.reloadData()
+            FireBaseFunc.Instance.CallBackCount = 0
         }
     }
     
@@ -60,7 +61,10 @@ class UIViewController_Board : UIViewController, UITableViewDelegate, UITableVie
                 BoardLoadCnt += CommonData.LOAD_DATA_SET
             }
         }
-        
+        if BoardLoadCnt == 0
+        {
+            BoardCnt = DataMgr.Instance.CachingBoardDataList.count
+        }
         
     }
     

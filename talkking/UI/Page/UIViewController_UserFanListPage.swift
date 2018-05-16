@@ -32,6 +32,7 @@ class UIViewController_UserFanListPage : UIViewController
             CommonUIFunc.DismissLoading()
             FanCnt = userData.FanDataList.count
             FanTableView.reloadData()
+            FireBaseFunc.Instance.CallBackCount = 0
         }
     }
     

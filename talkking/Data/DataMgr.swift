@@ -9,6 +9,7 @@
 import Foundation
 
 class DataMgr {
+    public var CachingNotificationDataList : [Int : NotificationData] = [Int : NotificationData]()
     public var CachingBoardDataList : [BoardData] = [BoardData]()
     private var CachingUserDataList : [Int : UserData] = [Int : UserData]()
     private var CachingSimpleUserDataList : [Int : UserData] = [Int : UserData]()
@@ -84,6 +85,22 @@ class DataMgr {
         // 겹치는 인덱스의 게시글이 들어 올때는 데이터만 갱신
     }
 
+    public func GetNotificationData(index:Int) -> NotificationData?
+    {
+        if var NotiData = CachingNotificationDataList[index]
+        {
+            return NotiData
+        }
+    
+        return nil
+    }
+    
+    public func SetNotificationData(index : Int , notiData:NotificationData)
+    {
+        CachingNotificationDataList[index] = notiData
+        // 겹치는 인덱스의 게시글이 들어 올때는 데이터만 갱신
+    }
+    
     // RecvHeart 기준으로 들어오는 순서대로 유져 인덱스 적재
     public func SetUserDataList_RecvHeart(ViewIndex : Int, userIndex : Int)
     {

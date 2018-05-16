@@ -24,6 +24,7 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
             CommonUIFunc.DismissLoading()
             FavorCnt = DataMgr.Instance.MyData!.FavorUserIndexList.count
             FavorTableView.reloadData()
+            FireBaseFunc.Instance.CallBackCount = 0
         }
     }
     
@@ -52,6 +53,11 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
                 FireBaseFunc.Instance.LoadSimpleUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[i], complete: CallBackFunc_LoadSimpleUserData)
                 FavorLoadCnt += CommonData.LOAD_DATA_SET
             }
+        }
+        
+        if FavorLoadCnt == 0
+        {
+            FavorCnt = DataMgr.Instance.MyData!.FavorUserIndexList.count
         }
     }
     

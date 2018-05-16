@@ -36,6 +36,7 @@ class UIViewController_UserPage : UIViewController
             {
                 let favorRemoveAction = {
                     // TODO : 파이어 베이스에 올리기
+                    FireBaseFunc.Instance.DelFavorList(userData : pageUserData)
                     myData.FavorUserIndexList.removeAll()
                     self.RefreshFavorUI()
                 }
@@ -52,6 +53,7 @@ class UIViewController_UserPage : UIViewController
             {
                 let favorAddAction = {
                     // TODO : 파이어 베이스에 올리기
+                    FireBaseFunc.Instance.SetFavorList(userData: pageUserData)
                     myData.FavorUserIndexList.append(String(pageUserData.Index))
                     self.RefreshFavorUI()
                 }
@@ -98,6 +100,7 @@ class UIViewController_UserPage : UIViewController
             CommonUIFunc.DismissLoading()
             FanCnt = PageUserData!.FanDataList.count
             FanListView.reloadData()
+            FireBaseFunc.Instance.CallBackCount = 0
         }
     }
     

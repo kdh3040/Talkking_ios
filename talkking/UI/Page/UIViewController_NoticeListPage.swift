@@ -28,18 +28,18 @@ class UIViewController_NoticeListPage : UIViewController
 extension UIViewController_NoticeListPage : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+       // return 1
+        return DataMgr.Instance.CachingNotificationDataList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_Notice
-        
-        cell.SetNoticeData()
+        cell.SetNoticeData(notiData: DataMgr.Instance.GetNotificationData(index: indexPath.row)!)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "NOTICE_PAGE") as! UIViewController_NoticePage
-        page.SetNotice()
+        page.SetNotice(notiData: DataMgr.Instance.GetNotificationData(index: indexPath.row)!)
         self.present(page, animated: true)
     }
 }

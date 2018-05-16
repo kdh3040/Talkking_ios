@@ -17,6 +17,7 @@ class FireBaseFunc
     var CallbackFunc: ()
     var callbackExist : Bool = false
     var LoadDataCnt : Int = 0
+    public var CallBackCount : Int = 0
     
     private init() {
          FirebaseApp.configure()
@@ -54,8 +55,8 @@ class FireBaseFunc
             if let tempMyIdx = tempData {
                 
                 self.LoadMyData(index: tempMyIdx, complete: self.CallBackFunc_LoadMyData)
- 
                 self.LoadBoardDataList()
+                self.LoadNotification()
             
             }
             else
@@ -216,7 +217,7 @@ class FireBaseFunc
         }
         //return nil
     }
-     var i : Int = 0
+ 
     
     public func LoadSimpleUserData(index : String, complete : @escaping ((_ count : Int)->())) //-> UserData?
     {
@@ -228,8 +229,8 @@ class FireBaseFunc
                 let retValue : UserData = UserData.init(tempData: tempData)
                 
                 DataMgr.Instance.SetCachingSimpleUserDataList(userData: retValue)
-                self.i += CommonData.LOAD_DATA_SET;
-                complete(self.i)
+                self.CallBackCount += CommonData.LOAD_DATA_SET
+                complete(self.CallBackCount)
                
             }
         }){ (error) in
@@ -365,5 +366,51 @@ class FireBaseFunc
         }
         
         //return nil
+    }
+    
+    public func LoadNotification()
+    {
+        ref.child("CommonValue").child("Notification").observeSingleEvent(of: .value, with: { ( snapshot) in
+            
+            for childSnapshot in snapshot.children
+            {
+                
+                var tempChildData = childSnapshot as! DataSnapshot
+                var tempData = tempChildData.value as? NSDictionary
+                var retValue : NotificationData = NotificationData.init(tempData: tempData!)
+                
+                DataMgr.Instance.SetNotificationData(index: Int(tempChildData.key)!, notiData: retValue)
+            }
+            
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
+        
+        //return nil
+    }
+    
+    public func SetFavorList(userData : UserData)
+    {
+        if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
+        {
+            self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).setValue(String(userData.Index))
+        }
+        else
+        {
+            self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).setValue(String(userData.Index))
+        }
+    }
+    
+    public func DelFavorList(userData : UserData)
+    {
+        if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
+        {
+            self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).removeValue()
+        }
+        else
+        {
+            self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).removeValue()
+        }
     }
 }
