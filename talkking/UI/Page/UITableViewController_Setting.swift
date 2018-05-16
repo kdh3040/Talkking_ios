@@ -16,7 +16,8 @@ class UITableViewController_Setting : UITableViewController
     @IBOutlet var AlarmPopup: UISwitch!
     @IBOutlet var MsgRefusal: UISwitch!
     @IBAction func BlockListAction(_ sender: Any) {
-        // TODO 차단 목록 관리
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "BLOCK_LIST_PAGE") as! UIViewController_BlockListPage
+        self.present(page, animated: true)
     }
     @IBAction func ShareAction(_ sender: Any) {
         // TODO 공유

@@ -25,6 +25,7 @@ struct CommonData {
     public static let STR_LIMIT_MYPROFILE_MEMO = 100
     public static let STR_LIMIT_SEND_MSG = 30
     public static let STR_LIMIT_BOARD_MSG = 100
+    public static let STR_LIMIT_HEART_SEND_MSG = 50
     
     public static let GACHA_COST = 7
     
