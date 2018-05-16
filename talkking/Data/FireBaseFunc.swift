@@ -121,8 +121,8 @@ class FireBaseFunc
                          
                                 DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
                             
-                                complete(CommonData.LOAD_DATA_SET)
-                            
+                                self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
+                           
                                 self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
                                 self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
                                 self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
@@ -142,12 +142,10 @@ class FireBaseFunc
                             let retValue : UserData = UserData.init(tempData: tempData)
                             
                             DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-                            
                            
                                 DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
                             
-                                complete(CommonData.LOAD_DATA_SET)
-                            
+                                self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
                             
                                 self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
                                 self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
@@ -413,4 +411,101 @@ class FireBaseFunc
             self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).removeValue()
         }
     }
+    public func LoadChatList(complete : @escaping ((_ count : Int)->()))
+    {
+        
+        if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
+        {
+            ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("SendList").observeSingleEvent(of: .value, with: { ( snapshot) in
+                
+                for childSnapshot in snapshot.children
+                {
+                    let tempChildData = childSnapshot as! DataSnapshot
+                    let tempChat = tempChildData.value as? NSDictionary
+                    
+                    if tempChat != nil
+                    {
+                            let tempChatData : ChatData = ChatData()
+    
+                            tempChatData.Idx = Int(tempChat!["Idx"] as! String)!
+                            tempChatData.ChatRoomName = tempChat!["ChatRoomName"] as! String
+                            tempChatData.Check = tempChat!["Check"] as! Int
+                            tempChatData.Date = tempChat!["Date"] as! Double
+                            tempChatData.Msg = tempChat!["Msg"] as! String
+                            tempChatData.WriterIdx = tempChat!["WriterIdx"] as! String
+                        
+                            DataMgr.Instance.MyData!.ChatDataList.append(tempChatData)
+                    }
+                }
+                
+                complete(CommonData.LOAD_DATA_SET)
+                
+            }){ (error) in
+                print(error.localizedDescription)
+            }
+        }
+       else
+        {
+            ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("SendList").observeSingleEvent(of: .value, with: { ( snapshot) in
+                
+                for childSnapshot in snapshot.children
+                {
+                    let tempChildData = childSnapshot as! DataSnapshot
+                    let tempChat = tempChildData.value as? NSDictionary
+                    
+                    if tempChat != nil
+                    {
+                        let tempChatData : ChatData = ChatData()
+                        
+                        tempChatData.Idx = Int(tempChat!["Idx"] as! String)!
+                        tempChatData.ChatRoomName = tempChat!["ChatRoomName"] as! String
+                        tempChatData.Check = tempChat!["Check"] as! Int
+                        tempChatData.Date = tempChat!["Date"] as! Double
+                        tempChatData.Msg = tempChat!["Msg"] as! String
+                        tempChatData.WriterIdx = tempChat!["WriterIdx"] as! String
+                        
+                        DataMgr.Instance.MyData!.ChatDataList.append(tempChatData)
+                    }
+                }
+                
+                complete(CommonData.LOAD_DATA_SET)
+                
+            }){ (error) in
+                print(error.localizedDescription)
+            }
+        }
+        
+     
+    }
+    public func MakeChatList(userData : UserData, msg : String)
+    {
+ 
+        var strChatRoomName : String = ""
+        strChatRoomName = String(DataMgr.Instance.MyData!.Index) + "_" + String(userData.Index)
+      
+        let writeDate = Date()
+        
+        if userData.Gender == GENDER_TYPE.MALE
+        {
+            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("ChatRoomName").setValue(strChatRoomName)
+            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Check").setValue(0)
+            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * CommonData.MILLISECOND)
+            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
+            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Msg").setValue(msg)
+            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("WriterIdx").setValue(String(DataMgr.Instance.MyData!.Index))
+            
+        }
+        else
+        {
+            //self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).setValue(String(userData.Index))
+            
+            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("ChatRoomName").setValue(strChatRoomName)
+            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Check").setValue(0)
+            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * CommonData.MILLISECOND)
+            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
+            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Msg").setValue(msg)
+            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("WriterIdx").setValue(String(DataMgr.Instance.MyData!.Index))
+        }
+    }
+    
 }

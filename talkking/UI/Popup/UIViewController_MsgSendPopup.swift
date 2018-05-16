@@ -16,6 +16,8 @@ class UIViewController_MsgSendPopup : UIViewController_Popup
     
     @IBAction func SendAction(_ sender: Any) {
         // TODO 쪽지 보내기 처리
+        FireBaseFunc.Instance.MakeChatList(userData : PageUserData!, msg : Msg.text)
+        self.DismissPopup()
     }
     @IBAction func CancelAction(_ sender: Any) {
         self.DismissPopup()
@@ -25,6 +27,7 @@ class UIViewController_MsgSendPopup : UIViewController_Popup
         self.present(page, animated: true)
     }
 
+     var PageUserData : UserData? = nil
     var placeholderLabel : UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +42,11 @@ class UIViewController_MsgSendPopup : UIViewController_Popup
         placeholderLabel.isHidden = !Msg.text.isEmpty
         
         CoinLabel.text = CommonUIFunc.Instance.ConvertNumberFormat(count: DataMgr.Instance.MyData!.Coin)
+    }
+    
+    public func SetUserData(userData : UserData)
+    {
+        PageUserData = userData
     }
 }
 

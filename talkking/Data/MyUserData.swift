@@ -25,6 +25,7 @@ class MyUserData : UserData
         }
     }
     
+    
     public func SetChatDataIdxList(ViewIndex : Int, userIndex : Int)
     {
         ChatDataIdx_List[ViewIndex] = userIndex

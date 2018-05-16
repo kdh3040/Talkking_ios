@@ -293,31 +293,6 @@ class UserData
             }
         }
       
-        let tempChat = tempData["SendList"] as? NSDictionary
-        if tempChat != nil
-        {
-            let tempChatList = (tempChat!.allKeys as? [String])!
-            
-            
-            for i in 0..<tempChat!.count
-            {
-                let tempChatDataList = tempChat![tempChatList[i]] as! NSDictionary
-                
-                let tempChatData : ChatData = ChatData()
-                
-                tempChatData.Idx = Int(tempChatDataList["Idx"] as! String)!
-                tempChatData.ChatRoomName = tempChatDataList["ChatRoomName"] as! String
-                tempChatData.Check = tempChatDataList["Check"] as! Int
-                tempChatData.Date = tempChatDataList["Date"] as! Double
-                tempChatData.Msg = tempChatDataList["Msg"] as! String
-                tempChatData.WriterIdx = tempChatDataList["WriterIdx"] as! String
-                
-                
-                ChatDataList.append(tempChatData)
-            }
-        }
-       
-       
        // var tempFanList : [String] = [String]()
         //tempFanList = tempFan.allKeys as! [String]
         
