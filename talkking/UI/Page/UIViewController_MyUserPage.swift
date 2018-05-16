@@ -29,7 +29,8 @@ class UIViewController_MyUserPage : UIViewController
     @IBOutlet var Name: UILabel!
     @IBOutlet var Grade: UIButton!
     @IBAction func GradeAction(_ sender: Any) {
-        // TODO 등급표 팝업 추가
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "RANK_POPUP") as! UIViewController_RankPopup
+        page.ShowPopup(viewController: self)
     }
     @IBOutlet var BestItem: UIButton!
     @IBAction func BestItemAction(_ sender: Any) {
