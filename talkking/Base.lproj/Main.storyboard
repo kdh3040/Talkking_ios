@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r39-bJ-P5j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IOw-kf-Iwj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -446,10 +446,41 @@
             </objects>
             <point key="canvasLocation" x="2629.5999999999999" y="-798.35082458770626"/>
         </scene>
+        <!--START-->
+        <scene sceneID="7Ty-wi-C2d">
+            <objects>
+                <viewController id="IOw-kf-Iwj" userLabel="START" customClass="UIViewController_StartPage" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6dc-gR-4zU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Apw-qk-k7O">
+                                <rect key="frame" x="37" y="183" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="KLL-QG-mbQ"/>
+                                    <constraint firstAttribute="height" constant="300" id="loV-pD-qYK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3803921569" green="0.31764705879999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Apw-qk-k7O" firstAttribute="centerX" secondItem="6dc-gR-4zU" secondAttribute="centerX" id="A6J-Be-aA9"/>
+                            <constraint firstItem="Apw-qk-k7O" firstAttribute="centerY" secondItem="6dc-gR-4zU" secondAttribute="centerY" id="Tbq-nw-9vP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g62-t8-T0S"/>
+                    </view>
+                    <connections>
+                        <outlet property="Logo" destination="Apw-qk-k7O" id="3xT-8p-6Fo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pRg-Bh-Jtq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="117"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mD4-Xn-R3Q">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="r39-bJ-P5j" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MAIN_PAGE" automaticallyAdjustsScrollViewInsets="NO" id="r39-bJ-P5j" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ysn-eT-Ofd">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

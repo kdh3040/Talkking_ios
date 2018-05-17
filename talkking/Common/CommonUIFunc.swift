@@ -24,23 +24,19 @@ struct UserPageAccumulateData {
 class CommonUIFunc{
     static let Instance = CommonUIFunc()
     
-    public var PageAccumulateList : [UserPageAccumulateData] = [UserPageAccumulateData]()
+    static var StartViewController : UIViewController? = nil
     
-    public func EnquePage(storyBoardId : String, userIndex : Int = 0)
+    public func ShowMainPage()
     {
-        PageAccumulateList.append(UserPageAccumulateData.init(pageStoryBoardId: storyBoardId, userIndex: userIndex))
+        let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MAIN_PAGE")
+        CommonUIFunc.StartViewController!.present(page, animated: true)
     }
     
-    public func DequePage() -> UserPageAccumulateData?
+    public func ShowInputPage()
     {
-        if let returnData = PageAccumulateList.popLast()
-        {
-            return returnData
-        }
-        
-        return nil
+        let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "INPUT_PAGE")
+        CommonUIFunc.StartViewController!.present(page, animated: true)
     }
-    
     
     
     public func GetGradeImgName(grade:Int) -> String{
