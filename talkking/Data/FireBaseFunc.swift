@@ -37,6 +37,7 @@ class FireBaseFunc
         if LoadDataCnt == CommonData.LOAD_DATA_TYPE
         {
             CommonUIFunc.DismissLoading()
+            CommonUIFunc.Instance.ShowMainPage()
         }
         
     }
@@ -94,7 +95,7 @@ class FireBaseFunc
     
     public func CreateUserData(userIdx : String)
     {
-     
+        CommonUIFunc.Instance.ShowInputPage()
     }
     
     public func LoadMyData(index : String, complete : @escaping ((_ count : Int)->())) //-> UserData?
