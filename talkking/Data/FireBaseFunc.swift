@@ -489,7 +489,7 @@ class FireBaseFunc
         {
             self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("ChatRoomName").setValue(strChatRoomName)
             self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Check").setValue(0)
-            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * CommonData.MILLISECOND)
+            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * Double(CommonData.MILLISECOND))
             self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
             self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Msg").setValue(msg)
             self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("WriterIdx").setValue(String(DataMgr.Instance.MyData!.Index))
@@ -501,7 +501,7 @@ class FireBaseFunc
             
             self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("ChatRoomName").setValue(strChatRoomName)
             self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Check").setValue(0)
-            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * CommonData.MILLISECOND)
+            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * Double(CommonData.MILLISECOND))
             self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
             self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Msg").setValue(msg)
             self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("WriterIdx").setValue(String(DataMgr.Instance.MyData!.Index))
