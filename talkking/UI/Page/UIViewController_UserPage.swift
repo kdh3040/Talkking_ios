@@ -77,6 +77,7 @@ class UIViewController_UserPage : UIViewController
     }
     @IBAction func HeartAction(_ sender: Any) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "HEART_SEND_POPUP") as! UIViewController_HeartSendPopup
+        page.SetUserData(userData: PageUserData!)
         page.ShowPopup(viewController: self)
     }
     @IBAction func ShareAction(_ sender: Any) {

@@ -14,8 +14,43 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
     @IBOutlet var Coin: UILabel!
     @IBOutlet var Msg: UITextView!
     @IBOutlet var Desc: UILabel!
+    var PageUserData : UserData? = nil
+    
+    private func CallBackFunc_SetMyCoin(count : Int)
+    {
+        CommonUIFunc.DismissLoading()
+        DataMgr.Instance.MyData!.Coin = count
+        
+        RefreshUI()
+    }
+    
     @IBAction func SendAction(_ sender: Any) {
         // TODO 하트 보내기 처리
+        
+        if sendEnable
+        {
+            FireBaseFunc.Instance.SetFavorList(userData: PageUserData!)
+            FireBaseFunc.Instance.SetFanList(userData: PageUserData!, Heart: SelectCost)
+            
+            DataMgr.Instance.MyData!.Coin -= SelectCost
+            FireBaseFunc.Instance.SetMyCoin()
+            self.DismissPopup()
+        }
+        else
+        {
+            let ChargeFunc = {
+                let page = self.storyboard?.instantiateViewController(withIdentifier: "CHARGE_PAGE") as! UIViewController_ChargePage
+                self.present(page, animated: true)
+            }
+            
+            CommonUIFunc.Instance.ShowAlertPopup(
+                viewController: self,
+                title: "코인이 부족합니다.",
+                message: "충잔 하시겠습니까?",
+                actionTitle_1: "네",
+                actionFunc_1: ChargeFunc,
+                actionTitle_2: "취소")
+        }
     }
     @IBAction func CancelAction(_ sender: Any) {
         self.DismissPopup()
@@ -54,6 +89,8 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
     var selectHeartIndex = 0
     var sendEnable = false
     var placeholderLabel : UILabel!
+    
+    var SelectCost = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,7 +103,9 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
         placeholderLabel.textColor = UIColor.lightGray
         placeholderLabel.isHidden = !Msg.text.isEmpty
         
-        Coin.text = CommonUIFunc.Instance.ConvertNumberFormat(count: DataMgr.Instance.MyData!.Coin)
+        CommonUIFunc.ShowLoading()
+        FireBaseFunc.Instance.LoadMyCoin(complete: CallBackFunc_SetMyCoin)
+       
         
         selectHeartIndex = 0
         sendEnable = false
@@ -75,6 +114,8 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
     
     func RefreshUI()
     {
+        Coin.text = CommonUIFunc.Instance.ConvertNumberFormat(count: DataMgr.Instance.MyData!.Coin)
+        
         for i in 0..<HeartList.count
         {
             let heartBtn = HeartList[i]
@@ -101,8 +142,15 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
             Desc.text = String.init(format:"%d하트를 날리시겟습니까?(%d코인 소모)", cost, cost)
             sendEnable = true
         }
+        
+        SelectCost = cost
+        
     }
     
+    public func SetUserData(userData : UserData)
+    {
+        PageUserData = userData
+    }
     
 }
 

@@ -32,6 +32,9 @@ struct CommonData {
     
     public static let MILLISECOND = 1000
     
+    public static let USER_CHECK_NO = 0
+    public static let USER_CHECK_OK = 1
+    
     public static let AGE_DATA =
                   ["20","21","22","23","24","25","26","27","28","29",
                    "30","31","32","33","34","35","36","37","38","39",
