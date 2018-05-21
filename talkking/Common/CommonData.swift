@@ -29,7 +29,9 @@ struct CommonData {
     
     public static let GACHA_COST = 7
     public static let NICKNAME_CHANGE_COST = 500
+    public static let MSG_COST = 8
     
+    public static let BOARD_WIRTE_LIMIT_TIME_MIN = 10
     public static let MILLISECOND = 1000
     
     public static let USER_CHECK_NO = 0
@@ -48,5 +50,19 @@ struct CommonData {
 
     public static let LOAD_DATA_SET = 1
     public static let LOAD_DATA_TYPE = 5
+    
+    
+    public static var JewelDataList : [JewelData] = [JewelData]()
+    
+    public struct JewelData {
+        var Name : String = ""
+        var Image : String = ""
+        var InfoImage : String = ""
+        var Percent : Float = 0
+        var Have : Int = 0
+        let SellCost : Int = 4
+    }
+    
+
 
 }

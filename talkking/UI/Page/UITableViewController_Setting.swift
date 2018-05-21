@@ -20,7 +20,7 @@ class UITableViewController_Setting : UITableViewController
         self.present(page, animated: true)
     }
     @IBAction func ShareAction(_ sender: Any) {
-        // TODO 공유
+        // TODO 도형 : 공유기능
         
     }
     @IBAction func CoinChargeAction(_ sender: Any) {
@@ -38,7 +38,7 @@ class UITableViewController_Setting : UITableViewController
         self.present(page, animated: true)
     }
     @IBAction func DeleteUserAction(_ sender: Any) {
-        // TODO 계정 삭제
+        // TODO 도형 : 계정 삭제 기능
         
     }
     override func viewDidLoad() {

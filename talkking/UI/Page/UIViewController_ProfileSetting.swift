@@ -11,37 +11,33 @@ import UIKit
 
 class UIViewController_ProfileSetting : UIViewController
 {
-    // TODO 변경된 데이터를 파이어베이스에 올리는 기능
     @IBAction func Back(_ sender: Any) {
-        self.dismiss(animated: true)
+        self.SaveSetting()
     }
     @IBAction func Save(_ sender: Any) {
-        // TODO : 실제로 데이터가 변경 되었다면 저장 확인 팝업
-        // 아니면 그냥 뒤로가기
-        self.dismiss(animated: true)
+        self.SaveSetting()
     }
     @IBOutlet var MainThumbnail: UIButton!
     @IBAction func MainThumbnailAction(_ sender: Any) {
-        // TODO : 현재 올린거를 리스트로 보여줘야함
         let page = self.storyboard?.instantiateViewController(withIdentifier: "THUMBNAIL_LIST_PAGE") as! UIViewController_ThumbnailList
-        page.SetUserThumbnailList(userData: DataMgr.Instance.MyData!)
+        page.SetUserThumbnailList(thumbnailList:ThumbnailImg)
         self.present(page, animated: true)
     }
     @IBOutlet var SubThumbnail_1: UIButton!
     @IBAction func SubThumbnailAction_1(_ sender: Any) {
-        SetThumbnail(button: SubThumbnail_1)
+        SetThumbnail(button: SubThumbnail_1, index :0)
     }
     @IBOutlet var SubThumbnail_2: UIButton!
     @IBAction func SubThumbnailAction_2(_ sender: Any) {
-        SetThumbnail(button: SubThumbnail_2)
+        SetThumbnail(button: SubThumbnail_2, index :1)
     }
     @IBOutlet var SubThumbnail_3: UIButton!
     @IBAction func SubThumbnailAction_3(_ sender: Any) {
-        SetThumbnail(button: SubThumbnail_3)
+        SetThumbnail(button: SubThumbnail_3, index :2)
     }
     @IBOutlet var SubThumbnail_4: UIButton!
     @IBAction func SubThumbnailAction_4(_ sender: Any) {
-        SetThumbnail(button: SubThumbnail_4)
+        SetThumbnail(button: SubThumbnail_4, index :3)
     }
     @IBOutlet var NickName: UILabel!
     @IBAction func NickNameChangeAction(_ sender: Any) {
@@ -57,6 +53,13 @@ class UIViewController_ProfileSetting : UIViewController
     let AgePickerView = UIPickerView()
     
     var SelectSubThumbnail : UIButton? = nil
+    var SelectSubThumbnailIndex : Int = -1
+    
+    var ChangeThumbnail = false
+    var ChangeMsg = false
+    var ChangeAge = false
+    
+    var ThumbnailImg : [Int : UIImage?] = [Int : UIImage?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +89,7 @@ class UIViewController_ProfileSetting : UIViewController
             
             CommonUIFunc.Instance.SetThumbnail(button: MainThumbnail, url:URL(string:myData.GetMainThumbnail())!, circle: false)
             
+            ThumbnailImg.removeAll()
             let subThumbnailList = myData.GetThumbnailList()
             for i in 0..<subThumbnailList.count
             {
@@ -95,15 +99,19 @@ class UIViewController_ProfileSetting : UIViewController
                     {
                     case 1:
                         CommonUIFunc.Instance.SetThumbnail(button: SubThumbnail_1, url:URL(string:subThumbnailList[i])!, circle: false)
+                        ThumbnailImg[0] = SubThumbnail_1.backgroundImage(for: .normal)
                         break;
                     case 2:
                         CommonUIFunc.Instance.SetThumbnail(button: SubThumbnail_2, url:URL(string:subThumbnailList[i])!, circle: false)
+                        ThumbnailImg[1] = SubThumbnail_2.backgroundImage(for: .normal)
                         break;
                     case 3:
                         CommonUIFunc.Instance.SetThumbnail(button: SubThumbnail_3, url:URL(string:subThumbnailList[i])!, circle: false)
+                        ThumbnailImg[2] = SubThumbnail_3.backgroundImage(for: .normal)
                         break;
                     case 4:
                         CommonUIFunc.Instance.SetThumbnail(button: SubThumbnail_4, url:URL(string:subThumbnailList[i])!, circle: false)
+                        ThumbnailImg[3] = SubThumbnail_4.backgroundImage(for: .normal)
                         break;
                     default:
                         break;
@@ -113,9 +121,10 @@ class UIViewController_ProfileSetting : UIViewController
         }
     }
     
-    public func SetThumbnail(button : UIButton)
+    public func SetThumbnail(button : UIButton, index : Int)
     {
-        self.SelectSubThumbnail = button;
+        self.SelectSubThumbnail = button
+        self.SelectSubThumbnailIndex = index
         
         let thumbnailChange = {
             CommonUIFunc.Instance.OpenThumbnailPic(viewController: self, thumbnailPicker: self.ThumbnailPicker)
@@ -125,6 +134,8 @@ class UIViewController_ProfileSetting : UIViewController
             if let thumbnail = self.SelectSubThumbnail
             {
                 thumbnail.setBackgroundImage(UIImage.init(named: "etc_icon_picture"), for: .normal)
+                self.ThumbnailImg[self.SelectSubThumbnailIndex] = nil
+                self.ChangeThumbnail = true
             }
         }
         
@@ -136,6 +147,33 @@ class UIViewController_ProfileSetting : UIViewController
             actionFunc_1: thumbnailChange,
             actionTitle_2: "삭제",
             actionFunc_2: thumbnailDelete)
+    }
+    
+    public func SaveSetting()
+    {
+        if ChangeThumbnail || ChangeMsg || ChangeAge
+        {
+            let saveAction = {
+                // TODO 도형 : 프로필 변경 저장
+                self.dismiss(animated: true)
+            }
+            let cancelAction = {
+                self.dismiss(animated: true)
+            }
+            
+            CommonUIFunc.Instance.ShowAlertPopup(
+                viewController: self,
+                title: "프로필",
+                message: "변경된 프로필을 저장 하시겠습니까?",
+                actionTitle_1: "네",
+                actionFunc_1: saveAction,
+                actionTitle_2: "아니요",
+                actionFunc_2: cancelAction)
+        }
+        else
+        {
+            self.dismiss(animated: true)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -151,9 +189,9 @@ extension UIViewController_ProfileSetting : UIImagePickerControllerDelegate, UIN
             
             if let thumbnail = SelectSubThumbnail
             {
-                // TODO : 이미지를 선택하면 바로 파이어 베이스에 올라가나??
                 thumbnail.setBackgroundImage(image, for: .normal)
-                print(info)
+                self.ThumbnailImg[SelectSubThumbnailIndex] = image
+                self.ChangeThumbnail = true
             }
         }
         dismiss(animated: true, completion: nil)
@@ -177,6 +215,17 @@ extension UIViewController_ProfileSetting : UIPickerViewDataSource, UIPickerView
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         Age.text = CommonData.AGE_DATA[row] + "세"
         
+        if let myData = DataMgr.Instance.MyData
+        {
+            if myData.Age - 20 == row
+            {
+                self.ChangeAge = false
+            }
+            else
+            {
+                self.ChangeAge = true
+            }
+        }
     }
 }
 extension UIViewController_ProfileSetting : UITextViewDelegate
@@ -188,6 +237,18 @@ extension UIViewController_ProfileSetting : UITextViewDelegate
     public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool
     {
         let currentText = textView.text ?? ""
+        
+        if let myData = DataMgr.Instance.MyData
+        {
+            if myData.Memo == currentText
+            {
+                self.ChangeMsg = false
+            }
+            else
+            {
+                self.ChangeMsg = true
+            }
+        }
         return CommonUIFunc.Instance.IsInputStringLimit(string: currentText, limit: CommonData.STR_LIMIT_MYPROFILE_MEMO)
     }
 }

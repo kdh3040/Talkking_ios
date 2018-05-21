@@ -187,7 +187,7 @@ class CommonUIFunc{
     
     public func IsInputStringLimit(string:String, limit:Int) -> Bool
     {
-        // TODO : 한글은 하나가 짤리는데 어떻게 해야 할지 모르겠음
+        // TODO 환웅 : 한글은 하나가 짤리는데 어떻게 해야 할지 모르겠음
         // 예시
         // 제한이 6이라면
         // 일이삼사오유 <-- 에서 걸림
@@ -228,25 +228,34 @@ class CommonUIFunc{
         viewController.present(alert, animated: true, completion: nil)
     }
     
-    public func ShowAlertPopup(viewController : UIViewController, title : String, message : String, actionTitle_1 : String, actionFunc_1 : @escaping () -> Void, actionTitle_2 : String, actionFunc_2 : (() -> Void)? = nil)
+    public func ShowAlertPopup(viewController : UIViewController, title : String, message : String, actionTitle_1 : String, actionFunc_1 : (() -> Void)? = nil, actionTitle_2 : String = "", actionFunc_2 : (() -> Void)? = nil)
     {
         let alertController = UIAlertController(title: title,message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         let action_1 = UIAlertAction(title : actionTitle_1 , style:.default){
-            (action:UIAlertAction) in actionFunc_1()
-        }
-        
-        let action_2 = UIAlertAction(title : actionTitle_2 , style:.default){
             (action:UIAlertAction) in
-            if let actionFunc = actionFunc_2
+            if let actionFunc = actionFunc_1
             {
                 actionFunc()
             }
         }
         
         alertController.addAction(action_1)
-        alertController.addAction(action_2)
         
+        if actionTitle_2.isEmpty == false
+        {
+            let action_2 = UIAlertAction(title : actionTitle_2 , style:.default){
+                (action:UIAlertAction) in
+                if let actionFunc = actionFunc_2
+                {
+                    actionFunc()
+                }
+            }
+            
+            
+            alertController.addAction(action_2)
+        }
+
         viewController.present(alertController,animated: true,completion: nil)
     }
     
@@ -259,5 +268,15 @@ class CommonUIFunc{
     static public func DismissLoading()
     {
         SVProgressHUD.dismiss()
+    }
+    
+ 
+    public func IsStringEmptyCheck(text:String) -> Bool
+    {
+        var tempStr : String = text;
+        tempStr = tempStr.replacingOccurrences(of: "\n", with: "")
+        tempStr = tempStr.replacingOccurrences(of: " ", with: "")
+
+        return tempStr.count <= 0;
     }
 }

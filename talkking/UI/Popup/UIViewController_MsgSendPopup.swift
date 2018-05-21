@@ -17,9 +17,12 @@ class UIViewController_MsgSendPopup : UIViewController_Popup
     var PageUserData : UserData? = nil
     
     @IBAction func SendAction(_ sender: Any) {
-        // TODO 쪽지 보내기 처리
-        FireBaseFunc.Instance.SetChatList(userData : PageUserData!, msg : Msg.text)
-        self.DismissPopup()
+        // TODO 도형 : 코인 확인 및 차감
+        if CommonFunc.Instance.IsCoinEnough(coin: CommonData.MSG_COST, viewController: self)
+        {
+            FireBaseFunc.Instance.SetChatList(userData : PageUserData!, msg : Msg.text)
+            self.DismissPopup()
+        }
     }
     @IBAction func CancelAction(_ sender: Any) {
         self.DismissPopup()
@@ -28,7 +31,8 @@ class UIViewController_MsgSendPopup : UIViewController_Popup
         let page = self.storyboard?.instantiateViewController(withIdentifier: "CHARGE_PAGE") as! UIViewController_ChargePage
         self.present(page, animated: true)
     }
-
+    @IBOutlet var Desc: UILabel!
+    
     
     var placeholderLabel : UILabel!
     override func viewDidLoad() {
@@ -44,6 +48,8 @@ class UIViewController_MsgSendPopup : UIViewController_Popup
         placeholderLabel.isHidden = !Msg.text.isEmpty
         
         CoinLabel.text = CommonUIFunc.Instance.ConvertNumberFormat(count: DataMgr.Instance.MyData!.Coin)
+        
+        Desc.text = String.init(format:"* 쪽지 전송시 건당 %d코인이 차감됩니다.",CommonData.MSG_COST)
     }
     
     public func SetUserData(userData : UserData)

@@ -11,7 +11,7 @@ import UIKit
 
 class UIViewController_ChargePage : UIViewController
 {
-    // TODO 충전하기 기능 추가
+    // TODO 도형 : 충전하기 기능 추가
     @IBAction func Back(_ sender: Any) {
         self.dismiss(animated: true)
     }

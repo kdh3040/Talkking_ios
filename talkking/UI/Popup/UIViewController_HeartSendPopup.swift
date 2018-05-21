@@ -25,31 +25,15 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
     }
     
     @IBAction func SendAction(_ sender: Any) {
-        // TODO 하트 보내기 처리
-        
-        if sendEnable
+        if let myData = DataMgr.Instance.MyData,
+            CommonFunc.Instance.IsCoinEnough(coin: SelectCost, viewController: self)
         {
             FireBaseFunc.Instance.SetFavorList(userData: PageUserData!)
             FireBaseFunc.Instance.SetFanList(userData: PageUserData!, Heart: SelectCost)
             
-            DataMgr.Instance.MyData!.Coin -= SelectCost
+            myData.Coin -= SelectCost
             FireBaseFunc.Instance.SetMyCoin()
             self.DismissPopup()
-        }
-        else
-        {
-            let ChargeFunc = {
-                let page = self.storyboard?.instantiateViewController(withIdentifier: "CHARGE_PAGE") as! UIViewController_ChargePage
-                self.present(page, animated: true)
-            }
-            
-            CommonUIFunc.Instance.ShowAlertPopup(
-                viewController: self,
-                title: "코인이 부족합니다.",
-                message: "충잔 하시겠습니까?",
-                actionTitle_1: "네",
-                actionFunc_1: ChargeFunc,
-                actionTitle_2: "취소")
         }
     }
     @IBAction func CancelAction(_ sender: Any) {
@@ -87,7 +71,6 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
     
     var HeartCostList = [10, 30, 50, 100, 300, 500]
     var selectHeartIndex = 0
-    var sendEnable = false
     var placeholderLabel : UILabel!
     
     var SelectCost = 0
@@ -108,7 +91,6 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
        
         
         selectHeartIndex = 0
-        sendEnable = false
         RefreshUI()
     }
     
@@ -135,16 +117,12 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
         if cost > myCoin
         {
             Desc.text = String.init(format:"코인이 부족합니다. (%d코인 필요)", cost)
-            sendEnable = false
         }
         else
         {
             Desc.text = String.init(format:"%d하트를 날리시겟습니까?(%d코인 소모)", cost, cost)
-            sendEnable = true
         }
-        
         SelectCost = cost
-        
     }
     
     public func SetUserData(userData : UserData)

@@ -12,8 +12,29 @@ import UIKit
 class UIViewController_BoardWritePopup : UIViewController_Popup
 {
     @IBOutlet var Msg: UITextView!
-    @IBAction func Wirte(_ sender: Any) {
-        // TODO 게시판 글 쓰기 기능 추가
+    @IBAction func Write(_ sender: Any) {
+        if CommonUIFunc.Instance.IsStringEmptyCheck(text: Msg.text)
+        {
+            CommonUIFunc.Instance.ShowAlertPopup(
+                viewController: self,
+                title: "게시판 글쓰기",
+                message: "게시글의 내용이 없습니다.",
+                actionTitle_1: "확인")
+        }
+        else
+        {
+            let writeFunc = {
+                // TODO 도형 : 게시판 글 업로드
+                self.DismissPopup()
+            }
+            CommonUIFunc.Instance.ShowAlertPopup(
+                viewController: self,
+                title: "게시판 글쓰기",
+                message: String.init(format:"작성한 글을 게시하시겠습니까?\n도배방지를 위해 다음 글은 %d분후에 쓰실수 있습니다.", CommonData.BOARD_WIRTE_LIMIT_TIME_MIN),
+                actionTitle_1: "확인",
+                actionFunc_1: writeFunc,
+                actionTitle_2: "취소")
+        }
     }
     @IBAction func Cancel(_ sender: Any) {
         self.DismissPopup()

@@ -11,6 +11,9 @@ import UIKit
 
 class UIViewController_MyJewel : UIViewController
 {
+    @IBAction func Back(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     @IBOutlet var JewelIconList: [UIImageView]!
     @IBOutlet var JewelPercentList: [UILabel]!
     @IBOutlet var JewelNameList: [UILabel]!
@@ -27,7 +30,11 @@ class UIViewController_MyJewel : UIViewController
     
     @IBAction func GachaAction_1(_ sender: Any) {
         let GachaFunc = {
-            // TODO : 뽑기
+            // TODO 도형 : 코인 확인 및 차감
+            if CommonFunc.Instance.IsCoinEnough(coin: CommonData.GACHA_COST, viewController: self)
+            {
+                self.BuyItem(count : 1)
+            }
         }
         
         CommonUIFunc.Instance.ShowAlertPopup(
@@ -40,7 +47,13 @@ class UIViewController_MyJewel : UIViewController
     }
     @IBAction func GachaAction_10(_ sender: Any) {
         let GachaFunc = {
-            // TODO : 뽑기
+            // TODO 도형 : 코인 확인 및 차감
+            let gachaCount : Int = 10
+            let bonusGachaCount : Int = 1
+            if CommonFunc.Instance.IsCoinEnough(coin: CommonData.GACHA_COST * gachaCount, viewController: self)
+            {
+                self.BuyItem(count : gachaCount + bonusGachaCount)
+            }
         }
         
         CommonUIFunc.Instance.ShowAlertPopup(
@@ -56,21 +69,14 @@ class UIViewController_MyJewel : UIViewController
         let page = self.storyboard?.instantiateViewController(withIdentifier: "CHARGE_PAGE") as! UIViewController_ChargePage
         self.present(page, animated: true)
     }
+
     
-    struct JewelData {
-        var Name : String = ""
-        var Image : String = ""
-        var Percent : Float = 0
-        var Have : Int = 0
-    }
-    
-    var JewelDataList : [JewelData] = [JewelData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        InitData()
+        CommonFunc.InitJewelData()
         RefreshUI()
         
         JewelSlot_1.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(self.JewelSell_1)))
@@ -107,8 +113,13 @@ class UIViewController_MyJewel : UIViewController
     
     func ShowJewelSell(_ index:Int)
     {
-        // TODO 보석 판매 기능 추가
-        print(String.init(format:"%d", index))
+        let data : CommonData.JewelData = CommonData.JewelDataList[index]
+        if data.Have > 0
+        {
+            let page = self.storyboard?.instantiateViewController(withIdentifier: "JEWEL_INFO_POPUP") as! UIViewController_JewelInfoPopup
+            page.SetJewelInfo(index: index)
+            page.ShowPopup(viewController: self)
+        }
     }
     
     
@@ -116,88 +127,46 @@ class UIViewController_MyJewel : UIViewController
     public func RefreshUI()
     {
         SetHaveJewel()
-        for i in 0..<JewelDataList.count
+        let list = CommonData.JewelDataList
+        for i in 0..<list.count
         {
-            JewelNameList[i].text = JewelDataList[i].Name
+            JewelNameList[i].text = list[i].Name
             
-            if JewelDataList[i].Have == 0
+            if list[i].Have == 0
             {
-                JewelIconList[i].image = UIImage.init(named: JewelDataList[i].Image)?.withRenderingMode(.alwaysTemplate)
+                JewelIconList[i].image = UIImage.init(named: list[i].Image)?.withRenderingMode(.alwaysTemplate)
                 JewelIconList[i].tintColor = CommonUIFunc.Instance.GetDefaultColor()
                 JewelPercentList[i].isHidden = false
-                JewelPercentList[i].text = String.init(format:"%f.2", JewelDataList[i].Percent)
+                JewelPercentList[i].text = String.init(format:"%.2f", list[i].Percent)
                 
                 JewelHaveList[i].text = "미 보유"
             }
             else
             {
-                JewelIconList[i].image = UIImage.init(named: JewelDataList[i].Image)
+                JewelIconList[i].image = UIImage.init(named: list[i].Image)
                 JewelPercentList[i].isHidden = true
-                JewelHaveList[i].text = String.init(format:"%d 개", JewelDataList[i].Have)
+                JewelHaveList[i].text = String.init(format:"%d 개", list[i].Have)
             }
         }
     }
     
-    func InitData()
-    {
-        if JewelDataList.count <= 0
-        {
-            var tempData = JewelData()
-            tempData.Name = "오팔"
-            tempData.Image = "icon_item_opal"
-            tempData.Percent = 50
-            tempData.Have = 0
-            JewelDataList.append(tempData)
-            
-            tempData = JewelData()
-            tempData.Name = "진주"
-            tempData.Image = "icon_item_pearl"
-            tempData.Percent = 25
-            tempData.Have = 0
-            JewelDataList.append(tempData)
-            
-            tempData = JewelData()
-            tempData.Name = "자수정"
-            tempData.Image = "icon_item_amethyst"
-            tempData.Percent = 13.5
-            tempData.Have = 0
-            JewelDataList.append(tempData)
-            
-            tempData = JewelData()
-            tempData.Name = "사파이어"
-            tempData.Image = "icon_item_sapphire"
-            tempData.Percent = 7
-            tempData.Have = 0
-            JewelDataList.append(tempData)
-            
-            tempData = JewelData()
-            tempData.Name = "에메랄드"
-            tempData.Image = "icon_item_emerald"
-            tempData.Percent = 3.5
-            tempData.Have = 0
-            JewelDataList.append(tempData)
-            
-            tempData = JewelData()
-            tempData.Name = "루비"
-            tempData.Image = "icon_item_ruby"
-            tempData.Percent = 0.85
-            tempData.Have = 0
-            JewelDataList.append(tempData)
-            
-            tempData = JewelData()
-            tempData.Name = "다이아몬드"
-            tempData.Image = "icon_item_diamond"
-            tempData.Percent = 0.15
-            tempData.Have = 0
-            JewelDataList.append(tempData)
-        }
-    }
+    
     
     func SetHaveJewel()
     {
-        for i in 0..<JewelDataList.count
+        for i in 0..<CommonData.JewelDataList.count
         {
-            JewelDataList[i].Have = (DataMgr.Instance.MyData!.Item[i])!
+            CommonData.JewelDataList[i].Have = (DataMgr.Instance.MyData!.Item[i])!
+        }
+    }
+    
+    func BuyItem(count:Int)
+    {
+        for _ in 0..<count
+        {
+            let page = self.storyboard?.instantiateViewController(withIdentifier: "JEWEL_INFO_POPUP") as! UIViewController_JewelInfoPopup
+            page.SetJewelInfo(index: CommonFunc.GetJewelGacha())
+            page.ShowPopup(viewController: self)
         }
     }
 }

@@ -11,6 +11,8 @@ import UIKit
 
 class UIViewController_BlockListPage : UIViewController
 {
+    // TODO 도형 : 블락 리스트 데이터 필요
+    // TODO 환웅 : 블락 리스트 UI 채우기
     @IBOutlet var BlockList: UITableView!
     
     override func viewDidLoad() {
@@ -20,8 +22,6 @@ class UIViewController_BlockListPage : UIViewController
         BlockList.dataSource = self
         BlockList.rowHeight = 70;
         BlockList.separatorStyle = .none
-        
-        // TODO 블락 리스트 데이터 필요
     }
 }
 
@@ -33,7 +33,6 @@ extension UIViewController_BlockListPage : UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_BlockList
-        
         //cell.SetFavorCell(userData: GetSelectSimpleUserData(indexPath:indexPath))
         return cell
     }

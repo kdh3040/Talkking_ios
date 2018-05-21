@@ -14,7 +14,7 @@ class UITableViewCell_BlockList : UITableViewCell
     @IBOutlet var Thumbnail: UIImageView!
     @IBOutlet var Name: UILabel!
     @IBAction func BlockCancelAction(_ sender: Any) {
-        // TODO 블락 제거 하고 리스트 갱신
+        // TODO 환웅 : 블락 제거 하고 리스트 갱신
         
     }
     public func SetNoticeData()

@@ -3003,6 +3003,9 @@
                                         <rect key="frame" x="8" y="10" width="32" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="etc_icon_back"/>
+                                        <connections>
+                                            <action selector="Back:" destination="1sQ-kh-gDZ" eventType="touchUpInside" id="EnW-jw-GTx"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="내 보석" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bia-wS-Q3q" userLabel="내 보석">
                                         <rect key="frame" x="43" y="12" width="62" height="27"/>
@@ -3325,7 +3328,7 @@
                         <outlet property="JewelSlot_3" destination="PFS-bi-6nr" id="NzQ-xs-1xg"/>
                         <outlet property="JewelSlot_4" destination="BdA-bR-3a9" id="pLD-HR-0fp"/>
                         <outlet property="JewelSlot_5" destination="nu2-o8-Rcz" id="xQB-YG-7ru"/>
-                        <outlet property="JewelSlot_6" destination="Kvc-bf-y6Y" id="961-vp-dIs"/>
+                        <outlet property="JewelSlot_6" destination="fHE-Rr-DbE" id="lJv-0U-c0h"/>
                         <outlet property="JewelSlot_7" destination="Kvc-bf-y6Y" id="ROh-Bj-RKK"/>
                         <outletCollection property="JewelIconList" destination="B6r-0Q-pdM" collectionClass="NSMutableArray" id="DA4-22-1QO"/>
                         <outletCollection property="JewelIconList" destination="RWZ-ax-12a" collectionClass="NSMutableArray" id="R0b-Yg-LEF"/>
@@ -3713,8 +3716,8 @@
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="* 쪽지 전송시 건당 8코인이 차감됩니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ua-Zz-wUU">
-                                        <rect key="frame" x="38" y="163" width="266" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ua-Zz-wUU">
+                                        <rect key="frame" x="150" y="163" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.44199486301369861" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3771,6 +3774,7 @@
                     </view>
                     <connections>
                         <outlet property="CoinLabel" destination="c8f-qs-Uyg" id="Hek-aI-QHD"/>
+                        <outlet property="Desc" destination="6ua-Zz-wUU" id="ZF1-BA-38m"/>
                         <outlet property="Msg" destination="Ig6-21-QqQ" id="8Pp-DP-nKi"/>
                     </connections>
                 </viewController>
@@ -4025,7 +4029,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="Wirte:" destination="b09-34-Ckb" eventType="touchUpInside" id="OMS-tO-wka"/>
+                                            <action selector="Write:" destination="b09-34-Ckb" eventType="touchUpInside" id="Ife-eo-r9m"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhp-K3-vdZ">
@@ -4325,7 +4329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rV1-pS-ce1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3125.5999999999999" y="-4043.0284857571219"/>
+            <point key="canvasLocation" x="3126" y="-4043"/>
         </scene>
         <!--등급표-->
         <scene sceneID="Qnz-sb-vYx">
@@ -4558,6 +4562,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Fh-mb-T1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3845.5999999999999" y="-4043.0284857571219"/>
+        </scene>
+        <!--보석 결과창-->
+        <scene sceneID="FBk-Bq-WSY">
+            <objects>
+                <viewController storyboardIdentifier="JEWEL_INFO_POPUP" id="7BT-ht-sUX" userLabel="보석 결과창" customClass="UIViewController_JewelInfoPopup" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m3I-HT-Ixi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUu-LX-Gz7">
+                                <rect key="frame" x="60" y="183" width="255" height="300"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bm3-7C-e5Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tc1-PT-Ski" userLabel="팔기">
+                                        <rect key="frame" x="0.0" y="260" width="128" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="팔기">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SellAction:" destination="7BT-ht-sUX" eventType="touchUpInside" id="KwC-UH-IHz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHk-Eb-irR" userLabel="확인">
+                                        <rect key="frame" x="127" y="260" width="127.5" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="OkAction:" destination="7BT-ht-sUX" eventType="touchUpInside" id="Lp0-dC-45v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="255" id="b8o-Jk-eVs"/>
+                                    <constraint firstAttribute="height" constant="300" id="iRO-w4-TsV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.046232876710000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qUu-LX-Gz7" firstAttribute="centerY" secondItem="m3I-HT-Ixi" secondAttribute="centerY" id="9YO-Op-tok"/>
+                            <constraint firstItem="qUu-LX-Gz7" firstAttribute="centerX" secondItem="m3I-HT-Ixi" secondAttribute="centerX" id="gA1-2D-MbL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jh0-qC-oA3"/>
+                    </view>
+                    <connections>
+                        <outlet property="ResultImg" destination="bm3-7C-e5Q" id="HMs-Tn-gfS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uQe-ni-F0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4677.6000000000004" y="-4043.0284857571219"/>
         </scene>
     </scenes>
     <resources>

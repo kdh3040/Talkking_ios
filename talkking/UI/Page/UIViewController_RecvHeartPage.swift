@@ -11,7 +11,7 @@ import UIKit
 
 class UIViewController_RecvHeartPage : UIViewController
 {
-    // TODO 받은 하트 리스트로 뿌려주기
+    // TODO 환웅 : 받은 하트 리스트로 뿌려주기
     @IBAction func Back(_ sender: Any) {
         self.dismiss(animated: true)
     }

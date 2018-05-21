@@ -59,6 +59,34 @@ public class KingfisherSource: NSObject, InputSource {
     }
 }
 
+/// Input Source to load plain UIImage
+@objcMembers
+open class ImageSource: NSObject, InputSource {
+    var image: UIImage!
+    
+    /// Initializes a new Image Source with UIImage
+    /// - parameter image: Image to be loaded
+    public init(image: UIImage) {
+        self.image = image
+    }
+    
+    /// Initializes a new Image Source with an image name from the main bundle
+    /// - parameter imageString: name of the file in the application's main bundle
+    public init?(imageString: String) {
+        if let image = UIImage(named: imageString) {
+            self.image = image
+            super.init()
+        } else {
+            return nil
+        }
+    }
+    
+    public func load(to imageView: UIImageView, with callback: @escaping (UIImage?) -> Void) {
+        imageView.image = image
+        callback(image)
+    }
+}
+
 class UIViewController_ThumbnailList: UIViewController {
     
     open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -70,6 +98,7 @@ class UIViewController_ThumbnailList: UIViewController {
     @IBOutlet var Thumbnail: ImageSlideshow!
     
     var ThumbnailURLList : [String] = [String]()
+    var ThumbnailImageList : [Int:UIImage?] = [Int:UIImage?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,17 +116,33 @@ class UIViewController_ThumbnailList: UIViewController {
             print("current page:", page)
         }
         
-        var thumbnailSource : [KingfisherSource] = [KingfisherSource]()
-        for i in 0..<ThumbnailURLList.count
+        if ThumbnailURLList.count > 0
         {
-            if ThumbnailURLList[i] != "1"
+            var thumbnailSource : [KingfisherSource] = [KingfisherSource]()
+            for i in 0..<ThumbnailURLList.count
             {
-                thumbnailSource.append(KingfisherSource(urlString:ThumbnailURLList[i])!)
+                if ThumbnailURLList[i] != "1"
+                {
+                    thumbnailSource.append(KingfisherSource(urlString:ThumbnailURLList[i])!)
+                }
             }
+            
+            Thumbnail.setImageInputs(thumbnailSource)
+        }
+        
+        if ThumbnailImageList.count > 0
+        {
+            var thumbnailSource : [ImageSource] = [ImageSource]()
+            for data in ThumbnailImageList
+            {
+                if let image = data.value
+                {
+                    thumbnailSource.append(ImageSource.init(image: image))
+                }
+            }
+            Thumbnail.setImageInputs(thumbnailSource)
         }
 
-        Thumbnail.setImageInputs(thumbnailSource)
-        
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController_ThumbnailList.didTap))
         Thumbnail.addGestureRecognizer(recognizer)
     }
@@ -110,11 +155,21 @@ class UIViewController_ThumbnailList: UIViewController {
     
     public func SetUserThumbnailList(thumbnailList:[String])
     {
+        ThumbnailURLList.removeAll()
+        ThumbnailImageList.removeAll()
         ThumbnailURLList = thumbnailList
     }
     
     public func SetUserThumbnailList(userData:UserData)
     {
+        ThumbnailURLList.removeAll()
+        ThumbnailImageList.removeAll()
         ThumbnailURLList = userData.GetThumbnailList()
+    }
+    
+    public func SetUserThumbnailList(thumbnailList:[Int:UIImage?])
+    {
+        ThumbnailURLList.removeAll()
+        ThumbnailImageList = thumbnailList
     }
 }

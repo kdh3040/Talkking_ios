@@ -35,7 +35,6 @@ class UIViewController_UserPage : UIViewController
             if myData.FavorUserIndexList.contains(String.init(format:"%d", pageUserData.Index))
             {
                 let favorRemoveAction = {
-                    // TODO : 파이어 베이스에 올리기
                     FireBaseFunc.Instance.DelFavorList(userData : pageUserData)
                     myData.FavorUserIndexList.removeAll()
                     self.RefreshFavorUI()
@@ -52,7 +51,6 @@ class UIViewController_UserPage : UIViewController
             else
             {
                 let favorAddAction = {
-                    // TODO : 파이어 베이스에 올리기
                     FireBaseFunc.Instance.SetFavorList(userData: pageUserData)
                     myData.FavorUserIndexList.append(String(pageUserData.Index))
                     self.RefreshFavorUI()
@@ -81,7 +79,7 @@ class UIViewController_UserPage : UIViewController
         page.ShowPopup(viewController: self)
     }
     @IBAction func ShareAction(_ sender: Any) {
-        // TODO 공유하기 기능 추가
+        // TODO 도형 : 공유하기 기능 추가
     }
     @IBAction func HomeAction(_ sender: Any) {
         self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)

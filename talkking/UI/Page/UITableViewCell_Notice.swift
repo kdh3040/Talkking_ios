@@ -11,7 +11,6 @@ import UIKit
 
 class UITableViewCell_Notice : UITableViewCell
 {
-    // TODO 공지사항 데이터 받아서 실제 데이터 채우기
     @IBOutlet var Title: UILabel!
     @IBOutlet var Time: UILabel!
  

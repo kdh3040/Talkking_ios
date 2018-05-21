@@ -11,6 +11,7 @@ import UIKit
 
 class UIViewController_Popup : UIViewController
 {
+    // TODO 환웅 : 팝업이 뜰때 애니메이션 추가 가능한지 알아보자
     public var parentView : UIViewController? = nil
     
     public func SetParentView(viewController: UIViewController)
