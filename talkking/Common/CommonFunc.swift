@@ -53,6 +53,7 @@ class CommonFunc{
             tempData.InfoImage = "info_img_opal"
             tempData.Percent = 50
             tempData.Have = 0
+            tempData.Index = 0
             CommonData.JewelDataList.append(tempData)
             
             tempData = CommonData.JewelData()
@@ -61,6 +62,7 @@ class CommonFunc{
             tempData.InfoImage = "info_img_pearl"
             tempData.Percent = 25
             tempData.Have = 0
+            tempData.Index = 1
             CommonData.JewelDataList.append(tempData)
             
             tempData = CommonData.JewelData()
@@ -69,6 +71,7 @@ class CommonFunc{
             tempData.InfoImage = "info_img_amethyst"
             tempData.Percent = 13.5
             tempData.Have = 0
+            tempData.Index = 2
             CommonData.JewelDataList.append(tempData)
             
             tempData = CommonData.JewelData()
@@ -77,6 +80,7 @@ class CommonFunc{
             tempData.InfoImage = "info_img_sapphire"
             tempData.Percent = 7
             tempData.Have = 0
+            tempData.Index = 3
             CommonData.JewelDataList.append(tempData)
             
             tempData = CommonData.JewelData()
@@ -85,6 +89,7 @@ class CommonFunc{
             tempData.InfoImage = "info_img_emerald"
             tempData.Percent = 3.5
             tempData.Have = 0
+            tempData.Index = 4
             CommonData.JewelDataList.append(tempData)
             
             tempData = CommonData.JewelData()
@@ -93,6 +98,7 @@ class CommonFunc{
             tempData.InfoImage = "info_img_ruby"
             tempData.Percent = 0.85
             tempData.Have = 0
+            tempData.Index = 5
             CommonData.JewelDataList.append(tempData)
             
             tempData = CommonData.JewelData()
@@ -101,6 +107,7 @@ class CommonFunc{
             tempData.InfoImage = "info_img_diamond"
             tempData.Percent = 0.15
             tempData.Have = 0
+            tempData.Index = 6
             CommonData.JewelDataList.append(tempData)
         }
     }

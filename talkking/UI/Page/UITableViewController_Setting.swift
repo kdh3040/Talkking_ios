@@ -12,9 +12,53 @@ import UIKit
 class UITableViewController_Setting : UITableViewController
 {
     @IBOutlet var AlarmSound: UISwitch!
+    @IBAction func AlarmSoundAction(_ sender: Any) {
+        // TODO 도형 : 알람 설정
+        if AlarmSound.isOn
+        {
+            print("알람소리 ON")
+        }
+        else
+        {
+            print("알람소리 OFF")
+        }
+    }
     @IBOutlet var AlarmVibration: UISwitch!
+    @IBAction func AlarmVibrationAction(_ sender: Any) {
+        // TODO 도형 : 알람 진동 설정
+        if AlarmVibration.isOn
+        {
+            print("알람진동 ON")
+        }
+        else
+        {
+            print("알람진동 OFF")
+        }
+    }
     @IBOutlet var AlarmPopup: UISwitch!
+    @IBAction func AlarmPopupAction(_ sender: Any) {
+        // TODO 도형 : 알람 팝업 설정
+        if AlarmPopup.isOn
+        {
+            print("알람팝업 ON")
+        }
+        else
+        {
+            print("알람팝업 OFF")
+        }
+    }
     @IBOutlet var MsgRefusal: UISwitch!
+    @IBAction func MsgRefusalAction(_ sender: Any) {
+        // TODO 도형 : 쪽지 수신거부 설정
+        if MsgRefusal.isOn
+        {
+            print("쪽지수신거부 ON")
+        }
+        else
+        {
+            print("쪽지수신거부 OFF")
+        }
+    }
     @IBAction func BlockListAction(_ sender: Any) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "BLOCK_LIST_PAGE") as! UIViewController_BlockListPage
         self.present(page, animated: true)
@@ -44,5 +88,10 @@ class UITableViewController_Setting : UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO 도형 : 세팅 데이터 필요
+        AlarmSound.isOn = true
+        AlarmVibration.isOn = true
+        AlarmPopup.isOn = true
+        MsgRefusal.isOn = true
     }
 }

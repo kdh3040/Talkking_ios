@@ -84,6 +84,18 @@ class DataMgr {
         CachingBoardDataList.append(boardData)
         // 겹치는 인덱스의 게시글이 들어 올때는 데이터만 갱신
     }
+    
+    public func RemoveBoardData(index:Int)
+    {
+        for i in 0..<CachingBoardDataList.count
+        {
+            if CachingBoardDataList[i].BoardIndex == index
+            {
+                CachingBoardDataList.remove(at: i)
+                break
+            }
+        }
+    }
 
     public func GetNotificationData(index:Int) -> NotificationData?
     {

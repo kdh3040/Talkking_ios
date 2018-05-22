@@ -128,6 +128,9 @@
 		93D95D0B20B28FF600E40F2A /* Access_Term.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93D95D0720B28FF500E40F2A /* Access_Term.txt */; };
 		93D95D0C20B28FF600E40F2A /* Location_Term.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93D95D0820B28FF500E40F2A /* Location_Term.txt */; };
 		93D95D0D20B28FF600E40F2A /* Privacy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93D95D0920B28FF600E40F2A /* Privacy.txt */; };
+		93D95D0F20B29B4600E40F2A /* logo_png.png in Resources */ = {isa = PBXBuildFile; fileRef = 93D95D0E20B29B4500E40F2A /* logo_png.png */; };
+		93D95D1320B2F11600E40F2A /* UIViewController_MyBoardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D95D1220B2F11600E40F2A /* UIViewController_MyBoardList.swift */; };
+		93D95D1520B2F22A00E40F2A /* UITableViewCell_MyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D95D1420B2F22A00E40F2A /* UITableViewCell_MyBoard.swift */; };
 		93E5245220921870009E303A /* UITableViewCell_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E524502092186F009E303A /* UITableViewCell_Fan.swift */; };
 		93E5245320921870009E303A /* UIViewController_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E524512092186F009E303A /* UIViewController_Fan.swift */; };
 		93E524552092EDA0009E303A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E524542092EDA0009E303A /* Assets.xcassets */; };
@@ -307,6 +310,9 @@
 		93D95D0720B28FF500E40F2A /* Access_Term.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Access_Term.txt; sourceTree = "<group>"; };
 		93D95D0820B28FF500E40F2A /* Location_Term.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Location_Term.txt; sourceTree = "<group>"; };
 		93D95D0920B28FF600E40F2A /* Privacy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Privacy.txt; sourceTree = "<group>"; };
+		93D95D0E20B29B4500E40F2A /* logo_png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_png.png; sourceTree = "<group>"; };
+		93D95D1220B2F11600E40F2A /* UIViewController_MyBoardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_MyBoardList.swift; sourceTree = "<group>"; };
+		93D95D1420B2F22A00E40F2A /* UITableViewCell_MyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_MyBoard.swift; sourceTree = "<group>"; };
 		93E524502092186F009E303A /* UITableViewCell_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell_Fan.swift; sourceTree = "<group>"; };
 		93E524512092186F009E303A /* UIViewController_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_Fan.swift; sourceTree = "<group>"; };
 		93E524542092EDA0009E303A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -462,6 +468,7 @@
 				93D95D0620B28FF400E40F2A /* Activity_help.txt */,
 				93D95D0820B28FF500E40F2A /* Location_Term.txt */,
 				93D95D0920B28FF600E40F2A /* Privacy.txt */,
+				93D95D0E20B29B4500E40F2A /* logo_png.png */,
 				93BCBBB020AD350E009827E8 /* logo_gif.gif */,
 				9353D9A920A5B6C9006E4FAF /* charge */,
 				9318F99E2090815700E08F7D /* etc */,
@@ -700,6 +707,8 @@
 				93C29B8320AABE1B008D9D84 /* UITableViewCell_BlockList.swift */,
 				93C29B8B20AAE71B008D9D84 /* UIViewController_UserFanListPage.swift */,
 				93C29B8D20AAE75F008D9D84 /* UITableViewCell_UserFan.swift */,
+				93D95D1220B2F11600E40F2A /* UIViewController_MyBoardList.swift */,
+				93D95D1420B2F22A00E40F2A /* UITableViewCell_MyBoard.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -906,6 +915,7 @@
 				93E766572099FD76005455A8 /* main_icon_hot.png in Resources */,
 				93D95CFC20B267C500E40F2A /* info_img_emerald.png in Resources */,
 				93E76667209C5BA6005455A8 /* etc_icon_share.png in Resources */,
+				93D95D0F20B29B4600E40F2A /* logo_png.png in Resources */,
 				93BCBBB120AD350E009827E8 /* logo_gif.gif in Resources */,
 				9318F95920903E0300E08F7D /* fan.png in Resources */,
 				93D95CFD20B267C500E40F2A /* info_img_amethyst.png in Resources */,
@@ -1114,6 +1124,7 @@
 				9318F96720903E0300E08F7D /* UserData.swift in Sources */,
 				93C29B8220AABE03008D9D84 /* UIViewController_BlockListPage.swift in Sources */,
 				3D5091BD208DF92000DA8C8F /* AppDelegate.swift in Sources */,
+				93D95D1320B2F11600E40F2A /* UIViewController_MyBoardList.swift in Sources */,
 				93C29B8020AAB72D008D9D84 /* UITableViewController_Setting.swift in Sources */,
 				93C29B8E20AAE75F008D9D84 /* UITableViewCell_UserFan.swift in Sources */,
 				93C29B8C20AAE71B008D9D84 /* UIViewController_UserFanListPage.swift in Sources */,
@@ -1154,6 +1165,7 @@
 				93E766432099BA5F005455A8 /* UIViewCollectionCell_Home_FanCount.swift in Sources */,
 				9353D9A820A58AEC006E4FAF /* UIViewController_NoticePage.swift in Sources */,
 				93E7663D2099B860005455A8 /* UIViewController_Home_New.swift in Sources */,
+				93D95D1520B2F22A00E40F2A /* UITableViewCell_MyBoard.swift in Sources */,
 				9318F971209049A900E08F7D /* CommonFunc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

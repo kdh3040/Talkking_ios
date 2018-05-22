@@ -21,6 +21,7 @@ class UITableViewCell_Fan : UITableViewCell
     @IBOutlet var HeartCount: UILabel!
     public func SetFanCell(userData:UserData, rank : Int, RecvHeart : Int)
     {
+        // TODO 환웅 : New Icon 기능 추가
         let realRank = rank + 1
         CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: userData.GetMainThumbnail())!, circle : true)
         

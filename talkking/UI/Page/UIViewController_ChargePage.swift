@@ -36,6 +36,10 @@ class UIViewController_ChargePage : UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        
+        if let myData = DataMgr.Instance.MyData
+        {
+            MyCoin.text = CommonUIFunc.Instance.ConvertNumberFormat(count: myData.Coin)
+        }
     }
 }

@@ -10,32 +10,12 @@ import Foundation
 import UIKit
 import SVProgressHUD
 
-class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableViewDataSource
+class UIViewController_Favor : UIViewController
 {
     @IBOutlet var FavorTableView: UITableView!
-    
+
     var FavorCnt =  0
     var FavorLoadCnt =  0
-    
-    private func CallBackFunc_LoadSimpleUserData(count : Int)
-    {
-        if count == FavorLoadCnt
-        {
-            CommonUIFunc.DismissLoading()
-            FavorCnt = DataMgr.Instance.MyData!.FavorUserIndexList.count
-            FavorTableView.reloadData()
-            FireBaseFunc.Instance.CallBackCount = 0
-        }
-    }
-    
-    private func CallBackFunc_LoadUserData(index : Int)
-    {
-            CommonUIFunc.DismissLoading()
-            let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
-            let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-            page.SetUserData(userData: userData)
-            self.present(page, animated: true)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +45,14 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+}
+
+extension UIViewController_Favor : UITableViewDelegate, UITableViewDataSource
+{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return (DataMgr.Instance.MyData?.FavorUserIndexList.count)!
         return FavorCnt
     }
-    // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_Favor
@@ -78,14 +60,6 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
         cell.SetFavorCell(userData: GetSelectSimpleUserData(indexPath:indexPath))
         return cell
     }
-    
-    func GetSelectSimpleUserData(indexPath: IndexPath) -> UserData
-    {
-        let index : String = DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row]
-        
-        return DataMgr.Instance.GetCachingSimpleUserDataList(index: Int(index)!)!
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let userData = GetSelectUserData(indexPath:indexPath)
         {
@@ -99,6 +73,37 @@ class UIViewController_Favor : UIViewController, UITableViewDelegate, UITableVie
             CommonUIFunc.ShowLoading()
             FireBaseFunc.Instance.LoadUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row], complete: CallBackFunc_LoadUserData)
         }
+    }
+}
+
+extension UIViewController_Favor
+{
+    // 파이어 베이스 콜백 함수
+    private func CallBackFunc_LoadSimpleUserData(count : Int)
+    {
+        if count == FavorLoadCnt
+        {
+            CommonUIFunc.DismissLoading()
+            FavorCnt = DataMgr.Instance.MyData!.FavorUserIndexList.count
+            FavorTableView.reloadData()
+            FireBaseFunc.Instance.CallBackCount = 0
+        }
+    }
+    
+    private func CallBackFunc_LoadUserData(index : Int)
+    {
+        CommonUIFunc.DismissLoading()
+        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.SetUserData(userData: userData)
+        self.present(page, animated: true)
+    }
+    
+    func GetSelectSimpleUserData(indexPath: IndexPath) -> UserData
+    {
+        let index : String = DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row]
+        
+        return DataMgr.Instance.GetCachingSimpleUserDataList(index: Int(index)!)!
     }
     
     func GetSelectUserData(indexPath: IndexPath) -> UserData?

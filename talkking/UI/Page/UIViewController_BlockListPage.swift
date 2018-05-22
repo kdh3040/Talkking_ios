@@ -13,6 +13,9 @@ class UIViewController_BlockListPage : UIViewController
 {
     // TODO 도형 : 블락 리스트 데이터 필요
     // TODO 환웅 : 블락 리스트 UI 채우기
+    @IBAction func Back(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     @IBOutlet var BlockList: UITableView!
     
     override func viewDidLoad() {

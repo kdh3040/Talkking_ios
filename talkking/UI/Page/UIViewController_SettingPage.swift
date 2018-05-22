@@ -12,7 +12,6 @@ import UIKit
 class UIViewController_SettingPage : UIViewController
 {
     @IBAction func Back(_ sender: Any) {
-        // TODO 환웅 : 설정이 변경되면 뒤로 갈때 저장 할껀지 물어봐야함
         self.dismiss(animated: true)
     }
     override func viewDidLoad() {

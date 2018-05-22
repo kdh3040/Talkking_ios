@@ -17,7 +17,15 @@ class UIViewController_JewelInfoPopup : UIViewController_Popup
         {
             let itemSell = {
                 // TODO 도형 : 아이템 판매하는 파이어베이스 코드 추가
-                // TODO 환웅 : 아이템을 판매하고 아이템 페이지 갱신하는 코드 추가
+
+                if let myData = DataMgr.Instance.MyData
+                {
+                    myData.Item[self.JewelData!.Index] = myData.Item[self.JewelData!.Index]! - 1
+                }
+                if let refreshFunc = self.RefreshFunc
+                {
+                    refreshFunc()
+                }
                 self.DismissPopup()
             }
             
@@ -30,10 +38,17 @@ class UIViewController_JewelInfoPopup : UIViewController_Popup
         }
     }
     @IBAction func OkAction(_ sender: Any) {
+        
+        if let refreshFunc = RefreshFunc
+        {
+            refreshFunc()
+        }
         self.DismissPopup()
     }
     
     var JewelData : CommonData.JewelData? = nil
+    var RefreshFunc : (() -> Void)? = nil
+    var Gacha : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +59,16 @@ class UIViewController_JewelInfoPopup : UIViewController_Popup
         }
     }
     
-    public func SetJewelInfo(index:Int)
+    public func SetJewelInfo(index:Int, gacha : Bool, refreshFunc : (() -> Void)? = nil)
     {
         JewelData = CommonData.JewelDataList[index]
+        Gacha = gacha
+        RefreshFunc = refreshFunc
+        
+        if let myData = DataMgr.Instance.MyData,
+            Gacha
+        {
+            myData.Item[index] = myData.Item[index]! + 1
+        }
     }
 }

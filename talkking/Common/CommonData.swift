@@ -61,6 +61,7 @@ struct CommonData {
         var Percent : Float = 0
         var Have : Int = 0
         let SellCost : Int = 4
+        var Index : Int = -1
     }
     
 

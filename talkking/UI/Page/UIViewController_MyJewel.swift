@@ -27,6 +27,7 @@ class UIViewController_MyJewel : UIViewController
     @IBOutlet var JewelSlot_6: UIView!
     @IBOutlet var JewelSlot_7: UIView!
 
+    @IBOutlet var MyCoin: UILabel!
     
     @IBAction func GachaAction_1(_ sender: Any) {
         let GachaFunc = {
@@ -117,7 +118,10 @@ class UIViewController_MyJewel : UIViewController
         if data.Have > 0
         {
             let page = self.storyboard?.instantiateViewController(withIdentifier: "JEWEL_INFO_POPUP") as! UIViewController_JewelInfoPopup
-            page.SetJewelInfo(index: index)
+            page.SetJewelInfo(index: index, gacha: false, refreshFunc: {
+                self.SetHaveJewel()
+                self.RefreshUI()
+            })
             page.ShowPopup(viewController: self)
         }
     }
@@ -126,6 +130,7 @@ class UIViewController_MyJewel : UIViewController
     
     public func RefreshUI()
     {
+        MyCoin.text = CommonUIFunc.Instance.ConvertNumberFormat(count:  DataMgr.Instance.MyData!.Coin)
         SetHaveJewel()
         let list = CommonData.JewelDataList
         for i in 0..<list.count
@@ -165,7 +170,10 @@ class UIViewController_MyJewel : UIViewController
         for _ in 0..<count
         {
             let page = self.storyboard?.instantiateViewController(withIdentifier: "JEWEL_INFO_POPUP") as! UIViewController_JewelInfoPopup
-            page.SetJewelInfo(index: CommonFunc.GetJewelGacha())
+            page.SetJewelInfo(index: CommonFunc.GetJewelGacha(), gacha: true, refreshFunc: {
+                self.SetHaveJewel()
+                self.RefreshUI()
+            })
             page.ShowPopup(viewController: self)
         }
     }

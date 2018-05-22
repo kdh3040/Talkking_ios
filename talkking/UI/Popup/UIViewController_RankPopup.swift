@@ -14,8 +14,14 @@ class UIViewController_RankPopup : UIViewController_Popup
     @IBAction func OkAction(_ sender: Any) {
         self.DismissPopup()
     }
+    @IBOutlet var AccumulateCoin: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if let myData = DataMgr.Instance.MyData
+        {
+            // TODO 도형 : 누적 코인 데이터 필요
+            AccumulateCoin.text = CommonUIFunc.Instance.ConvertNumberFormat(count: 100)
+        }
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SVProgressHUD
 
-class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewDataSource
+class UIViewController_Fan : UIViewController
 {
     @IBOutlet var FanTableView: UITableView!
     @IBOutlet var MyFanCount: UILabel!
@@ -18,28 +18,7 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
     
     var FanCnt =  0
     var FanLoadCnt =  0
-    
-    private func CallBackFunc_LoadSimpleUserData(count : Int)
-    {
-        if count == FanLoadCnt
-        {
-            CommonUIFunc.DismissLoading()
-            FanCnt = DataMgr.Instance.MyData!.FanDataList.count
-            FanTableView.reloadData()
-            FireBaseFunc.Instance.CallBackCount = 0
-        }
-    }
-    
-    private func CallBackFunc_LoadUserData(index : Int)
-    {
-        CommonUIFunc.DismissLoading()
-        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-        page.SetUserData(userData: userData)
-        self.present(page, animated: true)
-    }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -73,28 +52,20 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
+
+extension UIViewController_Fan : UITableViewDelegate, UITableViewDataSource
+{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return (DataMgr.Instance.MyData?.FanDataList.count)!;
         return FanCnt
     }
-    // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_Fan
         cell.SetFanCell(userData: GetSelectSimpleUserData(indexPath: indexPath), rank: indexPath.row, RecvHeart: DataMgr.Instance.MyData!.FanDataList[indexPath.row].RecvHeart)
         return cell
     }
-    
-    func GetSelectSimpleUserData(indexPath: IndexPath) -> UserData
-    {
-        let index : Int = DataMgr.Instance.MyData!.FanDataList[indexPath.row].Idx
-        
-        return DataMgr.Instance.GetCachingSimpleUserDataList(index: (index))!
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         if let userData = GetSelectUserData(indexPath:indexPath)
         {
             let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
@@ -103,12 +74,38 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
         }
         else
         {
-            // 로딩하세요
             CommonUIFunc.ShowLoading()
             FireBaseFunc.Instance.LoadUserData(index: String(DataMgr.Instance.MyData!.FanDataList[indexPath.row].Idx), complete: CallBackFunc_LoadUserData)
         }
-        
-        
+    }
+}
+
+extension UIViewController_Fan
+{
+    private func CallBackFunc_LoadSimpleUserData(count : Int)
+    {
+        if count == FanLoadCnt
+        {
+            CommonUIFunc.DismissLoading()
+            FanCnt = DataMgr.Instance.MyData!.FanDataList.count
+            FanTableView.reloadData()
+            FireBaseFunc.Instance.CallBackCount = 0
+        }
+    }
+    
+    private func CallBackFunc_LoadUserData(index : Int)
+    {
+        CommonUIFunc.DismissLoading()
+        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.SetUserData(userData: userData)
+        self.present(page, animated: true)
+    }
+    
+    func GetSelectSimpleUserData(indexPath: IndexPath) -> UserData
+    {
+        let index : Int = DataMgr.Instance.MyData!.FanDataList[indexPath.row].Idx
+        return DataMgr.Instance.GetCachingSimpleUserDataList(index: (index))!
     }
     
     func GetSelectUserData(indexPath: IndexPath) -> UserData?
@@ -117,5 +114,4 @@ class UIViewController_Fan : UIViewController, UITableViewDelegate, UITableViewD
         
         return DataMgr.Instance.GetCachingUserDataList(index: index)
     }
-    
 }
