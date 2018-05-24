@@ -66,17 +66,7 @@ extension UIViewController_Fan : UITableViewDelegate, UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let userData = GetSelectUserData(indexPath:indexPath)
-        {
-            let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-            page.SetUserData(userData: userData)
-            self.present(page, animated: true)
-        }
-        else
-        {
-            CommonUIFunc.ShowLoading()
-            FireBaseFunc.Instance.LoadUserData(index: String(DataMgr.Instance.MyData!.FanDataList[indexPath.row].Idx), complete: CallBackFunc_LoadUserData)
-        }
+        CommonUIFunc.Instance.MoveUserPage(index:DataMgr.Instance.MyData!.FanDataList[indexPath.row].Idx, view : self)
     }
 }
 
@@ -93,25 +83,9 @@ extension UIViewController_Fan
         }
     }
     
-    private func CallBackFunc_LoadUserData(index : Int)
-    {
-        CommonUIFunc.DismissLoading()
-        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-        page.SetUserData(userData: userData)
-        self.present(page, animated: true)
-    }
-    
     func GetSelectSimpleUserData(indexPath: IndexPath) -> UserData
     {
         let index : Int = DataMgr.Instance.MyData!.FanDataList[indexPath.row].Idx
         return DataMgr.Instance.GetCachingSimpleUserDataList(index: (index))!
-    }
-    
-    func GetSelectUserData(indexPath: IndexPath) -> UserData?
-    {
-        let index = DataMgr.Instance.MyData!.FanDataList[indexPath.row].Idx
-        
-        return DataMgr.Instance.GetCachingUserDataList(index: index)
     }
 }

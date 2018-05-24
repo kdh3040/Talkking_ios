@@ -12,7 +12,8 @@ class MyUserData : UserData
 {
     public var CahingChatDataList : [ChatData] = [ChatData]()
     private var ChatDataIdx_List : [Int : Int] = [Int : Int]()
-
+    public var BlockDataList : [BlockData] = [BlockData]()
+    
     public init(index : Int)
     {
         let userData = DataMgr.Instance.GetCachingUserDataList(index: index)
@@ -38,5 +39,17 @@ class MyUserData : UserData
         }
         
         return 0
+    }
+    
+    public func RemoveBlockList(idx:Int)
+    {
+        for i in 0..<BlockDataList.count
+        {
+            if BlockDataList[i].Idx == idx
+            {
+                BlockDataList.remove(at: i)
+                return;
+            }
+        }
     }
 }

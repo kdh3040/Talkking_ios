@@ -61,18 +61,7 @@ extension UIViewController_Favor : UITableViewDelegate, UITableViewDataSource
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let userData = GetSelectUserData(indexPath:indexPath)
-        {
-            let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-            page.SetUserData(userData: userData)
-            self.present(page, animated: true)
-        }
-        else
-        {
-            // 로딩하세요
-            CommonUIFunc.ShowLoading()
-            FireBaseFunc.Instance.LoadUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row], complete: CallBackFunc_LoadUserData)
-        }
+        CommonUIFunc.Instance.MoveUserPage(index:Int(DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row])!, view : self)
     }
 }
 
@@ -90,26 +79,10 @@ extension UIViewController_Favor
         }
     }
     
-    private func CallBackFunc_LoadUserData(index : Int)
-    {
-        CommonUIFunc.DismissLoading()
-        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-        page.SetUserData(userData: userData)
-        self.present(page, animated: true)
-    }
-    
     func GetSelectSimpleUserData(indexPath: IndexPath) -> UserData
     {
         let index : String = DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row]
         
         return DataMgr.Instance.GetCachingSimpleUserDataList(index: Int(index)!)!
-    }
-    
-    func GetSelectUserData(indexPath: IndexPath) -> UserData?
-    {
-        let index : String = DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row]
-        
-        return DataMgr.Instance.GetCachingUserDataList(index: Int(index)!)
     }
 }

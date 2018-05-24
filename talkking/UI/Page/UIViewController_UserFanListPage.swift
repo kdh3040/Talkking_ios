@@ -36,15 +36,6 @@ class UIViewController_UserFanListPage : UIViewController
         }
     }
     
-    private func CallBackFunc_LoadUserData(index : Int)
-    {
-        CommonUIFunc.DismissLoading()
-        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-        page.SetUserData(userData: userData)
-        self.present(page, animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -105,23 +96,6 @@ extension UIViewController_UserFanListPage : UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let userData = GetSelectUserData(indexPath:indexPath)
-        {
-            let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-            page.SetUserData(userData: userData)
-            self.present(page, animated: true)
-        }
-        else
-        {
-            CommonUIFunc.ShowLoading()
-            FireBaseFunc.Instance.LoadUserData(index: String(SelectUserData!.FanDataList[indexPath.row].Idx), complete: CallBackFunc_LoadUserData)
-        }
-    }
-    
-    func GetSelectUserData(indexPath: IndexPath) -> UserData?
-    {
-        let index = SelectUserData!.FanDataList[indexPath.row].Idx
-        
-        return DataMgr.Instance.GetCachingUserDataList(index: index)
+        CommonUIFunc.Instance.MoveUserPage(index:SelectUserData!.FanDataList[indexPath.row].Idx, view : self)
     }
 }

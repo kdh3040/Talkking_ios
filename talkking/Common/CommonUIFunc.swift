@@ -279,4 +279,28 @@ class CommonUIFunc{
 
         return tempStr.count <= 0;
     }
+    
+    public func MoveUserPage(index:Int, view : UIViewController)
+    {
+        if let userData = DataMgr.Instance.GetCachingUserDataList(index: index)
+        {
+            let page = view.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+            page.SetUserData(userData: userData)
+            view.present(page, animated: true)
+        }
+        else
+        {
+            CommonUIFunc.ShowLoading()
+            FireBaseFunc.Instance.LoadUserData(index: String(index), complete: MoveUserPage_LoadUserData, view : view)
+        }
+    }
+    
+    private func MoveUserPage_LoadUserData(index : Int, view : UIViewController?)
+    {
+        CommonUIFunc.DismissLoading()
+        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
+        let page = view!.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
+        page.SetUserData(userData: userData)
+        view!.present(page, animated: true)
+    }
 }

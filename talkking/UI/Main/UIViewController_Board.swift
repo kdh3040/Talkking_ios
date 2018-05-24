@@ -68,18 +68,22 @@ extension UIViewController_Board : UITableViewDelegate, UITableViewDataSource
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let userData = GetSelectUserData(indexPath:indexPath)
-        {
-            let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-            page.SetUserData(userData: userData)
-            self.present(page, animated: true)
+        CommonUIFunc.Instance.MoveUserPage(index:DataMgr.Instance.CachingBoardDataList[indexPath.row].UserIndex, view : self)
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+            print("스크롤 하단")
         }
-        else
-        {
-            CommonUIFunc.ShowLoading()
-            FireBaseFunc.Instance.LoadUserData(index: String(DataMgr.Instance.CachingBoardDataList[indexPath.row].UserIndex), complete: CallBackFunc_LoadUserData)
+        
+        if (scrollView.contentOffset.y < 0){
+            print("스크롤 상단")
+        }
+        
+        if (scrollView.contentOffset.y >= 0 && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height)){
+            print("스크롤 중")
         }
     }
+
     
     /*
      07. scrollViewDidScroll
@@ -108,26 +112,11 @@ extension UIViewController_Board
             FireBaseFunc.Instance.CallBackCount = 0
         }
     }
-    private func CallBackFunc_LoadUserData(index : Int)
-    {
-        CommonUIFunc.DismissLoading()
-        let userData : UserData = DataMgr.Instance.GetCachingUserDataList(index: index)!
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-        page.SetUserData(userData: userData)
-        self.present(page, animated: true)
-    }
-    
+
     func GetSelectSimpleUserData(indexPath: IndexPath) -> UserData
     {
         let index : Int = DataMgr.Instance.CachingBoardDataList[indexPath.row].UserIndex
         
         return DataMgr.Instance.GetCachingSimpleUserDataList(index: index)!
-    }
-    
-    func GetSelectUserData(indexPath: IndexPath) -> UserData?
-    {
-        let userIndex = DataMgr.Instance.CachingBoardDataList[indexPath.row].UserIndex
-        
-        return DataMgr.Instance.GetCachingUserDataList(index: userIndex)
     }
 }

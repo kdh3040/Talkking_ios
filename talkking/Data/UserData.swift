@@ -45,7 +45,6 @@ class UserData
     var FanDataList : [FanData] = [FanData]()
     var ChatDataList : [ChatData] = [ChatData]()
     
-    
     public init(userData : UserData)
     {
          ConnectDate = userData.ConnectDate
@@ -292,7 +291,7 @@ class UserData
                 FanDataList.append(tempFanData)
             }
         }
-      
+
        // var tempFanList : [String] = [String]()
         //tempFanList = tempFan.allKeys as! [String]
         
@@ -452,5 +451,7 @@ class UserData
 
         return [String]()
     }
+    
+    
 
 }

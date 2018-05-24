@@ -58,7 +58,7 @@ class FireBaseFunc
                 self.LoadMyData(index: tempMyIdx, complete: self.CallBackFunc_LoadMyData)
                 self.LoadBoardDataList()
                 self.LoadNotification()
-            
+                
             }
             else
             {
@@ -120,14 +120,17 @@ class FireBaseFunc
                             
                             DataMgr.Instance.SetCachingUserDataList(userData: retValue)
                          
-                                DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                            DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                        
+                            self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
+                       
+                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
+                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
+                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
+                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
                             
-                                self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
-                           
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
+                            // TODO 환웅 : 메인 로딩 화면에서 로딩 하고 싶은데 어떻게 해야하지??
+                            self.LoadBlockDataList(index: index)
                             
                         }
                     }){ (error) in
@@ -144,14 +147,16 @@ class FireBaseFunc
                             
                             DataMgr.Instance.SetCachingUserDataList(userData: retValue)
                            
-                                DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                            DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                        
+                            self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
+                        
+                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
+                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
+                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
+                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
                             
-                                self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
-                            
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
-                                self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
+                            self.LoadBlockDataList(index: index)
                             
                             
                         }
@@ -167,7 +172,7 @@ class FireBaseFunc
         //return nil
     }
     
-    public func LoadUserData(index : String, complete : @escaping ((_ index : Int)->())) //-> UserData?
+    public func LoadUserData(index : String, complete : @escaping (_ index : Int, _ view : UIViewController? )->(), view : UIViewController? = nil) //-> UserData?
     {
         
         ref.child("GenderList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
@@ -188,7 +193,7 @@ class FireBaseFunc
                                 let retValue : UserData = UserData.init(tempData: tempData)
                                 
                                 DataMgr.Instance.SetCachingUserDataList(userData: retValue)                            
-                                complete(Int(index)!)
+                                complete(Int(index)!, view)
                             }
                         }){ (error) in
                             print(error.localizedDescription)
@@ -203,7 +208,7 @@ class FireBaseFunc
                                 let retValue : UserData = UserData.init(tempData: tempData)
                                 
                                 DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-                               complete(Int(index)!)
+                               complete(Int(index)!, view)
                             }
                         }){ (error) in
                             print(error.localizedDescription)
@@ -352,11 +357,33 @@ class FireBaseFunc
             for childSnapshot in snapshot.children
             {
                 
-                var tempChildData = childSnapshot as! DataSnapshot
-                var tempData = tempChildData.value as? NSDictionary
-                var retValue : BoardData = BoardData.init(tempData: tempData!)
+                let tempChildData = childSnapshot as! DataSnapshot
+                let tempData = tempChildData.value as? NSDictionary
+                let retValue : BoardData = BoardData.init(tempData: tempData!)
                 
                 DataMgr.Instance.SetBoardData(boardData: retValue)
+            }
+            
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
+        
+        //return nil
+    }
+    
+    public func LoadBlockDataList(index:String) //-> UserData?
+    {
+        ref.child("BlockList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+            
+            for childSnapshot in snapshot.children
+            {
+                
+                let tempChildData = childSnapshot as! DataSnapshot
+                let tempData = tempChildData.value as? NSDictionary
+                let retValue : BlockData = BlockData.init(tempData: tempData!)
+                
+                DataMgr.Instance.SetBlockData(retValue)
             }
             
             

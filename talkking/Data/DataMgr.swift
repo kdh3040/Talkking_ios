@@ -209,4 +209,12 @@ class DataMgr {
         return UserIdxList_Hot.count
     }
     
+    public func SetBlockData(_ blockData:BlockData)
+    {
+        if let myData = MyData
+        {
+            myData.BlockDataList.append(blockData)
+        }
+    }
+    
 }

@@ -72,6 +72,7 @@
 		9318F99720907E8900E08F7D /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99620907E8900E08F7D /* diamond.png */; };
 		9318F99920907E9100E08F7D /* emerald.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99820907E9100E08F7D /* emerald.png */; };
 		9318F99B20907F1D00E08F7D /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99A20907F1D00E08F7D /* heart.png */; };
+		933BACA420B6827200834A55 /* BlockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933BACA320B6827200834A55 /* BlockData.swift */; };
 		9353D9A820A58AEC006E4FAF /* UIViewController_NoticePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9A720A58AEC006E4FAF /* UIViewController_NoticePage.swift */; };
 		9353D9B120A5B6E3006E4FAF /* charge_500.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AA20A5B6DF006E4FAF /* charge_500.png */; };
 		9353D9B220A5B6E3006E4FAF /* charge_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AB20A5B6DF006E4FAF /* charge_30.png */; };
@@ -254,6 +255,7 @@
 		9318F99620907E8900E08F7D /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
 		9318F99820907E9100E08F7D /* emerald.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emerald.png; sourceTree = "<group>"; };
 		9318F99A20907F1D00E08F7D /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		933BACA320B6827200834A55 /* BlockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockData.swift; sourceTree = "<group>"; };
 		9353D9A720A58AEC006E4FAF /* UIViewController_NoticePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_NoticePage.swift; sourceTree = "<group>"; };
 		9353D9AA20A5B6DF006E4FAF /* charge_500.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_500.png; sourceTree = "<group>"; };
 		9353D9AB20A5B6DF006E4FAF /* charge_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_30.png; sourceTree = "<group>"; };
@@ -535,6 +537,7 @@
 				3D87315F20930D3400022D90 /* FireBaseFunc.swift */,
 				3D87316120948D1A00022D90 /* FanData.swift */,
 				3D663FC720AC0AB300062FB5 /* NotificationData.swift */,
+				933BACA320B6827200834A55 /* BlockData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1138,6 +1141,7 @@
 				9318F96A20903E0300E08F7D /* DataMgr.swift in Sources */,
 				93C29B8420AABE1B008D9D84 /* UITableViewCell_BlockList.swift in Sources */,
 				93E766332099B7F3005455A8 /* UIViewController_Home_Public.swift in Sources */,
+				933BACA420B6827200834A55 /* BlockData.swift in Sources */,
 				93E7665A209AF11C005455A8 /* UIViewController_UserPage.swift in Sources */,
 				93C29B8A20AAE12D008D9D84 /* UIViewController_Popup.swift in Sources */,
 				9353D9BB20A5BAC3006E4FAF /* UIViewController_ChargePage.swift in Sources */,
