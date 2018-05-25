@@ -16,24 +16,23 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
     @IBOutlet var Desc: UILabel!
     var PageUserData : UserData? = nil
     
-    private func CallBackFunc_SetMyCoin(count : Int)
-    {
-        CommonUIFunc.DismissLoading()
-        DataMgr.Instance.MyData!.Coin = count
-        
-        RefreshUI()
-    }
-    
     @IBAction func SendAction(_ sender: Any) {
-        if let myData = DataMgr.Instance.MyData,
-            CommonFunc.Instance.IsCoinEnough(coin: SelectCost, viewController: self)
+        
+        if CommonUIFunc.Instance.IsStringEmptyCheck(text: Msg.text)
         {
-            FireBaseFunc.Instance.SetFavorList(userData: PageUserData!)
-            FireBaseFunc.Instance.SetFanList(userData: PageUserData!, Heart: SelectCost)
-            
-            myData.Coin -= SelectCost
-            FireBaseFunc.Instance.SetMyCoin()
-            self.DismissPopup()
+            CommonUIFunc.Instance.ShowAlertPopup(
+                viewController: self,
+                title: "하트 보내기",
+                message: "메세지의 내용이 없습니다.",
+                actionTitle_1: "확인")
+        }
+        else
+        {
+            CommonFunc.Instance.UseCoin(cost: self.SelectCost, view: self, callFunc: {
+                FireBaseFunc.Instance.SetFavorList(userData: self.PageUserData!)
+                FireBaseFunc.Instance.SetFanList(userData: self.PageUserData!, Heart: self.SelectCost)
+                self.DismissPopup()
+            })
         }
     }
     @IBAction func CancelAction(_ sender: Any) {
@@ -85,10 +84,6 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (Msg.font?.pointSize)! / 2)
         placeholderLabel.textColor = UIColor.lightGray
         placeholderLabel.isHidden = !Msg.text.isEmpty
-        
-        CommonUIFunc.ShowLoading()
-        FireBaseFunc.Instance.LoadMyCoin(complete: CallBackFunc_SetMyCoin)
-       
         
         selectHeartIndex = 0
         RefreshUI()

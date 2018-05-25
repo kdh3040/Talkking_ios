@@ -16,6 +16,8 @@ class BoardData
     var WriteTime : Double = 0
     var Report : Bool = false
     
+    public init(){}
+    
     public init( tempData : NSDictionary)
     {
         

@@ -69,14 +69,20 @@ class UIViewController_UserPage : UIViewController
     @IBOutlet var Favor: UIButton!
     
     @IBAction func ChatAction(_ sender: Any) {
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "MSG_SEND_POPUP") as! UIViewController_MsgSendPopup
-        page.SetUserData(userData: PageUserData!)
-        page.ShowPopup(viewController: self)
+        if CommonUIFunc.Instance.IsBlockUser(idx: PageUserData!.Index, view: self) == false
+        {
+            let page = self.storyboard?.instantiateViewController(withIdentifier: "MSG_SEND_POPUP") as! UIViewController_MsgSendPopup
+            page.SetUserData(userData: PageUserData!)
+            page.ShowPopup(viewController: self)
+        }
     }
     @IBAction func HeartAction(_ sender: Any) {
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "HEART_SEND_POPUP") as! UIViewController_HeartSendPopup
-        page.SetUserData(userData: PageUserData!)
-        page.ShowPopup(viewController: self)
+        if CommonUIFunc.Instance.IsBlockUser(idx: PageUserData!.Index, view: self) == false
+        {
+            let page = self.storyboard?.instantiateViewController(withIdentifier: "HEART_SEND_POPUP") as! UIViewController_HeartSendPopup
+            page.SetUserData(userData: PageUserData!)
+            page.ShowPopup(viewController: self)
+        }
     }
     @IBAction func ShareAction(_ sender: Any) {
         // TODO 도형 : 공유하기 기능 추가

@@ -31,7 +31,7 @@ struct CommonData {
     public static let NICKNAME_CHANGE_COST = 500
     public static let MSG_COST = 8
     
-    public static let BOARD_WIRTE_LIMIT_TIME_MIN = 10
+    public static let BOARD_WIRTE_LIMIT_TIME_MIN = 600
     public static let MILLISECOND = 1000
     
     public static let USER_CHECK_NO = 0

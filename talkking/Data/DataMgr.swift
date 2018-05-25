@@ -81,8 +81,18 @@ class DataMgr {
     
     public func SetBoardData(boardData:BoardData)
     {
+        for i in 0..<CachingBoardDataList.count
+        {
+            if CachingBoardDataList[i].BoardIndex == boardData.BoardIndex
+            {
+                return
+            }
+        }
         CachingBoardDataList.append(boardData)
-        // 겹치는 인덱스의 게시글이 들어 올때는 데이터만 갱신
+
+        CachingBoardDataList.sort { (a, b) -> Bool in
+            return a.BoardIndex < b.BoardIndex
+        }
     }
     
     public func RemoveBoardData(index:Int)
@@ -209,12 +219,6 @@ class DataMgr {
         return UserIdxList_Hot.count
     }
     
-    public func SetBlockData(_ blockData:BlockData)
-    {
-        if let myData = MyData
-        {
-            myData.BlockDataList.append(blockData)
-        }
-    }
+    
     
 }

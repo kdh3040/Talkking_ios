@@ -22,11 +22,10 @@ class UIViewController_NickNameChangePopup : UIViewController_Popup
         }
         else
         {
-            if CommonFunc.Instance.IsCoinEnough(coin: CommonData.NICKNAME_CHANGE_COST, viewController: self)
-            {
-                // TODO 도형 : 닉네임 변경 및 코인 확인 및 차감
+            CommonFunc.Instance.UseCoin(cost: CommonData.NICKNAME_CHANGE_COST, view: self, callFunc: {
+                // TODO 도형 : 닉네임 변경
                 self.DismissPopup()
-            }
+            })
         }
     }
     @IBAction func CancelAction(_ sender: Any) {

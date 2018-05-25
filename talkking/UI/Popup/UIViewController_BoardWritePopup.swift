@@ -24,7 +24,12 @@ class UIViewController_BoardWritePopup : UIViewController_Popup
         else
         {
             let writeFunc = {
-                // TODO 도형 : 게시판 글 업로드
+                FireBaseFunc.Instance.WriteBoard(msg: self.Msg.text, complete: {
+                    DispatchQueue.main.async {
+                        self.boardListView!.RefreshUI()
+                    }
+                })
+                
                 self.DismissPopup()
             }
             CommonUIFunc.Instance.ShowAlertPopup(
@@ -41,6 +46,8 @@ class UIViewController_BoardWritePopup : UIViewController_Popup
     }
 
     var placeholderLabel : UILabel!
+    var boardListView : UIViewController_Board? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +60,11 @@ class UIViewController_BoardWritePopup : UIViewController_Popup
         placeholderLabel.textColor = UIColor.lightGray
         placeholderLabel.isHidden = !Msg.text.isEmpty
 
+    }
+    
+    public func SetBoardView(view : UIViewController_Board)
+    {
+        boardListView = view
     }
 }
 

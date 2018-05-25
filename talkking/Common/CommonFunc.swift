@@ -148,4 +148,47 @@ class CommonFunc{
         
         return returnValue;
     }
+    
+    public func UseCoin(cost : Int, view : UIViewController, callFunc : @escaping () -> Void)
+    {
+        FireBaseFunc.Instance.UpdateMyCoin(complete: {
+            if let myData = DataMgr.Instance.MyData
+            {
+                if CommonFunc.Instance.IsCoinEnough(coin: cost, viewController: view)
+                {
+                    callFunc()
+                    
+                    myData.Coin -= cost
+                    FireBaseFunc.Instance.SetMyCoin()
+                }
+            }
+        })
+    }
+    
+    public func GetCurrentTime() -> Double
+    {
+        return round(Date().timeIntervalSince1970 * Double(CommonData.MILLISECOND))
+    }
+    
+    public func IsBoardWriteEnable(showPopup : Bool = true, view :UIViewController? = nil) -> Bool
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            let wirteEnableTime = myData.BoardWriteTime + Double(CommonData.BOARD_WIRTE_LIMIT_TIME_MIN * CommonData.MILLISECOND)
+            if wirteEnableTime > GetCurrentTime()
+            {
+                if showPopup ,
+                    let popupView = view
+                {
+                    CommonUIFunc.Instance.ShowAlertPopup(
+                        viewController: popupView,
+                        title: "게시판",
+                        message:String.init(format:"작성 가능 시간까지 %@ 남았습니다.", CommonUIFunc.Instance.ConvertTimeString(time: (wirteEnableTime - GetCurrentTime()) / Double(CommonData.MILLISECOND), format: "mm분ss초")),
+                        actionTitle_1: "확인")
+                }
+                return false
+            }
+        }
+        return true
+    }
 }

@@ -24,6 +24,6 @@ class UITableViewCell_ChatMain : UITableViewCell
         CommonUIFunc.Instance.SetUserName(label: Name, userData: userData)
         Grade.image = UIImage.init(named: CommonUIFunc.Instance.GetGradeImgName(grade:userData.Grade))
         BestItem.image = UIImage.init(named: CommonUIFunc.Instance.GetItemImgName(bestItem: userData.BestItem))
-        Time.text = CommonUIFunc.Instance.ConvertTimeString(time: 100)
+        Time.text = CommonUIFunc.Instance.ConvertTimeString(time: 100, format:"HH")
     }
 }

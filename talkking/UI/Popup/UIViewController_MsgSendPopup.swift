@@ -17,11 +17,20 @@ class UIViewController_MsgSendPopup : UIViewController_Popup
     var PageUserData : UserData? = nil
     
     @IBAction func SendAction(_ sender: Any) {
-        // TODO 도형 : 코인 확인 및 차감
-        if CommonFunc.Instance.IsCoinEnough(coin: CommonData.MSG_COST, viewController: self)
+        if CommonUIFunc.Instance.IsStringEmptyCheck(text: Msg.text)
         {
-            FireBaseFunc.Instance.SetChatList(userData : PageUserData!, msg : Msg.text)
-            self.DismissPopup()
+            CommonUIFunc.Instance.ShowAlertPopup(
+                viewController: self,
+                title: "쪽지 보내기",
+                message: "메세지의 내용이 없습니다.",
+                actionTitle_1: "확인")
+        }
+        else
+        {
+            CommonFunc.Instance.UseCoin(cost: CommonData.MSG_COST, view: self, callFunc: {
+                FireBaseFunc.Instance.SetChatList(userData : self.PageUserData!, msg : self.Msg.text)
+                self.DismissPopup()
+            })
         }
     }
     @IBAction func CancelAction(_ sender: Any) {

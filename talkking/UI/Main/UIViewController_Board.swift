@@ -13,8 +13,12 @@ import SVProgressHUD
 class UIViewController_Board : UIViewController
 {
     @IBAction func WriteAction(_ sender: Any) {
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "BOARD_WRITE_POPUP") as! UIViewController_BoardWritePopup
-        page.ShowPopup(viewController: self)
+        if CommonFunc.Instance.IsBoardWriteEnable(showPopup: true, view: self) == true
+        {
+            let page = self.storyboard?.instantiateViewController(withIdentifier: "BOARD_WRITE_POPUP") as! UIViewController_BoardWritePopup
+            page.SetBoardView(view:self)
+            page.ShowPopup(viewController: self)
+        }
     }
     @IBAction func MyBoardListAction(_ sender: Any) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "MY_BOARD_LIST") as! UIViewController_MyBoardList

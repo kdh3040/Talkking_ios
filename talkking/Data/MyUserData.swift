@@ -13,6 +13,7 @@ class MyUserData : UserData
     public var CahingChatDataList : [ChatData] = [ChatData]()
     private var ChatDataIdx_List : [Int : Int] = [Int : Int]()
     public var BlockDataList : [BlockData] = [BlockData]()
+    public var BlockedDataList : [BlockData] = [BlockData]()
     
     public init(index : Int)
     {
@@ -41,6 +42,14 @@ class MyUserData : UserData
         return 0
     }
     
+    public func SetBlockData(_ blockData:BlockData)
+    {
+        if IsBlockUser(idx : blockData.Idx) == false
+        {
+            BlockDataList.append(blockData)
+        }
+    }
+    
     public func RemoveBlockList(idx:Int)
     {
         for i in 0..<BlockDataList.count
@@ -48,8 +57,43 @@ class MyUserData : UserData
             if BlockDataList[i].Idx == idx
             {
                 BlockDataList.remove(at: i)
+                FireBaseFunc.Instance.RemoveBlockDataList(index: BlockDataList[i].Idx)
                 return;
             }
         }
+    }
+    
+    public func IsBlockUser(idx:Int) -> Bool
+    {
+        for data in BlockDataList
+        {
+            if data.Idx == idx
+            {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    public func SetBlockedData(_ blockData:BlockData)
+    {
+        if IsBlockedUser(idx : blockData.Idx) == false
+        {
+            BlockedDataList.append(blockData)
+        }
+    }
+    
+    public func IsBlockedUser(idx:Int) -> Bool
+    {
+        for data in BlockedDataList
+        {
+            if data.Idx == idx
+            {
+                return true
+            }
+        }
+        
+        return false
     }
 }

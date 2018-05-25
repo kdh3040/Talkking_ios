@@ -31,11 +31,9 @@ class UIViewController_MyJewel : UIViewController
     
     @IBAction func GachaAction_1(_ sender: Any) {
         let GachaFunc = {
-            // TODO 도형 : 코인 확인 및 차감
-            if CommonFunc.Instance.IsCoinEnough(coin: CommonData.GACHA_COST, viewController: self)
-            {
+            CommonFunc.Instance.UseCoin(cost: CommonData.GACHA_COST, view: self, callFunc: {
                 self.BuyItem(count : 1)
-            }
+            })
         }
         
         CommonUIFunc.Instance.ShowAlertPopup(
@@ -48,13 +46,12 @@ class UIViewController_MyJewel : UIViewController
     }
     @IBAction func GachaAction_10(_ sender: Any) {
         let GachaFunc = {
-            // TODO 도형 : 코인 확인 및 차감
             let gachaCount : Int = 10
             let bonusGachaCount : Int = 1
-            if CommonFunc.Instance.IsCoinEnough(coin: CommonData.GACHA_COST * gachaCount, viewController: self)
-            {
+            
+            CommonFunc.Instance.UseCoin(cost: CommonData.GACHA_COST * gachaCount, view: self, callFunc: {
                 self.BuyItem(count : gachaCount + bonusGachaCount)
-            }
+            })
         }
         
         CommonUIFunc.Instance.ShowAlertPopup(

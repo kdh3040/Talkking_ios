@@ -116,11 +116,12 @@ class FireBaseFunc
                         
                         if let tempData = snapshot.value as? NSDictionary
                         {
+                            let indexInt = Int(index)!
                             let retValue : UserData = UserData.init(tempData: tempData)
                             
                             DataMgr.Instance.SetCachingUserDataList(userData: retValue)
                          
-                            DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                            DataMgr.Instance.MyData = MyUserData(index: indexInt)
                         
                             self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
                        
@@ -130,7 +131,9 @@ class FireBaseFunc
                             self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
                             
                             // TODO 환웅 : 메인 로딩 화면에서 로딩 하고 싶은데 어떻게 해야하지??
-                            self.LoadBlockDataList(index: index)
+                            // TODO 도형 : 이함수가 왜 2번 들어오는지 모르겠음(환웅)
+                            self.LoadBlockDataList(index: indexInt)
+                            self.LoadBlockedDataList(index: indexInt)
                             
                         }
                     }){ (error) in
@@ -143,11 +146,12 @@ class FireBaseFunc
                         
                         if let tempData = snapshot.value as? NSDictionary
                         {
+                            let indexInt = Int(index)!
                             let retValue : UserData = UserData.init(tempData: tempData)
                             
                             DataMgr.Instance.SetCachingUserDataList(userData: retValue)
                            
-                            DataMgr.Instance.MyData = MyUserData(index: Int(index)!)
+                            DataMgr.Instance.MyData = MyUserData(index: indexInt)
                         
                             self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
                         
@@ -156,9 +160,8 @@ class FireBaseFunc
                             self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
                             self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
                             
-                            self.LoadBlockDataList(index: index)
-                            
-                            
+                            self.LoadBlockDataList(index: indexInt)
+                            self.LoadBlockedDataList(index: indexInt)
                         }
                     }){ (error) in
                         print(error.localizedDescription)
@@ -372,26 +375,42 @@ class FireBaseFunc
         //return nil
     }
     
-    public func LoadBlockDataList(index:String) //-> UserData?
+    public func LoadBlockDataList(index:Int)
     {
-        ref.child("BlockList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+        ref.child("BlockList").child(String(index)).observeSingleEvent(of: .value, with: { ( snapshot) in
             
             for childSnapshot in snapshot.children
             {
-                
                 let tempChildData = childSnapshot as! DataSnapshot
                 let tempData = tempChildData.value as? NSDictionary
                 let retValue : BlockData = BlockData.init(tempData: tempData!)
                 
-                DataMgr.Instance.SetBlockData(retValue)
+                DataMgr.Instance.MyData!.SetBlockData(retValue)
             }
             
             
         }){ (error) in
             print(error.localizedDescription)
         }
-        
-        //return nil
+    }
+    
+    public func LoadBlockedDataList(index:Int)
+    {
+        ref.child("BlockedList").child(String(index)).observeSingleEvent(of: .value, with: { ( snapshot) in
+            
+            for childSnapshot in snapshot.children
+            {
+                let tempChildData = childSnapshot as! DataSnapshot
+                let tempData = tempChildData.value as? NSDictionary
+                let retValue : BlockData = BlockData.init(tempData: tempData!)
+                
+                DataMgr.Instance.MyData!.SetBlockedData(retValue)
+            }
+            
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
     }
     
     public func LoadNotification()
@@ -530,34 +549,6 @@ class FireBaseFunc
         }
     }
     
-    public func LoadMyCoin(complete : @escaping ((_ count : Int)->()))
-    {
-        if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
-        {
-            self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("Honey").observeSingleEvent(of: .value, with: { ( snapshot) in
-                
-                if let tempData = snapshot.value as? Int
-                {
-                    complete(tempData)
-                }
-            }){ (error) in
-                print(error.localizedDescription)
-            }
-        }
-        else
-        {
-            self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("Honey").observeSingleEvent(of: .value, with: { ( snapshot) in
-                
-                if let tempData = snapshot.value as? Int
-                {
-                    complete(tempData)
-                }
-            }){ (error) in
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
     public func SetMyCoin()
     {
         if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
@@ -641,6 +632,105 @@ class FireBaseFunc
             }
         }
        
+    }
+    
+    public func RemoveBlockDataList(index:Int)
+    {
+        // TODO 도형 확인 : 이거 맞나?
+        // 파이어베이스에서 내 BlockList 에서 해당 idx를 제거하고
+        // 차단 해제하는 유저의 BlockedList 에서 내 Idx를 제거하고
+        if let myData = DataMgr.Instance.MyData
+        {
+            ref.child("BlockList").child(String(myData.Index)).child(String(index)).removeValue()
+            
+            ref.child("BlockedList").child(String(index)).child(String(myData.Index)).removeValue()
+        }
+    }
+    
+    public func UpdateMyCoin(complete : @escaping ()-> Void)
+    {
+        CommonUIFunc.ShowLoading()
+        if let myData = DataMgr.Instance.MyData
+        {
+            if myData.Gender == GENDER_TYPE.FEMALE
+            {
+                self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("Honey").observeSingleEvent(of: .value, with: { ( snapshot) in
+                    
+                    CommonUIFunc.DismissLoading()
+                    if let tempData = snapshot.value as? Int
+                    {
+                        myData.Coin = tempData
+                        complete()
+                    }
+                }){ (error) in
+                    print(error.localizedDescription)
+                }
+            }
+            else
+            {
+                self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("Honey").observeSingleEvent(of: .value, with: { ( snapshot) in
+                    
+                    CommonUIFunc.DismissLoading()
+                    if let tempData = snapshot.value as? Int
+                    {
+                        myData.Coin = tempData
+                        complete()
+                    }
+                }){ (error) in
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    public func WriteBoard(msg:String, complete: @escaping () -> Void)
+    {
+        CommonUIFunc.ShowLoading()
+        ref.child("BoardIdx").runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var post = currentData.value as? Int {
+                
+                post -= 1
+                currentData.value = post
+                
+                let currentTime = CommonFunc.Instance.GetCurrentTime()
+                
+                
+                if let myData = DataMgr.Instance.MyData
+                {
+                    self.ref.child("Board").child(String(post)).child("BoardIdx").setValue(post)
+                    self.ref.child("Board").child(String(post)).child("Date").setValue(currentTime)
+                    self.ref.child("Board").child(String(post)).child("Idx").setValue(String(myData.Index))
+                    self.ref.child("Board").child(String(post)).child("Msg").setValue(msg)
+                    
+                    if myData.Gender == GENDER_TYPE.FEMALE
+                    {
+                        self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("LastBoardWriteTime").setValue(currentTime)
+                    }
+                    else
+                    {
+                        self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("LastBoardWriteTime").setValue(currentTime)
+                    }
+                    
+                    myData.BoardWriteTime = currentTime
+                    let boardData : BoardData = BoardData()
+                    boardData.BoardIndex = post
+                    boardData.BoardText = msg
+                    boardData.Report = false
+                    boardData.UserIndex = myData.Index
+                    boardData.WriteTime = currentTime
+                    DataMgr.Instance.SetBoardData(boardData: boardData)
+                    
+                    complete()
+                    CommonUIFunc.DismissLoading()
+                }
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
     
 }

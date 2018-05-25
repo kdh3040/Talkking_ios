@@ -79,21 +79,12 @@ class CommonUIFunc{
         return calendar.isDateInToday(time)
     }
     
-    public func ConvertTimeString(time:Double) -> String
+    public func ConvertTimeString(time:Double, format : String) -> String
     {
         let timeDate = Date(timeIntervalSince1970: time)
-        if CommonUIFunc.Instance.IsTodayTime(time:timeDate)
-        {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm"
-            return dateFormatter.string(from: timeDate)
-        }
-        else
-        {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM월 dd일"
-            return dateFormatter.string(from: timeDate)
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: timeDate)
     }
     
     public func GetDefaultColor() -> UIColor
@@ -302,5 +293,27 @@ class CommonUIFunc{
         let page = view!.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
         page.SetUserData(userData: userData)
         view!.present(page, animated: true)
+    }
+    
+    public func IsBlockUser(idx : Int, view : UIViewController, showPopup : Bool = true) -> Bool
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            if myData.IsBlockUser(idx: idx) == true && showPopup
+            {
+                self.ShowAlertPopup(viewController: view, title: "차단", message: "당신이 차단한 상대 입니다."
+                    , actionTitle_1: "확인")
+                return true
+            }
+            
+            if myData.IsBlockedUser(idx: idx) == true && showPopup
+            {
+                self.ShowAlertPopup(viewController: view, title: "차단", message: "당신은 차단 되었습니다."
+                    , actionTitle_1: "확인")
+                return true
+            }
+        }
+        
+        return false
     }
 }
