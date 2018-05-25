@@ -156,10 +156,10 @@ class CommonFunc{
             {
                 if CommonFunc.Instance.IsCoinEnough(coin: cost, viewController: view)
                 {
-                    callFunc()
-                    
                     myData.Coin -= cost
                     FireBaseFunc.Instance.SetMyCoin()
+                    
+                    callFunc()
                 }
             }
         })

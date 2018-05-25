@@ -21,6 +21,7 @@ class UIViewController_RecvHeartPage : UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         /*RecvHeartTableView.delegate = self
         RecvHeartTableView.dataSource = self

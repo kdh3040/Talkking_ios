@@ -11,12 +11,21 @@ import UIKit
 
 class UITableViewCell_Board : UITableViewCell
 {
+    @IBOutlet var ReportButton: UIButton!
     @IBAction func Report(_ sender: Any) {
         let reportAction = {
-            // TODO 도형 : 게시물 신고 기능
             if let data = self.TampBoardData
             {
                 DataMgr.Instance.RemoveBoardData(index: data.BoardIndex)
+                
+                if data.ReportList.count >= CommonData.REPORT_BOARD_DELETE - 1
+                {
+                    FireBaseFunc.Instance.RemoveBoardData(boardIdx: data.BoardIndex)
+                }
+                else
+                {
+                    FireBaseFunc.Instance.ReportBoardData(boardIdx: data.BoardIndex)
+                }
                 self.BoardViewController!.RefreshUI()
             }
         }
@@ -43,6 +52,15 @@ class UITableViewCell_Board : UITableViewCell
     {
         TampBoardData = boardData
         BoardViewController = view
+        
+        if TampBoardData?.UserIndex == DataMgr.Instance.MyData!.Index
+        {
+            ReportButton.isHidden = true
+        }
+        else
+        {
+            ReportButton.isHidden = false
+        }
         
         CommonUIFunc.Instance.SetDefaultThumbnail(imageView : Thumbnail, circle : true)
         

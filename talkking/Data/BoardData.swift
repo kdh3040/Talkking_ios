@@ -14,7 +14,7 @@ class BoardData
     var UserIndex : Int = 0
     var BoardText : String = ""
     var WriteTime : Double = 0
-    var Report : Bool = false
+    var ReportList : [Int] = [Int]()
     
     public init(){}
     
@@ -64,25 +64,16 @@ class BoardData
             WriteTime = 0
         }
         
-        
-    }
-    /*
-    public init(boardIndex : Int, userIndex : Int, boardText : String, writeTime : Date, noticeList : [Int])
-    {
-        BoardIndex = boardIndex
-        UserIndex = userIndex
-        BoardText = boardText
-        WriteTime = writeTime
-        
-        Notice = false
-        for noticeUserIndex in noticeList
+        let tempReportList = tempData["ReportList"] as? NSDictionary
+        if tempReportList != nil
         {
-            if noticeUserIndex == DataMgr.Instance.MyData?.Index
+            let tempReportIdxList = (tempReportList!.allKeys as? [String])!
+
+            for i in 0..<tempReportList!.count
             {
-                Notice = true
-                break
+                let tempReportData = tempReportList![tempReportIdxList[i]] as! NSDictionary
+                ReportList.append(Int(tempReportData["Idx"] as! String)!)
             }
         }
     }
- */
 }

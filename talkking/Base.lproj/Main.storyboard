@@ -997,6 +997,7 @@
                                             <outlet property="Board" destination="RED-xh-QNR" id="B9d-Rz-7dA"/>
                                             <outlet property="Grade" destination="DAL-ah-LEg" id="BdJ-Q1-ndp"/>
                                             <outlet property="Name" destination="end-kw-TxI" id="VWN-aX-X4k"/>
+                                            <outlet property="ReportButton" destination="rfk-xA-yUw" id="J71-0K-HOQ"/>
                                             <outlet property="Thumbnail" destination="dg3-XF-Apf" id="vvI-3M-WEm"/>
                                             <outlet property="Time" destination="sdM-Sh-97V" id="pT3-dh-if2"/>
                                         </connections>
@@ -4751,29 +4752,29 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="gGS-TT-7GU" firstAttribute="top" secondItem="dMQ-C0-pQH" secondAttribute="bottom" constant="4" id="0Vg-xg-6kI"/>
                                                 <constraint firstAttribute="bottom" secondItem="Dcj-Mz-vrF" secondAttribute="bottom" constant="0.5" id="42j-Pu-s91"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="IfH-nh-kVV" secondAttribute="trailing" constant="58" id="55H-xV-Hje"/>
                                                 <constraint firstItem="sTu-Yo-Srw" firstAttribute="top" secondItem="d4y-7o-msG" secondAttribute="top" constant="4" id="Arn-Dx-eWl"/>
                                                 <constraint firstAttribute="trailing" secondItem="gGS-TT-7GU" secondAttribute="trailing" constant="4" id="ETD-nt-luZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="dMQ-C0-pQH" secondAttribute="trailing" constant="6" id="Fcp-s6-tmW"/>
                                                 <constraint firstItem="Dcj-Mz-vrF" firstAttribute="centerX" secondItem="d4y-7o-msG" secondAttribute="centerX" constant="2.5" id="Hav-sa-Q6t"/>
                                                 <constraint firstItem="gS4-yg-Syf" firstAttribute="leading" secondItem="osX-wb-AoS" secondAttribute="trailing" constant="4" id="KA6-Bs-vG1"/>
                                                 <constraint firstItem="IfH-nh-kVV" firstAttribute="leading" secondItem="sTu-Yo-Srw" secondAttribute="trailing" constant="3" id="KdN-UZ-l2Y"/>
-                                                <constraint firstItem="dMQ-C0-pQH" firstAttribute="top" secondItem="d4y-7o-msG" secondAttribute="top" constant="4" id="MSs-c6-BVm"/>
                                                 <constraint firstItem="osX-wb-AoS" firstAttribute="leading" secondItem="qQI-cB-Fal" secondAttribute="trailing" constant="4" id="OPF-qJ-Kmx"/>
                                                 <constraint firstItem="IfH-nh-kVV" firstAttribute="top" secondItem="osX-wb-AoS" secondAttribute="bottom" constant="2" id="Opk-xo-l7J"/>
-                                                <constraint firstItem="gGS-TT-7GU" firstAttribute="top" secondItem="dMQ-C0-pQH" secondAttribute="bottom" constant="4" id="Y1m-6b-4gk"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IfH-nh-kVV" secondAttribute="bottom" constant="35" id="aqP-A5-M5I"/>
                                                 <constraint firstItem="osX-wb-AoS" firstAttribute="top" secondItem="d4y-7o-msG" secondAttribute="top" constant="7" id="h6R-n2-jWd"/>
                                                 <constraint firstItem="qQI-cB-Fal" firstAttribute="top" secondItem="d4y-7o-msG" secondAttribute="top" constant="4" id="hhb-e7-9NQ"/>
                                                 <constraint firstItem="gS4-yg-Syf" firstAttribute="top" secondItem="d4y-7o-msG" secondAttribute="top" constant="7" id="jhv-QL-51j"/>
+                                                <constraint firstAttribute="trailing" secondItem="gGS-TT-7GU" secondAttribute="trailing" constant="4" id="jn2-Yt-ZIj"/>
+                                                <constraint firstAttribute="trailing" secondItem="dMQ-C0-pQH" secondAttribute="trailing" constant="6" id="mSA-Yl-lZH"/>
                                                 <constraint firstItem="sTu-Yo-Srw" firstAttribute="leading" secondItem="d4y-7o-msG" secondAttribute="leading" constant="15" id="rcI-Xo-fX3"/>
+                                                <constraint firstItem="dMQ-C0-pQH" firstAttribute="top" secondItem="d4y-7o-msG" secondAttribute="top" constant="4" id="vnG-ya-QJB"/>
                                                 <constraint firstItem="qQI-cB-Fal" firstAttribute="leading" secondItem="sTu-Yo-Srw" secondAttribute="trailing" constant="3" id="wui-wW-C12"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="BestItem" destination="gS4-yg-Syf" id="evq-Qv-9wL"/>
-                                            <outlet property="Board" destination="IfH-nh-kVV" id="gqD-OD-Cki"/>
                                             <outlet property="BoardText" destination="IfH-nh-kVV" id="Ehv-cT-DXr"/>
                                             <outlet property="Grade" destination="osX-wb-AoS" id="a1Y-5S-IwW"/>
                                             <outlet property="Name" destination="qQI-cB-Fal" id="1kx-iz-dH7"/>

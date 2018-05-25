@@ -14,7 +14,6 @@ class UITableViewCell_BlockList : UITableViewCell
     @IBOutlet var Thumbnail: UIImageView!
     @IBOutlet var Name: UILabel!
     @IBAction func BlockCancelAction(_ sender: Any) {
-        // TODO 환웅 : 블락 제거 하고 리스트 갱신
         DataMgr.Instance.MyData!.RemoveBlockList(idx:Idx)
         View!.RefreshUI()
     }

@@ -11,6 +11,7 @@ import Foundation
 class DataMgr {
     public var CachingNotificationDataList : [Int : NotificationData] = [Int : NotificationData]()
     public var CachingBoardDataList : [BoardData] = [BoardData]()
+    public var CachingMyBoardDataList : [BoardData] = [BoardData]()
     private var CachingUserDataList : [Int : UserData] = [Int : UserData]()
     private var CachingSimpleUserDataList : [Int : UserData] = [Int : UserData]()
     
@@ -81,6 +82,17 @@ class DataMgr {
     
     public func SetBoardData(boardData:BoardData)
     {
+        if let myData = DataMgr.Instance.MyData
+        {
+            for i in 0..<boardData.ReportList.count
+            {
+                if boardData.ReportList[i] == myData.Index
+                {
+                    return
+                }
+            }
+        }
+        
         for i in 0..<CachingBoardDataList.count
         {
             if CachingBoardDataList[i].BoardIndex == boardData.BoardIndex
@@ -102,6 +114,47 @@ class DataMgr {
             if CachingBoardDataList[i].BoardIndex == index
             {
                 CachingBoardDataList.remove(at: i)
+                break
+            }
+        }
+    }
+    
+    public func GetMyBoardData(index:Int) -> BoardData?
+    {
+        for data in CachingMyBoardDataList
+        {
+            if data.BoardIndex == index
+            {
+                return data
+            }
+        }
+        
+        return nil
+    }
+    
+    public func SetMyBoardData(boardData:BoardData)
+    {
+        for i in 0..<CachingMyBoardDataList.count
+        {
+            if CachingMyBoardDataList[i].BoardIndex == boardData.BoardIndex
+            {
+                return
+            }
+        }
+        CachingMyBoardDataList.append(boardData)
+        
+        CachingMyBoardDataList.sort { (a, b) -> Bool in
+            return a.BoardIndex < b.BoardIndex
+        }
+    }
+    
+    public func RemoveMyBoardData(index:Int)
+    {
+        for i in 0..<CachingMyBoardDataList.count
+        {
+            if CachingMyBoardDataList[i].BoardIndex == index
+            {
+                CachingMyBoardDataList.remove(at: i)
                 break
             }
         }

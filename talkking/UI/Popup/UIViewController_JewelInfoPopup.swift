@@ -16,17 +16,18 @@ class UIViewController_JewelInfoPopup : UIViewController_Popup
         if let jewelData = JewelData
         {
             let itemSell = {
-                // TODO 도형 : 아이템 판매하는 파이어베이스 코드 추가
-
-                if let myData = DataMgr.Instance.MyData
-                {
-                    myData.Item[self.JewelData!.Index] = myData.Item[self.JewelData!.Index]! - 1
-                }
-                if let refreshFunc = self.RefreshFunc
-                {
-                    refreshFunc()
-                }
-                self.DismissPopup()
+                CommonFunc.Instance.UseCoin(cost: -jewelData.SellCost, view: self, callFunc: {
+                        if let myData = DataMgr.Instance.MyData
+                        {
+                            myData.Item[self.JewelData!.Index] = myData.Item[self.JewelData!.Index]! - 1
+                        }
+                        if let refreshFunc = self.RefreshFunc
+                        {
+                            refreshFunc()
+                        }
+                        FireBaseFunc.Instance.UpdateJewelData()
+                        self.DismissPopup()
+                    })
             }
             
             CommonUIFunc.Instance.ShowAlertPopup(
@@ -69,6 +70,7 @@ class UIViewController_JewelInfoPopup : UIViewController_Popup
             Gacha
         {
             myData.Item[index] = myData.Item[index]! + 1
+            FireBaseFunc.Instance.UpdateJewelData()
         }
     }
 }

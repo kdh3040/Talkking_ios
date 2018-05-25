@@ -20,8 +20,7 @@ class UIViewController_RankPopup : UIViewController_Popup
         
         if let myData = DataMgr.Instance.MyData
         {
-            // TODO 도형 : 누적 코인 데이터 필요
-            AccumulateCoin.text = CommonUIFunc.Instance.ConvertNumberFormat(count: 100)
+            AccumulateCoin.text = CommonUIFunc.Instance.ConvertNumberFormat(count: myData.Point)
         }
     }
 }

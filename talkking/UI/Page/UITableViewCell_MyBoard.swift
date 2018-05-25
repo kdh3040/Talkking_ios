@@ -13,8 +13,8 @@ class UITableViewCell_MyBoard : UITableViewCell
 {
     @IBAction func DeleteAction(_ sender: Any) {
         let deleteAction = {
-            // TODO 도형 : 게시물 삭제 기능
-            //self.MyBoardViewController.RefreshUI()
+            FireBaseFunc.Instance.RemoveMyBoardData(boardIdx:self.TampBoardData!.BoardIndex)
+            self.MyBoardViewController!.RefreshUI()
         }
         
         CommonUIFunc.Instance.ShowAlertPopup(

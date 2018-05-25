@@ -11,7 +11,6 @@ import UIKit
 
 class UIViewController_MyBoardList : UIViewController
 {
-    // TODO 도형 : 내가 쓴 게시판 데이터 필요
     @IBAction func Back(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -27,17 +26,22 @@ class UIViewController_MyBoardList : UIViewController
         MyBoardTableView.estimatedRowHeight = 70
         MyBoardTableView.separatorStyle = .none
     }
+    
+    public func RefreshUI()
+    {
+        MyBoardTableView.reloadData()
+    }
 }
 
 extension UIViewController_MyBoardList : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return DataMgr.Instance.CachingMyBoardDataList.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_MyBoard
         
-        //cell.SetBoardCell(boardData: DataMgr.Instance.CachingBoardDataList[indexPath.row], view : self)
+        cell.SetMyBoardData(boardData: DataMgr.Instance.CachingMyBoardDataList[indexPath.row], view: self)
         return cell
     }
 }

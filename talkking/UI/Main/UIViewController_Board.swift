@@ -32,6 +32,7 @@ class UIViewController_Board : UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TODO 환웅 하단 탭 이동시 페이지가 갱신 되게 알아보자
         // Do any additional setup after loading the view, typically from a nib.
         BoardTableView.delegate = self
         BoardTableView.dataSource = self

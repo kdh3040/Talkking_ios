@@ -51,6 +51,8 @@ struct CommonData {
     public static let LOAD_DATA_SET = 1
     public static let LOAD_DATA_TYPE = 5
     
+    public static let REPORT_BOARD_DELETE = 10
+    
     
     public static var JewelDataList : [JewelData] = [JewelData]()
     

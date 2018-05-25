@@ -56,7 +56,6 @@ class FireBaseFunc
             if let tempMyIdx = tempData {
                 
                 self.LoadMyData(index: tempMyIdx, complete: self.CallBackFunc_LoadMyData)
-                self.LoadBoardDataList()
                 self.LoadNotification()
                 
             }
@@ -134,7 +133,8 @@ class FireBaseFunc
                             // TODO 도형 : 이함수가 왜 2번 들어오는지 모르겠음(환웅)
                             self.LoadBlockDataList(index: indexInt)
                             self.LoadBlockedDataList(index: indexInt)
-                            
+                            self.LoadBoardDataList()
+                            self.LoadMyBoardData()
                         }
                     }){ (error) in
                         print(error.localizedDescription)
@@ -162,6 +162,8 @@ class FireBaseFunc
                             
                             self.LoadBlockDataList(index: indexInt)
                             self.LoadBlockedDataList(index: indexInt)
+                            self.LoadBoardDataList()
+                            self.LoadMyBoardData()
                         }
                     }){ (error) in
                         print(error.localizedDescription)
@@ -715,10 +717,10 @@ class FireBaseFunc
                     let boardData : BoardData = BoardData()
                     boardData.BoardIndex = post
                     boardData.BoardText = msg
-                    boardData.Report = false
                     boardData.UserIndex = myData.Index
                     boardData.WriteTime = currentTime
                     DataMgr.Instance.SetBoardData(boardData: boardData)
+                    DataMgr.Instance.SetMyBoardData(boardData: boardData)
                     
                     complete()
                     CommonUIFunc.DismissLoading()
@@ -733,4 +735,64 @@ class FireBaseFunc
         }
     }
     
+    public func UpdateJewelData()
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            for i in 0..<myData.Item.count
+            {
+                if myData.Gender == GENDER_TYPE.FEMALE
+                {
+                    self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child(String.init(format:"Item_%d",i + 1)).setValue(myData.Item[i])
+                }
+                else
+                {
+                    self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child(String.init(format:"Item_%d",i + 1)).setValue(myData.Item[i])
+                }
+            }
+        }
+    }
+    
+    public func LoadMyBoardData()
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            ref.child("Board").queryOrdered(byChild: "Idx").queryEqual(toValue: String(myData.Index)).observeSingleEvent(of: .value, with: { ( snapshot) in
+            
+                for childSnapshot in snapshot.children
+                {
+                    
+                    let tempChildData = childSnapshot as! DataSnapshot
+                    let tempData = tempChildData.value as? NSDictionary
+                    let retValue : BoardData = BoardData.init(tempData: tempData!)
+                    
+                    DataMgr.Instance.SetMyBoardData(boardData: retValue)
+                }
+            }){ (error) in
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    public func RemoveMyBoardData(boardIdx : Int)
+    {
+        DataMgr.Instance.RemoveMyBoardData(index: boardIdx)
+        ref.child("Board").child(String(boardIdx)).removeValue()
+    }
+    
+    public func RemoveBoardData(boardIdx : Int)
+    {
+        DataMgr.Instance.RemoveBoardData(index: boardIdx)
+        ref.child("Board").child(String(boardIdx)).removeValue()
+    }
+    
+    public func ReportBoardData(boardIdx : Int)
+    {
+        DataMgr.Instance.RemoveBoardData(index: boardIdx)
+        if let myData = DataMgr.Instance.MyData
+        {
+            ref.child("Board").child(String(boardIdx)).child("ReportList").child(String(myData.Index)).child("Date").setValue(CommonUIFunc.Instance.ConvertTimeString(time: Date().timeIntervalSince1970, format: "yyyyMMddHHmm"))
+            ref.child("Board").child(String(boardIdx)).child("ReportList").child(String(myData.Index)).child("Idx").setValue(String(myData.Index))
+        }
+    }
 }

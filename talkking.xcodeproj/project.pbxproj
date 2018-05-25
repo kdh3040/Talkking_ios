@@ -73,6 +73,7 @@
 		9318F99920907E9100E08F7D /* emerald.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99820907E9100E08F7D /* emerald.png */; };
 		9318F99B20907F1D00E08F7D /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99A20907F1D00E08F7D /* heart.png */; };
 		933BACA420B6827200834A55 /* BlockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933BACA320B6827200834A55 /* BlockData.swift */; };
+		933BACA620B7F22E00834A55 /* UITableViewCell_MyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933BACA520B7F22D00834A55 /* UITableViewCell_MyBoard.swift */; };
 		9353D9A820A58AEC006E4FAF /* UIViewController_NoticePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9A720A58AEC006E4FAF /* UIViewController_NoticePage.swift */; };
 		9353D9B120A5B6E3006E4FAF /* charge_500.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AA20A5B6DF006E4FAF /* charge_500.png */; };
 		9353D9B220A5B6E3006E4FAF /* charge_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AB20A5B6DF006E4FAF /* charge_30.png */; };
@@ -131,7 +132,6 @@
 		93D95D0D20B28FF600E40F2A /* Privacy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 93D95D0920B28FF600E40F2A /* Privacy.txt */; };
 		93D95D0F20B29B4600E40F2A /* logo_png.png in Resources */ = {isa = PBXBuildFile; fileRef = 93D95D0E20B29B4500E40F2A /* logo_png.png */; };
 		93D95D1320B2F11600E40F2A /* UIViewController_MyBoardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D95D1220B2F11600E40F2A /* UIViewController_MyBoardList.swift */; };
-		93D95D1520B2F22A00E40F2A /* UITableViewCell_MyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D95D1420B2F22A00E40F2A /* UITableViewCell_MyBoard.swift */; };
 		93E5245220921870009E303A /* UITableViewCell_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E524502092186F009E303A /* UITableViewCell_Fan.swift */; };
 		93E5245320921870009E303A /* UIViewController_Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E524512092186F009E303A /* UIViewController_Fan.swift */; };
 		93E524552092EDA0009E303A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E524542092EDA0009E303A /* Assets.xcassets */; };
@@ -256,6 +256,7 @@
 		9318F99820907E9100E08F7D /* emerald.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emerald.png; sourceTree = "<group>"; };
 		9318F99A20907F1D00E08F7D /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		933BACA320B6827200834A55 /* BlockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockData.swift; sourceTree = "<group>"; };
+		933BACA520B7F22D00834A55 /* UITableViewCell_MyBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell_MyBoard.swift; sourceTree = "<group>"; };
 		9353D9A720A58AEC006E4FAF /* UIViewController_NoticePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_NoticePage.swift; sourceTree = "<group>"; };
 		9353D9AA20A5B6DF006E4FAF /* charge_500.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_500.png; sourceTree = "<group>"; };
 		9353D9AB20A5B6DF006E4FAF /* charge_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_30.png; sourceTree = "<group>"; };
@@ -314,7 +315,6 @@
 		93D95D0920B28FF600E40F2A /* Privacy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Privacy.txt; sourceTree = "<group>"; };
 		93D95D0E20B29B4500E40F2A /* logo_png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_png.png; sourceTree = "<group>"; };
 		93D95D1220B2F11600E40F2A /* UIViewController_MyBoardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_MyBoardList.swift; sourceTree = "<group>"; };
-		93D95D1420B2F22A00E40F2A /* UITableViewCell_MyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_MyBoard.swift; sourceTree = "<group>"; };
 		93E524502092186F009E303A /* UITableViewCell_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell_Fan.swift; sourceTree = "<group>"; };
 		93E524512092186F009E303A /* UIViewController_Fan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_Fan.swift; sourceTree = "<group>"; };
 		93E524542092EDA0009E303A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -711,7 +711,7 @@
 				93C29B8B20AAE71B008D9D84 /* UIViewController_UserFanListPage.swift */,
 				93C29B8D20AAE75F008D9D84 /* UITableViewCell_UserFan.swift */,
 				93D95D1220B2F11600E40F2A /* UIViewController_MyBoardList.swift */,
-				93D95D1420B2F22A00E40F2A /* UITableViewCell_MyBoard.swift */,
+				933BACA520B7F22D00834A55 /* UITableViewCell_MyBoard.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -1150,6 +1150,7 @@
 				9318F97920906D0A00E08F7D /* UITableViewCell_Board.swift in Sources */,
 				9353D9C720A8128D006E4FAF /* UIViewController_RecvHeartPage.swift in Sources */,
 				93BB882720AC247F001E7623 /* UIViewController_RankPopup.swift in Sources */,
+				933BACA620B7F22E00834A55 /* UITableViewCell_MyBoard.swift in Sources */,
 				9318F96F2090499F00E08F7D /* CommonUIFunc.swift in Sources */,
 				9353D9CD20A817B3006E4FAF /* UIViewCollectionCell_UserPage_Fan.swift in Sources */,
 				93E7662D20996B8A005455A8 /* UIViewController_Home.swift in Sources */,
@@ -1169,7 +1170,6 @@
 				93E766432099BA5F005455A8 /* UIViewCollectionCell_Home_FanCount.swift in Sources */,
 				9353D9A820A58AEC006E4FAF /* UIViewController_NoticePage.swift in Sources */,
 				93E7663D2099B860005455A8 /* UIViewController_Home_New.swift in Sources */,
-				93D95D1520B2F22A00E40F2A /* UITableViewCell_MyBoard.swift in Sources */,
 				9318F971209049A900E08F7D /* CommonFunc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
