@@ -19,6 +19,7 @@ end
 pod 'Firebase', '>= 2.5.1'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
+pod 'Firebase/Storage'
 pod 'Firebase/Auth'
 pod 'Parchment'
 pod 'Kingfisher'

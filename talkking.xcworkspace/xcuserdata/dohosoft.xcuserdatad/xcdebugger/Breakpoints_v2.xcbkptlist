@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.6554101"
+            timestampString = "549017942.849879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.655516"
+            timestampString = "549027412.027341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -78,7 +78,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.65626"
+            timestampString = "549017942.850083"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -94,7 +94,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.6563441"
+            timestampString = "549017942.850131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -110,7 +110,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.656409"
+            timestampString = "549017942.850175"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "237"
@@ -126,7 +126,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.656472"
+            timestampString = "549017942.850217"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "238"
@@ -202,11 +202,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/AppDelegate.swift"
-            timestampString = "548147264.9207799"
+            timestampString = "549027412.027541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -222,7 +222,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/AppDelegate.swift"
-            timestampString = "548147264.920877"
+            timestampString = "549027412.027598"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -238,7 +238,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/AppDelegate.swift"
-            timestampString = "548147264.920944"
+            timestampString = "549027412.0276459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -254,7 +254,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.656665"
+            timestampString = "549027412.0276949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "10"
@@ -270,11 +270,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.65727"
+            timestampString = "549027412.027773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "CalcUserIdx(uuid:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,13 +286,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/MyUserData.swift"
-            timestampString = "548155390.658018"
+            timestampString = "549027412.027844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "MyUserData"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -318,11 +318,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.658529"
+            timestampString = "549027412.02819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "LoadUserDataList(sortRef:complete:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,7 +350,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.659073"
+            timestampString = "549017942.851079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "373"
@@ -366,7 +366,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.659148"
+            timestampString = "549017942.851154"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "379"
@@ -382,7 +382,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.659201"
+            timestampString = "549017942.8512239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
@@ -398,11 +398,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.659259"
+            timestampString = "549017942.851283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "432"
             endingLineNumber = "432"
+            landmarkName = "GetMainThumbnail()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/UserData.swift"
+            timestampString = "549017942.851344"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "431"
+            endingLineNumber = "431"
             landmarkName = "UserData"
             landmarkType = "3">
          </BreakpointContent>
@@ -414,29 +430,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.659312"
+            timestampString = "549017942.851441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "431"
             endingLineNumber = "431"
-            landmarkName = "SetBestItem()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.659358"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "431"
-            endingLineNumber = "431"
-            landmarkName = "SetBestItem()"
-            landmarkType = "7">
+            landmarkName = "UserData"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -510,7 +510,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.659444"
+            timestampString = "549017942.851791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "278"
@@ -526,7 +526,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.659515"
+            timestampString = "549017942.852035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "301"
@@ -542,7 +542,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.6595629"
+            timestampString = "549017942.852254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "303"
@@ -558,12 +558,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.659637"
+            timestampString = "549027412.028402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "LoadUserData(index:complete:)"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "LoadMyData(index:complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -574,12 +574,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.660131"
+            timestampString = "549027412.028474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "LoadUserData(index:complete:)"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "LoadMyData(index:complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -590,7 +590,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.660486"
+            timestampString = "549017942.852746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "296"
@@ -606,13 +606,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/MyUserData.swift"
-            timestampString = "548155390.660544"
+            timestampString = "549027412.028558"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "init(index:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -622,13 +622,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/MyUserData.swift"
-            timestampString = "548155390.660838"
+            timestampString = "549027412.02879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "init(index:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -670,11 +670,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.6612"
+            timestampString = "549027412.02906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "CallBackFunc_LoadMyData(count:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -686,59 +686,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
-            timestampString = "548155390.661657"
+            timestampString = "549026120.4288729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
             endingLineNumber = "73"
             landmarkName = "ChatAction(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
-            timestampString = "548155390.661891"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "HeartAction(_:)"
-            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "talkking.UIViewController_UserPage.HeartAction(Any) -&gt; ()"
+                  symbolName = "talkking.UIViewController_UserPage.ChatAction(Any) -&gt; ()"
                   moduleName = "talkking"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/UI/Page/UIViewController_UserPage.swift"
-                  timestampString = "548155175.140713"
+                  timestampString = "549027412.458334"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "18">
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "402">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "talkking.UIViewController_UserPage.HeartAction(Any) -&gt; ()"
+                  symbolName = "talkking.UIViewController_UserPage.ChatAction(Any) -&gt; ()"
                   moduleName = "talkking"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/UI/Page/UIViewController_UserPage.swift"
-                  timestampString = "548155175.142746"
+                  timestampString = "549027412.460421"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "327">
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1115">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -749,14 +733,30 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
+            timestampString = "549026120.428974"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "HeartAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.661981"
+            timestampString = "549027412.029163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "CallBackFunc_LoadSimpleUserData(count:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -766,13 +766,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.662949"
+            timestampString = "549027412.029696"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "CallBackFunc_LoadSimpleUserData(count:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -782,13 +782,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.663672"
+            timestampString = "549027412.0301369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -798,13 +798,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.6656491"
+            timestampString = "549027412.030565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -814,13 +814,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.666968"
+            timestampString = "549027412.030992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
             endingLineNumber = "22"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -830,12 +830,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.6681679"
+            timestampString = "549027412.0314111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
-            landmarkName = "LoadSimpleUserData(index:complete:)"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "LoadUserData(index:complete:view:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -878,12 +878,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.6688631"
+            timestampString = "549027412.031489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
-            landmarkName = "LoadSimpleUserData(index:complete:)"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "FireBaseFunc"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.031559"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "LoadUserData(index:complete:view:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -894,12 +910,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.669534"
+            timestampString = "549027412.031629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "LoadSimpleUserData(index:complete:)"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "LoadUserData(index:complete:view:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -910,12 +926,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.670817"
+            timestampString = "549027412.031697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
-            landmarkName = "LoadSimpleUserData(index:complete:)"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "LoadUserData(index:complete:view:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -926,27 +942,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.671536"
+            timestampString = "549027412.031765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "LoadSimpleUserData(index:complete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.67222"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "LoadSimpleUserData(index:complete:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -958,13 +958,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.672919"
+            timestampString = "549027412.031831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "UIViewController_Favor"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -974,7 +974,71 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.674112"
+            timestampString = "549027412.032262"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "LoadUserIndex(uuid:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.032335"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "LoadUserIndex(uuid:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "talkking.FireBaseFunc.LoadUserIndex(uuid: Swift.String) -&gt; ()"
+                  moduleName = "talkking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/Data/FireBaseFunc.swift"
+                  timestampString = "549023196.979393"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in talkking.FireBaseFunc.LoadUserIndex(uuid: Swift.String) -&gt; ()"
+                  moduleName = "talkking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/Data/FireBaseFunc.swift"
+                  timestampString = "549023196.981825"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "33">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.032402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -990,55 +1054,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.6747479"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "LoadUserIndex(uuid:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.6753711"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "LoadUserIndex(uuid:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.675745"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "CallBackFunc_LoadMyData(count:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.676146"
+            timestampString = "549027412.032469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -1054,91 +1070,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.676603"
+            timestampString = "549027412.032537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "LoadUserDataList(sortRef:complete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.677008"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
-            landmarkName = "LoadUserDataList(sortRef:complete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.677358"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "271"
-            endingLineNumber = "271"
-            landmarkName = "LoadUserDataList(sortRef:complete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.6778001"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
-            landmarkName = "LoadUserDataList(sortRef:complete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.6783299"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
-            landmarkName = "LoadUserDataList(sortRef:complete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.679013"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "CallBackFunc_LoadMyData(count:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1150,12 +1086,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.679607"
+            timestampString = "549027412.032603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "CallBackFunc_LoadMyData(count:)"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "LoadUserDataList(sortRef:complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1166,7 +1102,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.680027"
+            timestampString = "549027412.0326689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
+            landmarkName = "LoadUserDataList(sortRef:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.032735"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "LoadUserDataList(sortRef:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.032799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "282"
@@ -1182,7 +1150,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.680473"
+            timestampString = "549027412.032865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "290"
@@ -1194,11 +1162,75 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.0329289"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "CallBackFunc_LoadMyData(count:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.032993"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "CallBackFunc_LoadMyData(count:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.033059"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
+            landmarkName = "LoadUserDataList(sortRef:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.033126"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "LoadUserDataList(sortRef:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.6814851"
+            timestampString = "549027412.03319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -1250,9 +1282,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "GetSelectUserData(indexPath:)"
-            landmarkType = "7">
+            endingLineNumber = "116">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1266,9 +1296,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
+            endingLineNumber = "98">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1283,8 +1311,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
             endingLineNumber = "85"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            landmarkName = "UIViewController_Fan"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1310,12 +1338,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.683678"
+            timestampString = "549027412.033709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "380"
-            endingLineNumber = "380"
-            landmarkName = "LoadNotification()"
+            startingLineNumber = "383"
+            endingLineNumber = "383"
+            landmarkName = "LoadBoardDataList(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1331,7 +1359,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "SetNotificationData(index:notiData:)"
+            landmarkName = "SetBoardData(boardData:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1342,12 +1370,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.684639"
+            timestampString = "549027412.033797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
-            landmarkName = "SetFavorList(userData:)"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
+            landmarkName = "LoadBlockDataList(index:complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1358,7 +1386,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
-            timestampString = "548155390.685329"
+            timestampString = "549026120.451709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -1370,32 +1398,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.68546"
+            timestampString = "549027412.033883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
-            landmarkName = "SetFavorList(userData:)"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
+            landmarkName = "LoadBlockDataList(index:complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.686132"
+            timestampString = "549027412.033951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399"
-            landmarkName = "SetFavorList(userData:)"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
+            landmarkName = "LoadBlockDataList(index:complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1406,13 +1434,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.687183"
+            timestampString = "549027412.034018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "89"
+            endingLineNumber = "89">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1422,12 +1448,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.688603"
+            timestampString = "549027412.034434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "LoadUserData(index:complete:)"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "LoadMyData(index:complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1438,12 +1464,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.689211"
+            timestampString = "549027412.034506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "LoadUserData(index:complete:)"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "LoadMyData(index:complete:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -1486,43 +1512,59 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.689891"
+            timestampString = "549027412.034573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "LoadUserData(index:complete:)"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "LoadUserData(index:complete:view:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.034641"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "FireBaseFunc"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in talkking.FireBaseFunc.LoadUserData(index: Swift.String, complete: (Swift.Int) -&gt; ()) -&gt; ()"
+                  symbolName = "default argument 2 of talkking.FireBaseFunc.LoadUserData(index: Swift.String, complete: (Swift.Int, Swift.Optional&lt;__ObjC.UIViewController&gt;) -&gt; (), view: Swift.Optional&lt;__ObjC.UIViewController&gt;) -&gt; ()"
                   moduleName = "talkking"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/Data/FireBaseFunc.swift"
-                  timestampString = "548155175.24533"
+                  timestampString = "549027412.5182821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "198"
-                  endingLineNumber = "198"
-                  offsetFromSymbolStart = "1809">
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (__ObjC.DataSnapshot) -&gt; () in closure #1 (__ObjC.DataSnapshot) -&gt; () in talkking.FireBaseFunc.LoadUserData(index: Swift.String, complete: (Swift.Int) -&gt; ()) -&gt; ()"
+                  symbolName = "talkking.FireBaseFunc.LoadUserData(index: Swift.String, complete: (Swift.Int, Swift.Optional&lt;__ObjC.UIViewController&gt;) -&gt; (), view: Swift.Optional&lt;__ObjC.UIViewController&gt;) -&gt; ()"
                   moduleName = "talkking"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/Data/FireBaseFunc.swift"
-                  timestampString = "548155175.247488"
+                  timestampString = "549027412.520625"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "200"
-                  endingLineNumber = "200"
-                  offsetFromSymbolStart = "38">
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1534,29 +1576,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.690572"
+            timestampString = "549027412.034708"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "LoadUserData(index:complete:)"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "LoadUserData(index:complete:view:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.691213"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "LoadUserData(index:complete:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "talkking.FireBaseFunc.LoadUserData(index: Swift.String, complete: (Swift.Int, Swift.Optional&lt;__ObjC.UIViewController&gt;) -&gt; (), view: Swift.Optional&lt;__ObjC.UIViewController&gt;) -&gt; ()"
+                  moduleName = "talkking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/Data/FireBaseFunc.swift"
+                  timestampString = "549027412.528944"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in talkking.FireBaseFunc.LoadUserData(index: Swift.String, complete: (Swift.Int, Swift.Optional&lt;__ObjC.UIViewController&gt;) -&gt; (), view: Swift.Optional&lt;__ObjC.UIViewController&gt;) -&gt; ()"
+                  moduleName = "talkking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/Data/FireBaseFunc.swift"
+                  timestampString = "549027412.532433"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "190"
+                  endingLineNumber = "190"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1566,27 +1624,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.691862"
+            timestampString = "549027412.034773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
-            timestampString = "548155390.69301"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1598,43 +1640,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
-            timestampString = "548155390.6931421"
+            timestampString = "549026120.461226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "CallBackFunc_LoadSimpleUserData(count:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
-            timestampString = "548155390.693242"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "CallBackFunc_LoadSimpleUserData(count:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
-            timestampString = "548155390.693336"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1646,13 +1656,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
-            timestampString = "548155390.693431"
+            timestampString = "549026120.461324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "UIViewController_UserPage"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
+            timestampString = "549026120.461399"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "CallBackFunc_LoadSimpleUserData(count:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
+            timestampString = "549026120.461467"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/UI/Page/UIViewController_UserPage.swift"
+            timestampString = "549026120.461544"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "UIViewController_UserPage"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1662,13 +1720,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.6935591"
+            timestampString = "549027412.035445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "UIViewController_Favor"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1678,13 +1736,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.694573"
+            timestampString = "549027412.036123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "GetSelectSimpleUserData(indexPath:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1694,13 +1752,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.695274"
+            timestampString = "549027412.0369231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "89"
+            endingLineNumber = "89">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1710,13 +1766,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.695807"
+            timestampString = "549027412.037522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "89"
+            endingLineNumber = "89">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1726,45 +1780,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.6964099"
+            timestampString = "549027412.038152"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "talkking.UIViewController_Favor.tableView(__ObjC.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "talkking"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/UI/Main/UIViewController_Favor.swift"
-                  timestampString = "548155175.2973371"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "211">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "talkking.UIViewController_Favor.tableView(__ObjC.UITableView, didSelectRowAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "talkking"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/UI/Main/UIViewController_Favor.swift"
-                  timestampString = "548155175.299371"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "1840">
-               </Location>
-            </Locations>
+            startingLineNumber = "89"
+            endingLineNumber = "89">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1774,13 +1794,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.697083"
+            timestampString = "549027412.038618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "didReceiveMemoryWarning()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1790,13 +1810,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.698289"
+            timestampString = "549027412.039064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
             endingLineNumber = "75"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "CallBackFunc_LoadSimpleUserData(count:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1822,13 +1842,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.699177"
+            timestampString = "549027412.039608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1838,13 +1858,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.699821"
+            timestampString = "549027412.040058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1854,13 +1874,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Main/UIViewController_Favor.swift"
-            timestampString = "548155390.700441"
+            timestampString = "549027412.040483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1870,7 +1890,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/UserData.swift"
-            timestampString = "548155390.701257"
+            timestampString = "549017942.863838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "426"
@@ -1886,11 +1906,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/UI/Popup/UIViewController_MsgSendPopup.swift"
-            timestampString = "548155390.70135"
+            timestampString = "548224524.55125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "SendAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1902,43 +1922,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.701418"
+            timestampString = "549027412.040938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "484"
             endingLineNumber = "484"
-            landmarkName = "MakeChatList(userData:msg:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.702028"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "504"
-            endingLineNumber = "504"
-            landmarkName = "MakeChatList(userData:msg:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.702437"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "423"
-            endingLineNumber = "423"
             landmarkName = "LoadChatList(complete:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1950,12 +1938,428 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "talkking/Data/FireBaseFunc.swift"
-            timestampString = "548155390.7027431"
+            timestampString = "549027412.0410269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "501"
+            endingLineNumber = "501"
             landmarkName = "LoadChatList(complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.041098"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "425"
+            endingLineNumber = "425"
+            landmarkName = "LoadNotification()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "talkking.FireBaseFunc.LoadNotification() -&gt; ()"
+                  moduleName = "talkking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/Data/FireBaseFunc.swift"
+                  timestampString = "549014179.934232"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "422"
+                  endingLineNumber = "422"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in talkking.FireBaseFunc.LoadNotification() -&gt; ()"
+                  moduleName = "talkking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/Data/FireBaseFunc.swift"
+                  timestampString = "549014179.937083"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "424"
+                  endingLineNumber = "424"
+                  offsetFromSymbolStart = "21">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.0411659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "430"
+            endingLineNumber = "430"
+            landmarkName = "LoadNotification()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.041235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "557"
+            endingLineNumber = "557"
+            landmarkName = "SetChatList(userData:msg:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.041303"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "552"
+            endingLineNumber = "552"
+            landmarkName = "SetChatList(userData:msg:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.041371"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "568"
+            endingLineNumber = "568"
+            landmarkName = "SetMyCoin()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.0414439"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "561"
+            endingLineNumber = "561"
+            landmarkName = "SetMyCoin()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/UI/Page/UIViewController_InputPage.swift"
+            timestampString = "549027412.041527"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "UIViewController_InputPage"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.041919"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "830"
+            endingLineNumber = "830"
+            landmarkName = "UploadImgFromUrl(index:image:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/UI/Page/UIViewController_InputPage.swift"
+            timestampString = "549027412.042011"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/UI/Page/UIViewController_InputPage.swift"
+            timestampString = "549027412.042328"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.042613"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "837"
+            endingLineNumber = "837"
+            landmarkName = "UploadImgFromUrl(index:image:complete:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "talkking.FireBaseFunc.UploadImgFromUrl(index: Swift.String, image: __ObjC.UIImage, complete: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "talkking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/Data/FireBaseFunc.swift"
+                  timestampString = "549027412.630064"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "837"
+                  endingLineNumber = "837"
+                  offsetFromSymbolStart = "637">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in talkking.FireBaseFunc.UploadImgFromUrl(index: Swift.String, image: __ObjC.UIImage, complete: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "talkking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dohosoft/Desktop/Dohosoft/Talkking_ios/talkking/Data/FireBaseFunc.swift"
+                  timestampString = "549027412.633443"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "839"
+                  endingLineNumber = "839"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.042694"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "839"
+            endingLineNumber = "839"
+            landmarkName = "UploadImgFromUrl(index:image:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.042762"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "842"
+            endingLineNumber = "842"
+            landmarkName = "UploadImgFromUrl(index:image:complete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/AppDelegate.swift"
+            timestampString = "549027412.042832"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.042881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "LoadUserIndex(uuid:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.042935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "LoadUserIndex(uuid:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.042989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "LoadUserIndex(uuid:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/AppDelegate.swift"
+            timestampString = "549027412.043043"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/UI/Page/UIViewController_InputPage.swift"
+            timestampString = "549027412.043099"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "CallBackFunc_CompleteUploadImg(URL:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/UI/Page/UIViewController_InputPage.swift"
+            timestampString = "549027412.0433739"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "CreateAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/Data/FireBaseFunc.swift"
+            timestampString = "549027412.043617"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "870"
+            endingLineNumber = "870"
+            landmarkName = "SaveFirstData(index:Gender:TumbUrl:ImgUrl:NickName:Age:Lon:Lat:Dist:CreateDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "talkking/UI/Page/UIViewController_InputPage.swift"
+            timestampString = "549027412.043673"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "CallBackFunc_CompleteUploadImg(URL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

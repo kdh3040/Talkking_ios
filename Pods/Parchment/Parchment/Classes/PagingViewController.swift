@@ -118,7 +118,10 @@ open class PagingViewController<T: PagingItem>:
   /// PagingIndicatorView.self_
   public var indicatorClass: PagingIndicatorView.Type {
     get { return options.indicatorClass }
-    set { options.indicatorClass = newValue }
+    set {
+      options.indicatorClass = newValue
+      collectionViewLayout.registerIndicatorClass()
+    }
   }
 
   /// Determine the color of the indicator view.
@@ -140,7 +143,10 @@ open class PagingViewController<T: PagingItem>:
   /// PagingBorderView.self_
   public var borderClass: PagingBorderView.Type {
     get { return options.borderClass }
-    set { options.borderClass = newValue }
+    set {
+      options.borderClass = newValue
+      collectionViewLayout.registerBorderClass()
+    }
   }
   
   /// Determine the color of the border view.
@@ -476,7 +482,8 @@ open class PagingViewController<T: PagingItem>:
     collectionViewLayout.visibleItems = visibleItems
     collectionViewLayout.sizeCache = sizeCache
     collectionViewLayout.state = state
-    collectionViewLayout.registerDecorationViews()
+    collectionViewLayout.registerIndicatorClass()
+    collectionViewLayout.registerBorderClass()
   }
   
   private func configureStateMachine() {
@@ -543,9 +550,15 @@ open class PagingViewController<T: PagingItem>:
 
   private func generateItemsForIndexedDataSource() -> [T] {
     let numberOfItems = dataSource?.numberOfViewControllers(in: self) ?? 0
-    return (0..<numberOfItems).enumerated().compactMap{
-      dataSource?.pagingViewController(self, pagingItemForIndex: $0.offset)
-    }
+    #if swift(>=4.1)
+      return (0..<numberOfItems).enumerated().compactMap{
+        dataSource?.pagingViewController(self, pagingItemForIndex: $0.offset)
+      }
+    #else
+      return (0..<numberOfItems).enumerated().flatMap{
+        dataSource?.pagingViewController(self, pagingItemForIndex: $0.offset)
+      }
+    #endif
   }
   
   private func configureDataSource() {
@@ -655,6 +668,8 @@ open class PagingViewController<T: PagingItem>:
             reloadItems(around: pagingItem)
             selectCollectionViewItem(for: pagingItem, animated: animated)
           }
+        case .reset:
+          collectionViewLayout.invalidateLayout()
         default:
           break
         }
@@ -741,14 +756,16 @@ open class PagingViewController<T: PagingItem>:
       hasItemsAfter: hasItemAfter(pagingItem: sortedItems.last))
     collectionViewLayout.visibleItems = visibleItems
 
-    stateMachine.fire(.select(pagingItem: pagingItem, direction: .none, animated: false))
+    stateMachine.fire(.reset(pagingItem: pagingItem))
     collectionView.reloadData()
+    
+    pageViewController.removeAllViewControllers()
     selectViewController(pagingItem, direction: .none, animated: false)
 
     // Reloading the data triggers the didFinishScrollingFrom delegate
     // to be called which in turn means the wrong item will be selected.
     // For now, we just fix this by selecting the correct item manually.
-    stateMachine.fire(.select(pagingItem: pagingItem, direction: .none, animated: false))
+    stateMachine.fire(.reset(pagingItem: pagingItem))
   }
   
   private func removeAll() {

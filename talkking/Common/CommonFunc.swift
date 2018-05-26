@@ -191,4 +191,24 @@ class CommonFunc{
         }
         return true
     }
+    
+    public func CalcDistanceByLonLat(SourceLat : Double, SourceLon : Double, DefLat : Double, DefLon : Double) -> Double
+    {
+        
+        let rMyLat = SourceLat * M_PI / 180
+        let rMyLon = SourceLon * M_PI / 180
+        
+        let rRefLat = DefLat * M_PI / 180
+        let rRefLon = DefLon * M_PI / 180
+        
+        let theta = sin(rMyLat) * sin(rRefLat) +
+            cos(rMyLat) * cos(rRefLat) *
+            cos(rMyLon - rRefLon)
+        
+        let CenterTheta = acos(theta)
+        
+        let radius = CommonData.RADIUS
+        
+        return radius * CenterTheta
+    }
 }

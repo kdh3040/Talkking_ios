@@ -53,6 +53,13 @@ struct CommonData {
     
     public static let REPORT_BOARD_DELETE = 10
     
+    public static let REF_LAT = 38.910042
+    public static let REF_LON = 125.848755
+    
+    public static let DEF_LAT = 37.475610
+    public static let DEF_LON = 127.007094
+    
+    public static let RADIUS = 6378140.0
     
     public static var JewelDataList : [JewelData] = [JewelData]()
     

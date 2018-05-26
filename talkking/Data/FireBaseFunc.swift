@@ -19,8 +19,11 @@ class FireBaseFunc
     var LoadDataCnt : Int = 0
     public var CallBackCount : Int = 0
     
+    
     private init() {
          FirebaseApp.configure()
+
+        
           ref = Database.database().reference()
     }
    
@@ -79,8 +82,8 @@ class FireBaseFunc
                 
                 // Set value and report transaction success
                 currentData.value = post
-                self.ref.child("UserIdx").child(uuid).setValue(String(post))
-                self.CreateUserData(userIdx: String(post))
+                
+                self.CreateUserData(uuid : uuid, userIdx: String(post))
                 
                 return TransactionResult.success(withValue: currentData)
             }
@@ -92,9 +95,10 @@ class FireBaseFunc
         }
     }
     
-    public func CreateUserData(userIdx : String)
+    public func CreateUserData(uuid : String, userIdx : String)
     {
-        CommonUIFunc.Instance.ShowInputPage()
+        CommonUIFunc.DismissLoading()
+        CommonUIFunc.Instance.ShowInputPage(uuid : uuid, index : userIdx)
     }
     
     public func LoadMyData(index : String, complete : @escaping ((_ count : Int)->())) //-> UserData?
@@ -818,6 +822,184 @@ class FireBaseFunc
             }){ (error) in
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    public func UploadImgFromUrl(index : String, image : UIImage, complete : @escaping (_ count : String)->())
+    {
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        
+        let ImagePath = storageRef.child("Images").child(index)
+  
+        let uploadImg = UIImagePNGRepresentation(image)
+        
+        let uploadTask = ImagePath.putData(uploadImg!, metadata: nil){ (metadata, error) in
+            
+            guard let metadata = metadata else{
+                return
+            }
+            let downLoad = metadata.path
+            complete(downLoad!)
+        }
+    }
+    
+    public func SaveUserIndex(index : String, uid : String)
+    {
+        self.ref.child("UserIdx").child(uid).setValue(index)
+    }
+    
+    public func SaveGenderList(index : String, Gender : String )
+    {
+        if Gender == GENDER_TYPE.FEMALE.rawValue
+        {
+            self.ref.child("GenderList").child("Woman").child(index).setValue(Gender)
+        }
+        else
+        {
+            self.ref.child("GenderList").child("Man").child(index).setValue(Gender)
+        }
+    }
+    
+    public func SaveFirstData(index : String, Gender : String, TumbUrl : String, ImgUrl : String , NickName : String, Age : String
+        , Lon : Double, Lat : Double, Dist : Double, CreateDate : Double)
+    {
+
+        var tempGender : String ;
+        
+        if Gender == GENDER_TYPE.FEMALE.rawValue
+        {
+            tempGender = "Woman"
+        }
+        else
+        {
+            tempGender = "Man"
+        }
+            
+        //self.ref.child("Users").child(tempGender).child(String(index)).child("Token").setValue(myData.Token)
+            
+        self.ref.child("Users").child(tempGender).child(index).child("Idx").setValue(String(index))
+            
+        self.ref.child("Users").child(tempGender).child(index).child("Img").setValue(TumbUrl)
+        self.ref.child("Users").child(tempGender).child(index).child("ImgGroup0").setValue(ImgUrl)
+        self.ref.child("Users").child(tempGender).child(index).child("ImgGroup1").setValue("1")
+        self.ref.child("Users").child(tempGender).child(index).child("ImgGroup2").setValue("1")
+        self.ref.child("Users").child(tempGender).child(index).child("ImgGroup3").setValue("1")
+        self.ref.child("Users").child(tempGender).child(index).child("ImgCount").setValue(1)
+        
+        self.ref.child("Users").child(tempGender).child(index).child("NickName").setValue(NickName)
+        self.ref.child("Users").child(tempGender).child(index).child("Gender").setValue(Gender)
+        self.ref.child("Users").child(tempGender).child(index).child("Age").setValue(Age)
+            
+        self.ref.child("Users").child(tempGender).child(index).child("Lon").setValue(Lon)
+        self.ref.child("Users").child(tempGender).child(index).child("Lat").setValue(Lat)
+        self.ref.child("Users").child(tempGender).child(index).child("Dist").setValue(Dist)
+        
+        self.ref.child("Users").child(tempGender).child(index).child("SendCount").setValue(0)
+        self.ref.child("Users").child(tempGender).child(index).child("RecvGold").setValue(0)
+        
+        self.ref.child("Users").child(tempGender).child(index).child("Date").setValue(CreateDate)
+        self.ref.child("Users").child(tempGender).child(index).child("Memo").setValue("")
+            
+        self.ref.child("Users").child(tempGender).child(index).child("FanCount").setValue(0)
+        self.ref.child("Users").child(tempGender).child(index).child("Point").setValue(0)
+        self.ref.child("Users").child(tempGender).child(index).child("Grade").setValue(0)
+        self.ref.child("Users").child(tempGender).child(index).child("BestItem").setValue(0)
+        self.ref.child("Users").child(tempGender).child(index).child("Honey").setValue(0)
+        self.ref.child("Users").child(tempGender).child(index).child("NickChangeCnt").setValue(0)
+        
+    }
+    
+    
+    public func SaveSimpleData(index : Int)
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            var tempGender : String ;
+            if myData.Gender == GENDER_TYPE.FEMALE
+            {
+                tempGender = "Woman"
+            }
+            else
+            {
+                tempGender = "Man"
+            }
+            
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Token").setValue(myData.Token)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Idx").setValue(String(myData.Index))
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Img").setValue(myData.ThumbnailList[0])
+            
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("NickName").setValue(myData.Name)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Gender").setValue(myData.Gender)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Age").setValue(String(myData.Age))
+            
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Lon").setValue(myData.Lon)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Lat").setValue(myData.Lat)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Dist").setValue(myData.Distance)
+            
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("SendCount").setValue(0)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("RecvGold").setValue(myData.RecvHeart)
+            
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Date").setValue(myData.CreateDate)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Memo").setValue(myData.Memo)
+            
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("FanCount").setValue(myData.FanCount)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Point").setValue(myData.Point)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Grade").setValue(myData.Grade)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("BestItem").setValue(myData.BestItem)
+            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Honey").setValue(myData.Coin)
+        }
+    }
+    
+    
+    public func SaveData(index : Int)
+    {
+        
+        if let myData = DataMgr.Instance.MyData
+        {
+            SaveSimpleData(index: myData.Index)
+            
+            var tempGender : String ;
+            if myData.Gender == GENDER_TYPE.FEMALE
+            {
+                tempGender = "Woman"
+            }
+            else
+            {
+                tempGender = "Man"
+            }
+            
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Token").setValue(myData.Token)
+    
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Idx").setValue(String(myData.Index))
+            
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Img").setValue(myData.ThumbnailList[0])
+            self.ref.child("Users").child(tempGender).child(String(index)).child("ImgGroup0").setValue(myData.ThumbnailList[1])
+            self.ref.child("Users").child(tempGender).child(String(index)).child("ImgGroup1").setValue(myData.ThumbnailList[2])
+            self.ref.child("Users").child(tempGender).child(String(index)).child("ImgGroup2").setValue(myData.ThumbnailList[3])
+            self.ref.child("Users").child(tempGender).child(String(index)).child("ImgGroup3").setValue(myData.ThumbnailList[4])
+            self.ref.child("Users").child(tempGender).child(String(index)).child("ImgCount").setValue(myData.ImgCount)
+            
+            self.ref.child("Users").child(tempGender).child(String(index)).child("NickName").setValue(myData.Name)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Gender").setValue(myData.Gender)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Age").setValue(String(myData.Age))
+            
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Lon").setValue(myData.Lon)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Lat").setValue(myData.Lat)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Dist").setValue(myData.Distance)
+            
+            self.ref.child("Users").child(tempGender).child(String(index)).child("SendCount").setValue(0)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("RecvGold").setValue(myData.RecvHeart)
+            
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Date").setValue(myData.CreateDate)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Memo").setValue(myData.Memo)
+            
+            self.ref.child("Users").child(tempGender).child(String(index)).child("FanCount").setValue(myData.FanCount)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Point").setValue(myData.Point)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Grade").setValue(myData.Grade)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("BestItem").setValue(myData.BestItem)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("Honey").setValue(myData.Coin)
+            self.ref.child("Users").child(tempGender).child(String(index)).child("NickChangeCnt").setValue(myData.NickCheckCnt)
         }
     }
 }

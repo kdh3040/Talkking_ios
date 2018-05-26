@@ -19,13 +19,13 @@ class UIViewController_Home : UIViewController
         self.present(page, animated: true)
     }
     @IBAction func HeartRecvAction(_ sender: Any) {
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "RECV_HEART_PAGE") as! UIViewController_RecvHeartPage
-        self.present(page, animated: true)
+        //let page = self.storyboard?.instantiateViewController(withIdentifier: "RECV_HEART_PAGE") as! UIViewController_RecvHeartPage
+        //self.present(page, animated: true)
         
-        /*
+        
          let page = self.storyboard?.instantiateViewController(withIdentifier: "INPUT_PAGE") as! UIViewController_InputPage
          self.present(page, animated: true)
-        */
+        
     }
     @IBAction func MyPageAction(_ sender: Any) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "MY_USER_PAGE") as! UIViewController_MyUserPage

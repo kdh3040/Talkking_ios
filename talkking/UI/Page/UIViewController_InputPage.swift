@@ -8,9 +8,41 @@
 
 import Foundation
 import UIKit
-
-class UIViewController_InputPage : UIViewController
+import CoreLocation
+class UIViewController_InputPage : UIViewController, CLLocationManagerDelegate
 {
+    
+    private var tempMyUid : String!
+    private var tempMyIdx : String!
+    
+    private var tempMyLon : Double!
+    private var tempMyLat : Double!
+    private var tempMyDist : Double!
+    
+    private var tempImg : UIImage?
+    
+    private var locationManager : CLLocationManager!
+    public func CallBackFunc_CompleteUploadImg(URL : String)
+    {
+        if let coor = locationManager.location?.coordinate{
+            tempMyLat = coor.latitude
+            tempMyLon = coor.longitude
+          
+        }
+        else
+        {
+            tempMyLat = CommonData.DEF_LAT
+            tempMyLon = CommonData.DEF_LON
+        }
+        
+        tempMyDist = CommonFunc.Instance.CalcDistanceByLonLat(SourceLat: tempMyLat, SourceLon: tempMyLon, DefLat: CommonData.REF_LAT, DefLon: CommonData.REF_LON)
+        
+        FireBaseFunc.Instance.SaveFirstData(index: tempMyIdx, Gender: Gender.text!, TumbUrl: URL, ImgUrl: URL
+            , NickName: NIckName.text!, Age: Age.text!, Lon: tempMyLon, Lat: tempMyLat, Dist: tempMyDist, CreateDate: CommonFunc.Instance.GetCurrentTime())
+    }
+    
+    
+    
     // TODO 도형 : 가입 기능 추가
     @IBAction func ThumbnailAction(_ sender: Any) {
         CommonUIFunc.Instance.OpenThumbnailPic(viewController: self, thumbnailPicker: ThumbnailPicker)
@@ -21,6 +53,7 @@ class UIViewController_InputPage : UIViewController
 
     @IBOutlet var Age: UITextField!
     @IBOutlet var Gender: UITextField!
+
     @IBAction func InputProfileCheckAction_1(_ sender: Any) {
         if InputProfileCheckData_1 == true
         {
@@ -80,6 +113,12 @@ class UIViewController_InputPage : UIViewController
         self.present(page, animated: true)
     }
     @IBAction func CreateAction(_ sender: Any) {
+     
+        
+        FireBaseFunc.Instance.UploadImgFromUrl(index: tempMyIdx, image: tempImg!, complete: self.CallBackFunc_CompleteUploadImg)
+        FireBaseFunc.Instance.SaveUserIndex(index: tempMyIdx, uid: tempMyUid)
+        FireBaseFunc.Instance.SaveGenderList(index: tempMyIdx, Gender: Gender.text!)
+
         self.dismiss(animated: true)
     }
 
@@ -106,20 +145,35 @@ class UIViewController_InputPage : UIViewController
         GenderPickerView.tag = 2
         
         NIckName.delegate = self;
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    public func SetMyIndex(uuid : String, index : String)
+    {
+        tempMyUid = uuid
+        tempMyIdx = index
+    }
+    
 }
 
 extension UIViewController_InputPage : UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+        if let img = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-            Thumbnail.setImage(image, for: .normal)
+            tempImg = img
+            Thumbnail.setImage(tempImg, for: .normal)
+    
             print(info)
             
         }
@@ -146,6 +200,7 @@ extension UIViewController_InputPage : UIPickerViewDataSource, UIPickerViewDeleg
             return CommonData.AGE_DATA[row]  + "세"
         } else {
             return CommonData.GENDER_DATA[row]
+            
         }
     }
     

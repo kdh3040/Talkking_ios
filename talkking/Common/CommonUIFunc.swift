@@ -32,9 +32,10 @@ class CommonUIFunc{
         CommonUIFunc.StartViewController!.present(page, animated: true)
     }
     
-    public func ShowInputPage()
+    public func ShowInputPage(uuid : String, index : String)
     {
-        let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "INPUT_PAGE")
+        let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "INPUT_PAGE") as! UIViewController_InputPage
+        page.SetMyIndex(uuid : uuid, index : index)
         CommonUIFunc.StartViewController!.present(page, animated: true)
     }
     
