@@ -81,7 +81,7 @@ class CommonUIFunc{
     
     public func ConvertTimeString(time:Double, format : String) -> String
     {
-        let timeDate = Date(timeIntervalSince1970: time)
+        let timeDate = Date(timeIntervalSinceNow: time)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: timeDate)

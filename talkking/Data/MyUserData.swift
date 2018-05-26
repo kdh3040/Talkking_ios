@@ -14,6 +14,7 @@ class MyUserData : UserData
     private var ChatDataIdx_List : [Int : Int] = [Int : Int]()
     public var BlockDataList : [BlockData] = [BlockData]()
     public var BlockedDataList : [BlockData] = [BlockData]()
+    public var RecvHeartList : [RecvHeartData] = [RecvHeartData]()
     
     public init(index : Int)
     {
@@ -95,5 +96,27 @@ class MyUserData : UserData
         }
         
         return false
+    }
+    
+    public func SetRecvHeartData(_ recvHeartData:RecvHeartData)
+    {
+        for data in RecvHeartList
+        {
+            if data.RecvDate == recvHeartData.RecvDate
+            {
+                return;
+            }
+        }
+        
+        RecvHeartList.append(recvHeartData)
+        
+        RecvHeartList.sort { (a, b) -> Bool in
+            return a.RecvDate > b.RecvDate
+        }
+    }
+    
+    public func RemoveAllRecvHeartData()
+    {
+        RecvHeartList.removeAll()
     }
 }

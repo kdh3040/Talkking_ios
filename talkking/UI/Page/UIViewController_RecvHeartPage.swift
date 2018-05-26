@@ -16,6 +16,11 @@ class UIViewController_RecvHeartPage : UIViewController
         self.dismiss(animated: true)
     }
     @IBAction func RemoveAll(_ sender: Any) {
+        if let myData = DataMgr.Instance.MyData
+        {
+            myData.RemoveAllRecvHeartData()
+            RefreshUI()
+        }
     }
     @IBOutlet var RecvHeartTableView: UITableView!
     
@@ -23,46 +28,34 @@ class UIViewController_RecvHeartPage : UIViewController
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        /*RecvHeartTableView.delegate = self
+        RecvHeartTableView.delegate = self
         RecvHeartTableView.dataSource = self
         RecvHeartTableView.rowHeight = 70;
         RecvHeartTableView.separatorStyle = .none
-        
-        for i in 0..<DataMgr.Instance.MyData!.FanDataList.count
-        {
-            DataMgr.Instance.MyData!.FanDataList[i].
-            if (DataMgr.Instance.GetCachingUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!) != nil)
-            {
-                DataMgr.Instance.SetCachingSimpleUserDataList(userData: DataMgr.Instance.GetCachingUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!)!)
-            }
-            else
-            {
-                SVProgressHUD.init()
-                SVProgressHUD.show()
-                FireBaseFunc.Instance.LoadSimpleUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[i], complete: CallBackFunc_LoadSimpleUserData)
-                FavorLoadCnt += 1
-            }
-        }*/
+    }
+    
+    public func RefreshUI()
+    {
+        RecvHeartTableView.reloadData()
     }
 }
-/*
+
 extension UIViewController_RecvHeartPage : UITableViewDelegate, UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return (DataMgr.Instance.MyData?.FavorUserIndexList.count)!
-        return FavorCnt
+        return DataMgr.Instance.MyData!.RecvHeartList.count
     }
     // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_Favor
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_RecvHeart
         
-        cell.SetFavorCell(userData: GetSelectSimpleUserData(indexPath:indexPath))
+        cell.SetRecvHeart(DataMgr.Instance.MyData!.RecvHeartList[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let userData = GetSelectUserData(indexPath:indexPath)
+        /*if let userData = GetSelectUserData(indexPath:indexPath)
         {
             let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
             page.SetUserData(userData: userData)
@@ -73,6 +66,6 @@ extension UIViewController_RecvHeartPage : UITableViewDelegate, UITableViewDataS
             // 로딩하세요
             CommonUIFunc.ShowLoading()
             FireBaseFunc.Instance.LoadUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row], complete: CallBackFunc_LoadUserData)
-        }
+        }*/
     }
-}*/
+}

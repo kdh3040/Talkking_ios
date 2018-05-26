@@ -74,6 +74,7 @@
 		9318F99B20907F1D00E08F7D /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9318F99A20907F1D00E08F7D /* heart.png */; };
 		933BACA420B6827200834A55 /* BlockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933BACA320B6827200834A55 /* BlockData.swift */; };
 		933BACA620B7F22E00834A55 /* UITableViewCell_MyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933BACA520B7F22D00834A55 /* UITableViewCell_MyBoard.swift */; };
+		933BACA820B9004100834A55 /* RecvHeartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933BACA720B9004100834A55 /* RecvHeartData.swift */; };
 		9353D9A820A58AEC006E4FAF /* UIViewController_NoticePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D9A720A58AEC006E4FAF /* UIViewController_NoticePage.swift */; };
 		9353D9B120A5B6E3006E4FAF /* charge_500.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AA20A5B6DF006E4FAF /* charge_500.png */; };
 		9353D9B220A5B6E3006E4FAF /* charge_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 9353D9AB20A5B6DF006E4FAF /* charge_30.png */; };
@@ -257,6 +258,7 @@
 		9318F99A20907F1D00E08F7D /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		933BACA320B6827200834A55 /* BlockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockData.swift; sourceTree = "<group>"; };
 		933BACA520B7F22D00834A55 /* UITableViewCell_MyBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell_MyBoard.swift; sourceTree = "<group>"; };
+		933BACA720B9004100834A55 /* RecvHeartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecvHeartData.swift; sourceTree = "<group>"; };
 		9353D9A720A58AEC006E4FAF /* UIViewController_NoticePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_NoticePage.swift; sourceTree = "<group>"; };
 		9353D9AA20A5B6DF006E4FAF /* charge_500.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_500.png; sourceTree = "<group>"; };
 		9353D9AB20A5B6DF006E4FAF /* charge_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charge_30.png; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 				3D87316120948D1A00022D90 /* FanData.swift */,
 				3D663FC720AC0AB300062FB5 /* NotificationData.swift */,
 				933BACA320B6827200834A55 /* BlockData.swift */,
+				933BACA720B9004100834A55 /* RecvHeartData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1152,6 +1155,7 @@
 				93BB882720AC247F001E7623 /* UIViewController_RankPopup.swift in Sources */,
 				933BACA620B7F22E00834A55 /* UITableViewCell_MyBoard.swift in Sources */,
 				9318F96F2090499F00E08F7D /* CommonUIFunc.swift in Sources */,
+				933BACA820B9004100834A55 /* RecvHeartData.swift in Sources */,
 				9353D9CD20A817B3006E4FAF /* UIViewCollectionCell_UserPage_Fan.swift in Sources */,
 				93E7662D20996B8A005455A8 /* UIViewController_Home.swift in Sources */,
 				9353D9BF20A69A34006E4FAF /* UIViewController_ProfileSetting.swift in Sources */,

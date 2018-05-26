@@ -135,6 +135,7 @@ class FireBaseFunc
                             self.LoadBlockedDataList(index: indexInt)
                             self.LoadBoardDataList()
                             self.LoadMyBoardData()
+                            self.LoadRecvHeartData()
                         }
                     }){ (error) in
                         print(error.localizedDescription)
@@ -164,6 +165,7 @@ class FireBaseFunc
                             self.LoadBlockedDataList(index: indexInt)
                             self.LoadBoardDataList()
                             self.LoadMyBoardData()
+                            self.LoadRecvHeartData()
                         }
                     }){ (error) in
                         print(error.localizedDescription)
@@ -793,6 +795,26 @@ class FireBaseFunc
         {
             ref.child("Board").child(String(boardIdx)).child("ReportList").child(String(myData.Index)).child("Date").setValue(CommonUIFunc.Instance.ConvertTimeString(time: Date().timeIntervalSince1970, format: "yyyyMMddHHmm"))
             ref.child("Board").child(String(boardIdx)).child("ReportList").child(String(myData.Index)).child("Idx").setValue(String(myData.Index))
+        }
+    }
+    
+    public func LoadRecvHeartData()
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            self.ref.child("GiftHoneyList").child(String(myData.Index)).observeSingleEvent(of: .value, with: { ( snapshot) in
+                
+                for childSnapshot in snapshot.children
+                {
+                    let tempChildData = childSnapshot as! DataSnapshot
+                    let tempData = tempChildData.value as? NSDictionary
+                    let retValue : RecvHeartData = RecvHeartData.init(tempData: tempData!)
+                    
+                    myData.SetRecvHeartData(retValue)
+                }
+            }){ (error) in
+                print(error.localizedDescription)
+            }
         }
     }
 }
