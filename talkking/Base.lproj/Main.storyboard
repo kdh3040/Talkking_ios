@@ -3443,13 +3443,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4H2-mq-Arb" userLabel="Thumbnail">
-                                                    <rect key="frame" x="15" y="0.0" width="70" height="70"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="6Kr-FS-lXf"/>
-                                                        <constraint firstAttribute="height" constant="70" id="uio-sx-F2n"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEC-KF-HuS" userLabel="Count">
                                                     <rect key="frame" x="191" y="21" width="53" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -3469,6 +3462,13 @@
                                                         <constraint firstAttribute="width" constant="30" id="FXI-sL-NOP"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4H2-mq-Arb" userLabel="Thumbnail">
+                                                    <rect key="frame" x="15" y="5" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="6Kr-FS-lXf"/>
+                                                        <constraint firstAttribute="height" constant="60" id="uio-sx-F2n"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4H2-mq-Arb" firstAttribute="leading" secondItem="Gsq-4p-4oA" secondAttribute="leading" constant="15" id="5kA-ST-fEa"/>
@@ -3476,8 +3476,8 @@
                                                 <constraint firstItem="9nE-ZO-VkO" firstAttribute="top" secondItem="Gsq-4p-4oA" secondAttribute="topMargin" constant="9" id="GYO-Xy-xm7"/>
                                                 <constraint firstItem="upW-do-uVy" firstAttribute="top" secondItem="Gsq-4p-4oA" secondAttribute="topMargin" constant="13" id="MmG-q2-vku"/>
                                                 <constraint firstItem="upW-do-uVy" firstAttribute="trailing" secondItem="Gsq-4p-4oA" secondAttribute="trailingMargin" id="RFB-xA-50h"/>
-                                                <constraint firstItem="9nE-ZO-VkO" firstAttribute="leading" secondItem="4H2-mq-Arb" secondAttribute="trailing" constant="68" id="aWw-tZ-Ujl"/>
-                                                <constraint firstItem="4H2-mq-Arb" firstAttribute="top" secondItem="Gsq-4p-4oA" secondAttribute="top" id="mar-RZ-gvZ"/>
+                                                <constraint firstItem="9nE-ZO-VkO" firstAttribute="leading" secondItem="4H2-mq-Arb" secondAttribute="trailing" constant="78" id="aWw-tZ-Ujl"/>
+                                                <constraint firstItem="4H2-mq-Arb" firstAttribute="top" secondItem="Gsq-4p-4oA" secondAttribute="top" constant="5" id="mar-RZ-gvZ"/>
                                                 <constraint firstItem="YEC-KF-HuS" firstAttribute="leading" secondItem="9nE-ZO-VkO" secondAttribute="trailing" constant="8" id="uu4-ls-LMb"/>
                                             </constraints>
                                         </tableViewCellContentView>

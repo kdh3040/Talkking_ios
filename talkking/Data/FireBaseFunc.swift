@@ -129,13 +129,12 @@ class FireBaseFunc
                             self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
                             self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
                             
-                            // TODO 환웅 : 메인 로딩 화면에서 로딩 하고 싶은데 어떻게 해야하지??
                             // TODO 도형 : 이함수가 왜 2번 들어오는지 모르겠음(환웅)
-                            self.LoadBlockDataList(index: indexInt)
-                            self.LoadBlockedDataList(index: indexInt)
-                            self.LoadBoardDataList()
-                            self.LoadMyBoardData()
-                            self.LoadRecvHeartData()
+                            self.LoadBlockDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
+                            self.LoadBlockedDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
+                            self.LoadBoardDataList(complete: self.CallBackFunc_LoadMyData)
+                            self.LoadMyBoardData(complete: self.CallBackFunc_LoadMyData)
+                            self.LoadRecvHeartData(complete: self.CallBackFunc_LoadMyData)
                         }
                     }){ (error) in
                         print(error.localizedDescription)
@@ -161,11 +160,11 @@ class FireBaseFunc
                             self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
                             self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
                             
-                            self.LoadBlockDataList(index: indexInt)
-                            self.LoadBlockedDataList(index: indexInt)
-                            self.LoadBoardDataList()
-                            self.LoadMyBoardData()
-                            self.LoadRecvHeartData()
+                            self.LoadBlockDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
+                            self.LoadBlockedDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
+                            self.LoadBoardDataList(complete: self.CallBackFunc_LoadMyData)
+                            self.LoadMyBoardData(complete: self.CallBackFunc_LoadMyData)
+                            self.LoadRecvHeartData(complete: self.CallBackFunc_LoadMyData)
                         }
                     }){ (error) in
                         print(error.localizedDescription)
@@ -357,7 +356,7 @@ class FireBaseFunc
         //return nil
     }
     
-    public func LoadBoardDataList() //-> UserData?
+    public func LoadBoardDataList(complete : @escaping (_ count : Int)->()) //-> UserData?
     {
         ref.child("Board").queryLimited(toFirst: UInt(CommonData.LOAD_BOARDDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
             
@@ -370,7 +369,7 @@ class FireBaseFunc
                 
                 DataMgr.Instance.SetBoardData(boardData: retValue)
             }
-            
+            complete(CommonData.LOAD_DATA_SET)
             
         }){ (error) in
             print(error.localizedDescription)
@@ -379,7 +378,7 @@ class FireBaseFunc
         //return nil
     }
     
-    public func LoadBlockDataList(index:Int)
+    public func LoadBlockDataList(index:Int, complete : @escaping (_ count : Int)->())
     {
         ref.child("BlockList").child(String(index)).observeSingleEvent(of: .value, with: { ( snapshot) in
             
@@ -392,13 +391,14 @@ class FireBaseFunc
                 DataMgr.Instance.MyData!.SetBlockData(retValue)
             }
             
+            complete(CommonData.LOAD_DATA_SET)
             
         }){ (error) in
             print(error.localizedDescription)
         }
     }
     
-    public func LoadBlockedDataList(index:Int)
+    public func LoadBlockedDataList(index:Int, complete : @escaping (_ count : Int)->())
     {
         ref.child("BlockedList").child(String(index)).observeSingleEvent(of: .value, with: { ( snapshot) in
             
@@ -410,7 +410,7 @@ class FireBaseFunc
                 
                 DataMgr.Instance.MyData!.SetBlockedData(retValue)
             }
-            
+            complete(CommonData.LOAD_DATA_SET)
             
         }){ (error) in
             print(error.localizedDescription)
@@ -755,7 +755,7 @@ class FireBaseFunc
         }
     }
     
-    public func LoadMyBoardData()
+    public func LoadMyBoardData(complete : @escaping (_ count : Int)->())
     {
         if let myData = DataMgr.Instance.MyData
         {
@@ -770,6 +770,8 @@ class FireBaseFunc
                     
                     DataMgr.Instance.SetMyBoardData(boardData: retValue)
                 }
+                
+                complete(CommonData.LOAD_DATA_SET)
             }){ (error) in
                 print(error.localizedDescription)
             }
@@ -798,7 +800,7 @@ class FireBaseFunc
         }
     }
     
-    public func LoadRecvHeartData()
+    public func LoadRecvHeartData(complete : @escaping (_ count : Int)->())
     {
         if let myData = DataMgr.Instance.MyData
         {
@@ -812,6 +814,7 @@ class FireBaseFunc
                     
                     myData.SetRecvHeartData(retValue)
                 }
+                complete(CommonData.LOAD_DATA_SET)
             }){ (error) in
                 print(error.localizedDescription)
             }

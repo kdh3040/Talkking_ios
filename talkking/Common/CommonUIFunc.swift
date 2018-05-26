@@ -73,15 +73,16 @@ class CommonUIFunc{
     
     
     
-    public func IsTodayTime(time:Date) -> Bool
+    public func IsTodayTime(time:Double) -> Bool
     {
+        let timeDate = Date(timeIntervalSince1970: time / Double(CommonData.MILLISECOND))
         let calendar = Calendar.current
-        return calendar.isDateInToday(time)
+        return calendar.isDateInToday(timeDate)
     }
     
     public func ConvertTimeString(time:Double, format : String) -> String
     {
-        let timeDate = Date(timeIntervalSinceNow: time)
+        let timeDate = Date(timeIntervalSince1970: time / Double(CommonData.MILLISECOND))
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: timeDate)

@@ -53,7 +53,7 @@ class UITableViewCell_MyBoard : UITableViewCell
         BoardText.numberOfLines = 0
         BoardText.text = boardData.BoardText
         
-        if CommonUIFunc.Instance.IsTodayTime(time:Date(timeIntervalSince1970: boardData.WriteTime))
+        if CommonUIFunc.Instance.IsTodayTime(time:boardData.WriteTime)
         {
             Time.text = CommonUIFunc.Instance.ConvertTimeString(time: boardData.WriteTime, format:"HH:mm")
         }
