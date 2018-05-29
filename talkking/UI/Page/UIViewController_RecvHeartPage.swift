@@ -11,7 +11,6 @@ import UIKit
 
 class UIViewController_RecvHeartPage : UIViewController
 {
-    // TODO 환웅 : 받은 하트 리스트로 뿌려주기
     @IBAction func Back(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -45,7 +44,6 @@ extension UIViewController_RecvHeartPage : UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataMgr.Instance.MyData!.RecvHeartList.count
     }
-    // 셀 내용 변경하기 (tableView 구현 필수)
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_RecvHeart
@@ -55,17 +53,8 @@ extension UIViewController_RecvHeartPage : UITableViewDelegate, UITableViewDataS
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*if let userData = GetSelectUserData(indexPath:indexPath)
-        {
-            let page = self.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage
-            page.SetUserData(userData: userData)
-            self.present(page, animated: true)
-        }
-        else
-        {
-            // 로딩하세요
-            CommonUIFunc.ShowLoading()
-            FireBaseFunc.Instance.LoadUserData(index: DataMgr.Instance.MyData!.FavorUserIndexList[indexPath.row], complete: CallBackFunc_LoadUserData)
-        }*/
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "MSG_POPUP") as! UIViewController_RecvMsgPopup
+        page.SetRecvHeartData(data: DataMgr.Instance.MyData!.RecvHeartList[indexPath.row])
+        page.ShowPopup(viewController: self)
     }
 }

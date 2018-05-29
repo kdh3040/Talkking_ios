@@ -111,6 +111,8 @@
 		93BCBBAF20AD2F16009827E8 /* UIViewController_StartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BCBBAE20AD2F16009827E8 /* UIViewController_StartPage.swift */; };
 		93BCBBB120AD350E009827E8 /* logo_gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93BCBBB020AD350E009827E8 /* logo_gif.gif */; };
 		93BCBBB320AD3CBF009827E8 /* UIViewController_JewelInfoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BCBBB220AD3CBF009827E8 /* UIViewController_JewelInfoPopup.swift */; };
+		93BEA5BF20BBB903005B4C0E /* UIViewController_RecvMsgPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BEA5BE20BBB903005B4C0E /* UIViewController_RecvMsgPopup.swift */; };
+		93BEA5C120BBE900005B4C0E /* UITabBarController_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BEA5C020BBE900005B4C0E /* UITabBarController_Main.swift */; };
 		93C29B7E20AA876E008D9D84 /* UIViewController_SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C29B7D20AA876E008D9D84 /* UIViewController_SettingPage.swift */; };
 		93C29B8020AAB72D008D9D84 /* UITableViewController_Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C29B7F20AAB72D008D9D84 /* UITableViewController_Setting.swift */; };
 		93C29B8220AABE03008D9D84 /* UIViewController_BlockListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C29B8120AABE03008D9D84 /* UIViewController_BlockListPage.swift */; };
@@ -295,6 +297,8 @@
 		93BCBBAE20AD2F16009827E8 /* UIViewController_StartPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_StartPage.swift; sourceTree = "<group>"; };
 		93BCBBB020AD350E009827E8 /* logo_gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo_gif.gif; sourceTree = "<group>"; };
 		93BCBBB220AD3CBF009827E8 /* UIViewController_JewelInfoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_JewelInfoPopup.swift; sourceTree = "<group>"; };
+		93BEA5BE20BBB903005B4C0E /* UIViewController_RecvMsgPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController_RecvMsgPopup.swift; sourceTree = "<group>"; };
+		93BEA5C020BBE900005B4C0E /* UITabBarController_Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarController_Main.swift; sourceTree = "<group>"; };
 		93C29B7D20AA876E008D9D84 /* UIViewController_SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_SettingPage.swift; sourceTree = "<group>"; };
 		93C29B7F20AAB72D008D9D84 /* UITableViewController_Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewController_Setting.swift; sourceTree = "<group>"; };
 		93C29B8120AABE03008D9D84 /* UIViewController_BlockListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_BlockListPage.swift; sourceTree = "<group>"; };
@@ -651,6 +655,7 @@
 				93BB882420AC1B90001E7623 /* UIViewController_NickNameChangePopup.swift */,
 				93BB882620AC247F001E7623 /* UIViewController_RankPopup.swift */,
 				93BCBBB220AD3CBF009827E8 /* UIViewController_JewelInfoPopup.swift */,
+				93BEA5BE20BBB903005B4C0E /* UIViewController_RecvMsgPopup.swift */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -667,6 +672,7 @@
 				9318F97820906D0A00E08F7D /* UITableViewCell_Board.swift */,
 				93E524512092186F009E303A /* UIViewController_Fan.swift */,
 				93E524502092186F009E303A /* UITableViewCell_Fan.swift */,
+				93BEA5C020BBE900005B4C0E /* UITabBarController_Main.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1140,6 +1146,7 @@
 				93C29B7E20AA876E008D9D84 /* UIViewController_SettingPage.swift in Sources */,
 				9318F96620903E0300E08F7D /* MyUserData.swift in Sources */,
 				9318F96420903E0300E08F7D /* UIViewController_Favor.swift in Sources */,
+				93BEA5BF20BBB903005B4C0E /* UIViewController_RecvMsgPopup.swift in Sources */,
 				93E5245220921870009E303A /* UITableViewCell_Fan.swift in Sources */,
 				9318F96A20903E0300E08F7D /* DataMgr.swift in Sources */,
 				93C29B8420AABE1B008D9D84 /* UITableViewCell_BlockList.swift in Sources */,
@@ -1152,6 +1159,7 @@
 				93A4C4E220A06A0F00066594 /* UIViewController_MyUserPage.swift in Sources */,
 				9318F97920906D0A00E08F7D /* UITableViewCell_Board.swift in Sources */,
 				9353D9C720A8128D006E4FAF /* UIViewController_RecvHeartPage.swift in Sources */,
+				93BEA5C120BBE900005B4C0E /* UITabBarController_Main.swift in Sources */,
 				93BB882720AC247F001E7623 /* UIViewController_RankPopup.swift in Sources */,
 				933BACA620B7F22E00834A55 /* UITableViewCell_MyBoard.swift in Sources */,
 				9318F96F2090499F00E08F7D /* CommonUIFunc.swift in Sources */,

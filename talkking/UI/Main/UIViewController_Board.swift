@@ -22,6 +22,7 @@ class UIViewController_Board : UIViewController
     }
     @IBAction func MyBoardListAction(_ sender: Any) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "MY_BOARD_LIST") as! UIViewController_MyBoardList
+        page.SetBoardView(view:self)
         self.present(page, animated: true)
     }
     
@@ -32,7 +33,6 @@ class UIViewController_Board : UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // TODO 환웅 하단 탭 이동시 페이지가 갱신 되게 알아보자
         // Do any additional setup after loading the view, typically from a nib.
         BoardTableView.delegate = self
         BoardTableView.dataSource = self
@@ -76,16 +76,21 @@ extension UIViewController_Board : UITableViewDelegate, UITableViewDataSource
         CommonUIFunc.Instance.MoveUserPage(index:DataMgr.Instance.CachingBoardDataList[indexPath.row].UserIndex, view : self)
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+        if SVProgressHUD.isVisible() == true
+        {
+            return
+        }
+
+        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height) - 10) {
+            // 게시판 로딩
+            FireBaseFunc.Instance.LoadBoardDataList(top:false, complete:RefreshUI)
             print("스크롤 하단")
         }
         
-        if (scrollView.contentOffset.y < 0){
+        if (floor(scrollView.contentOffset.y) <= 0){
+            // 게시판 로딩
+            FireBaseFunc.Instance.LoadBoardDataList(top:true, complete:RefreshUI)
             print("스크롤 상단")
-        }
-        
-        if (scrollView.contentOffset.y >= 0 && scrollView.contentOffset.y < (scrollView.contentSize.height - scrollView.frame.size.height)){
-            print("스크롤 중")
         }
     }
 

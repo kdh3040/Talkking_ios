@@ -236,10 +236,6 @@ class UserData
         if let tempFavor = tempData["CardList"] as? NSDictionary {
             FavorUserIndexList = (tempFavor.allKeys as? [String])!
         }
-        else
-        {
-            FavorUserIndexList = [""]
-        }
         
         if let tempConnDate = tempData["ConnectDate"] as? Double {
             ConnectDate = tempConnDate

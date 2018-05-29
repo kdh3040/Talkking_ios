@@ -485,10 +485,10 @@
             </objects>
             <point key="canvasLocation" x="185" y="117"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller Main-->
         <scene sceneID="mD4-Xn-R3Q">
             <objects>
-                <tabBarController storyboardIdentifier="MAIN_PAGE" automaticallyAdjustsScrollViewInsets="NO" id="r39-bJ-P5j" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MAIN_PAGE" automaticallyAdjustsScrollViewInsets="NO" id="r39-bJ-P5j" customClass="UITabBarController_Main" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ysn-eT-Ofd">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -4839,6 +4839,110 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a08-q0-cve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2552.8000000000002" y="2005.5472263868066"/>
+        </scene>
+        <!--받은 메세지-->
+        <scene sceneID="0HM-aV-96y">
+            <objects>
+                <viewController storyboardIdentifier="MSG_POPUP" id="VrA-Dp-rJM" userLabel="받은 메세지" customClass="UIViewController_RecvMsgPopup" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ltg-mE-H42">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRD-it-dAn">
+                                <rect key="frame" x="45" y="237" width="284" height="193"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnf-ar-b6J" userLabel="TopBar">
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="39"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ls-hM-ktC" userLabel="쪽지">
+                                                <rect key="frame" x="118" y="6" width="49" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.46274509800000002" green="0.42745098040000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="w2b-vJ-Vkh"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="etc_heart_red" translatesAutoresizingMaskIntoConstraints="NO" id="hyI-fx-RMd">
+                                        <rect key="frame" x="91" y="46" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="SCQ-zn-jAj"/>
+                                            <constraint firstAttribute="width" constant="30" id="teH-MS-FU2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1o-ou-Fgu">
+                                        <rect key="frame" x="129" y="51" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dw-UR-Tzw">
+                                        <rect key="frame" x="157" y="153" width="70" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="삭제">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="DelAction:" destination="VrA-Dp-rJM" eventType="touchUpInside" id="NVc-bR-PnY"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="asdf" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c5D-Ep-uRZ">
+                                        <rect key="frame" x="19" y="80" width="247" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.3803921569" green="0.31764705879999999" blue="0.61960784310000006" alpha="0.14998929794520549" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxM-EP-Uq8">
+                                        <rect key="frame" x="57" y="153" width="70" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="OkAction:" destination="VrA-Dp-rJM" eventType="touchUpInside" id="1Cm-Mb-bNX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="D1o-ou-Fgu" firstAttribute="leading" secondItem="hyI-fx-RMd" secondAttribute="trailing" constant="8" id="9dV-xf-pom"/>
+                                    <constraint firstAttribute="height" constant="193" id="DzZ-RI-oiQ"/>
+                                    <constraint firstAttribute="width" constant="284" id="FNf-h7-lIY"/>
+                                    <constraint firstAttribute="trailing" secondItem="tnf-ar-b6J" secondAttribute="trailing" id="KzU-rR-6zq"/>
+                                    <constraint firstItem="hyI-fx-RMd" firstAttribute="top" secondItem="tnf-ar-b6J" secondAttribute="bottom" constant="7" id="Reg-xp-k5y"/>
+                                    <constraint firstItem="tnf-ar-b6J" firstAttribute="leading" secondItem="LRD-it-dAn" secondAttribute="leading" id="Vk7-tk-Lvl"/>
+                                    <constraint firstItem="hyI-fx-RMd" firstAttribute="leading" secondItem="LRD-it-dAn" secondAttribute="leading" constant="91" id="cbm-5Q-Sfi"/>
+                                    <constraint firstItem="D1o-ou-Fgu" firstAttribute="top" secondItem="tnf-ar-b6J" secondAttribute="bottom" constant="12" id="lBr-Ho-y2D"/>
+                                    <constraint firstItem="tnf-ar-b6J" firstAttribute="top" secondItem="LRD-it-dAn" secondAttribute="top" id="m8E-Kp-MZd"/>
+                                    <constraint firstItem="tnf-ar-b6J" firstAttribute="centerX" secondItem="LRD-it-dAn" secondAttribute="centerX" id="neg-h5-D9i"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LRD-it-dAn" firstAttribute="centerY" secondItem="ltg-mE-H42" secondAttribute="centerY" id="NoB-sb-aaN"/>
+                            <constraint firstItem="LRD-it-dAn" firstAttribute="centerX" secondItem="ltg-mE-H42" secondAttribute="centerX" id="kfD-7u-b5L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H7s-kH-spR"/>
+                    </view>
+                    <connections>
+                        <outlet property="FromUserLabel" destination="8ls-hM-ktC" id="Hp0-cb-RYr"/>
+                        <outlet property="HeartCount" destination="D1o-ou-Fgu" id="M88-c6-tW0"/>
+                        <outlet property="Msg" destination="c5D-Ep-uRZ" id="ZQ3-ZL-jHg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="imu-kT-UcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.60000000000002" y="-4729.385307346327"/>
         </scene>
     </scenes>
     <resources>

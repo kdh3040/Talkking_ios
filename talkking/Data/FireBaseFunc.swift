@@ -382,6 +382,44 @@ class FireBaseFunc
         //return nil
     }
     
+    public func LoadBoardDataList(top : Bool, complete : @escaping ()->Void)
+    {
+        CommonUIFunc.ShowLoading()
+        
+        var currIndex : Int = 0
+        var nextIndex : Int = 0
+        
+        if top == true
+        {
+            currIndex = DataMgr.Instance.BoardTopIndex - 10
+            nextIndex = DataMgr.Instance.BoardTopIndex
+        }
+        else
+        {
+            currIndex = DataMgr.Instance.BoardBottomIndex
+            nextIndex = DataMgr.Instance.BoardBottomIndex + 10
+        }
+        
+        ref.child("Board").queryOrdered(byChild: "BoardIdx").queryStarting(atValue: currIndex).queryEnding(atValue: nextIndex).observeSingleEvent(of: .value, with: { ( snapshot) in
+            
+            for childSnapshot in snapshot.children
+            {
+                
+                let tempChildData = childSnapshot as! DataSnapshot
+                let tempData = tempChildData.value as? NSDictionary
+                let retValue : BoardData = BoardData.init(tempData: tempData!)
+                
+                DataMgr.Instance.SetBoardData(boardData: retValue)
+            }
+            CommonUIFunc.DismissLoading()
+            complete()
+        }){ (error) in
+            print(error.localizedDescription)
+        }
+        
+        //return nil
+    }
+    
     public func LoadBlockDataList(index:Int, complete : @escaping (_ count : Int)->())
     {
         ref.child("BlockList").child(String(index)).observeSingleEvent(of: .value, with: { ( snapshot) in
@@ -1001,5 +1039,15 @@ class FireBaseFunc
             self.ref.child("Users").child(tempGender).child(String(index)).child("Honey").setValue(myData.Coin)
             self.ref.child("Users").child(tempGender).child(String(index)).child("NickChangeCnt").setValue(myData.NickCheckCnt)
         }
+    }
+    
+    public func RemoveRecvHeartData()
+    {
+        // TODO 도형 : 받은 하트 제거하는 기능 추가
+    }
+    
+    public func RemoveAllRecvHeartData()
+    {
+        // TODO 도형 : 받은 하트 전부 제거하는 기능 추가
     }
 }
