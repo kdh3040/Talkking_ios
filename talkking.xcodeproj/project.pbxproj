@@ -104,6 +104,7 @@
 		93A4C4EC20A1E1CF00066594 /* icon_main_mypage.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4E820A1E1CD00066594 /* icon_main_mypage.png */; };
 		93A4C4ED20A1E1CF00066594 /* icon_main_filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4E920A1E1CE00066594 /* icon_main_filter.png */; };
 		93A4C4EE20A1E1CF00066594 /* icon_main_randombox.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4EA20A1E1CE00066594 /* icon_main_randombox.png */; };
+		93B475FE20BD054A0041B3DC /* UIViewController_FanRankPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B475FD20BD054A0041B3DC /* UIViewController_FanRankPopup.swift */; };
 		93BB882020AC0C90001E7623 /* etc_heart_red_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BB881F20AC0C8F001E7623 /* etc_heart_red_empty.png */; };
 		93BB882320AC0EDA001E7623 /* UIViewController_HeartSendPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB882220AC0EDA001E7623 /* UIViewController_HeartSendPopup.swift */; };
 		93BB882520AC1B90001E7623 /* UIViewController_NickNameChangePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB882420AC1B90001E7623 /* UIViewController_NickNameChangePopup.swift */; };
@@ -290,6 +291,7 @@
 		93A4C4E820A1E1CD00066594 /* icon_main_mypage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_main_mypage.png; sourceTree = "<group>"; };
 		93A4C4E920A1E1CE00066594 /* icon_main_filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_main_filter.png; sourceTree = "<group>"; };
 		93A4C4EA20A1E1CE00066594 /* icon_main_randombox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_main_randombox.png; sourceTree = "<group>"; };
+		93B475FD20BD054A0041B3DC /* UIViewController_FanRankPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_FanRankPopup.swift; sourceTree = "<group>"; };
 		93BB881F20AC0C8F001E7623 /* etc_heart_red_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_heart_red_empty.png; sourceTree = "<group>"; };
 		93BB882220AC0EDA001E7623 /* UIViewController_HeartSendPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_HeartSendPopup.swift; sourceTree = "<group>"; };
 		93BB882420AC1B90001E7623 /* UIViewController_NickNameChangePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_NickNameChangePopup.swift; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 				93BB882620AC247F001E7623 /* UIViewController_RankPopup.swift */,
 				93BCBBB220AD3CBF009827E8 /* UIViewController_JewelInfoPopup.swift */,
 				93BEA5BE20BBB903005B4C0E /* UIViewController_RecvMsgPopup.swift */,
+				93B475FD20BD054A0041B3DC /* UIViewController_FanRankPopup.swift */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -1182,6 +1185,7 @@
 				93E766432099BA5F005455A8 /* UIViewCollectionCell_Home_FanCount.swift in Sources */,
 				9353D9A820A58AEC006E4FAF /* UIViewController_NoticePage.swift in Sources */,
 				93E7663D2099B860005455A8 /* UIViewController_Home_New.swift in Sources */,
+				93B475FE20BD054A0041B3DC /* UIViewController_FanRankPopup.swift in Sources */,
 				9318F971209049A900E08F7D /* CommonFunc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

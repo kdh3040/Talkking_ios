@@ -35,10 +35,6 @@ class UIViewController_RecvMsgPopup : UIViewController_Popup
             actionTitle_1: "삭제",
             actionFunc_1: MsgDelete,
             actionTitle_2: "취소")
-        
-        
-        
-        
     }
     
     var RecvHeart : RecvHeartData? = nil

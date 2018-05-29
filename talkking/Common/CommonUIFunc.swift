@@ -64,6 +64,14 @@ class CommonUIFunc{
         return CommonData.FAN_RANK_ICON[rank - 1]
     }
     
+    public func GetFanRankBigImgName(rank:Int) -> String{
+        if(rank <= 0 || CommonData.FAN_RANK_ICON_BIG.count < rank)
+        {
+            return ""
+        }
+        return CommonData.FAN_RANK_ICON_BIG[rank - 1]
+    }
+    
     public func GetMainRankImgName(rank:Int) -> String{
         if(rank <= 0 || CommonData.MAIN_RANK_ICON.count <= rank)
         {

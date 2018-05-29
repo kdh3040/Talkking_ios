@@ -15,11 +15,24 @@ class UIViewController_RecvHeartPage : UIViewController
         self.dismiss(animated: true)
     }
     @IBAction func RemoveAll(_ sender: Any) {
-        if let myData = DataMgr.Instance.MyData
-        {
-            myData.RemoveAllRecvHeartData()
-            RefreshUI()
+
+        let MsgDelete = {
+            if let myData = DataMgr.Instance.MyData
+            {
+                FireBaseFunc.Instance.RemoveAllRecvHeartData()
+                myData.RemoveAllRecvHeartData()
+                self.RefreshUI()
+            }
         }
+        
+        CommonUIFunc.Instance.ShowAlertPopup(
+            viewController: self,
+            title: "메세지 삭제",
+            message: "메세지를 전체삭제 하시겠습니까?",
+            actionTitle_1: "삭제",
+            actionFunc_1: MsgDelete,
+            actionTitle_2: "취소")
+        
     }
     @IBOutlet var RecvHeartTableView: UITableView!
     

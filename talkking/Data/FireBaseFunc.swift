@@ -1044,10 +1044,15 @@ class FireBaseFunc
     public func RemoveRecvHeartData()
     {
         // TODO 도형 : 받은 하트 제거하는 기능 추가
+        
+        
     }
     
     public func RemoveAllRecvHeartData()
     {
-        // TODO 도형 : 받은 하트 전부 제거하는 기능 추가
+        if let myData = DataMgr.Instance.MyData
+        {
+            self.ref.child("GiftHoneyList").child(String(myData.Index)).removeValue()
+        }
     }
 }

@@ -3906,7 +3906,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pZ7-p0-nb4" id="QQP-C6-7VY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IuZ-pb-wYE" userLabel="Rank">
@@ -4944,6 +4944,47 @@
             </objects>
             <point key="canvasLocation" x="933.60000000000002" y="-4729.385307346327"/>
         </scene>
+        <!--팬 랭크-->
+        <scene sceneID="0ds-vF-oZr">
+            <objects>
+                <viewController storyboardIdentifier="FAN_RANK_POPUP" id="gNu-uP-9aZ" userLabel="팬 랭크" customClass="UIViewController_FanRankPopup" customModule="talkking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y0T-XY-RU3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fan_rank_big_1" translatesAutoresizingMaskIntoConstraints="NO" id="mlD-OC-Lah">
+                                <rect key="frame" x="37" y="183" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="wQG-Vg-85Y"/>
+                                    <constraint firstAttribute="width" constant="300" id="ya2-B0-4S3"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rba-lX-bq5">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <action selector="Back:" destination="gNu-uP-9aZ" eventType="touchUpInside" id="LMV-fA-wf6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rba-lX-bq5" firstAttribute="top" secondItem="cFd-z4-CM9" secondAttribute="top" id="9IV-8E-50f"/>
+                            <constraint firstItem="Rba-lX-bq5" firstAttribute="leading" secondItem="cFd-z4-CM9" secondAttribute="leading" id="Gx8-sX-lpF"/>
+                            <constraint firstItem="mlD-OC-Lah" firstAttribute="centerX" secondItem="Y0T-XY-RU3" secondAttribute="centerX" id="Jme-dR-jdM"/>
+                            <constraint firstItem="cFd-z4-CM9" firstAttribute="bottom" secondItem="Rba-lX-bq5" secondAttribute="bottom" id="ZUj-Xf-w47"/>
+                            <constraint firstItem="mlD-OC-Lah" firstAttribute="centerY" secondItem="Y0T-XY-RU3" secondAttribute="centerY" id="uNn-eA-aOV"/>
+                            <constraint firstItem="cFd-z4-CM9" firstAttribute="trailing" secondItem="Rba-lX-bq5" secondAttribute="trailing" id="vdt-Gz-8b1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cFd-z4-CM9"/>
+                    </view>
+                    <connections>
+                        <outlet property="RankIcon" destination="mlD-OC-Lah" id="oCq-up-PWa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJw-5U-gO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692" y="-4729.385307346327"/>
+        </scene>
     </scenes>
     <resources>
         <image name="charge_10" width="342" height="59"/>
@@ -4977,6 +5018,7 @@
         <image name="etc_main_icon_location" width="48" height="48"/>
         <image name="etc_new" width="32" height="15"/>
         <image name="etc_notice" width="48" height="48"/>
+        <image name="fan_rank_big_1" width="400" height="400"/>
         <image name="icon_item_amethyst" width="255" height="255"/>
         <image name="icon_item_diamond" width="255" height="255"/>
         <image name="icon_main_board" width="30" height="30"/>
