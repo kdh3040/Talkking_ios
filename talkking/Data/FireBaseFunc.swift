@@ -132,6 +132,7 @@ class FireBaseFunc
                         self.LoadBlockDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
                         self.LoadBlockedDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
                         self.LoadBoardDataList(complete: self.CallBackFunc_LoadMyData)
+                        self.LoadSettingData(index: indexInt,complete: self.CallBackFunc_LoadMyData)
                         self.LoadMyBoardData(complete: self.CallBackFunc_LoadMyData)
                         self.LoadRecvHeartData(complete: self.CallBackFunc_LoadMyData)
                     }
@@ -257,6 +258,46 @@ class FireBaseFunc
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    public func SetSettingData(index : Int) //-> UserData?
+    {
+        if let myData = DataMgr.Instance.MyData?.CahingSettingDataList[0]
+        {
+                self.ref.child("Setting").child(String(index)).child("AlarmMode_Popup").setValue(myData.AlarmMode_Popup)
+                self.ref.child("Setting").child(String(index)).child("AlarmMode_Sound").setValue(myData.AlarmMode_Sound)
+                self.ref.child("Setting").child(String(index)).child("AlarmMode_Vibration").setValue(myData.AlarmMode_Vibe)
+            
+                self.ref.child("Setting").child(String(index)).child("StartAge").setValue(myData.SearchMode_StartAge)
+                self.ref.child("Setting").child(String(index)).child("EndAge").setValue(myData.SearchMode_EndAge)
+                self.ref.child("Setting").child(String(index)).child("ViewMode").setValue(myData.SearchMode_Gender)
+            
+                self.ref.child("Setting").child(String(index)).child("RecvMsgReject").setValue(myData.RecvMode_Msg)
+        }
+        
+        //return nil
+    }
+    
+    public func LoadSettingData(index : Int, complete : @escaping (_ count : Int)->()) //-> UserData?
+    {
+        ref.child("Setting").child(String(index)).observeSingleEvent(of: .value, with: { ( snapshot) in
+            
+            
+            if let tempData = snapshot.value as? NSDictionary
+            {
+                let retValue : SettingData = SettingData.init(tempData: tempData)
+                
+                DataMgr.Instance.MyData!.SetSettingData(retValue)
+                self.CallBackCount += CommonData.LOAD_DATA_SET
+                complete(self.CallBackCount)
+            }
+            
+            
+        }){ (error) in
+            print(error.localizedDescription)
+        }
+        
+        //return nil
     }
     
     public func LoadBoardDataList(complete : @escaping (_ count : Int)->()) //-> UserData?

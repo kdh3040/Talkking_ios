@@ -15,6 +15,7 @@
 		3D5091D2208DF92200DA8C8F /* talkkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5091D1208DF92200DA8C8F /* talkkingTests.swift */; };
 		3D5091DD208DF92200DA8C8F /* talkkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5091DC208DF92200DA8C8F /* talkkingUITests.swift */; };
 		3D663FC820AC0AB300062FB5 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D663FC720AC0AB300062FB5 /* NotificationData.swift */; };
+		3D7244E120BE9612000BBFFB /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7244E020BE9612000BBFFB /* SettingData.swift */; };
 		3D87315E2092077300022D90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D87315D2092077300022D90 /* GoogleService-Info.plist */; };
 		3D87316020930D3400022D90 /* FireBaseFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87315F20930D3400022D90 /* FireBaseFunc.swift */; };
 		3D87316220948D1A00022D90 /* FanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87316120948D1A00022D90 /* FanData.swift */; };
@@ -201,6 +202,7 @@
 		3D5091DC208DF92200DA8C8F /* talkkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talkkingUITests.swift; sourceTree = "<group>"; };
 		3D5091DE208DF92200DA8C8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D663FC720AC0AB300062FB5 /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
+		3D7244E020BE9612000BBFFB /* SettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingData.swift; sourceTree = "<group>"; };
 		3D87315D2092077300022D90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3D87315F20930D3400022D90 /* FireBaseFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseFunc.swift; sourceTree = "<group>"; };
 		3D87316120948D1A00022D90 /* FanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanData.swift; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 				3D663FC720AC0AB300062FB5 /* NotificationData.swift */,
 				933BACA320B6827200834A55 /* BlockData.swift */,
 				933BACA720B9004100834A55 /* RecvHeartData.swift */,
+				3D7244E020BE9612000BBFFB /* SettingData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -969,6 +972,7 @@
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -981,6 +985,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -1021,6 +1026,7 @@
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -1033,6 +1039,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -1073,6 +1080,7 @@
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Parchment/Parchment.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyGif/SwiftyGif.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -1085,6 +1093,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parchment.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyGif.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -1120,6 +1129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7244E120BE9612000BBFFB /* SettingData.swift in Sources */,
 				9353D9D120A832D0006E4FAF /* UIViewController_ThumbnailList.swift in Sources */,
 				9318F96520903E0300E08F7D /* BoardData.swift in Sources */,
 				93E766452099BA7B005455A8 /* UIViewCollectionCell_Home_Near.swift in Sources */,

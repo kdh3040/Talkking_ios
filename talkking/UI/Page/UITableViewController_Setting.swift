@@ -16,10 +16,12 @@ class UITableViewController_Setting : UITableViewController
         // TODO 도형 : 알람 설정
         if AlarmSound.isOn
         {
+             DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Sound = true
             print("알람소리 ON")
         }
         else
         {
+            DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Sound = false
             print("알람소리 OFF")
         }
     }
@@ -28,10 +30,12 @@ class UITableViewController_Setting : UITableViewController
         // TODO 도형 : 알람 진동 설정
         if AlarmVibration.isOn
         {
+             DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Vibe = true
             print("알람진동 ON")
         }
         else
         {
+             DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Vibe = false
             print("알람진동 OFF")
         }
     }
@@ -40,10 +44,12 @@ class UITableViewController_Setting : UITableViewController
         // TODO 도형 : 알람 팝업 설정
         if AlarmPopup.isOn
         {
+            DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Popup = true
             print("알람팝업 ON")
         }
         else
         {
+            DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Popup = false
             print("알람팝업 OFF")
         }
     }
@@ -52,10 +58,12 @@ class UITableViewController_Setting : UITableViewController
         // TODO 도형 : 쪽지 수신거부 설정
         if MsgRefusal.isOn
         {
+            DataMgr.Instance.MyData!.CahingSettingDataList[0].RecvMode_Msg = 0
             print("쪽지수신거부 ON")
         }
         else
         {
+            DataMgr.Instance.MyData!.CahingSettingDataList[0].RecvMode_Msg = 1
             print("쪽지수신거부 OFF")
         }
     }
@@ -89,9 +97,16 @@ class UITableViewController_Setting : UITableViewController
         super.viewDidLoad()
         
         // TODO 도형 : 세팅 데이터 필요
-        AlarmSound.isOn = true
-        AlarmVibration.isOn = true
-        AlarmPopup.isOn = true
-        MsgRefusal.isOn = true
+        AlarmSound.isOn = DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Sound
+        AlarmVibration.isOn = DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Vibe
+        AlarmPopup.isOn = DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Popup
+        if DataMgr.Instance.MyData!.CahingSettingDataList[0].RecvMode_Msg == 0
+        {
+             MsgRefusal.isOn = true
+        }
+        else
+        {
+             MsgRefusal.isOn = false
+        }
     }
 }

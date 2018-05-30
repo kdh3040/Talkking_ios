@@ -17,6 +17,8 @@ class MyUserData : UserData
     public var RecvHeartList : [RecvHeartData] = [RecvHeartData]()
     public var UID : String? = nil
     
+    public var CahingSettingDataList : [SettingData] = [SettingData]()
+    
     public init(index : Int)
     {
         let userData = DataMgr.Instance.GetCachingUserDataList(index: index)
@@ -119,5 +121,10 @@ class MyUserData : UserData
     public func RemoveAllRecvHeartData()
     {
         RecvHeartList.removeAll()
+    }
+    
+    public func SetSettingData(_ SettingData:SettingData)
+    {
+        CahingSettingDataList.append(SettingData)
     }
 }

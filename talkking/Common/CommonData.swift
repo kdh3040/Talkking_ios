@@ -49,7 +49,7 @@ struct CommonData {
     public static let GENDER_DATA = ["남자","여자"]
 
     public static let LOAD_DATA_SET = 1
-    public static let LOAD_DATA_TYPE = 10
+    public static let LOAD_DATA_TYPE = 11
     
     public static let REPORT_BOARD_DELETE = 10
     

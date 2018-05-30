@@ -12,6 +12,7 @@ import UIKit
 class UIViewController_SettingPage : UIViewController
 {
     @IBAction func Back(_ sender: Any) {
+        FireBaseFunc.Instance.SetSettingData(index: DataMgr.Instance.MyData!.Index)
         self.dismiss(animated: true)
     }
     override func viewDidLoad() {
