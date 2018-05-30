@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "UIViewController_Favor.viewDidLoad():UIViewController_Favor.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "DataMgr.Instance.MyData">
+            </PersistentString>
+            <PersistentString
+               value = "DataMgr.Instance">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UIViewController_Board.scrollViewDidScroll(_:):UIViewController_Board.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.contentSize.height">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.contentOffset.y">
+            </PersistentString>
+            <PersistentString
+               value = "scrollView.frame.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "(scrollView.contentSize.height - scrollView.frame.size.height)">
+            </PersistentString>
+            <PersistentString
+               value = "floor(scrollView.contentOffset.y)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
