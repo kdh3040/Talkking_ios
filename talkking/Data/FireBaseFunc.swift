@@ -689,14 +689,7 @@ class FireBaseFunc
     
     public func SaveGenderList(index : String, Gender : String )
     {
-        if Gender == GENDER_TYPE.FEMALE.rawValue
-        {
-            self.ref.child("GenderList").child("Woman").child(index).setValue(Gender)
-        }
-        else
-        {
-            self.ref.child("GenderList").child("Man").child(index).setValue(Gender)
-        }
+        self.ref.child("GenderList").child(index).setValue(Gender)
     }
     
     public func SaveFirstData(index : String, Gender : String, TumbUrl : String, ImgUrl : String , NickName : String, Age : String

@@ -20,6 +20,7 @@ class UIViewController_InputPage : UIViewController, CLLocationManagerDelegate
     private var tempMyDist : Double!
     
     private var tempImg : UIImage?
+    private var tempAge : String!
     
     private var locationManager : CLLocationManager!
     public func CallBackFunc_CompleteUploadImg(URL : String)
@@ -38,7 +39,11 @@ class UIViewController_InputPage : UIViewController, CLLocationManagerDelegate
         tempMyDist = CommonFunc.Instance.CalcDistanceByLonLat(SourceLat: tempMyLat, SourceLon: tempMyLon, DefLat: CommonData.REF_LAT, DefLon: CommonData.REF_LON)
         
         FireBaseFunc.Instance.SaveFirstData(index: tempMyIdx, Gender: Gender.text!, TumbUrl: URL, ImgUrl: URL
-            , NickName: NIckName.text!, Age: Age.text!, Lon: tempMyLon, Lat: tempMyLat, Dist: tempMyDist, CreateDate: CommonFunc.Instance.GetCurrentTime())
+            , NickName: NIckName.text!, Age: tempAge!, Lon: tempMyLon, Lat: tempMyLat, Dist: tempMyDist, CreateDate: CommonFunc.Instance.GetCurrentTime())
+        
+        CommonUIFunc.ShowLoading()        
+        FireBaseFunc.Instance.LoadUserIndex(uuid: tempMyUid as! String)
+        
     }
     
     
@@ -114,12 +119,13 @@ class UIViewController_InputPage : UIViewController, CLLocationManagerDelegate
     }
     @IBAction func CreateAction(_ sender: Any) {
      
-        
-        FireBaseFunc.Instance.UploadImgFromUrl(index: tempMyIdx, image: tempImg!, complete: self.CallBackFunc_CompleteUploadImg)
         FireBaseFunc.Instance.SaveUserIndex(index: tempMyIdx, uid: tempMyUid)
         FireBaseFunc.Instance.SaveGenderList(index: tempMyIdx, Gender: Gender.text!)
+        FireBaseFunc.Instance.UploadImgFromUrl(index: tempMyIdx, image: tempImg!, complete: self.CallBackFunc_CompleteUploadImg)
+   
 
         self.dismiss(animated: true)
+        
     }
 
     let ThumbnailPicker = UIImagePickerController()
@@ -207,6 +213,7 @@ extension UIViewController_InputPage : UIPickerViewDataSource, UIPickerViewDeleg
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
             Age.text = CommonData.AGE_DATA[row]  + "세"
+            tempAge = CommonData.AGE_DATA[row]
         } else {
             Gender.text = CommonData.GENDER_DATA[row]
         }
