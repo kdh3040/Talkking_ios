@@ -21,6 +21,7 @@ class UIViewController_InputPage : UIViewController, CLLocationManagerDelegate
     
     private var tempImg : UIImage?
     private var tempAge : String!
+    private var tempGender : String!
     
     private var locationManager : CLLocationManager!
     public func CallBackFunc_CompleteUploadImg(URL : String)
@@ -38,7 +39,7 @@ class UIViewController_InputPage : UIViewController, CLLocationManagerDelegate
         
         tempMyDist = CommonFunc.Instance.CalcDistanceByLonLat(SourceLat: tempMyLat, SourceLon: tempMyLon, DefLat: CommonData.REF_LAT, DefLon: CommonData.REF_LON)
         
-        FireBaseFunc.Instance.SaveFirstData(index: tempMyIdx, Gender: Gender.text!, TumbUrl: URL, ImgUrl: URL
+        FireBaseFunc.Instance.SaveFirstData(index: tempMyIdx, Gender: tempGender!, TumbUrl: URL, ImgUrl: URL
             , NickName: NIckName.text!, Age: tempAge!, Lon: tempMyLon, Lat: tempMyLat, Dist: tempMyDist, CreateDate: CommonFunc.Instance.GetCurrentTime())
         
         CommonUIFunc.ShowLoading()        
@@ -140,6 +141,9 @@ class UIViewController_InputPage : UIViewController, CLLocationManagerDelegate
         super.viewDidLoad()
         ThumbnailPicker.delegate = self
  
+        tempAge = "20"
+        tempGender = "남자"
+        
         Age.inputView = AgePickerView
         Gender.inputView = GenderPickerView
         AgePickerView.dataSource = self
@@ -216,6 +220,7 @@ extension UIViewController_InputPage : UIPickerViewDataSource, UIPickerViewDeleg
             tempAge = CommonData.AGE_DATA[row]
         } else {
             Gender.text = CommonData.GENDER_DATA[row]
+            tempGender = CommonData.GENDER_DATA[row]
         }
     }
 }
