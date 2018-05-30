@@ -48,8 +48,6 @@ class FireBaseFunc
     
     public func LoadUserIndex(uuid : String)
     {
-        
-        
         ref.child("UserIdx").child(uuid).observeSingleEvent(of: .value, with: { ( snapshot) in
             
             var tempData = snapshot.value as? String

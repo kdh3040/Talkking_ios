@@ -16,14 +16,6 @@ class UIViewController_StartPage : UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        CommonUIFunc.ShowLoading()
-        CommonUIFunc.StartViewController = self
-        let uuid = CFUUIDCreateString(nil, CFUUIDCreate(nil))
-        var tempuuid = "2A81CBB50-66CB-40BD-AA4D-C5DD14C22EE7"
-        tempuuid = "f8cf61f5d605463"
-        FireBaseFunc.Instance.LoadUserIndex(uuid: tempuuid)
-        
         let gif = UIImage(gifName: "logo_gif.gif")
         Logo.setGifImage(gif)
     }
