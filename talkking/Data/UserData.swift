@@ -420,9 +420,14 @@ class UserData
                 }
             }
             
-            tempItem.sorted(by: >)
+            tempItem.sort { (a, b) -> Bool in
+                return a > b
+            }
             
-            self.BestItem = tempItem[0]
+            if tempItem.count > 0
+            {
+                BestItem = tempItem[0]
+            }
             print(tempItem)
         }
     }
