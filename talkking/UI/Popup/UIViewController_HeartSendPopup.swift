@@ -30,7 +30,7 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
         {
             CommonFunc.Instance.UseCoin(cost: self.SelectCost, view: self, callFunc: {
                 FireBaseFunc.Instance.SetFavorList(userData: self.PageUserData!)
-                FireBaseFunc.Instance.SetFanList(userData: self.PageUserData!, Heart: self.SelectCost)
+                FireBaseFunc.Instance.SetFanList(userData: self.PageUserData!, Heart: self.SelectCost, view : self)
                 self.DismissPopup()
             })
         }

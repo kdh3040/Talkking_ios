@@ -457,5 +457,13 @@ class UserData
         }
     }
     
+    public func AddFanList(idx : Int, recvGold : Int)
+    {
+        let tempFanData : FanData = FanData()
+        tempFanData.Idx = idx
+        tempFanData.RecvHeart = recvGold
+        tempFanData.Check = 0
+        FanDataList.append(tempFanData)
+    }
 
 }

@@ -460,8 +460,9 @@ class FireBaseFunc
     }
     
     
-    public func SetFanList(userData : UserData, Heart : Int)
+    public func SetFanList(userData : UserData, Heart : Int, view : UIViewController)
     {
+        var addFan : Bool = true
         var saveHeart : Int = Heart
         let gender : String = CommonFunc.Instance.ConvertGenderString(gender: userData.Gender)
         
@@ -473,12 +474,21 @@ class FireBaseFunc
                 {
                     if userData.FanDataList[i].Idx == myData.Index
                     {
+                        addFan = false
                         saveHeart = userData.FanDataList[i].RecvHeart
                         userData.FanDataList[i].RecvHeart += Heart
                         break
                     }
                 }
             }
+            
+            if addFan
+            {
+                userData.AddFanList(idx: myData.Index, recvGold: Heart)
+            }
+            
+            userData.SortFanList()
+            CommonUIFunc.Instance.CheckFanRank(userData: userData, view : view)
             
             self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
             self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index)).child("Idx").setValue(String(myData.Index))
@@ -504,7 +514,7 @@ class FireBaseFunc
         if let myData = DataMgr.Instance.MyData
         {
             let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
-            self.ref.child("Users").child(gender).child(String(DataMgr.Instance.MyData!.Index)).child("Honey").observeSingleEvent(of: .value, with: { ( snapshot) in
+            self.ref.child("Users").child(gender).child(String(myData.Index)).child("Honey").observeSingleEvent(of: .value, with: { ( snapshot) in
                 
                 CommonUIFunc.DismissLoading()
                 if let tempData = snapshot.value as? Int
@@ -515,6 +525,15 @@ class FireBaseFunc
             }){ (error) in
                 print(error.localizedDescription)
             }
+        }
+    }
+    
+    public func SetMyPoint()
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
+            self.ref.child("Users").child(gender).child(String(myData.Index)).child("Point").setValue(myData.Point)
         }
     }
     
