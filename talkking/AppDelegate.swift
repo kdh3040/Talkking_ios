@@ -27,11 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      //  FireBaseFunc.Instance.LoadMyIndex(uuid: String(uuid!))
         
        // var tempuuid = "2A81CBB50-66CB-40BD-AA4D-C5DD14C22EE7"
-       // tempuuid = "f8cf61f5d605463"
+       // tempuuid = "2259441abd2bad79"
         
         CommonUIFunc.ShowLoading()
         
-        FireBaseFunc.Instance.LoadUserIndex(uuid: uuid as! String)
+        FireBaseFunc.Instance.LoadUserIndex(uuid: "a8970cb9531bdd5c" as! String)
  
  
         //NSString *UUID = [nameofclass]

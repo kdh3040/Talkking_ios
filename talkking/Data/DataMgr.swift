@@ -21,6 +21,8 @@ class DataMgr {
     private var UserIdxList_New : [Int : Int] = [Int : Int]()
     private var UserIdxList_Hot : [Int : Int] = [Int : Int]()
     
+    public var BoardTopIndex : Int = 0
+    public var BoardBottomIndex : Int = -Int.max;
     public var MyData : MyUserData?
     
     static let Instance = DataMgr()
@@ -100,6 +102,18 @@ class DataMgr {
                 return
             }
         }
+
+        if(BoardBottomIndex < boardData.BoardIndex)
+        {
+            BoardBottomIndex = boardData.BoardIndex;
+        }
+        
+        if(BoardTopIndex > boardData.BoardIndex)
+        {
+            BoardTopIndex = boardData.BoardIndex;
+        }
+        
+        
         CachingBoardDataList.append(boardData)
 
         CachingBoardDataList.sort { (a, b) -> Bool in

@@ -64,6 +64,14 @@ class CommonUIFunc{
         return CommonData.FAN_RANK_ICON[rank - 1]
     }
     
+    public func GetFanRankBigImgName(rank:Int) -> String{
+        if(rank <= 0 || CommonData.FAN_RANK_ICON_BIG.count < rank)
+        {
+            return ""
+        }
+        return CommonData.FAN_RANK_ICON_BIG[rank - 1]
+    }
+    
     public func GetMainRankImgName(rank:Int) -> String{
         if(rank <= 0 || CommonData.MAIN_RANK_ICON.count <= rank)
         {
@@ -317,5 +325,23 @@ class CommonUIFunc{
         }
         
         return false
+    }
+    
+    public func CheckFanRank(userData : UserData, view : UIViewController)
+    {
+        if userData.FanDataList.count > 0,
+            let myData = DataMgr.Instance.MyData
+        {
+            for i in 0..<userData.FanDataList.count
+            {
+                if userData.FanDataList[i].Idx == myData.Index && i < CommonData.FAN_RANK_ICON_BIG.count
+                {
+                    let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FAN_RANK_POPUP") as! UIViewController_FanRankPopup
+                    page.SetFanRank(rank: i + 1)
+                    page.ShowPopup(viewController: view)
+                    break
+                }
+            }
+        }
     }
 }

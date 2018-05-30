@@ -17,6 +17,8 @@ class UIViewController_MyBoardList : UIViewController
     
     @IBOutlet var MyBoardTableView: UITableView!
     
+    var BoardView : UIViewController_Board? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,6 +32,14 @@ class UIViewController_MyBoardList : UIViewController
     public func RefreshUI()
     {
         MyBoardTableView.reloadData()
+    }
+    public func RefreshBoardUI()
+    {
+        BoardView!.RefreshUI()
+    }
+    public func SetBoardView(view : UIViewController_Board)
+    {
+        BoardView = view
     }
 }
 

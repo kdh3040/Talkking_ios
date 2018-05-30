@@ -236,10 +236,6 @@ class UserData
         if let tempFavor = tempData["CardList"] as? NSDictionary {
             FavorUserIndexList = (tempFavor.allKeys as? [String])!
         }
-        else
-        {
-            FavorUserIndexList = [""]
-        }
         
         if let tempConnDate = tempData["ConnectDate"] as? Double {
             ConnectDate = tempConnDate
@@ -290,6 +286,8 @@ class UserData
                 tempFanData.Check = tempFanDataList["Check"] as! Int
                 FanDataList.append(tempFanData)
             }
+            
+            SortFanList()
         }
 
        // var tempFanList : [String] = [String]()
@@ -452,6 +450,20 @@ class UserData
         return [String]()
     }
     
+    public func SortFanList()
+    {
+        FanDataList.sort { (a, b) -> Bool in
+            return a.RecvHeart > b.RecvHeart
+        }
+    }
     
+    public func AddFanList(idx : Int, recvGold : Int)
+    {
+        let tempFanData : FanData = FanData()
+        tempFanData.Idx = idx
+        tempFanData.RecvHeart = recvGold
+        tempFanData.Check = 0
+        FanDataList.append(tempFanData)
+    }
 
 }
