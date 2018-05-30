@@ -3906,7 +3906,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pZ7-p0-nb4" id="QQP-C6-7VY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IuZ-pb-wYE" userLabel="Rank">
@@ -4854,9 +4854,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tnf-ar-b6J" userLabel="TopBar">
                                         <rect key="frame" x="0.0" y="0.0" width="284" height="39"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ls-hM-ktC" userLabel="쪽지">
-                                                <rect key="frame" x="118" y="6" width="49" height="27"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ls-hM-ktC" userLabel="쪽지">
+                                                <rect key="frame" x="0.0" y="6" width="284" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="27" id="Dpg-iN-jLb"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -4864,6 +4866,11 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.46274509800000002" green="0.42745098040000001" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="8ls-hM-ktC" secondAttribute="bottom" constant="6" id="5K9-fV-spC"/>
+                                            <constraint firstItem="8ls-hM-ktC" firstAttribute="top" secondItem="tnf-ar-b6J" secondAttribute="top" constant="6" id="Hmy-aa-VlB"/>
+                                            <constraint firstItem="8ls-hM-ktC" firstAttribute="leading" secondItem="tnf-ar-b6J" secondAttribute="leading" id="RMx-Jj-Pks"/>
+                                            <constraint firstAttribute="trailing" secondItem="8ls-hM-ktC" secondAttribute="trailing" id="UZo-54-zFB"/>
+                                            <constraint firstItem="8ls-hM-ktC" firstAttribute="centerX" secondItem="tnf-ar-b6J" secondAttribute="centerX" id="rzD-kX-nKj"/>
                                             <constraint firstAttribute="height" constant="39" id="w2b-vJ-Vkh"/>
                                         </constraints>
                                     </view>
