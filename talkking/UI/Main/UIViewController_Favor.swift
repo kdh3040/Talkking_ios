@@ -24,7 +24,13 @@ class UIViewController_Favor : UIViewController
         FavorTableView.dataSource = self
         FavorTableView.rowHeight = 70;
         FavorTableView.separatorStyle = .none
-        
+        CommonUIFunc.MainFavorViewController = self
+        RefreshUI(false)
+    }
+    
+    public func RefreshUI(_ tableRefresh : Bool = true)
+    {
+        FavorLoadCnt = 0
         for i in 0..<DataMgr.Instance.MyData!.FavorUserIndexList.count
         {
             if (DataMgr.Instance.GetCachingSimpleUserDataList(index: Int(DataMgr.Instance.MyData!.FavorUserIndexList[i])!) == nil)
@@ -38,6 +44,11 @@ class UIViewController_Favor : UIViewController
         if FavorLoadCnt == 0
         {
             FavorCnt = DataMgr.Instance.MyData!.FavorUserIndexList.count
+        }
+        
+        if tableRefresh
+        {
+            FavorTableView.reloadData()
         }
     }
     

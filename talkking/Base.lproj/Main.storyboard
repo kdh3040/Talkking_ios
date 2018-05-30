@@ -290,6 +290,14 @@
                                             <action selector="HeartRecvAction:" destination="Q1M-Zu-uBB" eventType="touchUpInside" id="qDt-ik-5EX"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ybo-2g-3N3">
+                                        <rect key="frame" x="324" y="8" width="10" height="10"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="I7O-pf-Tjb"/>
+                                            <constraint firstAttribute="height" constant="10" id="woL-qb-82w"/>
+                                        </constraints>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98h-q1-dRy" userLabel="randombox">
                                         <rect key="frame" x="266" y="10" width="30" height="30"/>
                                         <constraints>
@@ -334,6 +342,8 @@
                                     <constraint firstItem="98h-q1-dRy" firstAttribute="top" secondItem="tfq-fD-5KB" secondAttribute="top" constant="10" id="bRF-U4-OLj"/>
                                     <constraint firstAttribute="height" constant="50" id="c6r-hY-ebF"/>
                                     <constraint firstAttribute="trailing" secondItem="qx9-SU-Tao" secondAttribute="trailing" constant="8" id="ce4-ir-d1W"/>
+                                    <constraint firstItem="ybo-2g-3N3" firstAttribute="top" secondItem="tfq-fD-5KB" secondAttribute="top" constant="8" id="f2L-4J-I2r"/>
+                                    <constraint firstItem="qx9-SU-Tao" firstAttribute="leading" secondItem="ybo-2g-3N3" secondAttribute="trailing" constant="3" id="hgN-MS-Pb3"/>
                                     <constraint firstItem="1XO-Ma-wJu" firstAttribute="top" secondItem="tfq-fD-5KB" secondAttribute="top" constant="10" id="ptV-ZE-RWG"/>
                                     <constraint firstItem="qx9-SU-Tao" firstAttribute="leading" secondItem="1XO-Ma-wJu" secondAttribute="trailing" constant="3" id="vtV-I7-Rzg"/>
                                     <constraint firstItem="1XO-Ma-wJu" firstAttribute="leading" secondItem="98h-q1-dRy" secondAttribute="trailing" constant="8" id="wx3-1q-dHA"/>
@@ -349,6 +359,9 @@
                         <viewLayoutGuide key="safeArea" id="iIC-iS-s2A"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="icon_main_home" selectedImage="icon_main_home_select" id="zQS-vh-Zr1"/>
+                    <connections>
+                        <outlet property="NewHeartRecv" destination="ybo-2g-3N3" id="fKp-U3-I5v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QF7-dG-FCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -496,6 +509,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="MainTabBar" destination="ysn-eT-Ofd" id="aUo-ES-qU4"/>
                         <segue destination="Q1M-Zu-uBB" kind="relationship" relationship="viewControllers" id="C1o-y3-bu8"/>
                         <segue destination="Rqu-y3-rNX" kind="relationship" relationship="viewControllers" id="Ywg-WH-B9F"/>
                         <segue destination="3v9-ht-TOB" kind="relationship" relationship="viewControllers" id="4Pq-vg-7lj"/>
@@ -619,7 +633,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A9x-60-XXe"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="채팅" image="icon_main_chat" selectedImage="icon_main_chat_select" id="i7P-wW-yqf"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="채팅" image="icon_main_chat" selectedImage="icon_main_chat_select" id="i7P-wW-yqf"/>
                     <connections>
                         <outlet property="ChatMainTableView" destination="uTe-w6-v70" id="tiu-Mi-GW7"/>
                     </connections>
@@ -837,7 +851,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q3Z-eb-Lq6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="팬" image="icon_main_fan" selectedImage="icon_main_fan_select" id="G8V-Jj-PMe"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="팬" image="icon_main_fan" selectedImage="icon_main_fan_select" id="G8V-Jj-PMe"/>
                     <connections>
                         <outlet property="FanTableView" destination="eLs-QT-ETn" id="zZe-cp-w7J"/>
                         <outlet property="MyFanCount" destination="VOd-pV-SJ4" id="pNm-h7-2J8"/>
@@ -1016,7 +1030,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xSE-tk-MnH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="게시판" image="icon_main_board" selectedImage="icon_main_board_select" id="Dxl-DA-aWA"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="게시판" image="icon_main_board" selectedImage="icon_main_board_select" id="Dxl-DA-aWA"/>
                     <connections>
                         <outlet property="BoardTableView" destination="fck-Vv-gYA" id="28h-CW-vxh"/>
                     </connections>
@@ -1111,7 +1125,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="dQy-Cz-9dS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="즐겨찾기" image="icon_main_favor" selectedImage="icon_main_favor_select" id="TeL-qm-Z4e"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="즐겨찾기" image="icon_main_favor" selectedImage="icon_main_favor_select" id="TeL-qm-Z4e"/>
                     <connections>
                         <outlet property="FavorTableView" destination="YcP-bY-o8X" id="fIN-ZF-1ZI"/>
                     </connections>
@@ -3906,7 +3920,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pZ7-p0-nb4" id="QQP-C6-7VY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IuZ-pb-wYE" userLabel="Rank">
@@ -4887,18 +4901,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Dw-UR-Tzw">
-                                        <rect key="frame" x="157" y="153" width="70" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="삭제">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="DelAction:" destination="VrA-Dp-rJM" eventType="touchUpInside" id="NVc-bR-PnY"/>
-                                        </connections>
-                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="asdf" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c5D-Ep-uRZ">
                                         <rect key="frame" x="19" y="80" width="247" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -4907,7 +4909,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxM-EP-Uq8">
-                                        <rect key="frame" x="57" y="153" width="70" height="30"/>
+                                        <rect key="frame" x="107" y="155" width="70" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.41568627450000001" green="0.38431372549999998" blue="0.63529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>

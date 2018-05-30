@@ -483,8 +483,8 @@ class FireBaseFunc
         
         self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("ChatRoomName").setValue(strChatRoomName)
         self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Check").setValue(0)
-        self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * Double(CommonData.MILLISECOND))
-        self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
+    self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * Double(CommonData.MILLISECOND))
+    self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
         self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Msg").setValue(msg)
         self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("WriterIdx").setValue(String(DataMgr.Instance.MyData!.Index))
     }
@@ -529,8 +529,8 @@ class FireBaseFunc
             userData.SortFanList()
             CommonUIFunc.Instance.CheckFanRank(userData: userData, view : view)
             
-            self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
-            self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index)).child("Idx").setValue(String(myData.Index))
+        self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
+        self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index)).child("Idx").setValue(String(myData.Index))
             self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index))
             .child("RecvGold").setValue(saveHeart)
         }
@@ -847,13 +847,6 @@ class FireBaseFunc
             self.ref.child("Users").child(gender).child(String(index)).child("Honey").setValue(myData.Coin)
             self.ref.child("Users").child(gender).child(String(index)).child("NickChangeCnt").setValue(myData.NickCheckCnt)
         }
-    }
-    
-    public func RemoveRecvHeartData()
-    {
-        // TODO 도형 : 받은 하트 제거하는 기능 추가
-        
-        
     }
     
     public func RemoveAllRecvHeartData()

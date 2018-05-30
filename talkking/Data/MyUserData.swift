@@ -16,6 +16,7 @@ class MyUserData : UserData
     public var BlockedDataList : [BlockData] = [BlockData]()
     public var RecvHeartList : [RecvHeartData] = [RecvHeartData]()
     public var UID : String? = nil
+    public var NewFavorUserIndexList : [String] = [String]()
     
     public var CahingSettingDataList : [SettingData] = [SettingData]()
     
@@ -126,5 +127,24 @@ class MyUserData : UserData
     public func SetSettingData(_ SettingData:SettingData)
     {
         CahingSettingDataList.append(SettingData)
+    }
+    public override func AddFavorList(idx : Int)
+    {
+        super.AddFavorList(idx:idx)
+        NewFavorUserIndexList.append(String(idx))
+        CommonUIFunc.Instance.RefreshMainTabBar()
+    }
+    public override func RemoveFavorList(idx : Int)
+    {
+        super.RemoveFavorList(idx:idx)
+        for i in 0..<NewFavorUserIndexList.count
+        {
+            if NewFavorUserIndexList[i] == String(idx)
+            {
+                NewFavorUserIndexList.remove(at: i)
+                break;
+            }
+        }
+        CommonUIFunc.Instance.RefreshMainTabBar()
     }
 }

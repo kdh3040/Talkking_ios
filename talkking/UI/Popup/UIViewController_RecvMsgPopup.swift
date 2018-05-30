@@ -17,29 +17,9 @@ class UIViewController_RecvMsgPopup : UIViewController_Popup
     @IBAction func OkAction(_ sender: Any) {
         self.DismissPopup()
     }
-    @IBAction func DelAction(_ sender: Any) {
-
-        let MsgDelete = {
-            FireBaseFunc.Instance.RemoveRecvHeartData()
-            if let view = self.RecvHeartListView
-            {
-                view.RefreshUI()
-            }
-            self.DismissPopup()
-        }
-        
-        CommonUIFunc.Instance.ShowAlertPopup(
-            viewController: self,
-            title: "메세지 삭제",
-            message: "메세지를 삭제 하시겠습니까?",
-            actionTitle_1: "삭제",
-            actionFunc_1: MsgDelete,
-            actionTitle_2: "취소")
-    }
     
     var RecvHeart : RecvHeartData? = nil
-    var RecvHeartListView : UIViewController_RecvHeartPage? = nil
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,17 +27,19 @@ class UIViewController_RecvMsgPopup : UIViewController_Popup
         {
             FromUserLabel.text = String.init(format:"From : %@", data.SendUserNickName)
             HeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: data.RecvHeart)
-            Msg.text = data.RecvMsg
+            if data.RecvMsg.isEmpty
+            {
+                Msg.isHidden = false
+            }
+            else
+            {
+                Msg.text = data.RecvMsg
+            }
         }
     }
     
     public func SetRecvHeartData(data : RecvHeartData)
     {
         RecvHeart = data
-    }
-    
-    public func SetRecvHeartListView(view : UIViewController_RecvHeartPage)
-    {
-        RecvHeartListView = view
     }
 }

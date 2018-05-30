@@ -465,5 +465,21 @@ class UserData
         tempFanData.Check = 0
         FanDataList.append(tempFanData)
     }
-
+    
+    public func AddFavorList(idx : Int)
+    {
+        FavorUserIndexList.append(String(idx))
+    }
+    
+    public func RemoveFavorList(idx : Int)
+    {
+        for i in 0..<FavorUserIndexList.count
+        {
+            if FavorUserIndexList[i] == String(idx)
+            {
+                FavorUserIndexList.remove(at: i)
+                break;
+            }
+        }
+    }
 }
