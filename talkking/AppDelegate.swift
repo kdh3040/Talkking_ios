@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         CommonUIFunc.ShowLoading()
         
-        FireBaseFunc.Instance.LoadUserIndex(uuid: "a8970cb9531bdd5c" as! String)
+        FireBaseFunc.Instance.LoadUserIndex(uuid: "7df9bcf972c36f24" as! String)
  
  
         //NSString *UUID = [nameofclass]
