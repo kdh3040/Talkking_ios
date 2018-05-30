@@ -30,7 +30,7 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
         {
             CommonFunc.Instance.UseCoin(cost: self.SelectCost, view: self, callFunc: {
                 FireBaseFunc.Instance.SetFavorList(userData: self.PageUserData!)
-                FireBaseFunc.Instance.SetFanList(userData: self.PageUserData!, Heart: self.SelectCost, view : self)
+                FireBaseFunc.Instance.SetFanList(userData: self.PageUserData!, Heart: self.SelectCost, view : self.View!)
                 self.DismissPopup()
             })
         }
@@ -73,6 +73,7 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
     var placeholderLabel : UILabel!
     
     var SelectCost = 0
+    var View : UIViewController! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -123,6 +124,11 @@ class UIViewController_HeartSendPopup : UIViewController_Popup
     public func SetUserData(userData : UserData)
     {
         PageUserData = userData
+    }
+    
+    public func SetViewController(view : UIViewController)
+    {
+        View = view
     }
     
 }

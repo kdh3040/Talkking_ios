@@ -81,6 +81,7 @@ class UIViewController_UserPage : UIViewController
         {
             let page = self.storyboard?.instantiateViewController(withIdentifier: "HEART_SEND_POPUP") as! UIViewController_HeartSendPopup
             page.SetUserData(userData: PageUserData!)
+            page.SetViewController(view: self)
             page.ShowPopup(viewController: self)
         }
     }

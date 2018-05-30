@@ -338,9 +338,11 @@ class CommonUIFunc{
             {
                 if userData.FanDataList[i].Idx == myData.Index && i < CommonData.FAN_RANK_ICON_BIG.count
                 {
-                    let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FAN_RANK_POPUP") as! UIViewController_FanRankPopup
-                    page.SetFanRank(rank: i + 1)
-                    page.ShowPopup(viewController: view)
+                    DispatchQueue.main.async {
+                        let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FAN_RANK_POPUP") as! UIViewController_FanRankPopup
+                        page.SetFanRank(rank: i + 1)
+                        page.ShowPopup(viewController: view)
+                    }
                     break
                 }
             }
