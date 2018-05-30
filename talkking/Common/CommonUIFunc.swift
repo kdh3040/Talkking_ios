@@ -27,6 +27,7 @@ class CommonUIFunc{
     static var StartViewController : UIViewController? = nil
     static var MainTabBarController : UITabBarController_Main? = nil
     static var MainFavorViewController : UIViewController_Favor? = nil
+    static var MainViewController : UIViewController_Home? = nil
     
     public func ShowMainPage()
     {
@@ -56,6 +57,14 @@ class CommonUIFunc{
         if let view = CommonUIFunc.MainFavorViewController
         {
             view.RefreshUI(true)
+        }
+    }
+    
+    public func RefreshMain()
+    {
+        if let view = CommonUIFunc.MainViewController
+        {
+            view.RefreshUI()
         }
     }
     
@@ -188,7 +197,7 @@ class CommonUIFunc{
     
     public func SetUserName(label : UILabel, userData : UserData)
     {
-        label.text = userData.Name
+        label.text = String.init(format:"%@(%d세)", userData.Name ,userData.Age)
         if userData.Gender == GENDER_TYPE.FEMALE
         {
             label.textColor = GetFemaleColor()

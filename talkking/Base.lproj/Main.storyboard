@@ -290,6 +290,14 @@
                                             <action selector="HeartRecvAction:" destination="Q1M-Zu-uBB" eventType="touchUpInside" id="qDt-ik-5EX"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ybo-2g-3N3">
+                                        <rect key="frame" x="324" y="8" width="10" height="10"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="I7O-pf-Tjb"/>
+                                            <constraint firstAttribute="height" constant="10" id="woL-qb-82w"/>
+                                        </constraints>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98h-q1-dRy" userLabel="randombox">
                                         <rect key="frame" x="266" y="10" width="30" height="30"/>
                                         <constraints>
@@ -334,6 +342,8 @@
                                     <constraint firstItem="98h-q1-dRy" firstAttribute="top" secondItem="tfq-fD-5KB" secondAttribute="top" constant="10" id="bRF-U4-OLj"/>
                                     <constraint firstAttribute="height" constant="50" id="c6r-hY-ebF"/>
                                     <constraint firstAttribute="trailing" secondItem="qx9-SU-Tao" secondAttribute="trailing" constant="8" id="ce4-ir-d1W"/>
+                                    <constraint firstItem="ybo-2g-3N3" firstAttribute="top" secondItem="tfq-fD-5KB" secondAttribute="top" constant="8" id="f2L-4J-I2r"/>
+                                    <constraint firstItem="qx9-SU-Tao" firstAttribute="leading" secondItem="ybo-2g-3N3" secondAttribute="trailing" constant="3" id="hgN-MS-Pb3"/>
                                     <constraint firstItem="1XO-Ma-wJu" firstAttribute="top" secondItem="tfq-fD-5KB" secondAttribute="top" constant="10" id="ptV-ZE-RWG"/>
                                     <constraint firstItem="qx9-SU-Tao" firstAttribute="leading" secondItem="1XO-Ma-wJu" secondAttribute="trailing" constant="3" id="vtV-I7-Rzg"/>
                                     <constraint firstItem="1XO-Ma-wJu" firstAttribute="leading" secondItem="98h-q1-dRy" secondAttribute="trailing" constant="8" id="wx3-1q-dHA"/>
@@ -349,6 +359,9 @@
                         <viewLayoutGuide key="safeArea" id="iIC-iS-s2A"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="icon_main_home" selectedImage="icon_main_home_select" id="zQS-vh-Zr1"/>
+                    <connections>
+                        <outlet property="NewHeartRecv" destination="ybo-2g-3N3" id="fKp-U3-I5v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QF7-dG-FCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -27,6 +27,7 @@ class UIViewController_Home : UIViewController
          //self.present(page, animated: true)
         
     }
+    @IBOutlet var NewHeartRecv: UIImageView!
     @IBAction func MyPageAction(_ sender: Any) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "MY_USER_PAGE") as! UIViewController_MyUserPage
         self.present(page, animated: true)
@@ -72,6 +73,14 @@ class UIViewController_Home : UIViewController
         view.constrainToEdges(PagingViewController.view)
         PagingViewController.didMove(toParentViewController: self)
         
+        NewHeartRecv.layer.cornerRadius = NewHeartRecv.frame.size.width / 2
+        NewHeartRecv.clipsToBounds = true
+    }
+    
+    public func RefreshUI()
+    {
+        // TODO 도형 새로운 선물이 있으면
+        // NewHeartRecv를 보여주면 됨
     }
 }
 
