@@ -20,7 +20,7 @@ class UIViewController_FanRankPopup : UIViewController_Popup
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        RankIcon.image = UIImage.init(named: CommonUIFunc.GetFanRankBigImgName(Rank))
+        RankIcon.image = UIImage.init(named: CommonUIFunc.Instance.GetFanRankBigImgName(rank: Rank))
     }
     
     public func SetFanRank(rank : Int)

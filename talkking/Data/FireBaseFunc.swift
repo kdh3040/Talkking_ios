@@ -106,76 +106,41 @@ class FireBaseFunc
         
         ref.child("GenderList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
             
-            var tempGender = snapshot.value as? String
+            let tempGender = snapshot.value as? String
             
             // tempData  = nil
             
             if let tempUserGender = tempGender {
                 
-                
-                if tempUserGender == "남자"
-                {
-                    self.ref.child("Users").child("Man").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+                self.ref.child("Users").child(CommonFunc.Instance.ConvertGenderString(gender: tempUserGender)).child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+                    
+                    if let tempData = snapshot.value as? NSDictionary
+                    {
+                        let indexInt = Int(index)!
+                        let retValue : UserData = UserData.init(tempData: tempData)
                         
-                        if let tempData = snapshot.value as? NSDictionary
-                        {
-                            let indexInt = Int(index)!
-                            let retValue : UserData = UserData.init(tempData: tempData)
-                            
-                            DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-                         
-                            DataMgr.Instance.MyData = MyUserData(index: indexInt)
+                        DataMgr.Instance.SetCachingUserDataList(userData: retValue)
                         
-                            self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
-                       
-                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
-                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
-                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
-                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
-                            
-                            // TODO 도형 : 이함수가 왜 2번 들어오는지 모르겠음(환웅)
-                            self.LoadBlockDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
-                            self.LoadBlockedDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
-                            self.LoadBoardDataList(complete: self.CallBackFunc_LoadMyData)
-                            self.LoadMyBoardData(complete: self.CallBackFunc_LoadMyData)
-                            self.LoadRecvHeartData(complete: self.CallBackFunc_LoadMyData)
-                        }
-                    }){ (error) in
-                        print(error.localizedDescription)
+                        DataMgr.Instance.MyData = MyUserData(index: indexInt)
+                        
+                        self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
+                        
+                        self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
+                        self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
+                        self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
+                        self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
+                        
+                        // TODO 도형 : 이함수가 왜 2번 들어오는지 모르겠음(환웅)
+                        self.LoadBlockDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
+                        self.LoadBlockedDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
+                        self.LoadBoardDataList(complete: self.CallBackFunc_LoadMyData)
+                        self.LoadMyBoardData(complete: self.CallBackFunc_LoadMyData)
+                        self.LoadRecvHeartData(complete: self.CallBackFunc_LoadMyData)
                     }
-                }
-                else
-                {
-                    self.ref.child("Users").child("Woman").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
-                        
-                        if let tempData = snapshot.value as? NSDictionary
-                        {
-                            let indexInt = Int(index)!
-                            let retValue : UserData = UserData.init(tempData: tempData)
-                            
-                            DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-                           
-                            DataMgr.Instance.MyData = MyUserData(index: indexInt)
-                        
-                            self.LoadChatList(complete: self.CallBackFunc_LoadMyData)
-                        
-                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[0], complete: self.CallBackFunc_LoadMyData)
-                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
-                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
-                            self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
-                            
-                            self.LoadBlockDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
-                            self.LoadBlockedDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
-                            self.LoadBoardDataList(complete: self.CallBackFunc_LoadMyData)
-                            self.LoadMyBoardData(complete: self.CallBackFunc_LoadMyData)
-                            self.LoadRecvHeartData(complete: self.CallBackFunc_LoadMyData)
-                        }
-                    }){ (error) in
-                        print(error.localizedDescription)
-                    }
+                }){ (error) in
+                    print(error.localizedDescription)
                 }
             }
-            
         }){ (error) in
             print(error.localizedDescription)
         }
@@ -187,43 +152,23 @@ class FireBaseFunc
         
         ref.child("GenderList").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
             
-            var tempGender = snapshot.value as? String
+            let tempGender = snapshot.value as? String
             
             // tempData  = nil
             
             if let tempUserGender = tempGender {
-                
-         
-                    if tempUserGender == "남자"
+                self.ref.child("Users").child(CommonFunc.Instance.ConvertGenderString(gender: tempUserGender)).child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
+                    
+                    if let tempData = snapshot.value as? NSDictionary
                     {
-                        self.ref.child("Users").child("Man").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
-                            
-                            if let tempData = snapshot.value as? NSDictionary
-                            {
-                                let retValue : UserData = UserData.init(tempData: tempData)
-                                
-                                DataMgr.Instance.SetCachingUserDataList(userData: retValue)                            
-                                complete(Int(index)!, view)
-                            }
-                        }){ (error) in
-                            print(error.localizedDescription)
-                        }
+                        let retValue : UserData = UserData.init(tempData: tempData)
+                        
+                        DataMgr.Instance.SetCachingUserDataList(userData: retValue)
+                        complete(Int(index)!, view)
                     }
-                    else
-                    {
-                        self.ref.child("Users").child("Woman").child(index).observeSingleEvent(of: .value, with: { ( snapshot) in
-                            
-                            if let tempData = snapshot.value as? NSDictionary
-                            {
-                                let retValue : UserData = UserData.init(tempData: tempData)
-                                
-                                DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-                               complete(Int(index)!, view)
-                            }
-                        }){ (error) in
-                            print(error.localizedDescription)
-                        }
-                    }
+                }){ (error) in
+                    print(error.localizedDescription)
+                }
             }
             
         }){ (error) in
@@ -256,10 +201,9 @@ class FireBaseFunc
     
     public func LoadUserDataList(sortRef : String, complete : @escaping ((_ count : Int)->())) //-> UserData?
     {
-        
-        if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
+        if let myData = DataMgr.Instance.MyData
         {
-            ref.child("Users").child("Woman").queryOrdered(byChild: sortRef).queryLimited(toFirst: UInt(CommonData.LOAD_USERDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
+            ref.child("Users").child(CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)).queryOrdered(byChild: sortRef).queryLimited(toFirst: UInt(CommonData.LOAD_USERDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
                 
                 var viewIdx : Int = 0
                 for childSnapshot in snapshot.children
@@ -280,7 +224,7 @@ class FireBaseFunc
                         {
                             complete(CommonData.LOAD_DATA_SET)
                         }
-                       
+                        
                     }
                     else if sortRef == CommonData.HOME_VIEW_REF[1]
                     {
@@ -315,49 +259,6 @@ class FireBaseFunc
                 print(error.localizedDescription)
             }
         }
-        else
-        {
-            ref.child("Users").child("Man").queryOrdered(byChild: sortRef).queryLimited(toFirst: UInt(CommonData.LOAD_USERDATA_COUNT)).observeSingleEvent(of: .value, with: { ( snapshot) in
-                
-                var viewIdx : Int = 0
-                for childSnapshot in snapshot.children
-                {
-                    
-                    let tempChildData = childSnapshot as! DataSnapshot
-                    let tempData = tempChildData.value as? NSDictionary
-                    let retValue : UserData = UserData.init(tempData: tempData!)
-                    
-                    DataMgr.Instance.SetCachingUserDataList(userData: retValue)
-                    
-                    if sortRef == CommonData.HOME_VIEW_REF[0]
-                    {
-                        DataMgr.Instance.SetUserDataList_RecvHeart(ViewIndex : viewIdx, userIndex: retValue.Index)
-                    }
-                    else if sortRef == CommonData.HOME_VIEW_REF[1]
-                    {
-                        DataMgr.Instance.SetUserDataList_FanCount(ViewIndex: viewIdx, userIndex: retValue.Index)
-                    }
-                    else if sortRef == CommonData.HOME_VIEW_REF[2]
-                    {
-                        DataMgr.Instance.SetUserDataList_Near(ViewIndex: viewIdx, userIndex: retValue.Index)
-                    }
-                    else if sortRef == CommonData.HOME_VIEW_REF[3]
-                    {
-                        DataMgr.Instance.SetUserDataList_New(ViewIndex: viewIdx, userIndex: retValue.Index)
-                    }
-                    
-                    viewIdx += 1
-                }
-                
-                
-            }){ (error) in
-                print(error.localizedDescription)
-            }
-        }
-        
-       
-    
-        //return nil
     }
     
     public func LoadBoardDataList(complete : @escaping (_ count : Int)->()) //-> UserData?
@@ -482,63 +383,27 @@ class FireBaseFunc
     
     public func SetFavorList(userData : UserData)
     {
-        if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
+        if let myData = DataMgr.Instance.MyData
         {
-            self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).setValue(String(userData.Index))
-        }
-        else
-        {
-            self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).setValue(String(userData.Index))
+            self.ref.child("Users").child(CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)).child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).setValue(String(userData.Index))
         }
     }
     
     public func DelFavorList(userData : UserData)
     {
-        if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
+        if let myData = DataMgr.Instance.MyData
         {
-            self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).removeValue()
-        }
-        else
-        {
-            self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).removeValue()
+            self.ref.child("Users").child(CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)).child(String(DataMgr.Instance.MyData!.Index)).child("CardList").child(String(userData.Index)).removeValue()
         }
     }
     
     public func LoadChatList(complete : @escaping ((_ count : Int)->()))
     {
-        if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
+        if let myData = DataMgr.Instance.MyData
         {
-            ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("SendList").observeSingleEvent(of: .value, with: { ( snapshot) in
-                
-                for childSnapshot in snapshot.children
-                {
-                    let tempChildData = childSnapshot as! DataSnapshot
-                    let tempChat = tempChildData.value as? NSDictionary
-                    
-                    if tempChat != nil
-                    {
-                        let tempChatData : ChatData = ChatData()
-    
-                        tempChatData.Idx = Int(tempChat!["Idx"] as! String)!
-                        tempChatData.ChatRoomName = tempChat!["ChatRoomName"] as! String
-                        tempChatData.Check = tempChat!["Check"] as! Int
-                        tempChatData.Date = tempChat!["Date"] as! Double
-                        tempChatData.Msg = tempChat!["Msg"] as! String
-                        tempChatData.WriterIdx = tempChat!["WriterIdx"] as! String
-                        
-                        DataMgr.Instance.MyData!.ChatDataList.append(tempChatData)
-                    }
-                }
-                
-                complete(CommonData.LOAD_DATA_SET)
-                
-            }){ (error) in
-                print(error.localizedDescription)
-            }
-        }
-       else
-        {
-            ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("SendList").observeSingleEvent(of: .value, with: { ( snapshot) in
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
+            
+            ref.child("Users").child(gender).child(String(DataMgr.Instance.MyData!.Index)).child("SendList").observeSingleEvent(of: .value, with: { ( snapshot) in
                 
                 for childSnapshot in snapshot.children
                 {
@@ -575,116 +440,56 @@ class FireBaseFunc
       
         let writeDate = Date()
         
-        if userData.Gender == GENDER_TYPE.MALE
-        {
-            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("ChatRoomName").setValue(strChatRoomName)
-            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Check").setValue(0)
-            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * Double(CommonData.MILLISECOND))
-            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
-            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Msg").setValue(msg)
-            self.ref.child("Users").child("Man").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("WriterIdx").setValue(String(DataMgr.Instance.MyData!.Index))
-        }
-        else
-        {
-            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("ChatRoomName").setValue(strChatRoomName)
-            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Check").setValue(0)
-            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * Double(CommonData.MILLISECOND))
-            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
-            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Msg").setValue(msg)
-            self.ref.child("Users").child("Woman").child(String(userData.Index)).child("SendList").child(strChatRoomName).child("WriterIdx").setValue(String(DataMgr.Instance.MyData!.Index))
-        }
+        let gender : String = CommonFunc.Instance.ConvertGenderString(gender: userData.Gender)
+        
+        self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("ChatRoomName").setValue(strChatRoomName)
+        self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Check").setValue(0)
+        self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Date").setValue(writeDate.timeIntervalSince1970 * Double(CommonData.MILLISECOND))
+        self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
+        self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("Msg").setValue(msg)
+        self.ref.child("Users").child(gender).child(String(userData.Index)).child("SendList").child(strChatRoomName).child("WriterIdx").setValue(String(DataMgr.Instance.MyData!.Index))
     }
     
     public func SetMyCoin()
     {
-        if DataMgr.Instance.MyData!.Gender == GENDER_TYPE.MALE
+        if let myData = DataMgr.Instance.MyData
         {
-            self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("Honey").setValue(DataMgr.Instance.MyData!.Coin)
-        }
-        else
-        {
-            self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("Honey").setValue(DataMgr.Instance.MyData!.Coin)
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
+            self.ref.child("Users").child(gender).child(String(myData.Index)).child("Honey").setValue(myData.Coin)
         }
     }
     
     
     public func SetFanList(userData : UserData, Heart : Int)
     {
+        var saveHeart : Int = Heart
+        let gender : String = CommonFunc.Instance.ConvertGenderString(gender: userData.Gender)
         
-        if userData.FanDataList.count > 0
+        if let myData = DataMgr.Instance.MyData
         {
-            var bExist : Bool = false
-            var nMyIndex : Int = 0
-            
-            for i in 0..<userData.FanDataList.count
+            if userData.FanDataList.count > 0
             {
-                if userData.FanDataList[i].Idx == DataMgr.Instance.MyData!.Index
+                for i in 0..<userData.FanDataList.count
                 {
-                    bExist = true
-                    nMyIndex = i
-                    break
+                    if userData.FanDataList[i].Idx == myData.Index
+                    {
+                        saveHeart = userData.FanDataList[i].RecvHeart
+                        userData.FanDataList[i].RecvHeart += Heart
+                        break
+                    }
                 }
             }
             
-            
-            if bExist
-            {
-                if userData.Gender == GENDER_TYPE.MALE
-                {
-                    self.ref.child("Users").child("Man").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
-                    self.ref.child("Users").child("Man").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
-                    self.ref.child("Users").child("Man").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index))
-                        .child("RecvGold").setValue(userData.FanDataList[nMyIndex].RecvHeart + Heart)
-                }
-                else
-                {
-                    self.ref.child("Users").child("Woman").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
-                    self.ref.child("Users").child("Woman").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
-                    self.ref.child("Users").child("Woman").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index))
-                        .child("RecvGold").setValue(userData.FanDataList[nMyIndex].RecvHeart + Heart)
-                }
-            }
-            else
-            {
-                if userData.Gender == GENDER_TYPE.MALE
-                {
-                    self.ref.child("Users").child("Man").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
-                    self.ref.child("Users").child("Man").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
-                    self.ref.child("Users").child("Man").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("RecvGold").setValue(Heart)
-                }
-                else
-                {
-                    self.ref.child("Users").child("Woman").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
-                    self.ref.child("Users").child("Woman").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
-                    self.ref.child("Users").child("Woman").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("RecvGold").setValue(Heart)
-                }
-            }
-            
-            
+            self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
+            self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index)).child("Idx").setValue(String(myData.Index))
+            self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index))
+            .child("RecvGold").setValue(saveHeart)
         }
-        else
-        {
-            if userData.Gender == GENDER_TYPE.MALE
-            {
-                self.ref.child("Users").child("Man").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
-                self.ref.child("Users").child("Man").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
-                self.ref.child("Users").child("Man").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("RecvGold").setValue(Heart)
-            }
-            else
-            {
-                self.ref.child("Users").child("Woman").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
-                self.ref.child("Users").child("Woman").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("Idx").setValue(String(DataMgr.Instance.MyData!.Index))
-                self.ref.child("Users").child("Woman").child(String(userData.Index)).child("FanList").child(String(DataMgr.Instance.MyData!.Index)).child("RecvGold").setValue(Heart)
-            }
-        }
-       
     }
     
     public func RemoveBlockDataList(index:Int)
     {
-        // TODO 도형 확인 : 이거 맞나?
-        // 파이어베이스에서 내 BlockList 에서 해당 idx를 제거하고
-        // 차단 해제하는 유저의 BlockedList 에서 내 Idx를 제거하고
+
         if let myData = DataMgr.Instance.MyData
         {
             ref.child("BlockList").child(String(myData.Index)).child(String(index)).removeValue()
@@ -698,33 +503,17 @@ class FireBaseFunc
         CommonUIFunc.ShowLoading()
         if let myData = DataMgr.Instance.MyData
         {
-            if myData.Gender == GENDER_TYPE.FEMALE
-            {
-                self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child("Honey").observeSingleEvent(of: .value, with: { ( snapshot) in
-                    
-                    CommonUIFunc.DismissLoading()
-                    if let tempData = snapshot.value as? Int
-                    {
-                        myData.Coin = tempData
-                        complete()
-                    }
-                }){ (error) in
-                    print(error.localizedDescription)
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
+            self.ref.child("Users").child(gender).child(String(DataMgr.Instance.MyData!.Index)).child("Honey").observeSingleEvent(of: .value, with: { ( snapshot) in
+                
+                CommonUIFunc.DismissLoading()
+                if let tempData = snapshot.value as? Int
+                {
+                    myData.Coin = tempData
+                    complete()
                 }
-            }
-            else
-            {
-                self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child("Honey").observeSingleEvent(of: .value, with: { ( snapshot) in
-                    
-                    CommonUIFunc.DismissLoading()
-                    if let tempData = snapshot.value as? Int
-                    {
-                        myData.Coin = tempData
-                        complete()
-                    }
-                }){ (error) in
-                    print(error.localizedDescription)
-                }
+            }){ (error) in
+                print(error.localizedDescription)
             }
         }
     }
@@ -783,16 +572,10 @@ class FireBaseFunc
     {
         if let myData = DataMgr.Instance.MyData
         {
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
             for i in 0..<myData.Item.count
             {
-                if myData.Gender == GENDER_TYPE.FEMALE
-                {
-                    self.ref.child("Users").child("Woman").child(String(DataMgr.Instance.MyData!.Index)).child(String.init(format:"Item_%d",i + 1)).setValue(myData.Item[i])
-                }
-                else
-                {
-                    self.ref.child("Users").child("Man").child(String(DataMgr.Instance.MyData!.Index)).child(String.init(format:"Item_%d",i + 1)).setValue(myData.Item[i])
-                }
+                self.ref.child("Users").child(gender).child(String(DataMgr.Instance.MyData!.Index)).child(String.init(format:"Item_%d",i + 1)).setValue(myData.Item[i])
             }
         }
     }
@@ -903,48 +686,39 @@ class FireBaseFunc
         , Lon : Double, Lat : Double, Dist : Double, CreateDate : Double)
     {
 
-        var tempGender : String ;
+        let gender : String = CommonFunc.Instance.ConvertGenderString(gender: Gender)
         
-        if Gender == GENDER_TYPE.FEMALE.rawValue
-        {
-            tempGender = "Woman"
-        }
-        else
-        {
-            tempGender = "Man"
-        }
-            
         //self.ref.child("Users").child(tempGender).child(String(index)).child("Token").setValue(myData.Token)
             
-        self.ref.child("Users").child(tempGender).child(index).child("Idx").setValue(String(index))
+        self.ref.child("Users").child(gender).child(index).child("Idx").setValue(String(index))
             
-        self.ref.child("Users").child(tempGender).child(index).child("Img").setValue(TumbUrl)
-        self.ref.child("Users").child(tempGender).child(index).child("ImgGroup0").setValue(ImgUrl)
-        self.ref.child("Users").child(tempGender).child(index).child("ImgGroup1").setValue("1")
-        self.ref.child("Users").child(tempGender).child(index).child("ImgGroup2").setValue("1")
-        self.ref.child("Users").child(tempGender).child(index).child("ImgGroup3").setValue("1")
-        self.ref.child("Users").child(tempGender).child(index).child("ImgCount").setValue(1)
+        self.ref.child("Users").child(gender).child(index).child("Img").setValue(TumbUrl)
+        self.ref.child("Users").child(gender).child(index).child("ImgGroup0").setValue(ImgUrl)
+        self.ref.child("Users").child(gender).child(index).child("ImgGroup1").setValue("1")
+        self.ref.child("Users").child(gender).child(index).child("ImgGroup2").setValue("1")
+        self.ref.child("Users").child(gender).child(index).child("ImgGroup3").setValue("1")
+        self.ref.child("Users").child(gender).child(index).child("ImgCount").setValue(1)
         
-        self.ref.child("Users").child(tempGender).child(index).child("NickName").setValue(NickName)
-        self.ref.child("Users").child(tempGender).child(index).child("Gender").setValue(Gender)
-        self.ref.child("Users").child(tempGender).child(index).child("Age").setValue(Age)
+        self.ref.child("Users").child(gender).child(index).child("NickName").setValue(NickName)
+        self.ref.child("Users").child(gender).child(index).child("Gender").setValue(Gender)
+        self.ref.child("Users").child(gender).child(index).child("Age").setValue(Age)
             
-        self.ref.child("Users").child(tempGender).child(index).child("Lon").setValue(Lon)
-        self.ref.child("Users").child(tempGender).child(index).child("Lat").setValue(Lat)
-        self.ref.child("Users").child(tempGender).child(index).child("Dist").setValue(Dist)
+        self.ref.child("Users").child(gender).child(index).child("Lon").setValue(Lon)
+        self.ref.child("Users").child(gender).child(index).child("Lat").setValue(Lat)
+        self.ref.child("Users").child(gender).child(index).child("Dist").setValue(Dist)
         
-        self.ref.child("Users").child(tempGender).child(index).child("SendCount").setValue(0)
-        self.ref.child("Users").child(tempGender).child(index).child("RecvGold").setValue(0)
+        self.ref.child("Users").child(gender).child(index).child("SendCount").setValue(0)
+        self.ref.child("Users").child(gender).child(index).child("RecvGold").setValue(0)
         
-        self.ref.child("Users").child(tempGender).child(index).child("Date").setValue(CreateDate)
-        self.ref.child("Users").child(tempGender).child(index).child("Memo").setValue("")
+        self.ref.child("Users").child(gender).child(index).child("Date").setValue(CreateDate)
+        self.ref.child("Users").child(gender).child(index).child("Memo").setValue("")
             
-        self.ref.child("Users").child(tempGender).child(index).child("FanCount").setValue(0)
-        self.ref.child("Users").child(tempGender).child(index).child("Point").setValue(0)
-        self.ref.child("Users").child(tempGender).child(index).child("Grade").setValue(0)
-        self.ref.child("Users").child(tempGender).child(index).child("BestItem").setValue(0)
-        self.ref.child("Users").child(tempGender).child(index).child("Honey").setValue(0)
-        self.ref.child("Users").child(tempGender).child(index).child("NickChangeCnt").setValue(0)
+        self.ref.child("Users").child(gender).child(index).child("FanCount").setValue(0)
+        self.ref.child("Users").child(gender).child(index).child("Point").setValue(0)
+        self.ref.child("Users").child(gender).child(index).child("Grade").setValue(0)
+        self.ref.child("Users").child(gender).child(index).child("BestItem").setValue(0)
+        self.ref.child("Users").child(gender).child(index).child("Honey").setValue(0)
+        self.ref.child("Users").child(gender).child(index).child("NickChangeCnt").setValue(0)
         
     }
     
@@ -953,39 +727,31 @@ class FireBaseFunc
     {
         if let myData = DataMgr.Instance.MyData
         {
-            var tempGender : String ;
-            if myData.Gender == GENDER_TYPE.FEMALE
-            {
-                tempGender = "Woman"
-            }
-            else
-            {
-                tempGender = "Man"
-            }
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
             
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Token").setValue(myData.Token)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Idx").setValue(String(myData.Index))
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Img").setValue(myData.ThumbnailList[0])
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Token").setValue(myData.Token)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Idx").setValue(String(myData.Index))
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Img").setValue(myData.ThumbnailList[0])
             
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("NickName").setValue(myData.Name)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Gender").setValue(myData.Gender)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Age").setValue(String(myData.Age))
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("NickName").setValue(myData.Name)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Gender").setValue(myData.Gender)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Age").setValue(String(myData.Age))
             
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Lon").setValue(myData.Lon)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Lat").setValue(myData.Lat)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Dist").setValue(myData.Distance)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Lon").setValue(myData.Lon)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Lat").setValue(myData.Lat)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Dist").setValue(myData.Distance)
             
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("SendCount").setValue(0)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("RecvGold").setValue(myData.RecvHeart)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("SendCount").setValue(0)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("RecvGold").setValue(myData.RecvHeart)
             
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Date").setValue(myData.CreateDate)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Memo").setValue(myData.Memo)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Date").setValue(myData.CreateDate)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Memo").setValue(myData.Memo)
             
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("FanCount").setValue(myData.FanCount)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Point").setValue(myData.Point)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Grade").setValue(myData.Grade)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("BestItem").setValue(myData.BestItem)
-            self.ref.child("SimpleData").child(tempGender).child(String(index)).child("Honey").setValue(myData.Coin)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("FanCount").setValue(myData.FanCount)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Point").setValue(myData.Point)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Grade").setValue(myData.Grade)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("BestItem").setValue(myData.BestItem)
+            self.ref.child("SimpleData").child(gender).child(String(index)).child("Honey").setValue(myData.Coin)
         }
     }
     
@@ -996,48 +762,39 @@ class FireBaseFunc
         if let myData = DataMgr.Instance.MyData
         {
             SaveSimpleData(index: myData.Index)
-            
-            var tempGender : String ;
-            if myData.Gender == GENDER_TYPE.FEMALE
-            {
-                tempGender = "Woman"
-            }
-            else
-            {
-                tempGender = "Man"
-            }
-            
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Token").setValue(myData.Token)
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
+
+            self.ref.child("Users").child(gender).child(String(index)).child("Token").setValue(myData.Token)
     
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Idx").setValue(String(myData.Index))
+            self.ref.child("Users").child(gender).child(String(index)).child("Idx").setValue(String(myData.Index))
             
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Img").setValue(myData.ThumbnailList[0])
-            self.ref.child("Users").child(tempGender).child(String(index)).child("ImgGroup0").setValue(myData.ThumbnailList[1])
-            self.ref.child("Users").child(tempGender).child(String(index)).child("ImgGroup1").setValue(myData.ThumbnailList[2])
-            self.ref.child("Users").child(tempGender).child(String(index)).child("ImgGroup2").setValue(myData.ThumbnailList[3])
-            self.ref.child("Users").child(tempGender).child(String(index)).child("ImgGroup3").setValue(myData.ThumbnailList[4])
-            self.ref.child("Users").child(tempGender).child(String(index)).child("ImgCount").setValue(myData.ImgCount)
+            self.ref.child("Users").child(gender).child(String(index)).child("Img").setValue(myData.ThumbnailList[0])
+            self.ref.child("Users").child(gender).child(String(index)).child("ImgGroup0").setValue(myData.ThumbnailList[1])
+            self.ref.child("Users").child(gender).child(String(index)).child("ImgGroup1").setValue(myData.ThumbnailList[2])
+            self.ref.child("Users").child(gender).child(String(index)).child("ImgGroup2").setValue(myData.ThumbnailList[3])
+            self.ref.child("Users").child(gender).child(String(index)).child("ImgGroup3").setValue(myData.ThumbnailList[4])
+            self.ref.child("Users").child(gender).child(String(index)).child("ImgCount").setValue(myData.ImgCount)
             
-            self.ref.child("Users").child(tempGender).child(String(index)).child("NickName").setValue(myData.Name)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Gender").setValue(myData.Gender)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Age").setValue(String(myData.Age))
+            self.ref.child("Users").child(gender).child(String(index)).child("NickName").setValue(myData.Name)
+            self.ref.child("Users").child(gender).child(String(index)).child("Gender").setValue(myData.Gender)
+            self.ref.child("Users").child(gender).child(String(index)).child("Age").setValue(String(myData.Age))
             
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Lon").setValue(myData.Lon)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Lat").setValue(myData.Lat)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Dist").setValue(myData.Distance)
+            self.ref.child("Users").child(gender).child(String(index)).child("Lon").setValue(myData.Lon)
+            self.ref.child("Users").child(gender).child(String(index)).child("Lat").setValue(myData.Lat)
+            self.ref.child("Users").child(gender).child(String(index)).child("Dist").setValue(myData.Distance)
             
-            self.ref.child("Users").child(tempGender).child(String(index)).child("SendCount").setValue(0)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("RecvGold").setValue(myData.RecvHeart)
+            self.ref.child("Users").child(gender).child(String(index)).child("SendCount").setValue(0)
+            self.ref.child("Users").child(gender).child(String(index)).child("RecvGold").setValue(myData.RecvHeart)
             
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Date").setValue(myData.CreateDate)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Memo").setValue(myData.Memo)
+            self.ref.child("Users").child(gender).child(String(index)).child("Date").setValue(myData.CreateDate)
+            self.ref.child("Users").child(gender).child(String(index)).child("Memo").setValue(myData.Memo)
             
-            self.ref.child("Users").child(tempGender).child(String(index)).child("FanCount").setValue(myData.FanCount)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Point").setValue(myData.Point)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Grade").setValue(myData.Grade)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("BestItem").setValue(myData.BestItem)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("Honey").setValue(myData.Coin)
-            self.ref.child("Users").child(tempGender).child(String(index)).child("NickChangeCnt").setValue(myData.NickCheckCnt)
+            self.ref.child("Users").child(gender).child(String(index)).child("FanCount").setValue(myData.FanCount)
+            self.ref.child("Users").child(gender).child(String(index)).child("Point").setValue(myData.Point)
+            self.ref.child("Users").child(gender).child(String(index)).child("Grade").setValue(myData.Grade)
+            self.ref.child("Users").child(gender).child(String(index)).child("BestItem").setValue(myData.BestItem)
+            self.ref.child("Users").child(gender).child(String(index)).child("Honey").setValue(myData.Coin)
+            self.ref.child("Users").child(gender).child(String(index)).child("NickChangeCnt").setValue(myData.NickCheckCnt)
         }
     }
     

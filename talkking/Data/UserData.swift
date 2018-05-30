@@ -286,6 +286,8 @@ class UserData
                 tempFanData.Check = tempFanDataList["Check"] as! Int
                 FanDataList.append(tempFanData)
             }
+            
+            SortFanList()
         }
 
        // var tempFanList : [String] = [String]()
@@ -448,6 +450,12 @@ class UserData
         return [String]()
     }
     
+    public func SortFanList()
+    {
+        FanDataList.sort { (a, b) -> Bool in
+            return a.RecvHeart > b.RecvHeart
+        }
+    }
     
 
 }

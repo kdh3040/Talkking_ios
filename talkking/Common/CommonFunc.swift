@@ -211,4 +211,28 @@ class CommonFunc{
         
         return radius * CenterTheta
     }
+    
+    public func ConvertGenderString(gender:GENDER_TYPE) -> String
+    {
+        if gender == GENDER_TYPE.FEMALE
+        {
+            return "Woman"
+        }
+        else
+        {
+            return "Man"
+        }
+    }
+    
+    public func ConvertGenderString(gender:String) -> String
+    {
+        if gender == "남자"
+        {
+            return "Man"
+        }
+        else
+        {
+            return "Woman"
+        }
+    }
 }
