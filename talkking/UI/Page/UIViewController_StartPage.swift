@@ -16,8 +16,6 @@ class UIViewController_StartPage : UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        CommonUIFunc.StartViewController = self
         let gif = UIImage(gifName: "logo_gif.gif")
         Logo.setGifImage(gif)
     }

@@ -3,14 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "CommonUIFunc.ShowMainPage():CommonUIFunc.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "CommonUIFunc">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "UIViewController_Favor.viewDidLoad():UIViewController_Favor.swift">
          <PersistentStrings>
             <PersistentString
@@ -22,19 +14,16 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "FireBaseFunc.RemoveAllRecvHeartData():FireBaseFunc.swift">
-      </ContextState>
-      <ContextState
          contextName = "UIViewController_Board.scrollViewDidScroll(_:):UIViewController_Board.swift">
          <PersistentStrings>
             <PersistentString
                value = "scrollView.contentSize.height">
             </PersistentString>
             <PersistentString
-               value = "scrollView.frame.size.height">
+               value = "scrollView.contentOffset.y">
             </PersistentString>
             <PersistentString
-               value = "scrollView.contentOffset.y">
+               value = "scrollView.frame.size.height">
             </PersistentString>
             <PersistentString
                value = "(scrollView.contentSize.height - scrollView.frame.size.height)">
