@@ -132,7 +132,7 @@ class FireBaseFunc
                         self.LoadBlockDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
                         self.LoadBlockedDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
                         self.LoadBoardDataList(complete: self.CallBackFunc_LoadMyData)
-                        self.LoadSettingData(index: indexInt,complete: self.CallBackFunc_LoadMyData)
+                        self.LoadSettingData(index: indexInt)
                         self.LoadMyBoardData(complete: self.CallBackFunc_LoadMyData)
                         self.LoadRecvHeartData(complete: self.CallBackFunc_LoadMyData)
                     }
@@ -278,7 +278,7 @@ class FireBaseFunc
         //return nil
     }
     
-    public func LoadSettingData(index : Int, complete : @escaping (_ count : Int)->()) //-> UserData?
+    public func LoadSettingData(index : Int) //-> UserData?
     {
         ref.child("Setting").child(String(index)).observeSingleEvent(of: .value, with: { ( snapshot) in
             
@@ -288,8 +288,6 @@ class FireBaseFunc
                 let retValue : SettingData = SettingData.init(tempData: tempData)
                 
                 DataMgr.Instance.MyData!.SetSettingData(retValue)
-                self.CallBackCount += CommonData.LOAD_DATA_SET
-                complete(self.CallBackCount)
             }
             
             
@@ -854,6 +852,21 @@ class FireBaseFunc
         if let myData = DataMgr.Instance.MyData
         {
             self.ref.child("GiftHoneyList").child(String(myData.Index)).removeValue()
+        }
+    }
+    
+    public func RemoveUserData()
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            self.ref.child("UserIdx").child(myData.UID!).removeValue()
+            
+            self.ref.child("UserIdx_History").child(myData.UID!).setValue(String(myData.Index))
+            
+             self.ref.child("SimpleData").child(String(myData.Index)).child("Token").setValue(0)
+            
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
+            self.ref.child("Users").child(gender).child(String(myData.Index)).child("Token").setValue(0)
         }
     }
 }

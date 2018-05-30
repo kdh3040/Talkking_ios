@@ -235,4 +235,28 @@ class CommonFunc{
             return "Woman"
         }
     }
+    
+    public func IsMsgPopup() -> Bool
+    {
+        return DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Popup
+    }
+    public func IsMsgSound() -> Bool
+    {
+        return DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Sound
+    }
+    public func IsMsgVibe() -> Bool
+    {
+        return DataMgr.Instance.MyData!.CahingSettingDataList[0].AlarmMode_Vibe
+    }
+    public func IsMsgReject() -> Bool
+    {
+        if DataMgr.Instance.MyData!.CahingSettingDataList[0].RecvMode_Msg == 0
+        {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
 }

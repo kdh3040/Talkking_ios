@@ -92,6 +92,10 @@ class UITableViewController_Setting : UITableViewController
     @IBAction func DeleteUserAction(_ sender: Any) {
         // TODO 도형 : 계정 삭제 기능
         
+        FireBaseFunc.Instance.RemoveUserData()
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        UIApplication.shared.keyWindow?.rootViewController = vc
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
