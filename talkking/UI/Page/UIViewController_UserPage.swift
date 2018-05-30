@@ -36,7 +36,7 @@ class UIViewController_UserPage : UIViewController
             {
                 let favorRemoveAction = {
                     FireBaseFunc.Instance.DelFavorList(userData : pageUserData)
-                    myData.FavorUserIndexList.removeAll()
+                    myData.RemoveFavorList(idx: pageUserData.Index)
                     self.RefreshFavorUI()
                 }
                 
@@ -52,7 +52,7 @@ class UIViewController_UserPage : UIViewController
             {
                 let favorAddAction = {
                     FireBaseFunc.Instance.SetFavorList(userData: pageUserData)
-                    myData.FavorUserIndexList.append(String(pageUserData.Index))
+                    myData.AddFavorList(idx: pageUserData.Index)
                     self.RefreshFavorUI()
                 }
                 

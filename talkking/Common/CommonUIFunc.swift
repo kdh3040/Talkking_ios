@@ -25,6 +25,8 @@ class CommonUIFunc{
     static let Instance = CommonUIFunc()
     
     static var StartViewController : UIViewController? = nil
+    static var MainTabBarController : UITabBarController_Main? = nil
+    static var MainFavorViewController : UIViewController_Favor? = nil
     
     public func ShowMainPage()
     {
@@ -38,6 +40,22 @@ class CommonUIFunc{
             let page = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "INPUT_PAGE") as! UIViewController_InputPage
             page.SetMyIndex(uuid : uuid, index : index)
             CommonUIFunc.StartViewController!.present(page, animated: true)
+        }
+    }
+    
+    public func RefreshMainTabBar()
+    {
+        if let view = CommonUIFunc.MainTabBarController
+        {
+            view.RefreshTabBar()
+        }
+    }
+    
+    public func RefreshMainFavor()
+    {
+        if let view = CommonUIFunc.MainFavorViewController
+        {
+            view.RefreshUI(true)
         }
     }
     
