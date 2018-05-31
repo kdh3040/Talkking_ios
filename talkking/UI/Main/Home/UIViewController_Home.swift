@@ -21,6 +21,12 @@ class UIViewController_Home : UIViewController
     @IBAction func HeartRecvAction(_ sender: Any) {
         let page = self.storyboard?.instantiateViewController(withIdentifier: "RECV_HEART_PAGE") as! UIViewController_RecvHeartPage
         self.present(page, animated: true)
+        if let myData = DataMgr.Instance.MyData
+        {
+            myData.NewRecvHeartList = false
+        }
+        
+        self.RefreshUI()
         
         
          //let page = self.storyboard?.instantiateViewController(withIdentifier: "INPUT_PAGE") as! UIViewController_InputPage
@@ -75,12 +81,23 @@ class UIViewController_Home : UIViewController
         
         NewHeartRecv.layer.cornerRadius = NewHeartRecv.frame.size.width / 2
         NewHeartRecv.clipsToBounds = true
+        CommonUIFunc.MainViewController = self
+        RefreshUI()
     }
     
     public func RefreshUI()
     {
-        // TODO 도형 새로운 선물이 있으면
-        // NewHeartRecv를 보여주면 됨
+        if let myData = DataMgr.Instance.MyData
+        {
+            if myData.NewRecvHeartList
+            {
+                NewHeartRecv.isHidden = false
+            }
+            else
+            {
+                NewHeartRecv.isHidden = true
+            }
+        }
     }
 }
 

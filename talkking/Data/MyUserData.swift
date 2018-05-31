@@ -15,6 +15,7 @@ class MyUserData : UserData
     public var BlockDataList : [BlockData] = [BlockData]()
     public var BlockedDataList : [BlockData] = [BlockData]()
     public var RecvHeartList : [RecvHeartData] = [RecvHeartData]()
+    public var NewRecvHeartList : Bool = false
     public var UID : String? = nil
     public var NewFavorUserIndexList : [String] = [String]()
     

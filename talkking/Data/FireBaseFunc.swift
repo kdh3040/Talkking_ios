@@ -685,8 +685,9 @@ class FireBaseFunc
     {
         if let myData = DataMgr.Instance.MyData
         {
-            self.ref.child("GiftHoneyList").child(String(myData.Index)).observeSingleEvent(of: .value, with: { ( snapshot) in
+            self.ref.child("GiftHoneyList").child(String(myData.Index)).observe(DataEventType.value, with: { ( snapshot) in
                 
+                var RecvHeartEnable = false
                 for childSnapshot in snapshot.children
                 {
                     let tempChildData = childSnapshot as! DataSnapshot
@@ -694,6 +695,16 @@ class FireBaseFunc
                     let retValue : RecvHeartData = RecvHeartData.init(tempData: tempData!)
                     
                     myData.SetRecvHeartData(retValue)
+                    RecvHeartEnable = true
+                }
+                
+                // 아직 로딩 중이라면 갱신하지 않음
+                if self.LoadDataCnt == CommonData.LOAD_DATA_TYPE &&
+                    RecvHeartEnable
+                {
+                    // 로딩끝
+                    myData.NewRecvHeartList = true
+                    CommonUIFunc.Instance.RefreshMain()
                 }
                 complete(CommonData.LOAD_DATA_SET)
             }){ (error) in
