@@ -31,7 +31,7 @@ class UIViewController_Home_Near: UIViewController, UICollectionViewDelegate, UI
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UIViewCollectionCell_Home_Near
         
-        cell.SetHomeNearData(userIndex:DataMgr.Instance.GetUserDataList_Near(index: indexPath.row), rank : indexPath.row + 1)
+        cell.SetHomeNearData(userIndex:DataMgr.Instance.GetUserDataList_Near(index: indexPath.row))
         
         return cell
     }

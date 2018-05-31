@@ -525,6 +525,8 @@ class FireBaseFunc
             
             userData.SortFanList()
             CommonUIFunc.Instance.CheckFanRank(userData: userData, view : view)
+            // TODO 도형 : 상대방 FanCount 올려줘야 하는거 아닌지?
+            
             
         self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index)).child("Check").setValue(CommonData.USER_CHECK_NO)
         self.ref.child("Users").child(gender).child(String(userData.Index)).child("FanList").child(String(myData.Index)).child("Idx").setValue(String(myData.Index))
@@ -630,7 +632,25 @@ class FireBaseFunc
             let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
             for i in 0..<myData.Item.count
             {
-                self.ref.child("Users").child(gender).child(String(DataMgr.Instance.MyData!.Index)).child(String.init(format:"Item_%d",i + 1)).setValue(myData.Item[i])
+                self.ref.child("Users").child(gender).child(String(myData.Index)).child(String.init(format:"Item_%d",i + 1)).setValue(myData.Item[i])
+            }
+            
+            self.ref.child("Users").child(gender).child(String(myData.Index)).child("ItemCount").setValue(myData.ItemCount)
+        }
+    }
+    
+    public func UpdateBestItem()
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
+            if myData.BestItem < 0
+            {
+                self.ref.child("Users").child(gender).child(String(myData.Index)).child("BestItem").setValue(0)
+            }
+            else
+            {
+                self.ref.child("Users").child(gender).child(String(myData.Index)).child("BestItem").setValue(myData.BestItem)
             }
         }
     }

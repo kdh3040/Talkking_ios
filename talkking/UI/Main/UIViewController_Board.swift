@@ -40,19 +40,7 @@ class UIViewController_Board : UIViewController
         BoardTableView.estimatedRowHeight = 70
         BoardTableView.separatorStyle = .none
         
-        for i in 0..<DataMgr.Instance.CachingBoardDataList.count
-        {
-            if (DataMgr.Instance.GetCachingSimpleUserDataList(index: DataMgr.Instance.CachingBoardDataList[i].UserIndex) == nil)
-            {
-                CommonUIFunc.ShowLoading()
-                FireBaseFunc.Instance.LoadSimpleUserData(index: String(DataMgr.Instance.CachingBoardDataList[i].UserIndex), complete: CallBackFunc_LoadSimpleUserData)
-                BoardLoadCnt += CommonData.LOAD_DATA_SET
-            }
-        }
-        if BoardLoadCnt == 0
-        {
-            BoardCnt = DataMgr.Instance.CachingBoardDataList.count
-        }
+        RefreshUI()
     }
     
     override func didReceiveMemoryWarning() {
@@ -99,6 +87,20 @@ extension UIViewController_Board
 {
     public func RefreshUI()
     {
+        BoardLoadCnt = 0
+        for i in 0..<DataMgr.Instance.CachingBoardDataList.count
+        {
+            if (DataMgr.Instance.GetCachingSimpleUserDataList(index: DataMgr.Instance.CachingBoardDataList[i].UserIndex) == nil)
+            {
+                CommonUIFunc.ShowLoading()
+                FireBaseFunc.Instance.LoadSimpleUserData(index: String(DataMgr.Instance.CachingBoardDataList[i].UserIndex), complete: CallBackFunc_LoadSimpleUserData)
+                BoardLoadCnt += CommonData.LOAD_DATA_SET
+            }
+        }
+        if BoardLoadCnt == 0
+        {
+            BoardCnt = DataMgr.Instance.CachingBoardDataList.count
+        }
         BoardCnt = DataMgr.Instance.CachingBoardDataList.count
         BoardTableView.reloadData()
     }

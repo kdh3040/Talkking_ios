@@ -28,7 +28,12 @@ class UIViewCollectionCell_Home_FanCount : UICollectionViewCell
             let rankIcon = CommonUIFunc.Instance.GetMainRankImgName(rank: rank)
             if rankIcon.isEmpty == false
             {
+                Rank.isHidden = false
                 Rank.image = UIImage.init(named: rankIcon)
+            }
+            else
+            {
+                Rank.isHidden = true
             }
         }
     }

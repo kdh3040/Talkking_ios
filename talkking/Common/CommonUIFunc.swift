@@ -87,11 +87,11 @@ class CommonUIFunc{
     }
     
     public func GetItemImgName(bestItem:Int) -> String{
-        if(bestItem <= 0 || CommonData.ITEM_ICON.count <= bestItem)
+        if(bestItem < 0 || CommonData.ITEM_ICON.count <= bestItem)
         {
             return ""
         }
-        return CommonData.ITEM_ICON[bestItem - 1]
+        return CommonData.ITEM_ICON[bestItem]
     }
     
     public func GetFanRankImgName(rank:Int) -> String{
@@ -321,6 +321,14 @@ class CommonUIFunc{
     
     public func MoveUserPage(index:Int, view : UIViewController)
     {
+        if let myData = DataMgr.Instance.MyData
+        {
+            if myData.Index == index
+            {
+                CommonUIFunc.Instance.ShowAlertPopup(viewController: view, title: "알림", message: "글쓴이가 본인 입니다.", actionTitle_1: "확인")
+                return
+            }
+        }
         if let userData = DataMgr.Instance.GetCachingUserDataList(index: index)
         {
             let page = view.storyboard?.instantiateViewController(withIdentifier: "USER_PAGE") as! UIViewController_UserPage

@@ -19,7 +19,7 @@ class UIViewController_JewelInfoPopup : UIViewController_Popup
                 CommonFunc.Instance.UseCoin(cost: -jewelData.SellCost, view: self, callFunc: {
                         if let myData = DataMgr.Instance.MyData
                         {
-                            myData.Item[self.JewelData!.Index] = myData.Item[self.JewelData!.Index]! - 1
+                            myData.MinusItem(index:self.JewelData!.Index)
                         }
                         if let refreshFunc = self.RefreshFunc
                         {
@@ -69,7 +69,7 @@ class UIViewController_JewelInfoPopup : UIViewController_Popup
         if let myData = DataMgr.Instance.MyData,
             Gacha
         {
-            myData.Item[index] = myData.Item[index]! + 1
+            myData.PlusItem(index:index)
             FireBaseFunc.Instance.UpdateJewelData()
         }
     }

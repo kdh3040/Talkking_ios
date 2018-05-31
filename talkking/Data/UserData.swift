@@ -40,7 +40,7 @@ class UserData
     var ThumbnailList : [String] = [String]()
     
     var ItemCount : Int = 0
-    var BestItem : Int = 0
+    var BestItem : Int = -1 // NOTE 환웅 DB는 0이 없는 아이템 클라는 -1이 없는 아이템으로 구분
     var Item : [Int : Int] = [Int: Int]()
     var FanDataList : [FanData] = [FanData]()
     var NewFanDataList : [Int] = [Int]()
@@ -361,7 +361,7 @@ class UserData
             Point = 0
         }
         if let tempRecv = tempData["RecvGold"] as? Int {
-            RecvHeart = tempRecv
+            RecvHeart = -tempRecv
         }
         else
         {
@@ -411,10 +411,9 @@ class UserData
     
     public func SetBestItem()
     {
-        
         if self.ItemCount == 0
         {
-            self.BestItem = 0
+            self.BestItem = -1
         }
         else
         {

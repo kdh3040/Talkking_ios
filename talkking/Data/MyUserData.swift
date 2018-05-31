@@ -148,4 +148,44 @@ class MyUserData : UserData
         }
         CommonUIFunc.Instance.RefreshMainTabBar()
     }
+    
+    public func PlusItem(index : Int)
+    {
+        if Item.count <= index
+        {
+            return
+        }
+        Item[index] = Item[index]! + 1
+        
+        ItemCount = 0
+        for i in 0..<Item.count
+        {
+            ItemCount += Item[i]!
+        }
+        SetBestItem()
+        FireBaseFunc.Instance.UpdateBestItem()
+    }
+    public func MinusItem(index : Int)
+    {
+        if Item.count <= index
+        {
+            return
+        }
+        
+        Item[index] = Item[index]! - 1
+        
+        if Item[index]! < 0
+        {
+            Item[index] = 0
+        }
+        
+        ItemCount = 0
+        for i in 0..<Item.count
+        {
+            ItemCount += Item[i]!
+        }
+        
+        SetBestItem()
+        FireBaseFunc.Instance.UpdateBestItem()
+    }
 }

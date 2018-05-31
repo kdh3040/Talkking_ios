@@ -14,7 +14,7 @@ class UIViewCollectionCell_Home_Near : UICollectionViewCell
     @IBOutlet var Thumbnail: UIImageView!
     @IBOutlet var Rank: UIImageView!
     @IBOutlet var Near: UILabel!
-    public func SetHomeNearData(userIndex : Int, rank : Int)
+    public func SetHomeNearData(userIndex : Int)
     {
         CommonUIFunc.Instance.SetDefaultThumbnail(imageView : Thumbnail, circle : false)
         
@@ -23,12 +23,6 @@ class UIViewCollectionCell_Home_Near : UICollectionViewCell
             CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: cellUserData.GetMainThumbnail())!, circle : false)
             
             Near.text = CommonUIFunc.Instance.ConvertNumberFormatDouble(count: cellUserData.Distance, addString : "Km")
-            
-            let rankIcon = CommonUIFunc.Instance.GetMainRankImgName(rank: rank)
-            if rankIcon.isEmpty == false
-            {
-                Rank.image = UIImage.init(named: rankIcon)
-            }
         }
     }
 }
