@@ -14,7 +14,6 @@ class UITableViewCell_UserFan : UITableViewCell
     @IBOutlet var Rank: UIImageView!
     @IBOutlet var RankLabel: UILabel!
     @IBOutlet var Thumbnail: UIImageView!
-    @IBOutlet var NewIcon: UIImageView!
     @IBOutlet var Name: UILabel!
     @IBOutlet var Grade: UIImageView!
     @IBOutlet var BestItem: UIImageView!

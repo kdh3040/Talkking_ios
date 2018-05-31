@@ -19,9 +19,10 @@ class UITableViewCell_Fan : UITableViewCell
     @IBOutlet var Grade: UIImageView!
     @IBOutlet var BestItem: UIImageView!
     @IBOutlet var HeartCount: UILabel!
+    @IBOutlet var Indicator: UIImageView!
+    var Index : Int = 0
     public func SetFanCell(userData:UserData, rank : Int, RecvHeart : Int)
     {
-        // TODO 환웅 : New Icon 기능 추가
         let realRank = rank + 1
         CommonUIFunc.Instance.SetThumbnail(imageView :  Thumbnail, url : URL(string: userData.GetMainThumbnail())!, circle : true)
         
@@ -47,5 +48,38 @@ class UITableViewCell_Fan : UITableViewCell
         }
         
         HeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: RecvHeart)
+        
+        Indicator.layer.cornerRadius = Indicator.frame.size.width / 2
+        Indicator.clipsToBounds = true
+        Index = userData.Index
+        RefreshUI()
+    }
+    
+    public func RefreshUI()
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            if myData.IsNewFanList(idx: Index)
+            {
+                NewIcon.isHidden = false
+                Indicator.isHidden = true
+            }
+            else if myData.IsUpdateFanList(idx: Index)
+            {
+                NewIcon.isHidden = true
+                Indicator.isHidden = false
+            }
+            else
+            {
+                NewIcon.isHidden = true
+                Indicator.isHidden = true
+            }
+        }
+    }
+    
+    public func RemoveIcon()
+    {
+        NewIcon.isHidden = true
+        Indicator.isHidden = true
     }
 }

@@ -43,6 +43,8 @@ class UserData
     var BestItem : Int = 0
     var Item : [Int : Int] = [Int: Int]()
     var FanDataList : [FanData] = [FanData]()
+    var NewFanDataList : [Int] = [Int]()
+    var UpdateFanDataList : [Int] = [Int]()
     var ChatDataList : [ChatData] = [ChatData]()
     
     public init(userData : UserData)
@@ -77,6 +79,8 @@ class UserData
         
         FavorUserIndexList = userData.FavorUserIndexList
         FanDataList = userData.FanDataList
+        NewFanDataList = userData.NewFanDataList
+        UpdateFanDataList = userData.UpdateFanDataList
         
         ChatDataList = userData.ChatDataList
         
@@ -285,6 +289,10 @@ class UserData
                 tempFanData.RecvHeart = tempFanDataList["RecvGold"] as! Int
                 tempFanData.Check = tempFanDataList["Check"] as! Int
                 FanDataList.append(tempFanData)
+                if tempFanData.Check == 0
+                {
+                    UpdateFanDataList.append(tempFanData.Idx)
+                }
             }
             
             SortFanList()
@@ -462,14 +470,118 @@ class UserData
         }
     }
     
-    public func AddFanList(idx : Int, recvGold : Int)
+    public func AddFanList(idx : Int, recvGold : Int, check : Int)
     {
         let tempFanData : FanData = FanData()
         tempFanData.Idx = idx
         tempFanData.RecvHeart = recvGold
-        tempFanData.Check = 0
-        FanDataList.append(tempFanData)
+        tempFanData.Check = check
+        
+        // NOTE 환웅 : 초반 로그인시 데이터가 세팅되고 난뒤 새로 추가되는 팬 및 업데이트되는 팬이 이 함수를 타게 된다.
+        if IsFanList(idx: idx)
+        {
+            if UpdateFanList(recvData : tempFanData)
+            {
+                UpdateFanDataList.append(tempFanData.Idx)
+                CommonUIFunc.Instance.RefreshMainTabBar()
+            }
+        }
+        else
+        {
+            FanDataList.append(tempFanData)
+            NewFanDataList.append(tempFanData.Idx)
+            if tempFanData.Check == 0
+            {
+                UpdateFanDataList.append(tempFanData.Idx)
+            }
+            CommonUIFunc.Instance.RefreshMainTabBar()
+        }
+        
+        SortFanList()
     }
+    
+    public func RemoveNewUpdateFan(idx : Int)
+    {
+        for i in 0..<UpdateFanDataList.count
+        {
+            if UpdateFanDataList[i] == idx
+            {
+                UpdateFanDataList.remove(at: i)
+                break
+            }
+        }
+        
+        for i in 0..<NewFanDataList.count
+        {
+            if NewFanDataList[i] == idx
+            {
+                NewFanDataList.remove(at: i)
+                break
+            }
+        }
+    }
+
+    public func IsFanList(idx : Int) -> Bool
+    {
+        for data in FanDataList
+        {
+            if data.Idx == idx
+            {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    public func UpdateFanList(recvData : FanData) -> Bool
+    {
+        var changeValue = false
+        for data in FanDataList
+        {
+            if data.Idx == recvData.Idx
+            {
+                if data.RecvHeart != recvData.RecvHeart
+                {
+                    changeValue = true
+                }
+                data.Check = recvData.Check
+                data.RecvHeart = recvData.RecvHeart
+                
+                return changeValue
+            }
+        }
+        
+        return changeValue
+    }
+    
+    public func IsUpdateFanList(idx : Int) -> Bool
+    {
+        for i in 0..<UpdateFanDataList.count
+        {
+            if UpdateFanDataList[i] == idx
+            {
+                return true
+            }
+        }
+        
+        return false
+    }
+
+    
+    public func IsNewFanList(idx : Int) -> Bool
+    {
+        for i in 0..<NewFanDataList.count
+        {
+            if NewFanDataList[i] == idx
+            {
+                return true
+            }
+        }
+        
+        return false
+    }
+
     
     public func AddFavorList(idx : Int)
     {

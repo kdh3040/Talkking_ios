@@ -806,12 +806,21 @@
                                                         <constraint firstItem="Na8-CO-bpW" firstAttribute="centerY" secondItem="9Hd-EQ-tes" secondAttribute="centerY" id="eAa-aP-ay2"/>
                                                     </constraints>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K3R-gz-9Bd">
+                                                    <rect key="frame" x="68" y="6" width="10" height="10"/>
+                                                    <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="M6M-qB-m6U"/>
+                                                        <constraint firstAttribute="width" constant="10" id="nI6-Uu-dwa"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ueR-Vw-cOD" firstAttribute="top" secondItem="wur-Hl-vsE" secondAttribute="top" constant="10" id="2eU-BG-Tmz"/>
                                                 <constraint firstItem="73D-SY-47I" firstAttribute="top" secondItem="wur-Hl-vsE" secondAttribute="topMargin" constant="2" id="463-Bn-0TD"/>
                                                 <constraint firstItem="ueR-Vw-cOD" firstAttribute="leading" secondItem="sI6-Kt-Myw" secondAttribute="trailing" constant="8" id="4Tg-8l-nyf"/>
                                                 <constraint firstItem="9Hd-EQ-tes" firstAttribute="leading" secondItem="sI6-Kt-Myw" secondAttribute="trailing" constant="8" id="5Dk-Zc-P0l"/>
+                                                <constraint firstItem="K3R-gz-9Bd" firstAttribute="leading" secondItem="wKi-bx-KQS" secondAttribute="trailing" constant="8" id="63L-9U-BL0"/>
                                                 <constraint firstItem="sI6-Kt-Myw" firstAttribute="top" secondItem="wur-Hl-vsE" secondAttribute="top" constant="10" id="Bvj-F8-opb"/>
                                                 <constraint firstItem="FWx-Gy-ZQI" firstAttribute="leading" secondItem="ueR-Vw-cOD" secondAttribute="trailing" constant="4" id="Fv7-2U-t74"/>
                                                 <constraint firstAttribute="bottom" secondItem="wKi-bx-KQS" secondAttribute="bottom" constant="-0.5" id="Jd6-xa-4VS"/>
@@ -821,6 +830,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="oCp-Ob-EuP" secondAttribute="bottom" constant="-0.5" id="XLt-A6-ayJ"/>
                                                 <constraint firstItem="wKi-bx-KQS" firstAttribute="top" secondItem="wur-Hl-vsE" secondAttribute="top" id="XbF-Aw-w2W"/>
                                                 <constraint firstItem="wKi-bx-KQS" firstAttribute="leading" secondItem="wur-Hl-vsE" secondAttribute="leading" id="gEs-Qf-8K6"/>
+                                                <constraint firstItem="K3R-gz-9Bd" firstAttribute="top" secondItem="wur-Hl-vsE" secondAttribute="top" constant="6" id="hvT-TY-u7Y"/>
                                                 <constraint firstItem="oCp-Ob-EuP" firstAttribute="top" secondItem="wur-Hl-vsE" secondAttribute="top" id="kTM-Zf-ST8"/>
                                                 <constraint firstAttribute="trailing" secondItem="9Hd-EQ-tes" secondAttribute="trailing" constant="7" id="l5i-ZS-dj1"/>
                                                 <constraint firstItem="9Hd-EQ-tes" firstAttribute="top" secondItem="ueR-Vw-cOD" secondAttribute="bottom" constant="8" id="myK-Jl-M6b"/>
@@ -833,6 +843,7 @@
                                             <outlet property="BestItem" destination="73D-SY-47I" id="e56-0i-zVY"/>
                                             <outlet property="Grade" destination="FWx-Gy-ZQI" id="Q8Z-4u-qTl"/>
                                             <outlet property="HeartCount" destination="Na8-CO-bpW" id="nR6-Rt-Qyh"/>
+                                            <outlet property="Indicator" destination="K3R-gz-9Bd" id="biE-ih-wn4"/>
                                             <outlet property="Name" destination="ueR-Vw-cOD" id="X2M-VM-RgR"/>
                                             <outlet property="NewIcon" destination="RK3-B2-QgW" id="Wu7-8C-JnB"/>
                                             <outlet property="Rank" destination="wKi-bx-KQS" id="9uR-pa-NLu"/>
@@ -3941,10 +3952,6 @@
                                                         <constraint firstAttribute="width" constant="60" id="H6f-zH-GiS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="etc_new" translatesAutoresizingMaskIntoConstraints="NO" id="uNO-Iu-Wmm">
-                                                    <rect key="frame" x="63" y="4" width="32" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktw-Qs-N71" userLabel="Name">
                                                     <rect key="frame" x="136" y="10" width="42" height="21"/>
                                                     <constraints>
@@ -4017,7 +4024,6 @@
                                             <outlet property="Grade" destination="RaB-Ew-kyU" id="3H3-Os-UTp"/>
                                             <outlet property="HeartCount" destination="3Rr-vX-x0I" id="0cr-AE-3Mp"/>
                                             <outlet property="Name" destination="Ktw-Qs-N71" id="GVR-8T-nbs"/>
-                                            <outlet property="NewIcon" destination="uNO-Iu-Wmm" id="f28-fA-QUN"/>
                                             <outlet property="Rank" destination="IuZ-pb-wYE" id="p7R-jQ-FcL"/>
                                             <outlet property="RankLabel" destination="KAg-0B-b7M" id="SHo-IA-erf"/>
                                             <outlet property="Thumbnail" destination="m4E-IO-hqo" id="2nJ-hU-eLb"/>

@@ -127,14 +127,13 @@ class FireBaseFunc
                         self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[1], complete: self.CallBackFunc_LoadMyData)
                         self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[2], complete: self.CallBackFunc_LoadMyData)
                         self.LoadUserDataList(sortRef: CommonData.HOME_VIEW_REF[3], complete: self.CallBackFunc_LoadMyData)
-                        
-                        // TODO 도형 : 이함수가 왜 2번 들어오는지 모르겠음(환웅)
                         self.LoadBlockDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
                         self.LoadBlockedDataList(index: indexInt, complete: self.CallBackFunc_LoadMyData)
                         self.LoadBoardDataList(complete: self.CallBackFunc_LoadMyData)
                         self.LoadSettingData(index: indexInt)
                         self.LoadMyBoardData(complete: self.CallBackFunc_LoadMyData)
                         self.LoadRecvHeartData(complete: self.CallBackFunc_LoadMyData)
+                        self.LoadMyFanData()
                     }
                 }){ (error) in
                     print(error.localizedDescription)
@@ -264,15 +263,15 @@ class FireBaseFunc
     {
         if let myData = DataMgr.Instance.MyData?.CahingSettingDataList[0]
         {
-                self.ref.child("Setting").child(String(index)).child("AlarmMode_Popup").setValue(myData.AlarmMode_Popup)
-                self.ref.child("Setting").child(String(index)).child("AlarmMode_Sound").setValue(myData.AlarmMode_Sound)
-                self.ref.child("Setting").child(String(index)).child("AlarmMode_Vibration").setValue(myData.AlarmMode_Vibe)
-            
-                self.ref.child("Setting").child(String(index)).child("StartAge").setValue(myData.SearchMode_StartAge)
-                self.ref.child("Setting").child(String(index)).child("EndAge").setValue(myData.SearchMode_EndAge)
-                self.ref.child("Setting").child(String(index)).child("ViewMode").setValue(myData.SearchMode_Gender)
-            
-                self.ref.child("Setting").child(String(index)).child("RecvMsgReject").setValue(myData.RecvMode_Msg)
+            self.ref.child("Setting").child(String(index)).child("AlarmMode_Popup").setValue(myData.AlarmMode_Popup)
+            self.ref.child("Setting").child(String(index)).child("AlarmMode_Sound").setValue(myData.AlarmMode_Sound)
+            self.ref.child("Setting").child(String(index)).child("AlarmMode_Vibration").setValue(myData.AlarmMode_Vibe)
+        
+            self.ref.child("Setting").child(String(index)).child("StartAge").setValue(myData.SearchMode_StartAge)
+            self.ref.child("Setting").child(String(index)).child("EndAge").setValue(myData.SearchMode_EndAge)
+            self.ref.child("Setting").child(String(index)).child("ViewMode").setValue(myData.SearchMode_Gender)
+        
+            self.ref.child("Setting").child(String(index)).child("RecvMsgReject").setValue(myData.RecvMode_Msg)
         }
         
         //return nil
@@ -521,7 +520,7 @@ class FireBaseFunc
             
             if addFan
             {
-                userData.AddFanList(idx: myData.Index, recvGold: Heart)
+                userData.AddFanList(idx: myData.Index, recvGold: Heart, check: 0)
             }
             
             userData.SortFanList()
@@ -676,7 +675,7 @@ class FireBaseFunc
         DataMgr.Instance.RemoveBoardData(index: boardIdx)
         if let myData = DataMgr.Instance.MyData
         {
-            ref.child("Board").child(String(boardIdx)).child("ReportList").child(String(myData.Index)).child("Date").setValue(CommonUIFunc.Instance.ConvertTimeString(time: Date().timeIntervalSince1970, format: "yyyyMMddHHmm"))
+        ref.child("Board").child(String(boardIdx)).child("ReportList").child(String(myData.Index)).child("Date").setValue(CommonUIFunc.Instance.ConvertTimeString(time: Date().timeIntervalSince1970, format: "yyyyMMddHHmm"))
             ref.child("Board").child(String(boardIdx)).child("ReportList").child(String(myData.Index)).child("Idx").setValue(String(myData.Index))
         }
     }
@@ -878,6 +877,48 @@ class FireBaseFunc
             
             let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
             self.ref.child("Users").child(gender).child(String(myData.Index)).child("Token").setValue(0)
+        }
+    }
+    
+    public func LoadMyFanData()
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
+            self.ref.child("Users").child(gender).child(String(myData.Index)).child("FanList").observe(DataEventType.childAdded, with: { ( snapshot) in
+                let value = snapshot.value as? NSDictionary
+                if let data = value
+                {
+                    let idx : Int = Int(data["Idx"] as! String)!
+                    let recvHeart : Int = data["RecvGold"] as! Int
+                    let check : Int = data["Check"] as! Int
+                    myData.AddFanList(idx: idx, recvGold: recvHeart, check: check)
+                }
+            }){ (error) in
+                print(error.localizedDescription)
+            }
+            
+            self.ref.child("Users").child(gender).child(String(myData.Index)).child("FanList").observe(DataEventType.childChanged, with: { ( snapshot) in
+                let value = snapshot.value as? NSDictionary
+                if let data = value
+                {
+                    let idx : Int = Int(data["Idx"] as! String)!
+                    let recvHeart : Int = data["RecvGold"] as! Int
+                    let check : Int = data["Check"] as! Int
+                    myData.AddFanList(idx: idx, recvGold: recvHeart, check: check)
+                }
+            }){ (error) in
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    public func UpdateMyFanCheckData(idx : Int)
+    {
+        if let myData = DataMgr.Instance.MyData
+        {
+            let gender : String = CommonFunc.Instance.ConvertGenderString(gender: myData.Gender)
+            self.ref.child("Users").child(gender).child(String(myData.Index)).child("FanList").child(String(idx)).child("Check").setValue(1)
         }
     }
 }

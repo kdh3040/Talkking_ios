@@ -28,6 +28,7 @@ class CommonUIFunc{
     static var MainTabBarController : UITabBarController_Main? = nil
     static var MainFavorViewController : UIViewController_Favor? = nil
     static var MainViewController : UIViewController_Home? = nil
+    static var MainFanViewController : UIViewController_Fan? = nil
     
     public func ShowMainPage()
     {
@@ -63,6 +64,14 @@ class CommonUIFunc{
     public func RefreshMain()
     {
         if let view = CommonUIFunc.MainViewController
+        {
+            view.RefreshUI()
+        }
+    }
+    
+    public func RefreshMainFan()
+    {
+        if let view = CommonUIFunc.MainFanViewController
         {
             view.RefreshUI()
         }

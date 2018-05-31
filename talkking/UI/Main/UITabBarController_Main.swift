@@ -15,6 +15,7 @@ class UITabBarController_Main : UITabBarController
     override func viewDidLoad() {
         super.viewDidLoad()
         CommonUIFunc.MainTabBarController = self
+        RefreshTabBar()
     }
     
     public func RefreshTabBar()
@@ -36,6 +37,11 @@ class UITabBarController_Main : UITabBarController
             else if i == 3
             {
                 // 팬
+                if let myData = DataMgr.Instance.MyData
+                {
+                    let badgeEnable = myData.NewFanDataList.count > 0 || myData.UpdateFanDataList.count > 0
+                    MainTabBar.items![i].badgeValue = badgeEnable ? " " : nil
+                }
             }
         }
     }
@@ -60,6 +66,7 @@ class UITabBarController_Main : UITabBarController
         else if item.tag == 3
         {
             // 팬
+            CommonUIFunc.Instance.RefreshMainFan()
         }
         
     }

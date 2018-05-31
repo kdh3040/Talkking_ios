@@ -26,26 +26,10 @@ class UIViewController_Fan : UIViewController
         FanTableView.dataSource = self
         FanTableView.rowHeight = 70
         FanTableView.separatorStyle = .none
-        
         MyFanCount.text = CommonUIFunc.Instance.ConvertNumberFormatDouble(count: DataMgr.Instance.MyData!.FanCount)
-        
         MyHeartCount.text = CommonUIFunc.Instance.ConvertNumberFormat(count: DataMgr.Instance.MyData!.RecvHeart)
-        
-        for i in 0..<DataMgr.Instance.MyData!.FanDataList.count
-        {
-            if (DataMgr.Instance.GetCachingSimpleUserDataList(index: Int(DataMgr.Instance.MyData!.FanDataList[i].Idx)) == nil)
-            {
-                CommonUIFunc.ShowLoading()
-                FireBaseFunc.Instance.LoadSimpleUserData(index: String(DataMgr.Instance.MyData!.FanDataList[i].Idx), complete: CallBackFunc_LoadSimpleUserData)
-                FanLoadCnt += CommonData.LOAD_DATA_SET
-            }
-        }
-        
-        if FanLoadCnt == 0
-        {
-            FanCnt = DataMgr.Instance.MyData!.FanDataList.count
-        }
-        
+        CommonUIFunc.MainFanViewController = self
+        RefreshUI()
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,12 +50,39 @@ extension UIViewController_Fan : UITableViewDelegate, UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        CommonUIFunc.Instance.MoveUserPage(index:DataMgr.Instance.MyData!.FanDataList[indexPath.row].Idx, view : self)
+        if let myData = DataMgr.Instance.MyData
+        {
+            CommonUIFunc.Instance.MoveUserPage(index:myData.FanDataList[indexPath.row].Idx, view : self)
+            myData.RemoveNewUpdateFan(idx: myData.FanDataList[indexPath.row].Idx)
+            FireBaseFunc.Instance.UpdateMyFanCheckData(idx: myData.FanDataList[indexPath.row].Idx)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell_Fan
+            cell.RemoveIcon()
+            CommonUIFunc.Instance.RefreshMainTabBar()
+        }
     }
 }
 
 extension UIViewController_Fan
 {
+    public func RefreshUI()
+    {
+        FanLoadCnt = 0
+        for i in 0..<DataMgr.Instance.MyData!.FanDataList.count
+        {
+            if (DataMgr.Instance.GetCachingSimpleUserDataList(index: Int(DataMgr.Instance.MyData!.FanDataList[i].Idx)) == nil)
+            {
+                CommonUIFunc.ShowLoading()
+                FireBaseFunc.Instance.LoadSimpleUserData(index: String(DataMgr.Instance.MyData!.FanDataList[i].Idx), complete: CallBackFunc_LoadSimpleUserData)
+                FanLoadCnt += CommonData.LOAD_DATA_SET
+            }
+        }
+        
+        if FanLoadCnt == 0
+        {
+            FanCnt = DataMgr.Instance.MyData!.FanDataList.count
+        }
+    }
+    
     private func CallBackFunc_LoadSimpleUserData(count : Int)
     {
         if count == FanLoadCnt

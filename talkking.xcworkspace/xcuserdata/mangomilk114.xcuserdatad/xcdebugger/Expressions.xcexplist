@@ -6,6 +6,14 @@
          contextName = "CommonUIFunc.CheckFanRank(userData:view:):CommonUIFunc.swift">
       </ContextState>
       <ContextState
+         contextName = "closure #3 in FireBaseFunc.LoadMyFanData():FireBaseFunc.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tempChildData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "FireBaseFunc.SetFanList(userData:Heart:view:):FireBaseFunc.swift">
       </ContextState>
       <ContextState
@@ -29,10 +37,10 @@
                value = "scrollView.contentSize.height">
             </PersistentString>
             <PersistentString
-               value = "scrollView.frame.size.height">
+               value = "scrollView.contentOffset.y">
             </PersistentString>
             <PersistentString
-               value = "scrollView.contentOffset.y">
+               value = "scrollView.frame.size.height">
             </PersistentString>
             <PersistentString
                value = "(scrollView.contentSize.height - scrollView.frame.size.height)">
@@ -58,6 +66,14 @@
             </PersistentString>
             <PersistentString
                value = "MainTabBar.items![1].badgeValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in FireBaseFunc.LoadMyFanData():FireBaseFunc.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tempChildData.value">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

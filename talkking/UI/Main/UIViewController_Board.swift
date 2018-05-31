@@ -93,17 +93,6 @@ extension UIViewController_Board : UITableViewDelegate, UITableViewDataSource
             print("스크롤 상단")
         }
     }
-
-    
-    /*
-     07. scrollViewDidScroll
-     scroll이 일정 offset에 다다르면, 데이터를 추가로 요청할 수 있다.
-     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-     if contentSize.offset.y < 100 {
-     data 추가 요청
-     }
-     }
- */
 }
 
 extension UIViewController_Board
