@@ -19,18 +19,21 @@ class UIViewController_Home : UIViewController
         self.present(page, animated: true)
     }
     @IBAction func HeartRecvAction(_ sender: Any) {
-        let page = self.storyboard?.instantiateViewController(withIdentifier: "RECV_HEART_PAGE") as! UIViewController_RecvHeartPage
+        /*let page = self.storyboard?.instantiateViewController(withIdentifier: "RECV_HEART_PAGE") as! UIViewController_RecvHeartPage
         self.present(page, animated: true)
         if let myData = DataMgr.Instance.MyData
         {
             myData.NewRecvHeartList = false
         }
         
-        self.RefreshUI()
+        self.RefreshUI()*/
         
         
          //let page = self.storyboard?.instantiateViewController(withIdentifier: "INPUT_PAGE") as! UIViewController_InputPage
          //self.present(page, animated: true)
+        
+        let page = self.storyboard?.instantiateViewController(withIdentifier: "CHATTING_PAGE") as! UIViewController_Chatting
+        self.present(page, animated: true)
         
     }
     @IBOutlet var NewHeartRecv: UIImageView!

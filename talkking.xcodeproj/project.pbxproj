@@ -106,6 +106,16 @@
 		93A4C4ED20A1E1CF00066594 /* icon_main_filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4E920A1E1CE00066594 /* icon_main_filter.png */; };
 		93A4C4EE20A1E1CF00066594 /* icon_main_randombox.png in Resources */ = {isa = PBXBuildFile; fileRef = 93A4C4EA20A1E1CE00066594 /* icon_main_randombox.png */; };
 		93B475FE20BD054A0041B3DC /* UIViewController_FanRankPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B475FD20BD054A0041B3DC /* UIViewController_FanRankPopup.swift */; };
+		93B4760020C1210D0041B3DC /* UIViewController_Chatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B475FF20C1210C0041B3DC /* UIViewController_Chatting.swift */; };
+		93B4760420C123830041B3DC /* UITableViewCell_Chatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4760320C123830041B3DC /* UITableViewCell_Chatting.swift */; };
+		93B4760720C238D40041B3DC /* UITableViewCell_ChattingMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4760520C238D40041B3DC /* UITableViewCell_ChattingMsg.swift */; };
+		93B4760820C238D40041B3DC /* UITableViewCell_ChattingMsg.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B4760620C238D40041B3DC /* UITableViewCell_ChattingMsg.xib */; };
+		93B4760B20C239C00041B3DC /* UITableViewCell_ChattingPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4760920C239C00041B3DC /* UITableViewCell_ChattingPic.swift */; };
+		93B4760C20C239C00041B3DC /* UITableViewCell_ChattingPic.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B4760A20C239C00041B3DC /* UITableViewCell_ChattingPic.xib */; };
+		93B4760F20C249DF0041B3DC /* UITableViewCell_OtherChattingMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4760D20C249DF0041B3DC /* UITableViewCell_OtherChattingMsg.swift */; };
+		93B4761020C249DF0041B3DC /* UITableViewCell_OtherChattingMsg.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B4760E20C249DF0041B3DC /* UITableViewCell_OtherChattingMsg.xib */; };
+		93B4761320C249F70041B3DC /* UITableViewCell_OtherChattingPic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4761120C249F70041B3DC /* UITableViewCell_OtherChattingPic.swift */; };
+		93B4761420C249F70041B3DC /* UITableViewCell_OtherChattingPic.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B4761220C249F70041B3DC /* UITableViewCell_OtherChattingPic.xib */; };
 		93BB882020AC0C90001E7623 /* etc_heart_red_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 93BB881F20AC0C8F001E7623 /* etc_heart_red_empty.png */; };
 		93BB882320AC0EDA001E7623 /* UIViewController_HeartSendPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB882220AC0EDA001E7623 /* UIViewController_HeartSendPopup.swift */; };
 		93BB882520AC1B90001E7623 /* UIViewController_NickNameChangePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB882420AC1B90001E7623 /* UIViewController_NickNameChangePopup.swift */; };
@@ -294,6 +304,16 @@
 		93A4C4E920A1E1CE00066594 /* icon_main_filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_main_filter.png; sourceTree = "<group>"; };
 		93A4C4EA20A1E1CE00066594 /* icon_main_randombox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_main_randombox.png; sourceTree = "<group>"; };
 		93B475FD20BD054A0041B3DC /* UIViewController_FanRankPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_FanRankPopup.swift; sourceTree = "<group>"; };
+		93B475FF20C1210C0041B3DC /* UIViewController_Chatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Chatting.swift; sourceTree = "<group>"; };
+		93B4760320C123830041B3DC /* UITableViewCell_Chatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_Chatting.swift; sourceTree = "<group>"; };
+		93B4760520C238D40041B3DC /* UITableViewCell_ChattingMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_ChattingMsg.swift; sourceTree = "<group>"; };
+		93B4760620C238D40041B3DC /* UITableViewCell_ChattingMsg.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITableViewCell_ChattingMsg.xib; sourceTree = "<group>"; };
+		93B4760920C239C00041B3DC /* UITableViewCell_ChattingPic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_ChattingPic.swift; sourceTree = "<group>"; };
+		93B4760A20C239C00041B3DC /* UITableViewCell_ChattingPic.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITableViewCell_ChattingPic.xib; sourceTree = "<group>"; };
+		93B4760D20C249DF0041B3DC /* UITableViewCell_OtherChattingMsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_OtherChattingMsg.swift; sourceTree = "<group>"; };
+		93B4760E20C249DF0041B3DC /* UITableViewCell_OtherChattingMsg.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITableViewCell_OtherChattingMsg.xib; sourceTree = "<group>"; };
+		93B4761120C249F70041B3DC /* UITableViewCell_OtherChattingPic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell_OtherChattingPic.swift; sourceTree = "<group>"; };
+		93B4761220C249F70041B3DC /* UITableViewCell_OtherChattingPic.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITableViewCell_OtherChattingPic.xib; sourceTree = "<group>"; };
 		93BB881F20AC0C8F001E7623 /* etc_heart_red_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = etc_heart_red_empty.png; sourceTree = "<group>"; };
 		93BB882220AC0EDA001E7623 /* UIViewController_HeartSendPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_HeartSendPopup.swift; sourceTree = "<group>"; };
 		93BB882420AC1B90001E7623 /* UIViewController_NickNameChangePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_NickNameChangePopup.swift; sourceTree = "<group>"; };
@@ -444,6 +464,14 @@
 				3D5091C0208DF92000DA8C8F /* Main.storyboard */,
 				3D5091C5208DF92100DA8C8F /* LaunchScreen.storyboard */,
 				3D5091C8208DF92100DA8C8F /* Info.plist */,
+				93B4760520C238D40041B3DC /* UITableViewCell_ChattingMsg.swift */,
+				93B4760620C238D40041B3DC /* UITableViewCell_ChattingMsg.xib */,
+				93B4760920C239C00041B3DC /* UITableViewCell_ChattingPic.swift */,
+				93B4760A20C239C00041B3DC /* UITableViewCell_ChattingPic.xib */,
+				93B4760D20C249DF0041B3DC /* UITableViewCell_OtherChattingMsg.swift */,
+				93B4760E20C249DF0041B3DC /* UITableViewCell_OtherChattingMsg.xib */,
+				93B4761120C249F70041B3DC /* UITableViewCell_OtherChattingPic.swift */,
+				93B4761220C249F70041B3DC /* UITableViewCell_OtherChattingPic.xib */,
 			);
 			path = talkking;
 			sourceTree = "<group>";
@@ -727,6 +755,8 @@
 				93C29B8D20AAE75F008D9D84 /* UITableViewCell_UserFan.swift */,
 				93D95D1220B2F11600E40F2A /* UIViewController_MyBoardList.swift */,
 				933BACA520B7F22D00834A55 /* UITableViewCell_MyBoard.swift */,
+				93B475FF20C1210C0041B3DC /* UIViewController_Chatting.swift */,
+				93B4760320C123830041B3DC /* UITableViewCell_Chatting.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -890,9 +920,11 @@
 				9318F95620903E0300E08F7D /* rank_vip.png in Resources */,
 				9318F95420903E0300E08F7D /* rank_diamond.png in Resources */,
 				93A4C4E620A1E0A200066594 /* etc_icon_main.png in Resources */,
+				93B4760820C238D40041B3DC /* UITableViewCell_ChattingMsg.xib in Resources */,
 				93A4C4DD20A0615B00066594 /* etc_icon_setting.png in Resources */,
 				93A4C4EB20A1E1CF00066594 /* icon_main_heart_recv.png in Resources */,
 				9318F95B20903E0300E08F7D /* favor.png in Resources */,
+				93B4761420C249F70041B3DC /* UITableViewCell_OtherChattingPic.xib in Resources */,
 				93A4C4DE20A0615B00066594 /* etc_icon_thumbnail.png in Resources */,
 				93D95D0C20B28FF600E40F2A /* Location_Term.txt in Resources */,
 				9318F98B20907E2E00E08F7D /* pearl.png in Resources */,
@@ -922,6 +954,7 @@
 				93E524552092EDA0009E303A /* Assets.xcassets in Resources */,
 				93A4C4E020A0670C00066594 /* etc_icon_coin.png in Resources */,
 				93D95CFF20B267C500E40F2A /* info_img_diamond.png in Resources */,
+				93B4761020C249DF0041B3DC /* UITableViewCell_OtherChattingMsg.xib in Resources */,
 				9318F98120907E0500E08F7D /* fan_rank_1.png in Resources */,
 				9318F98520907E0500E08F7D /* fan_rank_big_1.png in Resources */,
 				93E7664C2099F0CA005455A8 /* main_rank_1.png in Resources */,
@@ -937,6 +970,7 @@
 				93BCBBB120AD350E009827E8 /* logo_gif.gif in Resources */,
 				9318F95920903E0300E08F7D /* fan.png in Resources */,
 				93D95CFD20B267C500E40F2A /* info_img_amethyst.png in Resources */,
+				93B4760C20C239C00041B3DC /* UITableViewCell_ChattingPic.xib in Resources */,
 				93E76669209C5BA6005455A8 /* etc_icon_not_favor.png in Resources */,
 				93A4C4ED20A1E1CF00066594 /* icon_main_filter.png in Resources */,
 				9318F95C20903E0300E08F7D /* chat_select.png in Resources */,
@@ -1151,6 +1185,7 @@
 				3D5091BD208DF92000DA8C8F /* AppDelegate.swift in Sources */,
 				93D95D1320B2F11600E40F2A /* UIViewController_MyBoardList.swift in Sources */,
 				93C29B8020AAB72D008D9D84 /* UITableViewController_Setting.swift in Sources */,
+				93B4760B20C239C00041B3DC /* UITableViewCell_ChattingPic.swift in Sources */,
 				93C29B8E20AAE75F008D9D84 /* UITableViewCell_UserFan.swift in Sources */,
 				93C29B8C20AAE71B008D9D84 /* UIViewController_UserFanListPage.swift in Sources */,
 				93C29B9220AAFBF8008D9D84 /* UIViewController_BoardWritePopup.swift in Sources */,
@@ -1174,8 +1209,11 @@
 				9353D9C720A8128D006E4FAF /* UIViewController_RecvHeartPage.swift in Sources */,
 				93BEA5C120BBE900005B4C0E /* UITabBarController_Main.swift in Sources */,
 				93BB882720AC247F001E7623 /* UIViewController_RankPopup.swift in Sources */,
+				93B4760420C123830041B3DC /* UITableViewCell_Chatting.swift in Sources */,
 				933BACA620B7F22E00834A55 /* UITableViewCell_MyBoard.swift in Sources */,
 				9318F96F2090499F00E08F7D /* CommonUIFunc.swift in Sources */,
+				93B4761320C249F70041B3DC /* UITableViewCell_OtherChattingPic.swift in Sources */,
+				93B4760F20C249DF0041B3DC /* UITableViewCell_OtherChattingMsg.swift in Sources */,
 				933BACA820B9004100834A55 /* RecvHeartData.swift in Sources */,
 				9353D9CD20A817B3006E4FAF /* UIViewCollectionCell_UserPage_Fan.swift in Sources */,
 				93E7662D20996B8A005455A8 /* UIViewController_Home.swift in Sources */,
@@ -1185,8 +1223,10 @@
 				93E766472099BA94005455A8 /* UIViewCollectionCell_Home_New.swift in Sources */,
 				9318F96920903E0300E08F7D /* ChatData.swift in Sources */,
 				93E7663B2099B852005455A8 /* UIViewController_Home_Near.swift in Sources */,
+				93B4760020C1210D0041B3DC /* UIViewController_Chatting.swift in Sources */,
 				93E5245320921870009E303A /* UIViewController_Fan.swift in Sources */,
 				9318F96320903E0300E08F7D /* UITableViewCell_Favor.swift in Sources */,
+				93B4760720C238D40041B3DC /* UITableViewCell_ChattingMsg.swift in Sources */,
 				3D87316220948D1A00022D90 /* FanData.swift in Sources */,
 				9318F97720906CFA00E08F7D /* UIViewController_Board.swift in Sources */,
 				93BB882520AC1B90001E7623 /* UIViewController_NickNameChangePopup.swift in Sources */,
